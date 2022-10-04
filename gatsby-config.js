@@ -3,7 +3,7 @@ module.exports = {
     title: `주니어 개발자의 개발 일지`,
     description: `주니어 개발자의 개발 일지`,
     author: `COYO`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://coyo-hm.github.io/`,
   },
   plugins: [
     {
@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: '<https://my-website.com/>',
+        siteUrl: 'https://coyo-hm.github.io/',
         stripQueryString: true,
       },
     },
