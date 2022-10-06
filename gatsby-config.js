@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `주니어 개발자의 개발 일지`,
+    title: `COYO-LOG:D `,
     description: `주니어 개발자의 개발 일지`,
     author: `COYO`,
     siteUrl: `https://coyo-hm.github.io/`,
   },
   plugins: [
+    // `gatsby-plugin-ts`,
     {
       resolve: 'gatsby-plugin-typescript',
       options: {

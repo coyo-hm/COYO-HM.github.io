@@ -1,8 +1,11 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FunctionComponent, ReactNode, useState } from 'react'
 import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
-import GlobalStyle from 'components/Common/GlobalStyle'
+
 import Footer from 'components/Common/Footer'
+import Header from './Header'
+import Sidebar from './Sidebar'
+import GlobalStyle from 'style/GlobalStyle'
 
 interface ITemplateProps {
   title: string
@@ -16,6 +19,15 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
+`
+const ContentWrapper = styled.div`
+  position: relative;
+  top: 60px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 `
 
 /*
@@ -58,6 +70,12 @@ const Template: FunctionComponent<ITemplateProps> = function ({
   image,
   children,
 }) {
+  const [isOpenedSidebar, setisOpenedSidebar] = useState(false)
+
+  const openSidebar = () => {
+    setisOpenedSidebar(prev => !prev)
+  }
+
   return (
     <Container>
       <Helmet>
@@ -78,8 +96,8 @@ const Template: FunctionComponent<ITemplateProps> = function ({
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
-        <meta name="twitter:site" content="@사용자이름" />
-        <meta name="twitter:creator" content="@사용자이름" />
+        <meta name="twitter:site" content="@COYO" />
+        <meta name="twitter:creator" content="@COYO" />
         <meta
           name="google-site-verification"
           content="0ZXx4oZoly8ckpIlDvUrFbRLpK_zuI2m9yVSRKVHr3M"
@@ -90,10 +108,13 @@ const Template: FunctionComponent<ITemplateProps> = function ({
         />
         <html lang="ko" />
       </Helmet>
-
       <GlobalStyle />
-      {children}
-      <Footer />
+      <ContentWrapper>
+        {children}
+        <Footer />
+      </ContentWrapper>
+      <Header openSidebar={openSidebar} />
+      {isOpenedSidebar && <Sidebar />}
     </Container>
   )
 }

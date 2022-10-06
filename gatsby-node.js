@@ -16,6 +16,7 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
         hooks: path.resolve(__dirname, 'src/hooks'),
         model: path.resolve(__dirname, 'src/model'),
         templates: path.resolve(__dirname, 'src/templates'),
+        style: path.resolve(__dirname, 'src/style'),
       },
     },
   })

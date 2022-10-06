@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
 import ProfileImage from 'components/Main/ProfileImage'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
@@ -9,8 +9,8 @@ interface IIntroductionProps {
 
 const Background = styled.div`
   width: 100%;
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-  color: #ffffff;
+  background-image: #fef6ff;
+  color: black;
 `
 
 const Wrapper = styled.div`
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   width: 768px;
-  height: 400px;
+  height: 300px;
   margin: 0 auto;
 
   @media (max-width: 768px) {
@@ -27,6 +27,9 @@ const Wrapper = styled.div`
     height: 300px;
     padding: 0 20px;
   }
+`
+const TitleWrapper = styled.div`
+  margin-top: 30px;
 `
 
 const SubTitle = styled.div`
@@ -53,11 +56,10 @@ const Introduction = ({ profileImage }: IIntroductionProps) => {
     <Background>
       <Wrapper>
         <ProfileImage profileImage={profileImage} />
-
-        <div>
+        <TitleWrapper>
           <SubTitle>Nice to Meet You,</SubTitle>
           <Title>I'm Junior Frontend Developer COYO.</Title>
-        </div>
+        </TitleWrapper>
       </Wrapper>
     </Background>
   )
