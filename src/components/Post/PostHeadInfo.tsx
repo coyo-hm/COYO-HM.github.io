@@ -84,7 +84,13 @@ const PostHeadInfo = ({ title, date, categories }: IPostHeadInfoProps) => {
       </PrevPageIcon>
       <Title>{title}</Title>
       <PostData>
-        <div>{categories.join(' / ')}</div>
+        <div>
+          {categories
+            .map(category => {
+              return category.split('/')[1]
+            })
+            .join(' / ')}
+        </div>
         <div>{date}</div>
       </PostData>
     </PostHeadInfoWrapper>

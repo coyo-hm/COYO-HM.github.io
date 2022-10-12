@@ -3,15 +3,16 @@ date: '2022-10-03'
 title: 'Simple Kanban Board'
 categories:
   [
-    'React',
-    'TypeScript',
-    'React-beautiful-dnd',
-    'react-hook-form',
-    'recoil',
-    'styled-components',
+    'Project/ToyProject',
+    'Programming/React',
+    'Programming/TypeScript',
+    'Programming/react-beautiful-dnd',
+    'Programming/react-hook-form',
+    'Programming/recoil',
+    'Programming/styled-components',
   ]
 summary: 'react-beautiful-dnd를 이용한 간단한 칸반 보드'
-thumbnail: '../test.png'
+thumbnail: './test.png'
 ---
 
 # Simple Kanban Board

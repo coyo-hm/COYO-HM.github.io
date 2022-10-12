@@ -1,12 +1,13 @@
 import React, { useMemo } from 'react'
 import { graphql } from 'gatsby'
-import { IPost } from 'model/Post'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import queryString, { ParsedQuery } from 'query-string'
 import Introduction from 'components/Main/Introduction'
 import CategoryList, { ICategoryListProps } from 'components/Main/CategoryList'
 import PostList from 'components/Main/PostList'
 import Template from 'components/Common/Template'
+import { IPost } from '../model/Post'
+import { IMenuList } from 'components/Common/Sidebar'
 
 interface IIndexPageProps {
   location: {
@@ -63,7 +64,7 @@ const IndexPage = ({
             },
           }: IPost,
         ) => {
-          categories.forEach(category => {
+          categories.forEach((category: string) => {
             if (list[category] === undefined) list[category] = 1
             else list[category]++
           })
@@ -77,18 +78,56 @@ const IndexPage = ({
     [],
   )
 
+  const menuList = useMemo(
+    () =>
+      edges.reduce(
+        (
+          list: IMenuList,
+          {
+            node: {
+              frontmatter: { categories },
+            },
+          }: IPost,
+        ) => {
+          const parents = new Set<string>()
+          categories.forEach((category: string) => {
+            const [parent, child] = category.split('/')
+            parents.add(parent)
+
+            if (list[parent] === undefined) {
+              list[parent] = { cnt: 0, children: { [child]: 1 } }
+            } else if (list[parent].children[child] === undefined) {
+              list[parent].children[child] = 1
+            } else {
+              list[parent].children[child] += 1
+            }
+          })
+          parents.forEach(p => {
+            list[p].cnt += 1
+          })
+
+          return list
+        },
+        {},
+      ),
+    [],
+  )
+
   return (
     <Template
       title={title}
       description={description}
       url={siteUrl}
       image={publicURL}
+      selectedCategory={selectedCategory}
+      categoryList={categoryList}
+      menuList={menuList}
     >
       <Introduction profileImage={gatsbyImageData} />
-      <CategoryList
-        selectedCategory={selectedCategory}
-        categoryList={categoryList}
-      />
+      {/* <CategoryList */}
+      {/* selectedCategory={selectedCategory} */}
+      {/* categoryList={categoryList} */}
+      {/* /> */}
       <PostList selectedCategory={selectedCategory} posts={edges} />
     </Template>
   )

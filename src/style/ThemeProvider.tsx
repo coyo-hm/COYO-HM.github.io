@@ -1,8 +1,8 @@
-import { ThemeProvider as DefaultThemeProvider } from '@emotion/react'
+import { ThemeProvider } from '@emotion/react'
 import { theme } from './theme'
 
-const ThemeProvider = ({ children }: { children: any }) => {
-  return <DefaultThemeProvider theme={theme}>{children}</DefaultThemeProvider>
+const CustomThemeProvider = ({ children }: { children: any }) => {
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
 
-export default ThemeProvider
+export default CustomThemeProvider

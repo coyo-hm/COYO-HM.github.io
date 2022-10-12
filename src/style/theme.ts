@@ -1,6 +1,4 @@
-import { Theme } from '@emotion/react'
-
-export const theme: Theme = {
+export const theme = {
   sidebarWidth: '200px',
   headerHeight: '60px',
   color: {

@@ -1,7 +1,13 @@
 ---
 date: '2022-10-04'
 title: '블로그를 꾸며보자 01: Sidebar 만들기'
-categories: ['Web', 'SEO', 'Optimization']
+categories:
+  [
+    'Project/Blog',
+    'Programming/React',
+    'Programming/TypeScript',
+    'Programming/emotion',
+  ]
 summary: ''
 thumbnail: './sidebar/thumbnail.png'
 ---

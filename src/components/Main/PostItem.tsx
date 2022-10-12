@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import { IPostFrontmatter } from 'model/Post'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { IPostFrontmatter } from '../../model/Post'
 import React from 'react'
 
 interface IPostItemProps extends IPostFrontmatter {
@@ -100,7 +100,7 @@ const PostItem = ({
         <Date>{date}</Date>
         <Category>
           {categories.map(category => (
-            <CategoryItem key={category}>{category}</CategoryItem>
+            <CategoryItem key={category}>{category.split('/')[1]}</CategoryItem>
           ))}
         </Category>
         <Summary>{summary}</Summary>

@@ -1,6 +1,13 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
+export interface IMenuList {
+  [key: string]: {
+    cnt: number
+    children: { [key: string]: number }
+  }
+}
+
 const SidebarWrapper = styled.div`
   width: 300px;
   height: calc(100vh - 60px);
@@ -12,17 +19,33 @@ const SidebarWrapper = styled.div`
 `
 
 const MenuContainer = styled.div``
+
 const MenuItem = styled(Link)`
   display: block;
-  border-bottom: 1px solid #dbb0ff8f;
-  margin-bottom: 10px;
-  font-size: 24px;
+  padding: 5px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
+`
+
+const FirstMenuItem = styled(MenuItem)`
+  border-top: 1px solid #845ec2;
+  font-size: 24px;
 
   &:hover {
-    font-size: 30px;
+    font-size: 28px;
+  }
+
+  &:first-child {
+    border-top: none;
+  }
+`
+const SecondMenuItem = styled(MenuItem)`
+  border-bottom: 1px solid #9b89b3;
+  font-size: 20px;
+
+  &:hover {
+    font-size: 24px;
   }
 
   &:last-child {
@@ -30,39 +53,53 @@ const MenuItem = styled(Link)`
   }
 `
 
-const SubMenuItem = styled(MenuItem)`
-  font-size: 16px;
-  border-bottom: none;
-  margin: 10px 0 0 10px;
+const ThirdMenuItem = styled(MenuItem)`
+  font-size: 14px;
+  margin-left: 10px;
   &:hover {
-    font-size: 24px;
+    font-size: 20px;
   }
 `
 
+const Tag = styled(MenuItem)``
+
 const MENU_LIST = [
   {
-    label: 'All',
+    label: 'Programming',
     path: '/',
     submenu: [
       { label: 'React', path: '/' },
       { label: 'CSS', path: '/' },
     ],
   },
-  { label: 'About', path: '/about' },
+  { label: 'Algorithm', path: '/' },
+  { label: 'Project', path: '/' },
 ]
 
-const Sidebar = () => {
+interface ISidebarProps {
+  menuList: IMenuList
+}
+
+const Sidebar = ({ menuList }: ISidebarProps) => {
   return (
     <SidebarWrapper>
       <MenuContainer>
-        {MENU_LIST.map(menu => (
-          <MenuItem to={menu.path} key={menu.label}>
-            {menu.label}
-            {menu?.submenu?.map(sub => (
-              <SubMenuItem to={sub.path}>{sub.label}</SubMenuItem>
+        <FirstMenuItem to={'/'} key={'all'}>
+          ALL
+        </FirstMenuItem>
+        {Object.entries(menuList).map(([name, menu]) => (
+          <SecondMenuItem to={`/?category=${name}`} key={name}>
+            {name} ({menu.cnt})
+            {Object.entries(menu.children).map(([sub, cnt]) => (
+              <ThirdMenuItem to={`/?category=${name}/${sub}`}>
+                {sub} ({cnt})
+              </ThirdMenuItem>
             ))}
-          </MenuItem>
+          </SecondMenuItem>
         ))}
+        <FirstMenuItem to={'/'} key={'about'}>
+          About
+        </FirstMenuItem>
       </MenuContainer>
     </SidebarWrapper>
   )

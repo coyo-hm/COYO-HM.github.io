@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 
 import Footer from 'components/Common/Footer'
 import Header from './Header'
-import Sidebar from './Sidebar'
+import Sidebar, { IMenuList } from './Sidebar'
 import GlobalStyle from 'style/GlobalStyle'
 
 interface ITemplateProps {
@@ -12,7 +12,13 @@ interface ITemplateProps {
   description: string
   url: string
   image: string
+  selectedCategory: string
+  categoryList: {
+    [key: string]: number
+  }
   children: ReactNode
+  menuList: IMenuList
+  totalPost: number
 }
 
 const Container = styled.main`
@@ -68,13 +74,19 @@ const Template: FunctionComponent<ITemplateProps> = function ({
   description,
   url,
   image,
+  selectedCategory,
+  categoryList,
   children,
+  menuList,
+  totalPost,
 }) {
   const [isOpenedSidebar, setisOpenedSidebar] = useState(false)
 
   const openSidebar = () => {
     setisOpenedSidebar(prev => !prev)
   }
+
+  // console.log(categoryList, selectedCategory)
 
   return (
     <Container>
@@ -114,7 +126,7 @@ const Template: FunctionComponent<ITemplateProps> = function ({
         <Footer />
       </ContentWrapper>
       <Header openSidebar={openSidebar} />
-      {isOpenedSidebar && <Sidebar />}
+      {isOpenedSidebar && <Sidebar menuList={menuList} totalPost={totalPost} />}
     </Container>
   )
 }

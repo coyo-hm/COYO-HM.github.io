@@ -26,6 +26,7 @@ const SidebarButton = styled.button`
   place-items: center;
   border: none;
   margin-right: 10px;
+  cursor: pointer;
 
   &:hover {
     color: #845ec2;
