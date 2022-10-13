@@ -59,12 +59,20 @@ const Title = styled.div`
 `
 
 const PostData = styled.div`
-  display: flex;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
   align-items: center;
   margin-top: 10px;
   font-size: 18px;
   font-weight: 700;
+
+  div {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -84,6 +92,7 @@ const PostHeadInfo = ({ title, date, categories }: IPostHeadInfoProps) => {
       </PrevPageIcon>
       <Title>{title}</Title>
       <PostData>
+        <div>{date}</div>
         <div>
           {categories
             .map(category => {
@@ -91,7 +100,6 @@ const PostHeadInfo = ({ title, date, categories }: IPostHeadInfoProps) => {
             })
             .join(' / ')}
         </div>
-        <div>{date}</div>
       </PostData>
     </PostHeadInfoWrapper>
   )

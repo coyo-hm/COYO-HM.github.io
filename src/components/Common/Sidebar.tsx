@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
@@ -9,7 +10,7 @@ export interface IMenuList {
 }
 
 const SidebarWrapper = styled.div`
-  width: 300px;
+  width: 350px;
   height: calc(100vh - 60px);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   position: fixed;
@@ -29,19 +30,18 @@ const MenuItem = styled(Link)`
 `
 
 const FirstMenuItem = styled(MenuItem)`
-  border-top: 1px solid #845ec2;
+  border-bottom: 1px solid #845ec2;
   font-size: 24px;
 
   &:hover {
     font-size: 28px;
   }
 
-  &:first-child {
-    border-top: none;
+  &:last-child {
+    border: none;
   }
 `
 const SecondMenuItem = styled(MenuItem)`
-  border-bottom: 1px solid #9b89b3;
   font-size: 20px;
 
   &:hover {
@@ -55,9 +55,13 @@ const SecondMenuItem = styled(MenuItem)`
 
 const ThirdMenuItem = styled(MenuItem)`
   font-size: 14px;
-  margin-left: 10px;
+  padding-left: 10px;
   &:hover {
     font-size: 20px;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid #9b89b3;
   }
 `
 
@@ -88,14 +92,16 @@ const Sidebar = ({ menuList }: ISidebarProps) => {
           ALL
         </FirstMenuItem>
         {Object.entries(menuList).map(([name, menu]) => (
-          <SecondMenuItem to={`/?category=${name}`} key={name}>
-            {name} ({menu.cnt})
+          <div style={{}}>
+            <SecondMenuItem to={`/?category=${name}`} key={name}>
+              {name} ({menu.cnt})
+            </SecondMenuItem>
             {Object.entries(menu.children).map(([sub, cnt]) => (
               <ThirdMenuItem to={`/?category=${name}/${sub}`}>
                 {sub} ({cnt})
               </ThirdMenuItem>
             ))}
-          </SecondMenuItem>
+          </div>
         ))}
         <FirstMenuItem to={'/'} key={'about'}>
           About

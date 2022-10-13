@@ -11,13 +11,20 @@ const MarkdownRenderer = styled.div`
   flex-direction: column;
   width: 768px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 50px 0;
   word-break: break-all;
 
   // Markdown Style
   line-height: 1.8;
   font-size: 16px;
   font-weight: 400;
+
+  * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
   // Apply Padding Attribute to All Elements
   p {
@@ -29,13 +36,13 @@ const MarkdownRenderer = styled.div`
   h2,
   h3 {
     font-weight: 800;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   * + h1,
   * + h2,
   * + h3 {
-    margin-top: 80px;
+    margin-top: 20px;
   }
 
   hr + h1,
@@ -58,7 +65,7 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Quotation Element Style
   blockquote {
-    margin: 30px 0;
+    margin: 10px 0;
     padding: 5px 15px;
     border-left: 2px solid #000000;
     font-weight: 800;
@@ -68,7 +75,7 @@ const MarkdownRenderer = styled.div`
   ol,
   ul {
     margin-left: 20px;
-    padding: 30px 0;
+    padding: 5px 0;
   }
 
   // Adjust Horizontal Rule style
@@ -83,9 +90,13 @@ const MarkdownRenderer = styled.div`
     text-decoration: underline;
   }
 
+  img {
+    width: 100%;
+  }
+
   // Adjust Code Style
   pre[class*='language-'] {
-    margin: 30px 0;
+    margin: 10px 0;
     padding: 15px;
     font-size: 15px;
 
@@ -101,7 +112,7 @@ const MarkdownRenderer = styled.div`
   }
   @media (max-width: 768px) {
     width: 100%;
-    padding: 80px 20px;
+    padding: 40px 20px;
     line-height: 1.6;
     font-size: 14px;
 

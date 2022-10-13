@@ -18,7 +18,6 @@ interface ITemplateProps {
   }
   children: ReactNode
   menuList: IMenuList
-  totalPost: number
 }
 
 const Container = styled.main`
@@ -78,7 +77,6 @@ const Template: FunctionComponent<ITemplateProps> = function ({
   categoryList,
   children,
   menuList,
-  totalPost,
 }) {
   const [isOpenedSidebar, setisOpenedSidebar] = useState(false)
 
@@ -126,7 +124,7 @@ const Template: FunctionComponent<ITemplateProps> = function ({
         <Footer />
       </ContentWrapper>
       <Header openSidebar={openSidebar} />
-      {isOpenedSidebar && <Sidebar menuList={menuList} totalPost={totalPost} />}
+      {isOpenedSidebar && <Sidebar menuList={menuList} />}
     </Container>
   )
 }
