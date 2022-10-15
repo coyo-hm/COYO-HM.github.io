@@ -5,6 +5,7 @@ import queryString, { ParsedQuery } from 'query-string'
 import Introduction from 'components/Main/Introduction'
 import PostList from 'components/Main/PostList'
 import Template from 'components/Common/Template'
+import MenuTitle from 'components/Main/MenuTitle'
 import { IPost } from '../model/Post'
 import { IMenuList } from 'components/Common/Sidebar'
 import { useSetRecoilState } from 'recoil'
@@ -99,11 +100,11 @@ const IndexPage = ({
       image={publicURL}
       selectedCategory={selectedCategory}
     >
-      <Introduction profileImage={gatsbyImageData} />
-      {/* <CategoryList */}
-      {/* selectedCategory={selectedCategory} */}
-      {/* categoryList={categoryList} */}
-      {/* /> */}
+      {selectedCategory === 'All' ? (
+        <Introduction profileImage={gatsbyImageData} />
+      ) : (
+        <MenuTitle selectedCategory={selectedCategory} />
+      )}
       <PostList selectedCategory={selectedCategory} posts={edges} />
     </Template>
   )

@@ -10,7 +10,7 @@ interface IPostItemProps extends IPostFrontmatter {
 
 const PostItemWrapper = styled(Link)`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
   transition: 0.3s box-shadow;
@@ -22,9 +22,12 @@ const PostItemWrapper = styled(Link)`
 `
 
 const ThumbnailImage = styled(GatsbyImage)`
-  width: 100%;
-  height: 200px;
+  width: 30%;
+  height: 175px;
   border-radius: 10px 10px 0 0;
+  img {
+    object-fit: contain !important;
+  }
 `
 const PostItemContent = styled.div`
   flex: 1;
@@ -94,7 +97,6 @@ const PostItem = ({
 }: IPostItemProps) => {
   return (
     <PostItemWrapper to={link}>
-      <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
       <PostItemContent>
         <Title>{title}</Title>
         <Date>{date}</Date>
@@ -111,6 +113,7 @@ const PostItem = ({
         </Category>
         <Summary>{summary}</Summary>
       </PostItemContent>
+      <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
     </PostItemWrapper>
   )
 }

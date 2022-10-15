@@ -78,8 +78,6 @@ const Template: FunctionComponent<ITemplateProps> = function ({
     setisOpenedSidebar(prev => !prev)
   }
 
-  // console.log(categoryList, selectedCategory)
-
   return (
     <Container>
       <Helmet>
