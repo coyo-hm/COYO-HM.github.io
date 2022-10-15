@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import { useRecoilValue } from 'recoil'
+import { menuListState } from '../../states'
 
 export interface IMenuList {
   [key: string]: {
@@ -67,45 +69,30 @@ const ThirdMenuItem = styled(MenuItem)`
 
 const Tag = styled(MenuItem)``
 
-const MENU_LIST = [
-  {
-    label: 'Programming',
-    path: '/',
-    submenu: [
-      { label: 'React', path: '/' },
-      { label: 'CSS', path: '/' },
-    ],
-  },
-  { label: 'Algorithm', path: '/' },
-  { label: 'Project', path: '/' },
-]
+interface ISidebarProps {}
 
-interface ISidebarProps {
-  menuList: IMenuList
-}
+const Sidebar = ({}: ISidebarProps) => {
+  const menuList = useRecoilValue(menuListState)
 
-const Sidebar = ({ menuList }: ISidebarProps) => {
   return (
     <SidebarWrapper>
       <MenuContainer>
         <FirstMenuItem to={'/'} key={'all'}>
           ALL
         </FirstMenuItem>
-        {Object.entries(menuList).map(([name, menu]) => (
-          <div style={{}}>
-            <SecondMenuItem to={`/?category=${name}`} key={name}>
-              {name} ({menu.cnt})
-            </SecondMenuItem>
-            {Object.entries(menu.children).map(([sub, cnt]) => (
-              <ThirdMenuItem to={`/?category=${name}/${sub}`}>
-                {sub} ({cnt})
-              </ThirdMenuItem>
-            ))}
-          </div>
-        ))}
-        <FirstMenuItem to={'/'} key={'about'}>
-          About
-        </FirstMenuItem>
+        {menuList &&
+          Object.entries(menuList).map(([name, menu]) => (
+            <div>
+              <SecondMenuItem to={`/?category=${name}`} key={name}>
+                {name} ({menu.cnt})
+              </SecondMenuItem>
+              {Object.entries(menu.children).map(([sub, cnt]) => (
+                <ThirdMenuItem to={`/?category=${name}/${sub}`}>
+                  {sub} ({cnt})
+                </ThirdMenuItem>
+              ))}
+            </div>
+          ))}
       </MenuContainer>
     </SidebarWrapper>
   )

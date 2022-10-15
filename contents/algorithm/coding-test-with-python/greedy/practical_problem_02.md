@@ -1,7 +1,7 @@
 ---
 date: '2022-10-13'
 title: '[이코테] 그리디 알고리즘 실전문제3 : 숫자 카드 게임'
-categories: ['Algorithm/Problem', 'Algorithm/Greedy-Algorithm']
+categories: ['Algorithm', 'Algorithm/Problem', 'Algorithm/Greedy-Algorithm']
 summary: '숫자 카드 게임'
 thumbnail: '../thumbnail.jpg'
 ---

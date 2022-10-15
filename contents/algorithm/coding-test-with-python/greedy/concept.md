@@ -1,7 +1,7 @@
 ---
 date: '2022-10-13'
 title: '[이코테] 그리디 알고리즘 개념'
-categories: ['Algorithm/Concept', 'Algorithm/Greedy-Algorithm']
+categories: ['Algorithm', 'Algorithm/Concept', 'Algorithm/Greedy-Algorithm']
 summary: 'Greedy Algorithm에 대해 알아보자.'
 thumbnail: '../thumbnail.jpg'
 ---

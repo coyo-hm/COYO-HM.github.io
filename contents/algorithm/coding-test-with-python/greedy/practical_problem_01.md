@@ -1,7 +1,7 @@
 ---
 date: '2022-10-13'
 title: '[이코테] 그리디 알고리즘 실전문제2 : 큰 수의 법칙'
-categories: ['Algorithm/Problem', 'Algorithm/Greedy-Algorithm']
+categories: ['Algorithm', 'Algorithm/Problem', 'Algorithm/Greedy-Algorithm']
 summary: '큰 수의 법칙'
 thumbnail: '../thumbnail.jpg'
 ---

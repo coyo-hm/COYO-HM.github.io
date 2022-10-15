@@ -7,19 +7,6 @@ import Header from './Header'
 import Sidebar, { IMenuList } from './Sidebar'
 import GlobalStyle from 'style/GlobalStyle'
 
-interface ITemplateProps {
-  title: string
-  description: string
-  url: string
-  image: string
-  selectedCategory: string
-  categoryList: {
-    [key: string]: number
-  }
-  children: ReactNode
-  menuList: IMenuList
-}
-
 const Container = styled.main`
   display: flex;
   flex-direction: column;
@@ -68,15 +55,22 @@ Social Meta Tag : 페이스북, 트위터, 인스타그램 등의 여러 소셜 
 <meta name="twitter:image" content="<http://www.example.com/image.jpg>" />
 */
 
+interface ITemplateProps {
+  title: string
+  description: string
+  url: string
+  image: string
+  selectedCategory: string
+  children: ReactNode
+}
+
 const Template: FunctionComponent<ITemplateProps> = function ({
   title,
   description,
   url,
   image,
   selectedCategory,
-  categoryList,
   children,
-  menuList,
 }) {
   const [isOpenedSidebar, setisOpenedSidebar] = useState(false)
 
@@ -124,7 +118,7 @@ const Template: FunctionComponent<ITemplateProps> = function ({
         <Footer />
       </ContentWrapper>
       <Header openSidebar={openSidebar} />
-      {isOpenedSidebar && <Sidebar menuList={menuList} />}
+      {isOpenedSidebar && <Sidebar />}
     </Container>
   )
 }

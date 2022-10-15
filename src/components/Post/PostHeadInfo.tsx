@@ -83,18 +83,14 @@ const PostData = styled.div`
 `
 
 const PostHeadInfo = ({ title, date, categories }: IPostHeadInfoProps) => {
-  const goBackPage = () => window.history.back()
-
   return (
     <PostHeadInfoWrapper>
-      <PrevPageIcon onClick={goBackPage}>
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </PrevPageIcon>
       <Title>{title}</Title>
       <PostData>
         <div>{date}</div>
         <div>
           {categories
+            .filter(category => category.split('/').length > 1)
             .map(category => {
               return category.split('/')[1]
             })

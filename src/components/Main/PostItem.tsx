@@ -99,9 +99,15 @@ const PostItem = ({
         <Title>{title}</Title>
         <Date>{date}</Date>
         <Category>
-          {categories.map(category => (
-            <CategoryItem key={category}>{category.split('/')[1]}</CategoryItem>
-          ))}
+          {categories.map(category => {
+            if (category.split('/').length > 1) {
+              return (
+                <CategoryItem key={category}>
+                  {category.split('/')[1]}
+                </CategoryItem>
+              )
+            }
+          })}
         </Category>
         <Summary>{summary}</Summary>
       </PostItemContent>

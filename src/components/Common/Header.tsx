@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -17,33 +18,30 @@ const HeaderWrapper = styled.header`
   justify-content: space-between;
 `
 
-const SidebarButton = styled.button`
-  width: 60px;
-  height: 60px;
-  font-size: 32px;
-  background-color: transparent;
-  color: #4e2e8c;
-  place-items: center;
-  border: none;
-  margin-right: 10px;
-  cursor: pointer;
-
-  &:hover {
-    color: #845ec2;
-  }
-`
-
 const Left = styled.div`
   display: flex;
   justify-content: flex-start;
 `
 const Right = styled.div`
-  padding-right: 20px;
   display: flex;
   justify-content: flex-end;
 
   @media (max-width: 768px) {
     display: none;
+  }
+`
+const SidebarButton = styled.button`
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  background-color: transparent;
+  color: #4e2e8c;
+  place-items: center;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: #845ec2;
   }
 `
 
@@ -58,9 +56,21 @@ const Home = styled(Link)`
   }
 `
 
-const Menu = styled(Home)`
-  font-size: 24px;
-  font-weight: 500;
+const InfoBtn = styled.a`
+  width: 45px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 28px;
+  background-color: transparent;
+  color: #4e2e8c;
+  place-items: center;
+  text-align: center;
+  border: none;
+  /* cursor: pointer; */
+
+  &:hover {
+    color: #845ec2;
+  }
 `
 
 interface IHeaderProps {
@@ -77,7 +87,12 @@ const Header = ({ openSidebar }: IHeaderProps) => {
         <Home to="/">COYO-LOG:D</Home>
       </Left>
       <Right>
-        <Menu to="/about">About</Menu>
+        <InfoBtn href="https://github.com/COYO-HM" target={'_blank'}>
+          <FontAwesomeIcon icon={faGithub} />
+        </InfoBtn>
+        <InfoBtn href="mailto:bsydwp@gmail.com">
+          <FontAwesomeIcon icon={faEnvelope} />
+        </InfoBtn>
       </Right>
     </HeaderWrapper>
   )

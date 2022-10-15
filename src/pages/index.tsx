@@ -3,11 +3,12 @@ import { graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import queryString, { ParsedQuery } from 'query-string'
 import Introduction from 'components/Main/Introduction'
-import CategoryList, { ICategoryListProps } from 'components/Main/CategoryList'
 import PostList from 'components/Main/PostList'
 import Template from 'components/Common/Template'
 import { IPost } from '../model/Post'
 import { IMenuList } from 'components/Common/Sidebar'
+import { useSetRecoilState } from 'recoil'
+import { menuListState } from '../states'
 
 interface IIndexPageProps {
   location: {
@@ -46,37 +47,12 @@ const IndexPage = ({
     },
   },
 }: IIndexPageProps) => {
+  const setMenuList = useSetRecoilState(menuListState)
   const parsed: ParsedQuery<string> = queryString.parse(search)
   const selectedCategory: string =
     typeof parsed.category !== 'string' || !parsed.category
       ? 'All'
       : parsed.category
-
-  const categoryList = useMemo(
-    () =>
-      edges.reduce(
-        (
-          list: ICategoryListProps['categoryList'],
-          {
-            node: {
-              fields: { slug },
-              frontmatter: { categories },
-            },
-          }: IPost,
-        ) => {
-          categories.forEach((category: string) => {
-            if (list[category] === undefined) list[category] = 1
-            else list[category]++
-          })
-
-          list['All']++
-
-          return list
-        },
-        { All: 0 },
-      ),
-    [],
-  )
 
   const menuList = useMemo(
     () =>
@@ -89,12 +65,15 @@ const IndexPage = ({
             },
           }: IPost,
         ) => {
-          const parents = new Set<string>()
           categories.forEach((category: string) => {
             const [parent, child] = category.split('/')
-            parents.add(parent)
-
-            if (list[parent] === undefined) {
+            if (child === undefined) {
+              if (list[parent]?.cnt) {
+                list[parent].cnt += 1
+              } else {
+                list[parent] = { cnt: 1, children: {} }
+              }
+            } else if (list[parent] === undefined) {
               list[parent] = { cnt: 0, children: { [child]: 1 } }
             } else if (list[parent].children[child] === undefined) {
               list[parent].children[child] = 1
@@ -102,16 +81,15 @@ const IndexPage = ({
               list[parent].children[child] += 1
             }
           })
-          parents.forEach(p => {
-            list[p].cnt += 1
-          })
 
           return list
         },
         {},
       ),
-    [],
+    [edges],
   )
+
+  setMenuList(menuList)
 
   return (
     <Template
@@ -120,8 +98,6 @@ const IndexPage = ({
       url={siteUrl}
       image={publicURL}
       selectedCategory={selectedCategory}
-      categoryList={categoryList}
-      menuList={menuList}
     >
       <Introduction profileImage={gatsbyImageData} />
       {/* <CategoryList */}
