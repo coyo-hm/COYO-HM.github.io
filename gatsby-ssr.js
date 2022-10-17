@@ -4,13 +4,30 @@
  * See: https://www.gatsbyjs.com/docs/ssr-apis/
  */
 
-const React = require('react')
-const ThemeProvider = require('./src/style/ThemeProvider')
+// const React = require('react')
+// const RecoilRoot = require('recoil')
+// const CustomThemeProvider = require('./src/style/ThemeProvider')
 
-exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: `en` })
-}
+// exports.onRenderBody = ({ setHtmlAttributes }) => {
+//   setHtmlAttributes({ lang: `en` })
+// }
 
-exports.wrapRootElement = ({ element }) => {
-  return <ThemeProvider>{element}</ThemeProvider>
+// exports.wrapRootElement = ({ element }) => {
+//   return (
+//     <RecoilRoot>
+//       <CustomThemeProvider>{element}</CustomThemeProvider>
+//     </RecoilRoot>
+//   )
+// }
+
+import React from 'react'
+import CustomThemeProvider from './src/style/ThemeProvider'
+import { RecoilRoot } from 'recoil'
+
+export const wrapRootElement = ({ element, props }) => {
+  return (
+    <RecoilRoot>
+      <CustomThemeProvider {...props}>{element}</CustomThemeProvider>
+    </RecoilRoot>
+  )
 }

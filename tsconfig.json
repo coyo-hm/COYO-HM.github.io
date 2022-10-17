@@ -19,7 +19,8 @@
       "utils/*": ["./utils/*"],
       "hooks/*": ["./hooks/*"],
       "templates/*": ["./templates/*"],
-      "style/*": ["./style/*"]
+      "style/*": ["./style/*"],
+      "model/*": ["./model/*"]
     },
     "esModuleInterop": true,
     "skipLibCheck": true,

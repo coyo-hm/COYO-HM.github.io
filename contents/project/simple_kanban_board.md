@@ -14,7 +14,7 @@ categories:
     'Programming/styled-components',
   ]
 summary: 'react-beautiful-dnd를 이용한 간단한 칸반 보드'
-thumbnail: './simple_kanban_board.png'
+thumbnail: './simple_kanban_board.jpg'
 ---
 
 # Simple Kanban Board

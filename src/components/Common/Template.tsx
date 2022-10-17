@@ -55,12 +55,12 @@ Social Meta Tag : 페이스북, 트위터, 인스타그램 등의 여러 소셜 
 <meta name="twitter:image" content="<http://www.example.com/image.jpg>" />
 */
 
-interface ITemplateProps {
+export interface ITemplateProps {
   title: string
   description: string
   url: string
   image: string
-  selectedCategory: string
+  selectedCategory?: string
   children: ReactNode
 }
 

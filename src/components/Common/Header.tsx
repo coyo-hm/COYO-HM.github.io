@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import React, { useEffect, useRef, useState } from 'react'
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -16,6 +17,11 @@ const HeaderWrapper = styled.header`
   padding: 0 10px;
   display: flex;
   justify-content: space-between;
+
+  &.hide {
+    transform: translateY(-60px);
+    transition: transform 0.5s ease-in-out;
+  }
 `
 
 const Left = styled.div`
@@ -78,8 +84,40 @@ interface IHeaderProps {
 }
 
 const Header = ({ openSidebar }: IHeaderProps) => {
+  const [hide, setHide] = useState(false)
+  const [pageY, setPageY] = useState(0)
+
+  useEffect(() => {
+    const threshold = 0
+    let lastScrollY = window.pageYOffset
+    let ticking = false
+
+    const updateScrollDir = () => {
+      const scrollY = window.pageYOffset
+
+      if (Math.abs(scrollY - lastScrollY) < threshold) {
+        ticking = false
+        return
+      }
+      setHide(scrollY > lastScrollY && scrollY > 60 ? true : false)
+      lastScrollY = scrollY > 0 ? scrollY : 0
+      ticking = false
+    }
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollDir)
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', onScroll)
+
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [hide])
+
   return (
-    <HeaderWrapper>
+    <HeaderWrapper className={hide ? 'hide' : ''}>
       <Left>
         <SidebarButton onClick={openSidebar}>
           <FontAwesomeIcon icon={faBars} />

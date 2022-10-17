@@ -9,10 +9,14 @@ const MarkdownRenderer = styled.div`
   // Renderer Style
   display: flex;
   flex-direction: column;
-  width: 768px;
-  margin: 0 auto;
+  margin: 0 240px 0 50px;
   padding: 50px 0;
   word-break: break-all;
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+    padding: 50px;
+  }
 
   // Markdown Style
   line-height: 1.8;

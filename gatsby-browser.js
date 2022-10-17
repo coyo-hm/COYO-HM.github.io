@@ -1,12 +1,12 @@
 import 'prismjs/themes/prism-tomorrow.css'
 import React from 'react'
-import { RecoilRoot } from 'recoil'
 import CustomThemeProvider from './src/style/ThemeProvider'
+import { RecoilRoot } from 'recoil'
 
-export const wrapPageElement = ({ element, props }) => {
-  return <RecoilRoot {...props}>{element}</RecoilRoot>
+export const wrapRootElement = ({ element, props }) => {
+  return (
+    <RecoilRoot>
+      <CustomThemeProvider {...props}>{element}</CustomThemeProvider>
+    </RecoilRoot>
+  )
 }
-
-export const wrapRootElement = ({ element, props }) => (
-  <CustomThemeProvider {...props}>{element}</CustomThemeProvider>
-)

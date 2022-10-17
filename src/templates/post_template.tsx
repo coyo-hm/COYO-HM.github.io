@@ -5,10 +5,12 @@ import PostHead from 'components/Post/PostHead'
 import { IPostFrontmatter } from 'model/Post'
 import PostContent from 'components/Post/PostContent'
 import CommentWidget from 'components/Post/CommentWidget'
+import PostTableOfContents from 'components/Post/PostTableOfContents'
 
 export interface IPostPageItem {
   node: {
     html: string
+    tableOfContents: string
     frontmatter: IPostFrontmatter
   }
 }
@@ -16,7 +18,7 @@ export interface IPostPageItem {
 interface IPostTemplateProps {
   data: {
     allMarkdownRemark: {
-      edges: IPostPageItem[] // 존재하지 않는 타입이므로 에러가 발생하지만 일단 작성해주세요
+      edges: IPostPageItem[]
     }
   }
   location: {
@@ -33,6 +35,7 @@ const PostTemplate = ({
   const {
     node: {
       html,
+      tableOfContents,
       frontmatter: {
         title,
         summary,
@@ -55,6 +58,7 @@ const PostTemplate = ({
         thumbnail={gatsbyImageData}
       />
       <PostContent html={html} />
+      <PostTableOfContents tableOfContents={tableOfContents} />
       <CommentWidget />
     </Template>
   )
@@ -68,6 +72,7 @@ export const queryMarkdownDataBySlug = graphql`
       edges {
         node {
           html
+          tableOfContents
           frontmatter {
             title
             summary
