@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom"],
+    "allowJs": true,
+    "jsx": "preserve",
+    "jsxImportSource": "@emotion/react",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "types": ["node", "@emotion/core"],
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["src/@types/*"],
+      "components/*": ["./components/*"],
+      "utils/*": ["./utils/*"],
+      "hooks/*": ["./hooks/*"],
+      "templates/*": ["./templates/*"],
+      "style/*": ["./style/*"],
+      "model/*": ["./model/*"]
+    },
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*.tsx"],
+  "exclude": ["node_modules"]
+}
