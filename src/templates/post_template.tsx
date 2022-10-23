@@ -1,11 +1,12 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import Template from 'components/Common/Template'
 import PostHead from 'components/Post/PostHead'
-import { IPostFrontmatter } from 'model/Post'
+import { IPostFrontmatter } from '../model/Post'
 import PostContent from 'components/Post/PostContent'
 import CommentWidget from 'components/Post/CommentWidget'
 import PostTableOfContents from 'components/Post/PostTableOfContents'
+import { IMenuList } from 'components/Common/Sidebar'
 
 export interface IPostPageItem {
   node: {
@@ -16,6 +17,9 @@ export interface IPostPageItem {
 }
 
 interface IPostTemplateProps {
+  pageContext: {
+    menuList: IMenuList
+  }
   data: {
     allMarkdownRemark: {
       edges: IPostPageItem[]
@@ -27,6 +31,7 @@ interface IPostTemplateProps {
 }
 
 const PostTemplate = ({
+  pageContext: { menuList },
   data: {
     allMarkdownRemark: { edges },
   },
@@ -50,7 +55,13 @@ const PostTemplate = ({
   } = edges[0]
 
   return (
-    <Template title={title} description={summary} url={href} image={publicURL}>
+    <Template
+      title={title}
+      description={summary}
+      url={href}
+      image={publicURL}
+      menuList={menuList}
+    >
       <PostHead
         title={title}
         date={date}

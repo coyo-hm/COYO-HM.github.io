@@ -8,8 +8,6 @@ import Template from 'components/Common/Template'
 import MenuTitle from 'components/Main/MenuTitle'
 import { IPost } from '../model/Post'
 import { IMenuList } from 'components/Common/Sidebar'
-import { useSetRecoilState } from 'recoil'
-import { menuListState } from '../states'
 
 interface IIndexPageProps {
   location: {
@@ -48,7 +46,6 @@ const IndexPage = ({
     },
   },
 }: IIndexPageProps) => {
-  const setMenuList = useSetRecoilState(menuListState)
   const parsed: ParsedQuery<string> = queryString.parse(search)
   const selectedCategory: string =
     typeof parsed.category !== 'string' || !parsed.category
@@ -90,8 +87,6 @@ const IndexPage = ({
     [edges],
   )
 
-  setMenuList(menuList)
-
   return (
     <Template
       title={title}
@@ -99,6 +94,7 @@ const IndexPage = ({
       url={siteUrl}
       image={publicURL}
       selectedCategory={selectedCategory}
+      menuList={menuList}
     >
       {selectedCategory === 'All' ? (
         <Introduction profileImage={gatsbyImageData} />

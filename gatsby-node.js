@@ -52,6 +52,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               fields {
                 slug
               }
+              frontmatter {
+                categories
+              }
             }
           }
         }
@@ -71,6 +74,37 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     'src/templates/post_template.tsx',
   )
 
+  const menuList = queryAllMarkdownData.data.allMarkdownRemark.edges.reduce(
+    (
+      list,
+      {
+        node: {
+          frontmatter: { categories },
+        },
+      },
+    ) => {
+      categories.forEach(category => {
+        const [parent, child] = category.split('/')
+        if (child === undefined) {
+          if (list[parent]?.cnt) {
+            list[parent].cnt += 1
+          } else {
+            list[parent] = { cnt: 1, children: {} }
+          }
+        } else if (list[parent] === undefined) {
+          list[parent] = { cnt: 0, children: { [child]: 1 } }
+        } else if (list[parent].children[child] === undefined) {
+          list[parent].children[child] = 1
+        } else {
+          list[parent].children[child] += 1
+        }
+      })
+
+      return list
+    },
+    {},
+  )
+
   // Page Generating Function
   const generatePostPage = ({
     node: {
@@ -80,7 +114,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const pageOptions = {
       path: slug,
       component: PostTemplateComponent,
-      context: { slug },
+      context: { slug, menuList },
     }
 
     createPage(pageOptions)

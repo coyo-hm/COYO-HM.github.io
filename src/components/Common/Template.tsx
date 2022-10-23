@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode, useState } from 'react'
+import React, { FunctionComponent, ReactNode, useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
 
@@ -61,6 +61,7 @@ export interface ITemplateProps {
   url: string
   image: string
   selectedCategory?: string
+  menuList: IMenuList
   children: ReactNode
 }
 
@@ -70,6 +71,7 @@ const Template: FunctionComponent<ITemplateProps> = function ({
   url,
   image,
   selectedCategory,
+  menuList,
   children,
 }) {
   const [isOpenedSidebar, setisOpenedSidebar] = useState(false)
@@ -116,7 +118,7 @@ const Template: FunctionComponent<ITemplateProps> = function ({
         <Footer />
       </ContentWrapper>
       <Header openSidebar={openSidebar} />
-      {isOpenedSidebar && <Sidebar />}
+      {isOpenedSidebar && <Sidebar menuList={menuList} />}
     </Container>
   )
 }

@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Link } from 'gatsby'
-import { useRecoilValue } from 'recoil'
-import { menuListState } from '../../states'
+import { graphql, Link } from 'gatsby'
 
 export interface IMenuList {
   [key: string]: {
@@ -69,11 +67,11 @@ const ThirdMenuItem = styled(MenuItem)`
 
 const Tag = styled(MenuItem)``
 
-interface ISidebarProps {}
+interface ISidebarProps {
+  menuList: IMenuList
+}
 
-const Sidebar = ({}: ISidebarProps) => {
-  const menuList = useRecoilValue(menuListState)
-
+const Sidebar = ({ menuList }: ISidebarProps) => {
   return (
     <SidebarWrapper>
       <MenuContainer>
@@ -82,12 +80,12 @@ const Sidebar = ({}: ISidebarProps) => {
         </FirstMenuItem>
         {menuList &&
           Object.entries(menuList).map(([name, menu]) => (
-            <div>
+            <div key={name}>
               <SecondMenuItem to={`/?category=${name}`} key={name}>
                 {name} ({menu.cnt})
               </SecondMenuItem>
               {Object.entries(menu.children).map(([sub, cnt]) => (
-                <ThirdMenuItem to={`/?category=${name}/${sub}`}>
+                <ThirdMenuItem to={`/?category=${name}/${sub}`} key={sub}>
                   {sub} ({cnt})
                 </ThirdMenuItem>
               ))}
@@ -99,3 +97,17 @@ const Sidebar = ({}: ISidebarProps) => {
 }
 
 export default Sidebar
+
+export const getCategory = graphql`
+  query getCategory {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            categories
+          }
+        }
+      }
+    }
+  }
+`
