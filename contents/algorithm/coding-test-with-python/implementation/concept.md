@@ -1,12 +1,12 @@
 ---
 date: '2022-10-13'
-title: '[이코테] 그리디 알고리즘 개념'
+title: '[이코테] 구현 개념'
 categories: ['Algorithm', 'Algorithm/Concept', 'Algorithm/Implementation']
 summary: 'Implementation에 대해 알아보자.'
 thumbnail: '../thumbnail.jpg'
 ---
 
-<p>이 글은 "이것이 코딩 테스트이다."를 읽고 공부한 기록입니다.</p>
+<div class="noticeBox">이 글은 "이것이 코딩 테스트이다."를 읽고 공부한 기록입니다.</div>
 
 # Implementation이란?
 

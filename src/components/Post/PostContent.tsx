@@ -140,6 +140,14 @@ const MarkdownRenderer = styled.div`
       margin: 50px 0;
     }
   }
+
+  .noticeBox {
+    padding: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #f6e58d;
+    border-radius: 10px;
+  }
 `
 
 const PostContent = ({ html }: IPostContentProps) => {

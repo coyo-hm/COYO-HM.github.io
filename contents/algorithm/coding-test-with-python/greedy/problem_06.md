@@ -12,7 +12,7 @@ summary: '무지의 먹방 라이브'
 thumbnail: '../thumbnail.jpg'
 ---
 
-<p>이 글은 "이것이 코딩 테스트이다."를 읽고 공부한 기록입니다.</p>
+<div class="noticeBox">이 글은 "이것이 코딩 테스트이다."를 읽고 공부한 기록입니다.</div>
 
 ## 문제 설명
 
