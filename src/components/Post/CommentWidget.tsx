@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import React, { createRef, FunctionComponent, useEffect } from 'react'
 
 const src = 'https://utteranc.es/client.js'
-const repo = 'COYO-HM/coyo-log.github.io' // 자신 계정의 레포지토리로 설정
+const repo = 'COYO-HM/COYO_HM.github.io' // 자신 계정의 레포지토리로 설정
 
 interface IUtterancesAttributesType {
   src: string

@@ -17,12 +17,12 @@ summary: 'react-beautiful-dnd를 이용한 간단한 칸반 보드'
 thumbnail: './simple_kanban_board.jpg'
 ---
 
-# Simple Kanban Board
+# [Simple Kanban Board](https://github.com/COYO-HM/Simple-Kanban-Board.git)
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/56423604/190454639-62c2abb5-359b-4e33-bc6a-fe45c2fcf3c1.gif)
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/56423604/190454736-c55b9ec0-4d28-436e-bb20-7955f2828167.gif)
 
-> react-beautiful-dnd를 이용한 간단한 칸반 보드
+> react-beautiful-dnd를 이용한 간단한 칸반 보드입니다.
 
 ## Quick Start
 
