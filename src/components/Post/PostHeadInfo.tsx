@@ -12,10 +12,11 @@ export interface IPostHeadInfoProps {
 const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 768px;
+  /* width: 768px; */
+  width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 60px 0;
+  padding: 60px;
   color: #ffffff;
 
   @media (max-width: 768px) {

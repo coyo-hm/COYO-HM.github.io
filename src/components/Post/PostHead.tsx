@@ -16,7 +16,8 @@ interface IPostHeadProps extends IPostHeadInfoProps {
 const PostHeadWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 400px;
+  /* height: 400px; */
+  height: 40%;
   @media (max-width: 768px) {
     height: 300px;
   }
@@ -27,7 +28,8 @@ const BackgroundImage = styled((props: IGatsbyImgProps) => (
 ))`
   z-index: -1;
   width: 100%;
-  height: 400px;
+  /* height: 400px; */
+  height: 100%;
   object-fit: cover;
   filter: brightness(0.25);
 
