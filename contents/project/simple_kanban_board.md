@@ -17,21 +17,28 @@ summary: 'react-beautiful-dnd를 이용한 간단한 칸반 보드'
 thumbnail: './simple_kanban_board.jpg'
 ---
 
-# Simple Kanban Board
+# Introduction
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/56423604/190454639-62c2abb5-359b-4e33-bc6a-fe45c2fcf3c1.gif)
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/56423604/190454736-c55b9ec0-4d28-436e-bb20-7955f2828167.gif)
 
-> react-beautiful-dnd를 이용한 간단한 칸반 보드
+> react-beautiful-dnd를 이용한 간단한 칸반 보드입니다.
+>
+> - react-beautiful-dnd를 이용하여 Drag&Drop이 가능한 Kanban Board를 구현하였습니다.
+> - 카드끼리의 위치 이동은 물론 보드끼리의 위치 이동과 보드에서 다른 보드로 카드를 이동시킬 수도 있습니다.
+> - 사용자는 + 버튼을 눌러 보드를 추가할 수도 있으며 아래의 휴지통으로 카드나 보드를 Drag&Drop하여 삭제할 수 있습니다.
+> - Context API를 사용하여 테마 토글을 추가하였습니다. 테마 토글을 사용하여 다크 테마와 기본 테마를 설정할 수 있습니다.
+> - 사용자의 화면에 따라 CSS가 달라지도록 반응형으로 구현하였습니다.
+> - 보드 정보는 Local Storage에 저장하여 브라우저를 종료하더라도 해당 내용이 유지됩니다.
 
-## Quick Start
+# Quick Start
 
 ```shell
 npm install
 npm start
 ```
 
-## Project Structure
+# Project Structure
 
 ```Plain text
 src
@@ -44,7 +51,7 @@ src
 │   ├── DroppableArea
 │   └── Home
 │
-├── helpers ──────────────  각종 유틸 함수 및 공통 상수
+├── helpers ──────────────  공통 상수
 │   └── constant
 │
 ├── hooks ────────────────  hook
@@ -67,7 +74,7 @@ src
 └── index.js ─────────────  애플리케이션 엔트리 포인트
 ```
 
-## Tech Stack
+# Tech Stack
 
 - react v_18.2.0
 - react-beautiful-dnd v_13.1.0

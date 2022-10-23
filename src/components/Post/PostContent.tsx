@@ -103,6 +103,7 @@ const MarkdownRenderer = styled.div`
     margin: 10px 0;
     padding: 15px;
     font-size: 15px;
+    font-family: 'JetBrains Mono';
 
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.5);
@@ -113,7 +114,12 @@ const MarkdownRenderer = styled.div`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
+
+    * {
+      font-family: 'JetBrains Mono';
+    }
   }
+
   @media (max-width: 768px) {
     width: 100%;
     padding: 40px 20px;
@@ -139,6 +145,14 @@ const MarkdownRenderer = styled.div`
     hr {
       margin: 50px 0;
     }
+  }
+
+  .noticeBox {
+    padding: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #f6e58d;
+    border-radius: 10px;
   }
 `
 
