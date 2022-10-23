@@ -114,6 +114,10 @@ const MarkdownRenderer = styled.div`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
+
+    * {
+      font-family: 'JetBrains Mono';
+    }
   }
 
   @media (max-width: 768px) {

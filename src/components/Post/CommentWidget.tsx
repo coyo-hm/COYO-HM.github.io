@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import React, { createRef, FunctionComponent, useEffect } from 'react'
 
 const src = 'https://utteranc.es/client.js'
-const repo = 'COYO-HM/COYO_HM.github.io' // 자신 계정의 레포지토리로 설정
+const repo = 'COYO-HM/COYO-HM.github.io' // 자신 계정의 레포지토리로 설정
 
 interface IUtterancesAttributesType {
   src: string
@@ -15,8 +15,9 @@ interface IUtterancesAttributesType {
 }
 
 const UtterancesWrapper = styled.div`
+  margin: 0 240px 0 50px;
   @media (max-width: 768px) {
-    padding: 0 20px;
+    margin: 0 20px;
   }
 `
 
