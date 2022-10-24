@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { graphql, Link } from 'gatsby'
+import { Link } from 'gatsby'
 
 export interface IMenuList {
   [key: string]: {
@@ -97,17 +97,3 @@ const Sidebar = ({ menuList }: ISidebarProps) => {
 }
 
 export default Sidebar
-
-export const getCategory = graphql`
-  query getCategory {
-    allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            categories
-          }
-        }
-      }
-    }
-  }
-`

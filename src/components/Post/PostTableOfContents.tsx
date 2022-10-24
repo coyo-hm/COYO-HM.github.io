@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useCallback } from 'react'
 
 interface IPostTableOfContentsProps {
   tableOfContents: string
@@ -63,13 +64,21 @@ const TableofContents = styled.div`
 const PostTableOfContents = ({
   tableOfContents,
 }: IPostTableOfContentsProps) => {
+  const onClickUpButton = useCallback(() => {
+    window?.scrollTo(0, 0)
+  }, [])
+
+  const onClickDownButton = useCallback(() => {
+    window?.scrollTo(0, document.body.scrollHeight)
+  }, [])
+
   return (
     <TableofContentsWrapper>
-      <UpButton>
+      <UpButton onClick={onClickUpButton}>
         <FontAwesomeIcon icon={faAngleUp} />
       </UpButton>
       <TableofContents dangerouslySetInnerHTML={{ __html: tableOfContents }} />
-      <DownButton>
+      <DownButton onClick={onClickDownButton}>
         <FontAwesomeIcon icon={faAngleDown} />
       </DownButton>
     </TableofContentsWrapper>

@@ -19,7 +19,7 @@ const MarkdownRenderer = styled.div`
   }
 
   // Markdown Style
-  line-height: 1.8;
+  line-height: 2;
   font-size: 16px;
   font-weight: 400;
 
@@ -101,8 +101,9 @@ const MarkdownRenderer = styled.div`
   // Adjust Code Style
   pre[class*='language-'] {
     margin: 10px 0;
-    padding: 15px;
-    font-size: 15px;
+    padding: 20px;
+    font-size: 14px;
+    border-radius: 4px;
     font-family: 'JetBrains Mono';
 
     ::-webkit-scrollbar-thumb {
@@ -114,6 +115,7 @@ const MarkdownRenderer = styled.div`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
+    font-family: 'JetBrains Mono';
 
     * {
       font-family: 'JetBrains Mono';
@@ -145,6 +147,12 @@ const MarkdownRenderer = styled.div`
     hr {
       margin: 50px 0;
     }
+  }
+
+  code[class*='language-text'] {
+    tab-size: 2;
+    font-family: 'JetBrains Mono';
+    padding: 0.2em;
   }
 
   .noticeBox {
