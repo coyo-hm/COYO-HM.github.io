@@ -81,9 +81,10 @@ const InfoBtn = styled.a`
 
 interface IHeaderProps {
   openSidebar: () => void
+  isOpenedSidebar: boolean
 }
 
-const Header = ({ openSidebar }: IHeaderProps) => {
+const Header = ({ openSidebar, isOpenedSidebar }: IHeaderProps) => {
   const [hide, setHide] = useState(false)
   const [pageY, setPageY] = useState(0)
 
@@ -105,7 +106,7 @@ const Header = ({ openSidebar }: IHeaderProps) => {
     }
 
     const onScroll = () => {
-      if (!ticking) {
+      if (isOpenedSidebar && !ticking) {
         window.requestAnimationFrame(updateScrollDir)
         ticking = true
       }

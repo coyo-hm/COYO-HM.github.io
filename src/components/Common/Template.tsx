@@ -117,7 +117,7 @@ const Template: FunctionComponent<ITemplateProps> = function ({
         {children}
         <Footer />
       </ContentWrapper>
-      <Header openSidebar={openSidebar} />
+      <Header openSidebar={openSidebar} isOpenedSidebar={isOpenedSidebar} />
       {isOpenedSidebar && <Sidebar menuList={menuList} />}
     </Container>
   )
