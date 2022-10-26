@@ -16,11 +16,8 @@ interface IPostHeadProps extends IPostHeadInfoProps {
 const PostHeadWrapper = styled.div`
   position: relative;
   width: 100%;
-  /* height: 400px; */
   height: 40%;
-  @media (max-width: 768px) {
-    height: 300px;
-  }
+  margin: 60px 0 20px;
 `
 
 const BackgroundImage = styled((props: IGatsbyImgProps) => (
@@ -32,16 +29,12 @@ const BackgroundImage = styled((props: IGatsbyImgProps) => (
   height: 100%;
   object-fit: cover;
   filter: brightness(0.25);
-
-  @media (max-width: 768px) {
-    height: 300px;
-  }
 `
 
 const PostHead = ({ thumbnail, title, date, categories }: IPostHeadProps) => {
   return (
     <PostHeadWrapper>
-      <BackgroundImage image={thumbnail} alt="thumbnail" />
+      {/* <BackgroundImage image={thumbnail} alt="thumbnail" /> */}
       <PostHeadInfo title={title} date={date} categories={categories} />
     </PostHeadWrapper>
   )

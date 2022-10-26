@@ -6,16 +6,15 @@ interface IPostContentProps {
 }
 
 const MarkdownRenderer = styled.div`
-  // Renderer Style
   display: flex;
   flex-direction: column;
-  margin: 0 240px 0 50px;
-  padding: 50px 0;
-  word-break: break-all;
+  padding: 20px 0;
 
-  @media (max-width: 768px) {
-    margin: 0 auto;
-    padding: 50px;
+  word-break: break-all;
+  border-top: 1px solid #b0a8b970;
+  border-bottom: 1px solid #b0a8b970;
+
+  @media screen and (max-width: 768px) {
   }
 
   // Markdown Style
@@ -122,7 +121,7 @@ const MarkdownRenderer = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
     padding: 40px 20px;
     line-height: 1.6;

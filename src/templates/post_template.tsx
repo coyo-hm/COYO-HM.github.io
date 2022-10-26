@@ -7,6 +7,7 @@ import PostContent from 'components/Post/PostContent'
 import CommentWidget from 'components/Post/CommentWidget'
 import PostTableOfContents from 'components/Post/PostTableOfContents'
 import { IMenuList } from 'components/Common/Sidebar'
+import styled from '@emotion/styled'
 
 export interface IPostPageItem {
   node: {
@@ -29,6 +30,25 @@ interface IPostTemplateProps {
     href: string
   }
 }
+
+const PostWrapper = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  column-gap: 20px;
+  justify-content: center;
+  grid-template-columns: min(calc(100% - 220px), 768px) 200px;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 100%;
+  }
+`
+
+const PostContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`
 
 const PostTemplate = ({
   pageContext: { menuList },
@@ -62,15 +82,19 @@ const PostTemplate = ({
       image={publicURL}
       menuList={menuList}
     >
-      <PostHead
-        title={title}
-        date={date}
-        categories={categories}
-        thumbnail={gatsbyImageData}
-      />
-      <PostContent html={html} />
-      <PostTableOfContents tableOfContents={tableOfContents} />
-      <CommentWidget />
+      <PostWrapper>
+        <PostContentWrapper>
+          <PostHead
+            title={title}
+            date={date}
+            categories={categories}
+            thumbnail={gatsbyImageData}
+          />
+          <PostContent html={html} />
+          <CommentWidget />
+        </PostContentWrapper>
+        <PostTableOfContents tableOfContents={tableOfContents} />
+      </PostWrapper>
     </Template>
   )
 }

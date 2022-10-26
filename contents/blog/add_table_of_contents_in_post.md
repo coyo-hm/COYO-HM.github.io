@@ -1,6 +1,6 @@
 ---
 date: '2022-10-23'
-title: '[Blog]Markdown Post에 목차 추가하기'
+title: '[Blog] Markdown Post에 목차 추가하기'
 categories:
   [
     'Project',

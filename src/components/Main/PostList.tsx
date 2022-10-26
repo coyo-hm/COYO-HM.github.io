@@ -12,14 +12,15 @@ const PostListWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
-  width: 768px;
+  max-width: 768px;
   margin: 0 auto;
-  padding: 30px 0 100px;
+  padding: 30px 0;
+  border-top: 1px solid #b0a8b9c7;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     width: 100%;
-    padding: 20px 20px 50px;
+    padding: 20px;
   }
 `
 
