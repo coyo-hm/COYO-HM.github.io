@@ -1,26 +1,31 @@
 import styled from '@emotion/styled'
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 
 interface IPostTableOfContentsProps {
   tableOfContents: string
 }
 
+const PostTableWrapper = styled.div`
+  flex: 0 0 200px;
+  position: relative;
+  height: 100%;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
+
 const TableofContentsWrapper = styled.div`
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 50%;
-  right: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: calc(100vh -400px);
-  /* height: 100%; */
   width: 200px;
-  /* transform: translateY(-50%); */
-  @media (max-width: 768px) {
-    display: none;
-  }
+  transform: translateY(-50%);
 `
 
 const UpButton = styled.button`
@@ -40,12 +45,30 @@ const UpButton = styled.button`
 
 const DownButton = styled(UpButton)``
 
-const TableofContents = styled.div`
-  border-radius: 5px;
-  background-color: #b0a8b970;
+const TableofContents = styled.div<{ maxHeight: string }>`
+  border-left: 2px solid #b0a8b970;
   padding: 15px;
   width: 100%;
+  max-height: ${props => props.maxHeight};
   overflow-y: auto;
+  font-size: 14px;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #b0a8b929;
+
+    &:hover {
+      background-color: #845ec2;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 
   * {
     list-style: none;
@@ -65,23 +88,31 @@ const PostTableOfContents = ({
   tableOfContents,
 }: IPostTableOfContentsProps) => {
   const onClickUpButton = useCallback(() => {
-    window?.scrollTo(0, 0)
+    document.getElementById('contentWrapper')?.scrollTo(0, 0)
   }, [])
 
   const onClickDownButton = useCallback(() => {
-    window?.scrollTo(0, document.body.scrollHeight)
+    const contentWrapperRef = document.getElementById('contentWrapper')
+    if (contentWrapperRef) {
+      contentWrapperRef.scrollTo(0, contentWrapperRef.scrollHeight)
+    }
   }, [])
 
   return (
-    <TableofContentsWrapper>
-      <UpButton onClick={onClickUpButton}>
-        <FontAwesomeIcon icon={faAngleUp} />
-      </UpButton>
-      <TableofContents dangerouslySetInnerHTML={{ __html: tableOfContents }} />
-      <DownButton onClick={onClickDownButton}>
-        <FontAwesomeIcon icon={faAngleDown} />
-      </DownButton>
-    </TableofContentsWrapper>
+    <PostTableWrapper>
+      <TableofContentsWrapper>
+        <UpButton onClick={onClickUpButton}>
+          <FontAwesomeIcon icon={faAngleUp} />
+        </UpButton>
+        <TableofContents
+          dangerouslySetInnerHTML={{ __html: tableOfContents }}
+          maxHeight={`calc(${window.innerHeight}px - 200px)`}
+        />
+        <DownButton onClick={onClickDownButton}>
+          <FontAwesomeIcon icon={faAngleDown} />
+        </DownButton>
+      </TableofContentsWrapper>
+    </PostTableWrapper>
   )
 }
 

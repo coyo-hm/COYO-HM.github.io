@@ -10,13 +10,29 @@ export interface IMenuList {
 }
 
 const SidebarWrapper = styled.div`
-  width: 350px;
   height: calc(100vh - 60px);
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  top: 60px;
-  background-color: #ffffff;
+  width: 275px;
+  flex: 0 0 275px;
   padding: 20px 30px;
+  background-color: #b0a8b929;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #e9defa;
+
+    &:hover {
+      background-color: #845ec2;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 `
 
 const MenuContainer = styled.div``
@@ -31,10 +47,10 @@ const MenuItem = styled(Link)`
 
 const FirstMenuItem = styled(MenuItem)`
   border-bottom: 1px solid #845ec2;
-  font-size: 24px;
+  font-size: 16px;
 
   &:hover {
-    font-size: 28px;
+    font-size: 20px;
   }
 
   &:last-child {
@@ -42,10 +58,10 @@ const FirstMenuItem = styled(MenuItem)`
   }
 `
 const SecondMenuItem = styled(MenuItem)`
-  font-size: 20px;
+  font-size: 14px;
 
   &:hover {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   &:last-child {
@@ -54,10 +70,10 @@ const SecondMenuItem = styled(MenuItem)`
 `
 
 const ThirdMenuItem = styled(MenuItem)`
-  font-size: 14px;
   padding-left: 10px;
+  font-size: 12px;
   &:hover {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   &:last-child {

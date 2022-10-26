@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -11,17 +11,12 @@ const HeaderWrapper = styled.header`
   left: 0;
   /* background-color: #845ec2; */
   background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: 60px;
   padding: 0 10px;
   display: flex;
   justify-content: space-between;
-
-  &.hide {
-    transform: translateY(-60px);
-    transition: transform 0.5s ease-in-out;
-  }
 `
 
 const Left = styled.div`

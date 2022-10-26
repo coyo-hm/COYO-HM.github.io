@@ -3,6 +3,15 @@ import { Global, css } from '@emotion/react'
 
 const defaultStyle = css`
   @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+  @font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff')
+      format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   @font-face {
     font-family: 'S-CoreDream-3Light';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff')
@@ -143,7 +152,7 @@ const defaultStyle = css`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'S-CoreDream-3Light';
+    font-family: 'NanumSquareRound';
   }
 
   html,
@@ -156,6 +165,11 @@ const defaultStyle = css`
   a:hover {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
+  }
+
+  button,
+  button:hover {
     cursor: pointer;
   }
 `

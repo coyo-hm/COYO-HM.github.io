@@ -14,12 +14,7 @@ interface IUtterancesAttributesType {
   async: string
 }
 
-const UtterancesWrapper = styled.div`
-  margin: 0 240px 0 50px;
-  @media (max-width: 768px) {
-    margin: 0 20px;
-  }
-`
+const UtterancesWrapper = styled.div``
 
 const CommentWidget: FunctionComponent = function () {
   const element = createRef<HTMLDivElement>()

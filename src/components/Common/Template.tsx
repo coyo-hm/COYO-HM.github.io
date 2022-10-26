@@ -8,18 +8,41 @@ import Sidebar, { IMenuList } from './Sidebar'
 import GlobalStyle from 'style/GlobalStyle'
 
 const Container = styled.main`
+  top: 60px;
+  position: fixed;
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  height: calc(100% - 60px);
+  width: 100%;
 `
 const ContentWrapper = styled.div`
-  position: relative;
-  top: 60px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex: 1 1 calc(100% - 375px);
+  margin: 5px 0;
+  padding: 0px 50px;
   width: 100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #b0a8b929;
+
+    &:hover {
+      background-color: #845ec2;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 `
 
 /*
@@ -81,7 +104,7 @@ const Template: FunctionComponent<ITemplateProps> = function ({
   }
 
   return (
-    <Container>
+    <>
       <Helmet>
         <title>{title}</title>
 
@@ -113,13 +136,15 @@ const Template: FunctionComponent<ITemplateProps> = function ({
         <html lang="ko" />
       </Helmet>
       <GlobalStyle />
-      <ContentWrapper>
-        {children}
-        <Footer />
-      </ContentWrapper>
+      <Container>
+        {isOpenedSidebar && <Sidebar menuList={menuList} />}
+        <ContentWrapper id="contentWrapper">
+          {children}
+          <Footer />
+        </ContentWrapper>
+      </Container>
       <Header openSidebar={openSidebar} isOpenedSidebar={isOpenedSidebar} />
-      {isOpenedSidebar && <Sidebar menuList={menuList} />}
-    </Container>
+    </>
   )
 }
 

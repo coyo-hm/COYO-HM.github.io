@@ -8,6 +8,8 @@ interface IIntroductionProps {
 }
 
 const Background = styled.div`
+  flex: 0 1 120px;
+  margin: 30px auto 20px;
   width: 100%;
   background-image: #fef6ff;
   color: black;
@@ -15,39 +17,34 @@ const Background = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 768px;
-  height: 300px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 768px;
   margin: 0 auto;
 
   @media (max-width: 768px) {
     width: 100%;
-    height: 300px;
     padding: 0 20px;
   }
 `
-const TitleWrapper = styled.div`
-  margin-top: 30px;
-`
+const TitleWrapper = styled.div``
 
 const SubTitle = styled.div`
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
 
-  @media (max-width: 768px) {
-    font-size: 15px;
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
   }
 `
 
 const Title = styled.div`
-  margin-top: 5px;
-  font-size: 35px;
+  font-size: 32px;
   font-weight: 700;
 
-  @media (max-width: 768px) {
-    font-size: 25px;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
   }
 `
 
