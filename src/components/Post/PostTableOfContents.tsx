@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useCallback, useEffect } from 'react'
+import { useCallback } from 'react'
+import { isBrowser } from '../../utils'
 
 interface IPostTableOfContentsProps {
   tableOfContents: string
@@ -87,6 +88,10 @@ const TableofContents = styled.div<{ maxHeight: string }>`
 const PostTableOfContents = ({
   tableOfContents,
 }: IPostTableOfContentsProps) => {
+  const maxHeight = isBrowser
+    ? `calc(${window?.innerHeight}px - 200px)`
+    : '200px'
+
   const onClickUpButton = useCallback(() => {
     document.getElementById('contentWrapper')?.scrollTo(0, 0)
   }, [])
@@ -106,7 +111,7 @@ const PostTableOfContents = ({
         </UpButton>
         <TableofContents
           dangerouslySetInnerHTML={{ __html: tableOfContents }}
-          maxHeight={`calc(${window.innerHeight}px - 200px)`}
+          maxHeight={maxHeight}
         />
         <DownButton onClick={onClickDownButton}>
           <FontAwesomeIcon icon={faAngleDown} />
