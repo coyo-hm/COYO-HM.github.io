@@ -1,32 +1,21 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "es5",
-    "module": "commonjs",
-    "lib": ["dom"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "jsx": "preserve",
-    "jsxImportSource": "@emotion/react",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "types": ["node", "@emotion/core"],
-    "moduleResolution": "node",
-    "baseUrl": "./src",
-    "paths": {
-      "*": ["src/@types/*"],
-      "components/*": ["./components/*"],
-      "utils/*": ["./utils/*"],
-      "hooks/*": ["./hooks/*"],
-      "templates/*": ["./templates/*"],
-      "style/*": ["./style/*"],
-      "model/*": ["./model/*"]
-    },
-    "esModuleInterop": true,
     "skipLibCheck": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
   },
-  "include": ["src/**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
