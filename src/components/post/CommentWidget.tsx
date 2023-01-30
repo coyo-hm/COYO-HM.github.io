@@ -1,4 +1,4 @@
-import React, { createRef, useEffect } from 'react'
+import { createRef, useEffect } from 'react'
 
 const src = 'https://utteranc.es/client.js'
 const repo = 'COYO-HM/COYO-HM.github.io' // 자신 계정의 레포지토리로 설정
