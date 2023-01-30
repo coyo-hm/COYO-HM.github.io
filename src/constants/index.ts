@@ -1,0 +1,1 @@
+export const DEFAULT_NUMBER_OF_RECENT_POST = 5;

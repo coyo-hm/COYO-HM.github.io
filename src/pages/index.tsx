@@ -1,150 +1,54 @@
-import React, { useMemo } from 'react'
-import { graphql } from 'gatsby'
-import { IGatsbyImageData } from 'gatsby-plugin-image'
-import queryString, { ParsedQuery } from 'query-string'
-import Introduction from 'components/Main/Introduction'
-import PostList from 'components/Main/PostList'
-import Template from 'components/Common/Template'
-import MenuTitle from 'components/Main/MenuTitle'
-import { IPost } from '../model/Post'
-import { IMenuList } from 'components/Common/Sidebar'
+import { GetStaticProps } from "next";
+import Link from "next/link";
+import { PageSeo } from "@components/common/SEO";
+import { DEFAULT_NUMBER_OF_RECENT_POST } from "@constants/index";
+import { PostType } from "@type/index";
+import { getAllPosts } from "@utils/api";
+import metadata from "config";
+import Header from "@components/common/Header";
+import Footer from "@components/common/Footer";
 
-interface IIndexPageProps {
-  location: {
-    search: string
-  }
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-        description: string
-        siteUrl: string
-      }
-    }
-    allMarkdownRemark: {
-      edges: IPost[]
-    }
-    file: {
-      childImageSharp: {
-        gatsbyImageData: IGatsbyImageData
-      }
-      publicURL: string
-    }
-  }
-}
-
-const IndexPage = ({
-  location: { search },
-  data: {
-    site: {
-      siteMetadata: { title, description, siteUrl },
-    },
-    allMarkdownRemark: { edges },
-    file: {
-      childImageSharp: { gatsbyImageData },
-      publicURL,
-    },
-  },
-}: IIndexPageProps) => {
-  const parsed: ParsedQuery<string> = queryString.parse(search)
-  const selectedCategory: string =
-    typeof parsed.category !== 'string' || !parsed.category
-      ? 'All'
-      : parsed.category
-
-  const menuList = useMemo(
-    () =>
-      edges.reduce(
-        (
-          list: IMenuList,
-          {
-            node: {
-              frontmatter: { categories },
-            },
-          }: IPost,
-        ) => {
-          categories.forEach((category: string) => {
-            const [parent, child] = category.split('/')
-            if (child === undefined) {
-              if (list[parent]?.cnt) {
-                list[parent].cnt += 1
-              } else {
-                list[parent] = { cnt: 1, children: {} }
-              }
-            } else if (list[parent] === undefined) {
-              list[parent] = { cnt: 0, children: { [child]: 1 } }
-            } else if (list[parent].children[child] === undefined) {
-              list[parent].children[child] = 1
-            } else {
-              list[parent].children[child] += 1
-            }
-          })
-
-          return list
-        },
-        {},
-      ),
-    [edges],
-  )
-
+export default function Home({ posts }: { posts: PostType[] }) {
+  console.log(posts);
   return (
-    <Template
-      title={title}
-      description={description}
-      url={siteUrl}
-      image={publicURL}
-      selectedCategory={selectedCategory}
-      menuList={menuList}
-    >
-      {selectedCategory === 'All' ? (
-        <Introduction profileImage={gatsbyImageData} />
-      ) : (
-        <MenuTitle selectedCategory={selectedCategory} />
-      )}
-      <PostList selectedCategory={selectedCategory} posts={edges} />
-    </Template>
-  )
+    <>
+      <PageSeo
+        title="Home"
+        description={metadata.description}
+        url={metadata.siteUrl}
+      />
+      <div className="">
+        <Header />
+        <div>
+          <h1>Recent Post</h1>
+          <ul>
+            {posts.map(({ frontMatter, fields: { slug } }) => {
+              const { date, title, tags, description } = frontMatter;
+              const postDate = new Date(date);
+              console.log(slug);
+              return (
+                <li key={slug}>
+                  <article>
+                    <Link href={`/${slug}`}>{title}</Link>
+                  </article>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <Footer />
+      </div>
+    </>
+  );
 }
 
-export default IndexPage
+export const getStaticProps: GetStaticProps = async () => {
+  const recentPosts = (await getAllPosts()).slice(
+    0,
+    DEFAULT_NUMBER_OF_RECENT_POST
+  );
 
-export const getPostList = graphql`
-  query getPostList {
-    site {
-      siteMetadata {
-        title
-        description
-        siteUrl
-      }
-    }
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            summary
-            date(formatString: "YYYY.MM.DD.")
-            categories
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(width: 768, height: 400)
-              }
-            }
-          }
-        }
-      }
-    }
-    file(name: { eq: "profile-image" }) {
-      childImageSharp {
-        gatsbyImageData(width: 120, height: 120)
-      }
-      publicURL
-    }
-  }
-`
+  return {
+    props: { posts: recentPosts.map((post) => ({ ...post, path: "" })) },
+  };
+};
