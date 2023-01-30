@@ -31,13 +31,7 @@ function isImageNode(node: Node): node is ImageNode {
 }
 */
 
-const parseMarkdownToMdx = async ({
-  body,
-  path,
-}: {
-  body: string
-  path: string
-}) => {
+const parseMarkdownToMdx = async (body: string) => {
   return serialize(body, {
     mdxOptions: {
       remarkPlugins: [remarkToc, remarkSlug, remarkMath, remarkGfm],

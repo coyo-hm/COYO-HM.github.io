@@ -1,11 +1,12 @@
 import fs from 'fs'
-
 import { sync } from 'glob'
 import frontMatter from 'front-matter'
 
 import { FrontMatterType, PostType, TagWithCount } from '../type'
 
 const DIR_REPLACE_STRING = '/content'
+
+type ContentDirectory = 'blog'
 
 const POST_PATH = `${process.cwd()}${DIR_REPLACE_STRING}`
 
