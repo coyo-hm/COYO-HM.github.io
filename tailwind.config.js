@@ -4,9 +4,6 @@ module.exports = {
   content: ["./src/pages/**/*.tsx", "./src/components/**/*.tsx"],
   theme: {
     extend: {
-      width: {
-        900: "900px",
-      },
       gridTemplateColumns: {
         postcard: "repeat(5, 200px)",
       },
