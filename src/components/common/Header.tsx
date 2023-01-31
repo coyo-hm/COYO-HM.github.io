@@ -26,6 +26,8 @@ const Header = () => {
         </Link>
       </div>
       <Nav />
+      {/*TODO:검색 추가*/}
+      {/*TODO: THEME SWITCH*/}
     </header>
   );
 };
