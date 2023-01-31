@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
 
-module.exports = nextConfig
+module.exports = {
+  reactStrictMode: true,
+  assetPrefix:
+    process.env.NODE_ENV === "production" ? "https://coyo-hm.github.io/" : "",
+};
