@@ -9,7 +9,11 @@ const Nav = () => {
   return (
     <nav>
       {navlinks.map((nav) => (
-        <Link href={nav.link} key={nav.title}>
+        <Link
+          href={nav.link}
+          key={nav.title}
+          className={`hover:text-blue-700 mr-4 last:mr-0`}
+        >
           {nav.title}
         </Link>
       ))}

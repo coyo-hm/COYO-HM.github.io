@@ -6,11 +6,9 @@ import { FaBars } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header
-      className={`w-full max-w-3xl flex justify-between items-center my-1`}
-    >
-      <button>
-        <FaBars />
+    <header className={`w-full flex justify-between items-center py-1`}>
+      <button className={`hover:text-blue-700`}>
+        <FaBars size={24} />
       </button>
       <div className={`flex flex-row items-center`}>
         {/* <Image

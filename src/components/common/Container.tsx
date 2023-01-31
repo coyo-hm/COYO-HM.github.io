@@ -4,6 +4,7 @@ import {
   ReactFragment,
   ReactPortal,
 } from "react";
+import Footer from "./Footer";
 import Header from "./Header";
 
 const Container = (props: {
@@ -18,9 +19,14 @@ const Container = (props: {
     | undefined;
 }) => {
   return (
-    <div className={`w-full flex flex-col items-center p-3`}>
+    <div
+      className={`lg:w-full xl:w-[1024px] flex flex-col items-center py-3 px-8 m-auto`}
+    >
       <Header />
-      <main className={`w-full max-w-3xl`}>{props.children}</main>
+      <main className={`w-full flex flex-col justify-center my-6`}>
+        {props.children}
+      </main>
+      <Footer />
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import Container from "@components/common/Container";
 import Footer from "@components/common/Footer";
 import Header from "@components/common/Header";
 import CustomMDX from "@components/post/CustomMDX";
@@ -16,14 +17,9 @@ const BlogPost = ({
 }) => {
   console.log(post, mdx);
   return (
-    <div>
-      <Header />
-      <div>
-        <CustomMDX {...mdx} />
-      </div>
-
-      <Footer />
-    </div>
+    <Container>
+      <CustomMDX {...mdx} />
+    </Container>
   );
 };
 
