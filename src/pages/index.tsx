@@ -1,17 +1,16 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import metadata from "config";
-import { DEFAULT_NUMBER_OF_RECENT_POST } from "@constants/index";
-import Header from "@components/common/Header";
-import Footer from "@components/common/Footer";
-import PostCard from "@components/common/PostCard";
 import { FaEnvelope, FaGithub } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
+
+import PostCard from "@components/common/PostCard";
 import { PageSeo } from "@components/common/SEO";
-import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
+import { DEFAULT_NUMBER_OF_RECENT_POST } from "@constants/index";
+import useSidebar from "@hooks/useSidebar";
 import { PostType, TagWithCount } from "@type/index";
-import Container from "@components/common/Container";
+import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
+import metadata from "config";
 
 export default function Home({
   posts,
@@ -20,8 +19,11 @@ export default function Home({
   posts: PostType[];
   tags: TagWithCount[];
 }) {
+  const { setTags } = useSidebar();
+  setTags(tags);
+
   return (
-    <Container>
+    <>
       <PageSeo
         title="Home"
         description={metadata.description}
@@ -99,7 +101,7 @@ export default function Home({
           })}
         </div>
       </div>
-    </Container>
+    </>
   );
 }
 

@@ -3,11 +3,13 @@ import Link from "next/link";
 // import Image from 'next/image'
 import Nav from "./Nav";
 import { FaBars } from "react-icons/fa";
+import useSidebar from "@hooks/useSidebar";
 
 const Header = () => {
+  const { openSidebar } = useSidebar();
   return (
-    <header className={`w-full flex justify-between items-center py-1`}>
-      <button className={`hover:text-blue-700`}>
+    <header className={`w-full flex justify-between items-center pb-1 pt-4`}>
+      <button className={`hover:text-blue-700`} onClick={openSidebar}>
         <FaBars size={24} />
       </button>
       <div className={`flex flex-row items-center`}>

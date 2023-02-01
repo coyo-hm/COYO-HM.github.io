@@ -3,7 +3,9 @@ import { FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className={`w-full flex flex-col items-center text-neutral-700`}>
+    <footer
+      className={`w-full flex flex-col items-center text-neutral-700 pb-3`}
+    >
       <div className={"flex justify-center mb-2"}>
         <a
           href="https://github.com/COYO-HM"

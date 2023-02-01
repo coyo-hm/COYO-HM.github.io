@@ -16,7 +16,7 @@ const PostCard = ({ title, date, tags, description }: FrontMatterType) => {
             key={tag}
             className={`shrink-0 text-xs rounded bg-neutral-400 p-1 mr-2 text-neutral-100`}
           >
-            {tag}
+            #{tag}
           </div>
         ))}
       </div>
