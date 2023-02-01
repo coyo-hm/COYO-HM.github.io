@@ -4,4 +4,9 @@ module.exports = {
   reactStrictMode: true,
   assetPrefix:
     process.env.NODE_ENV === "production" ? "https://coyo-hm.github.io/" : "",
+  images: {
+    domains: ["https://coyo-hm.github.io/"],
+    loader: "imgix",
+    path: "https://coyo-hm.github.io/",
+  },
 };

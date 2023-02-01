@@ -1,12 +1,10 @@
-import Container from "@components/common/Container";
-import Footer from "@components/common/Footer";
-import Header from "@components/common/Header";
+import { GetStaticPaths, GetStaticProps } from "next";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+
 import CustomMDX from "@components/post/CustomMDX";
 import { PostType } from "@src/type/index";
 import { getAllPosts } from "@utils/api";
 import parseMarkdownToMdx from "@utils/parseMarkdown";
-import { GetStaticPaths, GetStaticProps } from "next";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 const BlogPost = ({
   post,
@@ -16,11 +14,7 @@ const BlogPost = ({
   mdx: MDXRemoteSerializeResult;
 }) => {
   console.log(post, mdx);
-  return (
-    <Container>
-      <CustomMDX {...mdx} />
-    </Container>
-  );
+  return <CustomMDX {...mdx} />;
 };
 
 export default BlogPost;

@@ -5,13 +5,17 @@ import "@styles/prism-plus.css";
 import type { AppProps } from "next/app";
 import SidebarProvider from "@contexts/SidebarContext";
 import Container from "@components/common/Container";
+import { ResourceProvider } from "@contexts/ResourceContext";
+import { prefix } from "config";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <SidebarProvider>
-      <Container>
-        <Component {...pageProps} />
-      </Container>
-    </SidebarProvider>
+    <ResourceProvider value={{ prefix }}>
+      <SidebarProvider>
+        <Container>
+          <Component {...pageProps} />
+        </Container>
+      </SidebarProvider>
+    </ResourceProvider>
   );
 }

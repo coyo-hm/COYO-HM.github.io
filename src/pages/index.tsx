@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import { FaEnvelope, FaGithub } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 
@@ -11,6 +11,8 @@ import useSidebar from "@hooks/useSidebar";
 import { PostType, TagWithCount } from "@type/index";
 import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
 import metadata from "config";
+import ResourceContext from "@contexts/ResourceContext";
+import { useContext } from "react";
 
 export default function Home({
   posts,
@@ -19,6 +21,7 @@ export default function Home({
   posts: PostType[];
   tags: TagWithCount[];
 }) {
+  const { prefix } = useContext(ResourceContext);
   const { setTags } = useSidebar();
   setTags(tags);
 
@@ -33,8 +36,8 @@ export default function Home({
         id={"profile"}
         className={`grid gap-2 grid-rows-4 grid-cols-[240px_1fr] px-6`}
       >
-        <Image
-          src={`/static/images/profile.png`}
+        <img
+          src={`${prefix}/static/images/profile.png`}
           alt={"profileImage"}
           className={"row-span-4 col-span-1 place-self-center"}
           width={150}
