@@ -11,7 +11,7 @@ const PostCard = ({ title, date, tags, description }: FrontMatterType) => {
         {postDate.getFullYear()}.{postDate.getMonth() + 1}.{postDate.getDate()}
       </div>
       <div className={`flex overflow-hidden my-2`}>
-        {tags.map((tag) => (
+        {tags.slice(0, 2).map((tag) => (
           <div
             key={tag}
             className={`shrink-0 text-xs rounded bg-neutral-400 p-1 mr-2 text-neutral-100`}

@@ -12,7 +12,7 @@ import { PostType, TagWithCount } from "@type/index";
 import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
 import metadata from "config";
 import ResourceContext from "@contexts/ResourceContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 export default function Home({
   posts,
@@ -23,7 +23,10 @@ export default function Home({
 }) {
   const { prefix } = useContext(ResourceContext);
   const { setTags } = useSidebar();
-  setTags(tags);
+
+  useEffect(() => {
+    setTags(tags);
+  }, [tags]);
 
   return (
     <>
@@ -74,7 +77,7 @@ export default function Home({
             <Link
               href={`/blog/${tag}`}
               key={tag}
-              className={`mr-2 hover:text-blue-900 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
+              className={`mr-2 hover:font-bold hover:text-blue-900 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
             >
               {tag}
             </Link>
@@ -93,7 +96,7 @@ export default function Home({
           <BsArrowRight />
         </Link>
         <div
-          className={`grid gap-5 grid-flow-col grid-cols-postcard px-4 py-6 bg-neutral-50`}
+          className={`grid gap-5 grid-flow-col grid-cols-postcard px-4 py-6 bg-neutral-50 overflow-x-auto`}
         >
           {posts.map(({ frontMatter, fields: { slug } }) => {
             return (

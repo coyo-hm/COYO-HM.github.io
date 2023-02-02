@@ -1,4 +1,5 @@
 import "@fonts/jetBrainsMono/jetBrainsMono.css";
+import "@fonts/pretendard/pretendard.css";
 import "@styles/globals.css";
 import "@styles/tailwind.css";
 import "@styles/prism-plus.css";
