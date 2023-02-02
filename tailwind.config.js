@@ -4,8 +4,13 @@ module.exports = {
   content: ["./src/pages/**/*.tsx", "./src/components/**/*.tsx"],
   theme: {
     extend: {
-      gridTemplateColumns: {
-        postcard: "repeat(5, 200px)",
+      padding: {
+        "header-1": "4px",
+        "header-2": "8px",
+        "header-3": "12px",
+        "header-4": "16px",
+        "header-5": "20px",
+        "header-6": "24px",
       },
     },
   },

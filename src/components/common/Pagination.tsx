@@ -12,8 +12,6 @@ const Pagination = ({
   endPage: number;
   path: string;
 }) => {
-  console.log("Paging", currPage, startPage, endPage, path);
-
   const getPath = (page: number) => {
     return `${path}?page=${page}`;
   };
@@ -29,7 +27,7 @@ const Pagination = ({
       <div
         className={`grid grid-flow-col grid-cols-[repeat(auto-fill, auto)] gap-3 mx-2 text-base place-items-center text-center`}
       >
-        {Array(endPage - startPage + 1)
+        {Array(endPage - startPage)
           .fill(0)
           .map((v: number, i) => {
             return (
@@ -37,7 +35,7 @@ const Pagination = ({
                 href={getPath(i + startPage)}
                 className={`hover:text-blue-900 ${
                   i + startPage === currPage
-                    ? "border rounded-full border-blue-700 w-[24px] h-[24px] text-center leading-6 font-semibold"
+                    ? "h-8 w-8 border-4 rounded-full border-blue-700 text-center leading-6 font-semibold"
                     : ""
                 }`}
                 key={i + startPage}

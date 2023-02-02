@@ -12,7 +12,9 @@ const Header = () => {
       <button className={`hover:text-blue-700`} onClick={openSidebar}>
         <FaBars size={24} />
       </button>
-      <div className={`flex flex-row items-center`}>
+      <div
+        className={`flex flex-row items-center max-md:grow max-md:justify-center`}
+      >
         {/* <Image
           src={`/images/logo.png`}
           alt="logo"

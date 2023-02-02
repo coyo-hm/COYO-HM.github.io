@@ -22,15 +22,45 @@ a {
 
 * {
   box-sizing: border-box;
-  font-family: "Pretendard-Regular";
+  font-family: "pretendard", "Pretendard-Regular";
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
     background: black;
   }
+}
+
+.header-1 {
+  padding-left: 5px;
+}
+.header-2 {
+  padding-left: 10px;
+}
+.header-3 {
+  padding-left: 15px;
+}
+.header-4 {
+  padding-left: 20px;
+}
+.header-5 {
+  padding-left: 25px;
+}
+.header-6 {
+  padding-left: 30px;
+}
+
+#toc {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#toc > div {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
 }

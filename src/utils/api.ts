@@ -24,7 +24,7 @@ export async function getAllPosts(): Promise<Array<PostType>> {
         .replace(".mdx", "")
         .replace(".md", "");
 
-      if (published) {
+      if (published || process.env.NODE_ENV === "development") {
         const tags: string[] = (fmTags || []).map((tag: string) => tag.trim());
 
         const result: PostType = {
@@ -56,11 +56,6 @@ export async function getAllPosts(): Promise<Array<PostType>> {
   return posts;
 }
 
-interface Tag {
-  tag: string;
-  count: number;
-}
-
 export async function getAllTagsFromPosts(): Promise<Array<TagWithCount>> {
   const tags: string[] = (await getAllPosts()).reduce<string[]>(
     (prev: string[], curr: PostType) => {
@@ -77,5 +72,7 @@ export async function getAllTagsFromPosts(): Promise<Array<TagWithCount>> {
     count: tags.filter((t) => t === tag).length,
   }));
 
-  return tagWithCount.sort((a: Tag, b: Tag) => b.count - a.count);
+  return tagWithCount.sort(
+    (a: TagWithCount, b: TagWithCount) => b.count - a.count
+  );
 }
