@@ -96,7 +96,7 @@ export default function Home({
           <BsArrowRight />
         </Link>
         <div
-          className={`grid gap-5 grid-flow-col grid-cols-postcard px-4 py-6 bg-neutral-50 overflow-x-auto`}
+          className={`grid gap-5 grid-flow-col auto-cols-[200px] px-4 py-6 bg-neutral-50 overflow-x-auto`}
         >
           {posts.map(({ frontMatter, fields: { slug } }) => {
             return (
