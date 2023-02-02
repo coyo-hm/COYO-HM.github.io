@@ -24,7 +24,7 @@ export async function getAllPosts(): Promise<Array<PostType>> {
         .replace(".mdx", "")
         .replace(".md", "");
 
-      if (published) {
+      if (published || process.env.NODE_ENV === "development") {
         const tags: string[] = (fmTags || []).map((tag: string) => tag.trim());
 
         const result: PostType = {

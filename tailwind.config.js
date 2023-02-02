@@ -3,7 +3,16 @@ module.exports = {
   darkMode: "media",
   content: ["./src/pages/**/*.tsx", "./src/components/**/*.tsx"],
   theme: {
-    extend: {},
+    extend: {
+      padding: {
+        "header-1": "4px",
+        "header-2": "8px",
+        "header-3": "12px",
+        "header-4": "16px",
+        "header-5": "20px",
+        "header-6": "24px",
+      },
+    },
   },
   plugins: [],
 };

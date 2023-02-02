@@ -8,8 +8,6 @@ const Nav = () => {
     { title: "Project", link: "/project" },
   ];
 
-  console.log(route);
-
   return (
     <nav className={"max-md:hidden"}>
       {navlinks.map((nav) => (
