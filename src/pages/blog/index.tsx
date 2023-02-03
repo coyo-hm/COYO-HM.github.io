@@ -1,14 +1,20 @@
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { PostType, TagWithCount } from "@type/index";
+import { PostType, TagWithCountType } from "@type/index";
 import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
 import useSidebar from "@hooks/useSidebar";
 import PostListLayout from "@components/layout/PostListLayout";
 import { PageSeo } from "@components/common/SEO";
 import metadata from "../../../config";
 
-const Blog = ({ posts, tags }: { posts: PostType[]; tags: TagWithCount[] }) => {
+const Blog = ({
+  posts,
+  tags,
+}: {
+  posts: PostType[];
+  tags: TagWithCountType[];
+}) => {
   const {
     route,
     query: { page },

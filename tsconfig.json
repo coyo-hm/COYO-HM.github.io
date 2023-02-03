@@ -17,6 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@config/*": ["config/*"],
       "@constants/*": ["src/constants/*"],
       "@contexts/*": ["src/contexts/*"],
       "@fonts/*": ["public/static/fonts/*"],

@@ -7,25 +7,28 @@ const TableOfContents = ({ content }: { content: string }) => {
   const activeHeader = "";
 
   const onClickUp = () => {
-    document.getElementById("contentWrapper")?.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   };
 
   const onClickDownButton = () => {
-    const contentWrapperRef = document.getElementById("contentWrapper");
-    if (contentWrapperRef) {
-      contentWrapperRef.scrollTo(0, contentWrapperRef.scrollHeight);
-    }
+    console.log(window.outerHeight, document.body.scrollHeight);
+    document.body.scrollTop = document.body.scrollHeight;
+    window.scrollTo(0, document.body.scrollHeight);
+    // const contentWrapperRef = document.getElementById("contentWrapper");
+    // if (contentWrapperRef) {
+    //   contentWrapperRef.scrollTo(0, window.scrollHeight);
+    // }
   };
 
   return (
     <div
-      className={`shrink-0 h-full sticky grid gap-4 place-items-center`}
+      className={`shrink-0 h-screen sticky flex flex-col flex-nowrap justify-center items-center top-0`}
       id={"toc"}
     >
       <button onClick={onClickUp} className={`hover:text-blue-700`}>
         <FaChevronUp size={32} />
       </button>
-      <div className={`grid gap-1.5 py-1 border-l border-l-blue-700`}>
+      <div className={`grid gap-1.5 py-1 border-l border-l-blue-700 my-4`}>
         {headers.map(({ title, count }) => {
           console.log(title, count);
           return (

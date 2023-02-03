@@ -1,11 +1,11 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { RxCross1 } from "react-icons/rx";
-import { TagWithCount } from "@src/type";
+import { TagWithCountType } from "@type/index";
 import useScrollBlock from "@hooks/useScrollBlock";
 import useSidebar from "@hooks/useSidebar";
 
-const SideBar = ({ tags }: { tags: TagWithCount[] }) => {
+const SideBar = ({ tags }: { tags: TagWithCountType[] }) => {
   console.log("SideBar");
   const router = useRouter();
   const { closeSidebar } = useSidebar();

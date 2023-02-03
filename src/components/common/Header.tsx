@@ -1,9 +1,10 @@
-import metadata from "config";
 import Link from "next/link";
 // import Image from 'next/image'
-import Nav from "./Nav";
 import { FaBars } from "react-icons/fa";
+
+import metadata from "@config/index";
 import useSidebar from "@hooks/useSidebar";
+import Nav from "./Nav";
 
 const Header = () => {
   const { openSidebar } = useSidebar();

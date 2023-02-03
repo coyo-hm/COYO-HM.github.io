@@ -1,32 +1,32 @@
-import { NextSeo, ArticleJsonLd } from 'next-seo'
-import metadata from 'config'
+import { NextSeo, ArticleJsonLd } from "next-seo";
+import metadata from "config";
 
 export const SEO = {
   title: metadata.title,
   description: metadata.description,
   openGraph: {
-    type: 'website',
-    locale: 'ko-KR',
+    type: "website",
+    locale: "ko-KR",
     url: metadata.siteUrl,
     title: metadata.title,
     description: metadata.description,
   },
   additionalMetaTags: [
     {
-      name: 'author',
+      name: "author",
       content: metadata.author.name,
     },
   ],
-}
+};
 
 export const PageSeo = ({
   title,
   description,
   url,
 }: {
-  title: string
-  description: string
-  url: string
+  title: string;
+  description: string;
+  url: string;
 }) => {
   return (
     <NextSeo
@@ -37,12 +37,12 @@ export const PageSeo = ({
         url,
         title,
         description,
-        images: [{ alt: title, url: '/thumbnail.png' }],
+        images: [{ alt: title, url: "/thumbnail.png" }],
       }}
     />
-  )
-}
-export const BlogSeo = ({
+  );
+};
+export const PostSEO = ({
   title,
   summary,
   date,
@@ -51,23 +51,23 @@ export const BlogSeo = ({
   tags,
   images = [],
 }: {
-  title: string
-  summary: string
-  date: string
-  updatedAt?: string
-  url: string
-  tags: string[]
-  images: string[]
+  title: string;
+  summary: string;
+  date: string;
+  updatedAt?: string;
+  url: string;
+  tags: string[];
+  images: string[];
 }) => {
-  const publishedAt = new Date(date).toISOString()
-  const modifiedAt = new Date(updatedAt || date).toISOString()
+  const publishedAt = new Date(date).toISOString();
+  const modifiedAt = new Date(updatedAt || date).toISOString();
 
-  const featuredImages = images.map(img => {
+  const featuredImages = images.map((img) => {
     return {
       url: img,
       alt: title,
-    }
-  })
+    };
+  });
 
   return (
     <>
@@ -76,7 +76,7 @@ export const BlogSeo = ({
         description={summary}
         canonical={url}
         openGraph={{
-          type: 'article',
+          type: "article",
           article: {
             publishedTime: publishedAt,
             modifiedTime: modifiedAt,
@@ -88,12 +88,6 @@ export const BlogSeo = ({
           description: summary,
           images: featuredImages,
         }}
-        additionalMetaTags={[
-          {
-            name: 'twitter:image',
-            content: images[0],
-          },
-        ]}
       />
       <ArticleJsonLd
         authorName={metadata.author.name}
@@ -107,5 +101,5 @@ export const BlogSeo = ({
         publisherLogo={`${metadata.siteUrl}/favicons/favicon-32x32.png`}
       />
     </>
-  )
-}
+  );
+};

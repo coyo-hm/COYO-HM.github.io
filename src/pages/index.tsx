@@ -1,32 +1,32 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
 // import Image from "next/image";
+import { useContext, useEffect } from "react";
 import { FaEnvelope, FaGithub } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 
+import metadata from "config";
 import PostCard from "@components/common/PostCard";
 import { PageSeo } from "@components/common/SEO";
+import ResourceContext from "@contexts/ResourceContext";
 import { DEFAULT_NUMBER_OF_RECENT_POST } from "@constants/index";
 import useSidebar from "@hooks/useSidebar";
-import { PostType, TagWithCount } from "@type/index";
+import { PostType, TagWithCountType } from "@type/index";
 import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
-import metadata from "config";
-import ResourceContext from "@contexts/ResourceContext";
-import { useContext, useEffect } from "react";
 
 export default function Home({
   posts,
   tags,
 }: {
   posts: PostType[];
-  tags: TagWithCount[];
+  tags: TagWithCountType[];
 }) {
   const { prefix } = useContext(ResourceContext);
   const { setTags } = useSidebar();
 
   useEffect(() => {
     setTags(tags);
-  }, [tags]);
+  }, [setTags, tags]);
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function Home({
       />
       <div
         id={"profile"}
-        className={`grid gap-2 grid-rows-4 grid-cols-[240px_1fr] px-6`}
+        className={`grid gap-2 grid-rows-4 grid-cols-[240px_1fr] px-6 max-md:grid-cols-1 max-md:auto-rows-auto`}
       >
         <img
           src={`${prefix}/static/images/profile.png`}
@@ -68,16 +68,15 @@ export default function Home({
         </div>
       </div>
       <div
-        id={"tags"}
         className={`flex flex-nowrap text-blue-700 border-y-2 border-blue-700 py-2 text-base my-4`}
       >
         <span className={"font-bold mr-4"}>#tags</span>
-        <div className={`flex flex-nowrap overflow-auto`}>
+        <div className={`flex flex-nowrap overflow-auto`} id={"tags"}>
           {tags.map(({ tag }) => (
             <Link
               href={`/blog/${tag}`}
               key={tag}
-              className={`mr-2 hover:font-bold hover:text-blue-900 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
+              className={`mr-2 hover:font-bold hover:text-blue-900 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out break-keep`}
             >
               {tag}
             </Link>

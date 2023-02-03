@@ -1,12 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { PostType, TagWithCount } from "@src/type";
+import { PostType, TagWithCountType } from "@src/type";
 import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
 import useSidebar from "@hooks/useSidebar";
 import PostListLayout from "@components/layout/PostListLayout";
 import { PageSeo } from "@components/common/SEO";
-import metadata from "../../../../config";
+import metadata from "@config/index";
 
 const BlogTagPage = ({
   posts,
@@ -14,7 +14,7 @@ const BlogTagPage = ({
   tag,
 }: {
   posts: PostType[];
-  tags: TagWithCount[];
+  tags: TagWithCountType[];
   tag: string;
 }) => {
   const {
@@ -33,7 +33,7 @@ const BlogTagPage = ({
   return (
     <>
       <PageSeo
-        title={`Blog/${tag}`}
+        title={`Blog | ${tag}`}
         description={metadata.description}
         url={metadata.siteUrl + `blog/tags/${tag}`}
       />
@@ -61,13 +61,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-interface ITags {
+interface TagsType {
   [key: string]: string;
   tag: string;
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { tag } = params as ITags;
+  const { tag } = params as TagsType;
   const allPosts = await getAllPosts();
   const allTags = await getAllTagsFromPosts();
   const posts = allPosts.filter(({ frontMatter: { tags } }) =>
