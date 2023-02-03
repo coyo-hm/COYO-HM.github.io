@@ -5,10 +5,10 @@ export interface FrontMatterType {
   published: boolean;
   date: string;
   description: string;
-  template: string;
   path: string;
   socialImageUrl?: string;
   socialImageCredit?: string;
+  thumbnail?: string;
 }
 
 export interface PostType {
@@ -20,7 +20,7 @@ export interface PostType {
   path: string;
 }
 
-export interface TagWithCount {
+export interface TagWithCountType {
   tag: string;
   count: number;
 }

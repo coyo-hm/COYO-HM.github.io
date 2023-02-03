@@ -1,22 +1,24 @@
 import { createContext, useState } from "react";
-import { TagWithCount } from "@src/type";
+import { TagWithCountType } from "@src/type";
 import SideBar from "@components/common/Sidebar";
 
-interface ISidebarContext {
-  setTags: (tags: TagWithCount[]) => void;
+interface SidebarContextPropsType {
+  setTags: (tags: TagWithCountType[]) => void;
   openSidebar: () => void;
   closeSidebar: () => void;
 }
 
-export const SidebarContext = createContext<ISidebarContext | null>(null);
+export const SidebarContext = createContext<SidebarContextPropsType | null>(
+  null
+);
 
-interface ISidebarProvider {
+interface SidebarProviderType {
   children: any;
 }
 
-const SidebarProvider = ({ children }: ISidebarProvider) => {
+const SidebarProvider = ({ children }: SidebarProviderType) => {
   const [isOpenedDrawer, setIsOpenedDrawer] = useState(false);
-  const [tags, setTags] = useState<TagWithCount[]>([]);
+  const [tags, setTags] = useState<TagWithCountType[]>([]);
 
   const openSidebar = () => setIsOpenedDrawer(true);
   const closeSidebar = () => setIsOpenedDrawer(false);

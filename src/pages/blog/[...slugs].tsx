@@ -13,12 +13,7 @@ const BlogPost = ({
   post: PostType;
   mdx: MDXRemoteSerializeResult;
 }) => {
-  // console.log(post, mdx);
-  return (
-    <>
-      <PostLayout post={post} mdx={mdx} />
-    </>
-  );
+  return <PostLayout post={post} mdx={mdx} />;
 };
 
 export default BlogPost;
@@ -35,13 +30,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-interface SlugInterface {
+interface SlugsType {
   [key: string]: string[];
   slugs: string[];
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slugs } = params as SlugInterface;
+  const { slugs } = params as SlugsType;
   const allPosts = await getAllPosts();
   const post = allPosts.find(
     (p) => p?.fields?.slug === ["blog", ...slugs].join("/")

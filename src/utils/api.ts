@@ -1,7 +1,7 @@
 import fs from "fs";
 import { sync } from "glob";
 import frontMatter from "front-matter";
-import { PostType, FrontMatterType, TagWithCount } from "@src/type/index";
+import { PostType, FrontMatterType, TagWithCountType } from "@src/type/index";
 
 const DIR_REPLACE_STRING = "/content";
 
@@ -56,7 +56,7 @@ export async function getAllPosts(): Promise<Array<PostType>> {
   return posts;
 }
 
-export async function getAllTagsFromPosts(): Promise<Array<TagWithCount>> {
+export async function getAllTagsFromPosts(): Promise<Array<TagWithCountType>> {
   const tags: string[] = (await getAllPosts()).reduce<string[]>(
     (prev: string[], curr: PostType) => {
       curr.frontMatter.tags.forEach((tag: string) => {
@@ -73,6 +73,6 @@ export async function getAllTagsFromPosts(): Promise<Array<TagWithCount>> {
   }));
 
   return tagWithCount.sort(
-    (a: TagWithCount, b: TagWithCount) => b.count - a.count
+    (a: TagWithCountType, b: TagWithCountType) => b.count - a.count
   );
 }

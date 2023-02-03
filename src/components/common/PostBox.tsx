@@ -1,5 +1,5 @@
-import { FrontMatterType } from "@src/type";
 import Link from "next/link";
+import { FrontMatterType } from "@type/index";
 
 const PostBox = ({
   title,
