@@ -21,7 +21,8 @@ const BlogPost = ({
 
   useEffect(() => {
     setTags(tags);
-  }, [tags]);
+  }, [setTags, tags]);
+
   return <PostLayout post={post} mdx={mdx} />;
 };
 
