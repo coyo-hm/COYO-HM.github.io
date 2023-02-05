@@ -9,6 +9,7 @@ const metadata = {
   author: {
     name: `COYO`,
   },
+  generateRobotsTxt: true,
 };
 
 export default metadata;
