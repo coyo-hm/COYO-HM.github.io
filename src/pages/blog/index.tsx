@@ -24,7 +24,7 @@ const Blog = ({
 
   useEffect(() => {
     setTags(tags);
-  }, [tags]);
+  }, [setTags, tags]);
 
   return (
     <>
