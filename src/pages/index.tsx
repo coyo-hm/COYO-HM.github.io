@@ -71,7 +71,7 @@ export default function Home({
         className={`flex flex-nowrap text-blue-700 border-y-2 border-blue-700 py-2 text-base my-4`}
       >
         <span className={"font-bold mr-4"}>#tags</span>
-        <div className={`flex flex-nowrap overflow-auto`} id={"tags"}>
+        <div id={"tags"} className={`flex flex-nowrap overflow-auto`}>
           {tags.map(({ tag }) => (
             <Link
               href={`/blog/tags/${tag}`}
@@ -95,6 +95,7 @@ export default function Home({
           <BsArrowRight />
         </Link>
         <div
+          id={"tags"}
           className={`grid gap-5 grid-flow-col auto-cols-[200px] px-4 py-6 bg-neutral-50 overflow-x-auto`}
         >
           {posts.map(({ frontMatter, fields: { slug } }) => {

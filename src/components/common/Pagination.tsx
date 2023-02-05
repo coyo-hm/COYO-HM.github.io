@@ -19,8 +19,9 @@ const Pagination = ({
   return (
     <div className={`flex text-blue-700 justify-center items-center my-2.5`}>
       <Link
-        href={getPath(Math.max(startPage, currPage - 1))}
+        href={getPath(currPage - 1)}
         className={`hover:text-blue-900`}
+        onClick={(e) => startPage === currPage && e.preventDefault()}
       >
         <IoIosArrowBack />
       </Link>
@@ -47,7 +48,8 @@ const Pagination = ({
       </div>
       <Link
         className={`hover:text-blue-900`}
-        href={getPath(Math.min(endPage, currPage + 1))}
+        href={getPath(currPage + 1)}
+        onClick={(e) => endPage === currPage + 1 && e.preventDefault()}
       >
         <IoIosArrowForward />
       </Link>
