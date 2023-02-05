@@ -28,6 +28,6 @@
       "@src/*": ["src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.config.js"],
   "exclude": ["node_modules"]
 }
