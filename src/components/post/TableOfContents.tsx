@@ -11,7 +11,7 @@ const TableOfContents = ({ content }: { content: string }) => {
   };
 
   const onClickDownButton = () => {
-    console.log(window.outerHeight, document.body.scrollHeight);
+    // console.log(window.outerHeight, document.body.scrollHeight);
     document.body.scrollTop = document.body.scrollHeight;
     window.scrollTo(0, document.body.scrollHeight);
     // const contentWrapperRef = document.getElementById("contentWrapper");
@@ -35,7 +35,6 @@ const TableOfContents = ({ content }: { content: string }) => {
         className={`w-full grid gap-1.5 py-1 border-l border-l-blue-700 my-4 rounded-none max-md:border-0 max-md:p-4 max-md:bg-neutral-200 max-md:rounded-xl`}
       >
         {headers.map(({ title, count }) => {
-          console.log(title, count);
           return (
             <Link
               key={title}
