@@ -5,6 +5,11 @@ import getHeaderId from "@utils/getHeaderId";
 
 const components: MDXComponents = {
   Image,
+  code: (props) => (
+    <code className={``} {...props}>
+      {props?.children}
+    </code>
+  ),
   a: (props) => (
     <a href={`${props?.href}`} {...props} target="_blank" rel="noreferrer">
       {props?.children}

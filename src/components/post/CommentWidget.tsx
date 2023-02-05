@@ -38,7 +38,7 @@ const CommentWidget = () => {
     element.current.appendChild(utterances);
   }, []);
 
-  return <div ref={element} />;
+  return <div ref={element} id={`utterances`} />;
 };
 
 export default CommentWidget;

@@ -3,7 +3,6 @@ code {
   background-color: rgb(229, 229, 229);
   border-radius: 4px;
   padding: 0 7px;
-  font-size: 14px;
 }
 
 code[class*="language-"] {

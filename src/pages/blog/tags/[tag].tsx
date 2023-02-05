@@ -26,7 +26,7 @@ const BlogTagPage = ({
 
   useEffect(() => {
     setTags(tags);
-  }, [tags]);
+  }, [setTags, tags]);
 
   return (
     <>

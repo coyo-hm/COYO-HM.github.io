@@ -68,3 +68,8 @@ a {
 #tags::-webkit-scrollbar {
   display: none;
 }
+
+.utterances {
+  margin: 0;
+  max-width: 100%;
+}
