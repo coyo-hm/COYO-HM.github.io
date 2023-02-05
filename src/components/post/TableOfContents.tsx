@@ -4,7 +4,6 @@ import getHeaders from "@utils/getHeaders";
 
 const TableOfContents = ({ content }: { content: string }) => {
   const headers = getHeaders(content);
-  console.log(headers);
   const activeHeader = "";
 
   const onClickUp = () => {
@@ -40,7 +39,7 @@ const TableOfContents = ({ content }: { content: string }) => {
             <Link
               key={title}
               href={`#${title.replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣\w$-+]/gi, "")}`}
-              className={`break-keep hover:text-blue-700 ${
+              className={`hover:text-blue-700 ${
                 activeHeader === title ? "bg-blue-100" : ""
               } header-${count}`}
             >

@@ -10,11 +10,17 @@ const components: MDXComponents = {
       {props?.children}
     </code>
   ),
-  a: (props) => (
-    <a href={`${props?.href}`} {...props} target="_blank" rel="noreferrer">
-      {props?.children}
-    </a>
-  ),
+  a: (props) => {
+    return props?.href && props.href[0] === "#" ? (
+      <a href={`${props?.href}`} {...props}>
+        {props?.children}
+      </a>
+    ) : (
+      <a href={`${props?.href}`} {...props} target="_blank" rel="noreferrer">
+        {props?.children}
+      </a>
+    );
+  },
   h1: (props) => {
     return (
       <h1
