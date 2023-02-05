@@ -62,12 +62,10 @@ const CustomMDX = (
     > & { components?: MDXComponents | undefined; lazy?: boolean | undefined }
 ) => {
   return (
-    <div className={`grow shrink pr-10 min-w-0`}>
-      <MDXRemote
-        {...props}
-        components={{ ...components, ...(props.components || {}) }}
-      />
-    </div>
+    <MDXRemote
+      {...props}
+      components={{ ...components, ...(props.components || {}) }}
+    />
   );
 };
 

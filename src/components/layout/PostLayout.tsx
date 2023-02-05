@@ -6,6 +6,7 @@ import TableOfContents from "@components/post/TableOfContents";
 import CustomMDX from "@components/post/CustomMDX";
 import CommentWidget from "@components/post/CommentWidget";
 import metadata from "@config/index";
+import TagsList from "@components/post/TagsList";
 
 const PostLayout = ({
   post: {
@@ -42,9 +43,14 @@ const PostLayout = ({
       <article className={`flex flex-col`}>
         <PostHeader {...frontMatter} />
         <div
-          className={`flex flex-row flex-nowrap relative border-y border-y-blue-700 py-10`}
+          className={`flex flex-row flex-nowrap relative border-y border-y-blue-700 max-md:flex-col-reverse`}
         >
-          <CustomMDX {...mdx} />
+          <div
+            className={`grow shrink pr-10 pt-10 min-w-0 max-md:p-0 max-md:pb-4`}
+          >
+            <CustomMDX {...mdx} />
+            <TagsList tags={tags} />
+          </div>
           <TableOfContents content={body} />
         </div>
         <CommentWidget />
