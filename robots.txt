@@ -1,3 +1,9 @@
+# *
 User-agent: *
-allow: /
-sitemap: https://coyo-hm.github.io/sitemap.xml
+Allow: /
+
+# Host
+Host: https://coyo-hm.github.io/
+
+# Sitemaps
+Sitemap: https://coyo-hm.github.io/sitemap.xml
