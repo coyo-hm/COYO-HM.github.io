@@ -3,14 +3,7 @@ const getHeaders = (content: string) => {
   return titles
     .filter((str) => str[0] === "#")
     .map((item) => {
-      //   console.log(item, item.match(/#/g)?.length);
-
       let count = item.match(/#/g)?.length || 0;
-      //   if (count) {
-      //     count = count * 10;
-      //   } else {
-      //     count = 0;
-      //   }
       return {
         title: item.split("# ")[1].replace(/`/g, "").trim(),
         count,

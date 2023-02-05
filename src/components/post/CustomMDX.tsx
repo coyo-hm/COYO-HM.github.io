@@ -12,44 +12,66 @@ const components: MDXComponents = {
   ),
   h1: (props) => {
     return (
-      <h1 className={`font-bold text-2xl`} id={getHeaderId(props)}>
+      <h1
+        className={`font-bold text-2xl pt-4 max-md:text-xl`}
+        id={getHeaderId(props)}
+      >
         {props.children}
       </h1>
     );
   },
   h2: (props) => {
     return (
-      <h2 className={`font-bold text-xl`} id={getHeaderId(props)}>
+      <h2
+        className={`font-bold text-xl pt-4 max-md:text-lg`}
+        id={getHeaderId(props)}
+      >
         {props.children}
       </h2>
     );
   },
   h3: (props) => {
     return (
-      <h3 className={`font-bold text-lg`} id={getHeaderId(props)}>
+      <h3
+        className={`font-bold pt-4 text-lg max-md:text`}
+        id={getHeaderId(props)}
+      >
         {props.children}
       </h3>
     );
   },
   h4: (props) => {
     return (
-      <h4 className={`font-bold text-lg`} id={getHeaderId(props)}>
+      <h4
+        className={`font-bold pt-4 text-lg max-md:text`}
+        id={getHeaderId(props)}
+      >
         {props.children}
       </h4>
     );
   },
   h5: (props) => {
     return (
-      <h5 className={`font-bold text-lg`} id={getHeaderId(props)}>
+      <h5
+        className={`font-bold pt-4 text-lg max-md:text`}
+        id={getHeaderId(props)}
+      >
         {props.children}
       </h5>
     );
   },
   h6: (props) => {
     return (
-      <h6 className={`font-bold text-lg`} id={getHeaderId(props)}>
+      <h6 className={`font-bold text-lg max-md:text`} id={getHeaderId(props)}>
         {props.children}
       </h6>
+    );
+  },
+  p: (props) => {
+    return (
+      <p className={`font-light text py-2`} {...props}>
+        {props.children}
+      </p>
     );
   },
 };

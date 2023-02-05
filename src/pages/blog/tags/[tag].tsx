@@ -28,8 +28,6 @@ const BlogTagPage = ({
     setTags(tags);
   }, [tags]);
 
-  console.log("TagPage", tag, currPage);
-
   return (
     <>
       <PageSeo
