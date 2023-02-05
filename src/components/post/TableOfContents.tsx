@@ -22,13 +22,18 @@ const TableOfContents = ({ content }: { content: string }) => {
 
   return (
     <div
-      className={`shrink-0 h-screen sticky flex flex-col flex-nowrap justify-center items-center top-0`}
+      className={`shrink-0 h-screen sticky flex flex-col flex-nowrap justify-center items-center top-0 max-md:static max-md:h-fit`}
       id={"toc"}
     >
-      <button onClick={onClickUp} className={`hover:text-blue-700`}>
+      <button
+        onClick={onClickUp}
+        className={`hover:text-blue-700 max-md:hidden`}
+      >
         <FaChevronUp size={32} />
       </button>
-      <div className={`grid gap-1.5 py-1 border-l border-l-blue-700 my-4`}>
+      <div
+        className={`w-full grid gap-1.5 py-1 border-l border-l-blue-700 my-4 rounded-none max-md:border-0 max-md:p-4 max-md:bg-neutral-200 max-md:rounded-xl`}
+      >
         {headers.map(({ title, count }) => {
           console.log(title, count);
           return (
@@ -45,7 +50,10 @@ const TableOfContents = ({ content }: { content: string }) => {
         })}
       </div>
       <button onClick={onClickDownButton}>
-        <FaChevronDown size={32} className={`hover:text-blue-700`} />
+        <FaChevronDown
+          size={32}
+          className={`hover:text-blue-700 max-md:hidden`}
+        />
       </button>
     </div>
   );
