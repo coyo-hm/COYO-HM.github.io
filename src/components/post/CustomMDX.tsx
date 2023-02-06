@@ -5,6 +5,22 @@ import getHeaderId from "@utils/getHeaderId";
 
 const components: MDXComponents = {
   Image,
+  aside: (props) => (
+    <aside {...props} className={`rounded bg-neutral-200`}></aside>
+  ),
+  blockquote: (props) => (
+    <blockquote
+      {...props}
+      className={`border-l-4 pl-3 my-2 border-neutral-600`}
+    >
+      {props?.children}
+    </blockquote>
+  ),
+  ul: (props) => (
+    <ul {...props} className={`pl-3 my-2 ml-4 list-disc`}>
+      {props?.children}
+    </ul>
+  ),
   code: (props) => (
     <code className={``} {...props}>
       {props?.children}
@@ -16,7 +32,13 @@ const components: MDXComponents = {
         {props?.children}
       </a>
     ) : (
-      <a href={`${props?.href}`} {...props} target="_blank" rel="noreferrer">
+      <a
+        href={`${props?.href}`}
+        {...props}
+        target="_blank"
+        rel="noreferrer"
+        className={`hover:text-blue-700`}
+      >
         {props?.children}
       </a>
     );

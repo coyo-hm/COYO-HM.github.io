@@ -33,7 +33,7 @@ const PostLayout = ({
   return (
     <>
       <PostSEO
-        title={`${metadata.title} | ${title}`}
+        title={`${title}`}
         summary={description}
         date={date}
         url={metadata.siteUrl + slug}

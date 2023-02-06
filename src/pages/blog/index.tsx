@@ -29,7 +29,7 @@ const Blog = ({
   return (
     <>
       <PageSeo
-        title={metadata.title + ": Blog"}
+        title={"Blog"}
         description={metadata.description}
         url={metadata.siteUrl + `blog`}
       />

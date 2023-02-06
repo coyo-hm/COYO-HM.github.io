@@ -7,13 +7,13 @@ const TableOfContents = ({ content }: { content: string }) => {
   const activeHeader = "";
 
   const onClickUp = () => {
-    window.scrollTo(0, 0);
+    window.scroll({ top: 0, behavior: "smooth" });
   };
 
   const onClickDownButton = () => {
     // console.log(window.outerHeight, document.body.scrollHeight);
     document.body.scrollTop = document.body.scrollHeight;
-    window.scrollTo(0, document.body.scrollHeight);
+    window.scroll(0, document.body.scrollHeight);
     // const contentWrapperRef = document.getElementById("contentWrapper");
     // if (contentWrapperRef) {
     //   contentWrapperRef.scrollTo(0, window.scrollHeight);
@@ -22,7 +22,7 @@ const TableOfContents = ({ content }: { content: string }) => {
 
   return (
     <div
-      className={`w-48 shrink-0 h-screen sticky flex flex-col flex-nowrap justify-center items-center top-0 max-md:static max-md:h-fit max-md:w-full`}
+      className={`w-52 shrink-0 h-full top-0 py-[50px] sticky flex flex-col flex-nowrap justify-center items-center max-md:static max-md:h-fit max-md:w-full`}
       id={"toc"}
     >
       <button
