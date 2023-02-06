@@ -5,6 +5,9 @@ import getHeaderId from "@utils/getHeaderId";
 
 const components: MDXComponents = {
   Image,
+  aside: (props) => (
+    <aside {...props} className={`rounded bg-neutral-200`}></aside>
+  ),
   blockquote: (props) => (
     <blockquote
       {...props}
