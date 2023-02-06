@@ -7,13 +7,13 @@ const TableOfContents = ({ content }: { content: string }) => {
   const activeHeader = "";
 
   const onClickUp = () => {
-    window.scrollTo(0, 0);
+    window.scroll({ top: 0, behavior: "smooth" });
   };
 
   const onClickDownButton = () => {
     // console.log(window.outerHeight, document.body.scrollHeight);
     document.body.scrollTop = document.body.scrollHeight;
-    window.scrollTo(0, document.body.scrollHeight);
+    window.scroll(0, document.body.scrollHeight);
     // const contentWrapperRef = document.getElementById("contentWrapper");
     // if (contentWrapperRef) {
     //   contentWrapperRef.scrollTo(0, window.scrollHeight);
