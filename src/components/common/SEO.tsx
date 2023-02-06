@@ -30,7 +30,7 @@ export const PageSeo = ({
 }) => {
   return (
     <NextSeo
-      title={`${title} – ${metadata.title}`}
+      title={`${metadata.title} | ${title}`}
       description={description}
       canonical={url}
       openGraph={{
@@ -72,7 +72,7 @@ export const PostSEO = ({
   return (
     <>
       <NextSeo
-        title={`${title} – ${metadata.title}`}
+        title={`${metadata.title} | ${title}`}
         description={summary}
         canonical={url}
         openGraph={{
