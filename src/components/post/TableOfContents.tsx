@@ -22,7 +22,7 @@ const TableOfContents = ({ content }: { content: string }) => {
 
   return (
     <div
-      className={`w-48 shrink-0 h-screen sticky flex flex-col flex-nowrap justify-center items-center top-0 max-md:static max-md:h-fit max-md:w-full`}
+      className={`w-52 shrink-0 h-full top-0 py-[50px] sticky flex flex-col flex-nowrap justify-center items-center max-md:static max-md:h-fit max-md:w-full`}
       id={"toc"}
     >
       <button
