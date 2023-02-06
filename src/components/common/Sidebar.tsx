@@ -30,13 +30,13 @@ const SideBar = ({ tags }: { tags: TagWithCountType[] }) => {
         </button>
         <h1 className={"pl-6 font-extrabold text-xl py-2 w-full"}>#Tag</h1>
         <ul className={`pl-10 grid gap-1 grid-cols-1`}>
-          {tags.map(({ tag }) => (
+          {tags.map(({ tag, count }) => (
             <li key={tag}>
               <button
                 onClick={(e) => onClickTag(e, tag)}
                 className={`break-normal transition-all hover:text-blue-700 hover:text-lg`}
               >
-                {tag}
+                {tag} ({count})
               </button>
             </li>
           ))}

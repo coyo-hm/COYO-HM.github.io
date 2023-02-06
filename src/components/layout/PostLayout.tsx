@@ -40,7 +40,7 @@ const PostLayout = ({
         tags={tags}
         images={[]}
       />
-      <article className={`flex flex-col`}>
+      <article className={`flex flex-col`} id={"post"}>
         <PostHeader {...frontMatter} />
         <div
           className={`flex flex-row flex-nowrap relative border-y border-y-blue-700 max-md:flex-col-reverse`}

@@ -73,3 +73,22 @@ a {
   margin: 0;
   max-width: 100%;
 }
+
+aside {
+  background-color: rgb(229 229 229);
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+
+.yellow {
+  padding: 0 4px;
+  border-radius: 3px;
+  background-color: #f1c40f;
+}
+
+.red {
+  padding: 0 4px;
+  border-radius: 3px;
+  background-color: #e74c3c;
+}
