@@ -5,9 +5,18 @@ code {
   padding: 0 7px;
 }
 
+.dark code {
+  background: rgb(82, 82, 82);
+  color: rgb(229, 229, 229);
+}
+
 code[class*="language-"] {
   tab-size: 2;
   font-family: "JetBrains Mono";
+}
+
+.dark code[class*="language-"] {
+  background: none;
 }
 
 pre[class*="language-"] {

@@ -1,18 +1,58 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  darkMode: ["class"],
-  content: ["./src/pages/**/*.tsx", "./src/components/**/*.tsx"],
-  theme: {
-    extend: {
-      padding: {
-        "header-1": "4px",
-        "header-2": "8px",
-        "header-3": "12px",
-        "header-4": "16px",
-        "header-5": "20px",
-        "header-6": "24px",
-      },
-    },
-  },
-  plugins: [],
-};
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.remark-code-title {
+  @apply px-5 py-3 font-mono text-sm font-bold text-gray-200 bg-gray-700 rounded-t;
+}
+
+.remark-code-title + pre {
+  @apply mt-0 rounded-t-none;
+}
+
+.task-list-item:before {
+  @apply hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  word-break: break-all;
+}
+
+.math-display {
+  overflow-x: auto;
+}
+
+h2 > a > span.icon.icon-link {
+  width: 18px;
+  height: 18px;
+}
+
+h3 > a > span.icon.icon-link {
+  width: 15px;
+  height: 15px;
+}
+
+h4 > a > span.icon.icon-link {
+  width: 12px;
+  height: 12px;
+}
+
+span.icon.icon-link {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 490 490' style='enable-background:new 0 0 490 490;' xml:space='preserve'%3E%3Cpath d='M64.333 490h58.401l33.878-137.69h122.259L245.39 490h58.401l33.878-137.69h119.92v-48.162h-108.24l29.2-117.324h79.04v-48.162H390.23L424.108 0H365.31l-33.878 138.661H208.79L242.668 0h-58.415l-33.864 138.661H32.411v48.162h106.298l-28.818 117.324h-77.48v48.162h65.8L64.333 490zM197.11 186.824h122.642l-29.2 117.324h-122.26l28.818-117.324z'/%3E%3C/svg%3E");
+}
+
+.dark span.icon.icon-link {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 490 490' style='enable-background:new 0 0 490 490; fill:white;' xml:space='preserve'%3E%3Cpath d='M64.333 490h58.401l33.878-137.69h122.259L245.39 490h58.401l33.878-137.69h119.92v-48.162h-108.24l29.2-117.324h79.04v-48.162H390.23L424.108 0H365.31l-33.878 138.661H208.79L242.668 0h-58.415l-33.864 138.661H32.411v48.162h106.298l-28.818 117.324h-77.48v48.162h65.8L64.333 490zM197.11 186.824h122.642l-29.2 117.324h-122.26l28.818-117.324z'/%3E%3C/svg%3E");
+}
+
+pre {
+  overflow-x: auto;
+}

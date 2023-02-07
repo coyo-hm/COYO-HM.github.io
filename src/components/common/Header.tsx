@@ -1,5 +1,4 @@
 import Link from "next/link";
-// import Image from 'next/image'
 import { FaBars } from "react-icons/fa";
 import { BsSunFill, BsFillMoonStarsFill } from "react-icons/bs";
 
@@ -25,7 +24,7 @@ const Header = () => {
       setIsDarkTheme(false);
       document.documentElement.classList.remove("dark");
     }
-    return () => localStorage.removeItem("theme");
+    // return () => localStorage.removeItem("theme");
   }, []);
 
   const toggleTheme = () => {
@@ -50,15 +49,7 @@ const Header = () => {
       <div
         className={`flex flex-row items-center grow justify-center ml-4 max-md:justify-start max-md:m-0`}
       >
-        {/* <Image
-          src={`/images/logo.png`}
-          alt="logo"
-          width={40}
-          height={40}
-          className={`rounded-full`}
-        /> */}
-
-        <Link href="/" className={`font-extralight text-lg`}>
+        <Link href="/" className={`font-extralight text-lg max-md:pl-4`}>
           {metadata.title}
         </Link>
       </div>

@@ -23,12 +23,12 @@ const SideBar = ({ tags }: { tags: TagWithCountType[] }) => {
         className={`fixed inset-0 m-0 p-0 w-full h-full opacity-70 bg-neutral-800`}
       />
       <div
-        className={`fixed inset-0 flex flex-col p-4 w-[300px] h-full bg-white overflow-y-auto`}
+        className={`fixed inset-0 flex flex-col p-4 w-[300px] h-full bg-white overflow-y-auto dark:bg-neutral-700 dark:text-neutral-200`}
       >
         <button onClick={closeSidebar} className={`hover:text-blue-700`}>
           <RxCross1 size={24} />
         </button>
-        <h1 className={"pl-6 font-extrabold text-xl py-2 w-full"}>#Tag</h1>
+        <h1 className={"pl-6 font-extrabold text-xl py-2 w-full"}># Tag</h1>
         <ul className={`pl-10 grid gap-1 grid-cols-1`}>
           {tags.map(({ tag, count }) => (
             <li key={tag}>

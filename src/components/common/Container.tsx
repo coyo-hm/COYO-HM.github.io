@@ -19,14 +19,16 @@ const Container = (props: {
     | undefined;
 }) => {
   return (
-    <div
-      className={`md:max-lg:w-full lg:w-[1000px] flex flex-col items-center px-8 m-auto dark:bg-neutral-800`}
-    >
-      <Header />
-      <main className={`w-full flex flex-col justify-center my-6`}>
-        {props.children}
-      </main>
-      <Footer />
+    <div className={`dark:bg-neutral-800 dark:text-neutral-100`}>
+      <div
+        className={`md:max-lg:w-full lg:w-[1000px] flex flex-col items-center px-8 m-auto dark:bg-neutral-800`}
+      >
+        <Header />
+        <main className={`w-full flex flex-col justify-center my-6`}>
+          {props.children}
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };
