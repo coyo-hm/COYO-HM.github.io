@@ -36,7 +36,7 @@ const BlogTagPage = ({
         url={metadata.siteUrl + `blog/tags/${tag}`}
       />
       <PostListLayout
-        title={`BLOG > ${tag}`}
+        tag={tag}
         posts={posts}
         currPage={currPage}
         path={route}

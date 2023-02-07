@@ -7,7 +7,11 @@ const PostCard = ({ title, date, tags, description }: FrontMatterType) => {
     <div
       className={`shadow-xl rounded-xl h-48 p-3 bg-white hover:-translate-y-2 hover:duration-300 hover:ease-in-out`}
     >
-      <h1 className={`text-base w-full break-normal`}>{title}</h1>
+      <h1
+        className={`text-base w-full max-h-12 min-h-12 overflow-hidden text-ellipsis`}
+      >
+        {title}
+      </h1>
       <div className={`text-xs text-neutral-400 text-right mt-2`}>
         {dateStr}
       </div>
