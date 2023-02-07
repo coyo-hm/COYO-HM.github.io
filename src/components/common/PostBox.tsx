@@ -11,7 +11,7 @@ const PostBox = ({
   const postDate = new Date(date);
   return (
     <Link
-      className={`flex flex-col rounded p-4 shadow-xl hover:bg-neutral-100 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
+      className={`flex flex-col rounded p-4 shadow-xl hover:bg-neutral-100 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out dark:bg-neutral-700`}
       href={`/${slug}`}
     >
       <div className={`font-bold`}>{title}</div>
@@ -29,7 +29,7 @@ const PostBox = ({
         ))}
       </div>
       <div
-        className={`text-xs text-neutral-600 w-full max-h-8 break-normal overflow-hidden text-ellipsis`}
+        className={`text-xs text-neutral-600 w-full max-h-8 break-normal overflow-hidden text-ellipsis  dark:text-neutral-300`}
       >
         {description}
       </div>

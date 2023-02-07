@@ -32,7 +32,7 @@ const TableOfContents = ({ content }: { content: string }) => {
         <FaChevronUp size={32} />
       </button>
       <div
-        className={`w-full grid gap-1.5 py-1 border-l border-l-blue-700 my-4 rounded-none max-md:border-0 max-md:p-4 max-md:bg-neutral-200 max-md:rounded-xl`}
+        className={`w-full grid gap-1.5 py-1 border-l border-l-blue-700 my-4 rounded-none max-md:border-0 max-md:p-4 max-md:bg-neutral-200 max-md:rounded-xl dark:bg-neutral-700`}
       >
         {headers.map(({ title, count }) => {
           return (

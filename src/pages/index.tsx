@@ -89,14 +89,14 @@ export default function Home({
       >
         <Link
           href={"/blog?page=0"}
-          className={`text-2xl text-blue-700 p-6 pb-0 flex justify-between bg-neutral-50 hover:text-blue-900`}
+          className={`text-2xl text-blue-700 p-6 pb-0 flex justify-between bg-neutral-50 hover:text-blue-900 dark:bg-neutral-700`}
         >
           <span>Recent Post</span>
           <BsArrowRight />
         </Link>
         <div
           id={"tags"}
-          className={`grid gap-5 grid-flow-col auto-cols-[200px] px-4 py-6 bg-neutral-50 overflow-x-auto`}
+          className={`grid gap-5 grid-flow-col auto-cols-[200px] px-4 py-6 bg-neutral-50 overflow-x-auto dark:bg-neutral-700`}
         >
           {posts.map(({ frontMatter, fields: { slug } }) => {
             return (

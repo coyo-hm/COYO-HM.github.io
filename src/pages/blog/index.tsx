@@ -33,12 +33,7 @@ const Blog = ({
         description={metadata.description}
         url={metadata.siteUrl + `blog`}
       />
-      <PostListLayout
-        title={"BLOG"}
-        posts={posts}
-        currPage={currPage}
-        path={route}
-      />
+      <PostListLayout posts={posts} currPage={currPage} path={route} />
     </>
   );
 };
