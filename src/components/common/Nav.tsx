@@ -5,7 +5,7 @@ const Nav = () => {
   const { route } = useRouter();
   const navlinks: { title: string; link: string }[] = [
     { title: "Blog", link: "/blog" },
-    { title: "Project", link: "/project" },
+    // { title: "Project", link: "/project" },
   ];
 
   return (
