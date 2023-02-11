@@ -6,6 +6,14 @@ description: ""
 published: false
 ---
 
+# NPM
+
+<aside>
+    <code>npx</code>
+    
+    npm 5.2+ 버전의 패키지 실행 도구
+</aside>
+
 ## package 삭제하기
 
 ```bash
@@ -24,4 +32,11 @@ npm uninstall --save-dev package-name
 
 ```bash
 npm uninstall -g package-name
+```
+
+## `package.json`에 있는 항목 모두 업데이트 하기
+
+```bash
+npx npm-check-updates -u
+npm install
 ```
