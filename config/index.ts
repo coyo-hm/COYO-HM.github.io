@@ -13,6 +13,3 @@ const metadata = {
 };
 
 export default metadata;
-
-export const prefix =
-  process.env.NODE_ENV === "production" ? "https://coyo-hm.github.io/" : "";

@@ -36,7 +36,7 @@ const CommentWidget = () => {
     });
 
     element.current.appendChild(utterances);
-  }, []);
+  }, [element]);
 
   return <div ref={element} id={`utterances`} />;
 };
