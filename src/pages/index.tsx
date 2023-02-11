@@ -1,18 +1,18 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
-// import Image from "next/image";
-import { useContext, useEffect } from "react";
+import Image from "next/image";
+import { useEffect } from "react";
 import { FaEnvelope, FaGithub } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 
 import metadata from "config";
 import PostCard from "@components/common/PostCard";
 import { PageSeo } from "@components/common/SEO";
-import ResourceContext from "@contexts/ResourceContext";
 import { DEFAULT_NUMBER_OF_RECENT_POST } from "@constants/index";
 import useSidebar from "@hooks/useSidebar";
 import { PostType, TagWithCountType } from "@type/index";
 import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
+import imgLoader from "@utils/imgLoader";
 
 export default function Home({
   posts,
@@ -21,7 +21,6 @@ export default function Home({
   posts: PostType[];
   tags: TagWithCountType[];
 }) {
-  const { prefix } = useContext(ResourceContext);
   const { setTags } = useSidebar();
 
   useEffect(() => {
@@ -39,10 +38,11 @@ export default function Home({
         id={"profile"}
         className={`grid gap-2 grid-rows-4 grid-cols-[240px_1fr] px-6 max-md:grid-cols-1 max-md:auto-rows-auto`}
       >
-        <img
-          src={`${prefix}/static/images/profile.png`}
+        <Image
+          loader={(props) => imgLoader(props)}
+          src={`/static/images/profile.png`}
           alt={"profileImage"}
-          className={"row-span-4 col-span-1 place-self-center"}
+          className={"row-span-4 col-span-1 place-self-center mb-5"}
           width={150}
           height={150}
         />
@@ -50,7 +50,7 @@ export default function Home({
           안녕하세요, Frontend 개발자 {metadata.author.name} 입니다.
         </h1>
         <p className={`row-span-2 break-keep`}>
-          react와 typeScript를 주로 사용하여 개발하고 있습니다.
+          React와 TypeScript를 주로 사용하여 개발하고 있습니다.
           <br /> 블로그를 통해 공부 기록을 남기고 있습니다.
         </p>
         <div className={`flex`}>
