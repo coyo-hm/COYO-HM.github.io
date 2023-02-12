@@ -4,8 +4,10 @@ const getHeaders = (content: string) => {
     .filter((str) => str[0] === "#")
     .map((item) => {
       let count = item.match(/#/g)?.length || 0;
+      const title = item.split("# ")[1].replace(/`/g, "").trim();
       return {
-        title: item.split("# ")[1].replace(/`/g, "").trim(),
+        id: title.replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣\w$-+]/gi, ""),
+        title,
         count,
       };
     });
