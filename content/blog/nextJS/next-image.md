@@ -9,5 +9,3 @@ published: false
 [NextJS/Image Docs](https://nextjs.org/docs/api-reference/next/image#loader-configuration)
 
 # Configuration Options
-
-##

@@ -1,23 +1,51 @@
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import getHeaders from "@utils/getHeaders";
 
 const TableOfContents = ({ content }: { content: string }) => {
   const headers = getHeaders(content);
-  const activeHeader = "";
+  const headersRef = useRef<any>({});
+  const [activeHeaderId, setActiveHeaderId] = useState("");
+
+  useEffect(() => {
+    headersRef.current = {};
+    const callback: IntersectionObserverCallback = (headers) => {
+      headersRef.current = headers.reduce((dict: any, headerElement) => {
+        dict[headerElement.target.id] = headerElement;
+        return dict;
+      }, headersRef.current);
+
+      const visibleHeaders: IntersectionObserverEntry[] = [];
+
+      Object.keys(headersRef.current).forEach((key) => {
+        const headerElement = headersRef.current[key];
+        if (headerElement.isIntersecting) {
+          visibleHeaders.push(headerElement);
+        }
+      });
+      setActiveHeaderId(visibleHeaders[0].target.id);
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      rootMargin: "-50px 0px 0px 0px",
+    });
+
+    headers.forEach(({ id }) => {
+      const element = document.getElementById(id);
+      if (!!element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [headers]);
 
   const onClickUp = () => {
     window.scroll({ top: 0, behavior: "smooth" });
   };
 
   const onClickDownButton = () => {
-    // console.log(window.outerHeight, document.body.scrollHeight);
     document.body.scrollTop = document.body.scrollHeight;
     window.scroll(0, document.body.scrollHeight);
-    // const contentWrapperRef = document.getElementById("contentWrapper");
-    // if (contentWrapperRef) {
-    //   contentWrapperRef.scrollTo(0, window.scrollHeight);
-    // }
   };
 
   return (
@@ -32,15 +60,15 @@ const TableOfContents = ({ content }: { content: string }) => {
         <FaChevronUp size={32} />
       </button>
       <div
-        className={`w-full grid gap-1.5 py-1 border-l border-l-blue-700 my-4 rounded-none max-md:border-0 max-md:p-4 max-md:bg-neutral-200 max-md:rounded-xl dark:bg-neutral-700`}
+        className={`w-full flex flex-col py-1 border-l border-l-blue-700 my-4 rounded-none max-md:border-0 max-md:p-4 max-md:bg-neutral-200 max-md:rounded-xl dark:bg-neutral-700`}
       >
-        {headers.map(({ title, count }) => {
+        {headers.map(({ title, count, id }) => {
           return (
             <Link
               key={title}
-              href={`#${title.replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣\w$-+]/gi, "")}`}
-              className={`hover:text-blue-700 ${
-                activeHeader === title ? "bg-blue-100" : ""
+              href={`#${id}`}
+              className={`hover:text-blue-700 py-1 ${
+                activeHeaderId === id ? "bg-blue-100" : ""
               } header-${count}`}
             >
               {title}
