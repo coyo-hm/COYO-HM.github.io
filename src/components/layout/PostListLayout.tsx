@@ -4,6 +4,7 @@ import { PostType } from "@src/type";
 import PostBox from "@components/common/PostBox";
 import Pagination from "@components/common/Pagination";
 import usePage from "@hooks/usePage";
+import PostListHeader from "@components/common/PostListHeader";
 
 const PostListLayout = ({
   tag,
@@ -24,15 +25,7 @@ const PostListLayout = ({
 
   return (
     <>
-      <span className={`font-bold py-3 pl-1 text-2xl`}>
-        <Link href={"/blog"}>BLOG</Link>{" "}
-        {tag && (
-          <>
-            {" "}
-            &#12297; <Link href={`/blog/tags/${tag}`}>{tag}</Link>
-          </>
-        )}
-      </span>
+      <PostListHeader categoryId={"Blog"} />
       <article className={`flex flex-col flex-nowrap gap-3`}>
         {showPosts.map(({ frontMatter, fields: { slug } }) => (
           <PostBox {...frontMatter} slug={slug} key={slug} />

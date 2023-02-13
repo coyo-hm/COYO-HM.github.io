@@ -5,6 +5,7 @@ import { PostType, TagWithCountType } from "@src/type";
 import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
 import useSidebar from "@hooks/useSidebar";
 import { PageSeo } from "@components/common/SEO";
+import CardListLayout from "@components/layout/CardListLayout";
 import metadata from "@config/index";
 
 export default function ProjectListPage({
@@ -32,6 +33,7 @@ export default function ProjectListPage({
         description={metadata.description}
         url={metadata.siteUrl + "project"}
       />
+      <CardListLayout posts={posts} currPage={currPage} path={route} />
     </>
   );
 }

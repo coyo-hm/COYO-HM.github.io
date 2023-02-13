@@ -45,7 +45,9 @@ const PostLayout = ({
         <div
           className={`flex flex-row flex-nowrap relative border-y border-y-blue-700 max-md:flex-col-reverse`}
         >
-          <div className={`grow shrink pr-10 min-w-0 max-md:p-0 max-md:pb-4`}>
+          <div
+            className={`grow shrink pr-10 pt-5 min-w-0 max-md:p-0 max-md:pb-4`}
+          >
             <CustomMDX {...mdx} />
             <TagsList tags={tags} />
           </div>
