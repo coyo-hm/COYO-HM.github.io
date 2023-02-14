@@ -2,7 +2,6 @@ import Link from "next/link";
 
 const TagsList = ({ tags, slug: path }: { tags: string[]; slug: string }) => {
   const category = path.split("/")[0];
-  console.log(category);
 
   return (
     <div className={`pt-4 flex flex-row items-center flex-wrap`}>
