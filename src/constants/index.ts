@@ -1,2 +1,3 @@
 export const DEFAULT_NUMBER_OF_RECENT_POST = 5;
 export const DEFAULT_NUMBER_OF_POST = 10;
+export const DEFAULT_NUMBER_OF_CARD_POST = 12;

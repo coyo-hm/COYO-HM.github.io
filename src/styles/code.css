@@ -1,12 +1,12 @@
 code {
   font-family: "JetBrains Mono";
-  background-color: rgb(229, 229, 229);
+  background-color: rgba(229, 229, 229, 0.8);
   border-radius: 4px;
   padding: 0 7px;
 }
 
 .dark code {
-  background: rgb(82, 82, 82);
+  background: rgb(82, 82, 82, 0.8);
   color: rgb(229, 229, 229);
 }
 

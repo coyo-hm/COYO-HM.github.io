@@ -1,16 +1,14 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+export const navLinks: { title: string; link: string }[] = [
+  { title: "Blog", link: "/blog" },
+  { title: "Project", link: "/project" },
+];
 const Nav = () => {
   const { route } = useRouter();
-  const navlinks: { title: string; link: string }[] = [
-    { title: "Blog", link: "/blog" },
-    { title: "Project", link: "/project" },
-  ];
-
   return (
     <nav className={"max-md:hidden"}>
-      {navlinks.map((nav) => (
+      {navLinks.map((nav) => (
         <Link
           href={nav.link}
           key={nav.title}
@@ -24,5 +22,4 @@ const Nav = () => {
     </nav>
   );
 };
-
 export default Nav;

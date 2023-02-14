@@ -24,7 +24,10 @@ const TableOfContents = ({ content }: { content: string }) => {
           visibleHeaders.push(headerElement);
         }
       });
-      setActiveHeaderId(visibleHeaders[0].target.id);
+
+      if (visibleHeaders?.length > 0) {
+        setActiveHeaderId(visibleHeaders[0].target.id);
+      }
     };
 
     const observer = new IntersectionObserver(callback, {
@@ -51,7 +54,6 @@ const TableOfContents = ({ content }: { content: string }) => {
   return (
     <div
       className={`w-52 shrink-0 h-full top-0 py-[50px] sticky flex flex-col flex-nowrap justify-center items-center max-md:static max-md:h-fit max-md:w-full`}
-      id={"toc"}
     >
       <button
         onClick={onClickUp}
@@ -60,15 +62,16 @@ const TableOfContents = ({ content }: { content: string }) => {
         <FaChevronUp size={32} />
       </button>
       <div
-        className={`w-full flex flex-col py-1 border-l border-l-blue-700 my-4 rounded-none max-md:border-0 max-md:p-4 max-md:bg-neutral-200 max-md:rounded-xl dark:bg-neutral-700`}
+        id={"toc"}
+        className={`w-full flex flex-col border-l-2 border-l-blue-100 dark:border-l-blue-900 my-4 rounded-none max-md:border-0 max-md:p-4 max-md:bg-neutral-200 max-md:rounded-xl dark:bg-neutral-700`}
       >
         {headers.map(({ title, count, id }) => {
           return (
             <Link
               key={title}
               href={`#${id}`}
-              className={`hover:text-blue-700 py-1 ${
-                activeHeaderId === id ? "bg-blue-100" : ""
+              className={`hover:text-blue-700 box-decoration-slice py-1.5 pr-1 ${
+                activeHeaderId === id ? "bg-blue-100 dark:bg-blue-900" : ""
               } header-${count}`}
             >
               {title}

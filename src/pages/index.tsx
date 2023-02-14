@@ -76,7 +76,7 @@ export default function Home({
             <Link
               href={`/blog/tags/${tag}`}
               key={tag}
-              className={`whitespace-nowrap mr-2 hover:font-bold hover:text-blue-900 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
+              className={`whitespace-nowrap mr-2 hover:font-bold hover:text-blue-900 dark:hover:text-blue-500 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
             >
               {tag}
             </Link>
@@ -91,7 +91,7 @@ export default function Home({
           href={"/blog?page=0"}
           className={`text-2xl text-blue-700 p-6 pb-0 flex justify-between bg-neutral-50 hover:text-blue-900 dark:bg-neutral-700`}
         >
-          <span>Recent Post</span>
+          <span>Recent Blog Post</span>
           <BsArrowRight />
         </Link>
         <div

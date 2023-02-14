@@ -68,8 +68,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { tag } = params as TagsType;
   const allPosts = await getAllPosts();
   const allTags = await getAllTagsFromPosts();
-  const posts = allPosts.filter(({ frontMatter: { tags } }) =>
-    tags.includes(tag)
+  const posts = allPosts.filter(
+    ({ frontMatter: { tags }, fields: { slug } }) =>
+      tags.includes(tag) && slug.startsWith("blog")
   );
 
   return {

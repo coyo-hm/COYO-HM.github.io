@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      posts: posts,
+      posts: posts.filter(({ fields: { slug } }) => slug.startsWith("blog")),
       tags: allTags,
     },
   };
