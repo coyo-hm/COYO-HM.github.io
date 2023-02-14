@@ -91,7 +91,7 @@ export default function Home({
           href={"/blog?page=0"}
           className={`text-2xl text-blue-700 p-6 pb-0 flex justify-between bg-neutral-50 hover:text-blue-900 dark:bg-neutral-700`}
         >
-          <span>Recent Post</span>
+          <span>Recent Blog Post</span>
           <BsArrowRight />
         </Link>
         <div

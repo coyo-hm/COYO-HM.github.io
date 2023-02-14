@@ -20,14 +20,15 @@ const CardListLayout = ({
     currPage * DEFAULT_NUMBER_OF_CARD_POST,
     (currPage + 1) * DEFAULT_NUMBER_OF_CARD_POST
   );
+
   return (
     <>
-      <PostListHeader categoryId={"Project"} />
-      <div className={`grid grid-cols-3 gap-4`}>
+      <PostListHeader categoryId={"Project"} tag={tag} />
+      <article className={`grid grid-cols-3 gap-4`}>
         {showPosts.map(({ frontMatter, fields: { slug } }) => (
-          <PreviewPostCard {...frontMatter} key={slug} />
+          <PreviewPostCard {...frontMatter} slug={slug} key={slug} />
         ))}
-      </div>
+      </article>
       <Pagination
         currPage={currPage}
         path={path}

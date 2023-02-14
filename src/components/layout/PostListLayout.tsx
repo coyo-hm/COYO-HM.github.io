@@ -25,7 +25,7 @@ const PostListLayout = ({
 
   return (
     <>
-      <PostListHeader categoryId={"Blog"} />
+      <PostListHeader categoryId={"Blog"} tag={tag} />
       <article className={`flex flex-col flex-nowrap gap-3`}>
         {showPosts.map(({ frontMatter, fields: { slug } }) => (
           <PostBox {...frontMatter} slug={slug} key={slug} />

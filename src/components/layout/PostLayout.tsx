@@ -49,7 +49,7 @@ const PostLayout = ({
             className={`grow shrink pr-10 pt-5 min-w-0 max-md:p-0 max-md:pb-4`}
           >
             <CustomMDX {...mdx} />
-            <TagsList tags={tags} />
+            <TagsList tags={tags} slug={slug} />
           </div>
           <TableOfContents content={body} />
         </div>

@@ -1,14 +1,14 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import metadata from "@config/index";
 import { PostType, TagWithCountType } from "@src/type";
 import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
 import useSidebar from "@hooks/useSidebar";
-import PostListLayout from "@components/layout/PostListLayout";
 import { PageSeo } from "@components/common/SEO";
-import metadata from "@config/index";
+import CardListLayout from "@components/layout/CardListLayout";
 
-const BlogTagPage = ({
+const ProjectTagPage = ({
   posts,
   tags,
   tag,
@@ -31,11 +31,11 @@ const BlogTagPage = ({
   return (
     <>
       <PageSeo
-        title={`Blog | ${tag}`}
+        title={`Project | ${tag}`}
         description={metadata.description}
-        url={metadata.siteUrl + `blog/tags/${tag}`}
+        url={metadata.siteUrl + `project/tags/${tag}`}
       />
-      <PostListLayout
+      <CardListLayout
         tag={tag}
         posts={posts}
         currPage={currPage}
@@ -45,7 +45,7 @@ const BlogTagPage = ({
   );
 };
 
-export default BlogTagPage;
+export default ProjectTagPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const allTags = await getAllTagsFromPosts();
@@ -70,7 +70,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const allTags = await getAllTagsFromPosts();
   const posts = allPosts.filter(
     ({ frontMatter: { tags }, fields: { slug } }) =>
-      tags.includes(tag) && slug.startsWith("blog")
+      tags.includes(tag) && slug.startsWith("project")
   );
 
   return {
