@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import metadata from "@config/index";
-import { PostType, TagWithCountType } from "@src/type";
+import { PostType, TagsType, TagWithCountType } from "@type/index";
 import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
 import useSidebar from "@hooks/useSidebar";
 import { PageSeo } from "@components/common/SEO";
@@ -58,11 +58,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: "blocking",
   };
 };
-
-interface TagsType {
-  [key: string]: string;
-  tag: string;
-}
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { tag } = params as TagsType;
