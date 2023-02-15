@@ -1,14 +1,18 @@
-import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { PostType, TagsType, TagWithCountType } from "@type/index";
 import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
 import useSidebar from "@hooks/useSidebar";
-import PostListLayout from "@components/layout/PostListLayout";
 import { PageSeo } from "@components/common/SEO";
 import metadata from "@config/index";
+import usePage from "@hooks/usePage";
+import { DEFAULT_NUMBER_OF_POST } from "@src/constants";
+import PostListHeader from "@components/common/PostListHeader";
+import PostBox from "@components/common/PostBox";
+import Pagination from "@components/common/Pagination";
 
-const BlogTagPage = ({
+const TagListPage = ({
   posts,
   tags,
   tag,
@@ -21,7 +25,12 @@ const BlogTagPage = ({
     route,
     query: { page },
   } = useRouter();
-  const currPage = page ? parseInt(page as string) : 0;
+  const currPage = typeof page === "string" ? parseInt(page) : 0;
+  const { startPage, endPage } = usePage(posts.length, currPage);
+  const showPosts = posts.slice(
+    currPage * DEFAULT_NUMBER_OF_POST,
+    (currPage + 1) * DEFAULT_NUMBER_OF_POST
+  );
   const { setTags } = useSidebar();
 
   useEffect(() => {
@@ -31,21 +40,27 @@ const BlogTagPage = ({
   return (
     <>
       <PageSeo
-        title={`Blog | ${tag}`}
+        title={tag}
         description={metadata.description}
-        url={metadata.siteUrl + `blog/tags/${tag}`}
+        url={metadata.siteUrl + `tags/${tag}`}
       />
-      <PostListLayout
-        tag={tag}
-        posts={posts}
+      <PostListHeader categoryId={"tag"} tag={tag} />
+      <article className={`flex flex-col flex-nowrap gap-3`}>
+        {showPosts.map(({ frontMatter, fields: { slug } }) => (
+          <PostBox {...frontMatter} slug={slug} key={slug} />
+        ))}
+      </article>
+      <Pagination
         currPage={currPage}
         path={route}
+        startPage={startPage}
+        endPage={endPage}
       />
     </>
   );
 };
 
-export default BlogTagPage;
+export default TagListPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const allTags = await getAllTagsFromPosts();
@@ -63,9 +78,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { tag } = params as TagsType;
   const allPosts = await getAllPosts();
   const allTags = await getAllTagsFromPosts();
-  const posts = allPosts.filter(
-    ({ frontMatter: { tags }, fields: { slug } }) =>
-      tags.includes(tag) && slug.startsWith("blog")
+  const posts = allPosts.filter(({ frontMatter: { tags }, fields: { slug } }) =>
+    tags.includes(tag)
   );
 
   return {

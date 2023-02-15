@@ -24,3 +24,8 @@ export interface TagWithCountType {
   tag: string;
   count: number;
 }
+
+export interface TagsType {
+  [key: string]: string;
+  tag: string;
+}
