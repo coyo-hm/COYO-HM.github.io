@@ -5,27 +5,28 @@ import { BsSunFill, BsFillMoonStarsFill } from "react-icons/bs";
 import metadata from "@config/index";
 import useSidebar from "@hooks/useSidebar";
 import Nav from "./Nav";
-import { useEffect, useState } from "react";
+import useTheme from "@hooks/useTheme";
 
 const Header = () => {
   const { openSidebar } = useSidebar();
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const { isDarkTheme, setIsDarkTheme } = useTheme();
+  // const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-  useEffect(() => {
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      setIsDarkTheme(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDarkTheme(false);
-      document.documentElement.classList.remove("dark");
-    }
-    // return () => localStorage.removeItem("theme");
-  }, []);
+  // useEffect(() => {
+  //   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  //   if (
+  //     localStorage.theme === "dark" ||
+  //     (!("theme" in localStorage) &&
+  //       window.matchMedia("(prefers-color-scheme: dark)").matches)
+  //   ) {
+  //     setIsDarkTheme(true);
+  //     document.documentElement.classList.add("dark");
+  //   } else {
+  //     setIsDarkTheme(false);
+  //     document.documentElement.classList.remove("dark");
+  //   }
+  //   // return () => localStorage.removeItem("theme");
+  // }, []);
 
   const toggleTheme = () => {
     setIsDarkTheme((prevState) => {

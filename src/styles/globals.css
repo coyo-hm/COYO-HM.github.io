@@ -41,6 +41,22 @@ body {
   background-color: rgb(38, 38, 38);
 }
 
+#utterances-dark {
+  display: none;
+}
+
+#utterances-light {
+  display: block;
+}
+
+.dark #utterances-dark {
+  display: block;
+}
+
+.dark #utterances-light {
+  display: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
