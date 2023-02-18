@@ -14,31 +14,56 @@ interface UtterancesAttributesType {
 }
 
 const CommentWidget = () => {
-  const element = createRef<HTMLDivElement>();
+  const elementLight = createRef<HTMLDivElement>();
+  const elementDark = createRef<HTMLDivElement>();
 
   useEffect(() => {
-    if (element.current === null) return;
+    if (elementLight.current === null || elementDark.current === null) {
+      return;
+    } else {
+      const utterances: HTMLScriptElement = document.createElement("script");
+      const utterancesDark: HTMLScriptElement =
+        document.createElement("script");
 
-    const utterances: HTMLScriptElement = document.createElement("script");
+      const attributes: UtterancesAttributesType = {
+        src,
+        repo,
+        "issue-term": "pathname",
+        label: "Comment",
+        theme: `github-light`,
+        crossorigin: "anonymous",
+        async: "true",
+      };
 
-    const attributes: UtterancesAttributesType = {
-      src,
-      repo,
-      "issue-term": "pathname",
-      label: "Comment",
-      theme: `github-light`,
-      crossorigin: "anonymous",
-      async: "true",
-    };
+      const darkAttributes: UtterancesAttributesType = {
+        src,
+        repo,
+        "issue-term": "pathname",
+        label: "Comment",
+        theme: `photon-dark`,
+        crossorigin: "anonymous",
+        async: "true",
+      };
 
-    Object.entries(attributes).forEach(([key, value]) => {
-      utterances.setAttribute(key, value);
-    });
+      Object.entries(attributes).forEach(([key, value]) => {
+        utterances.setAttribute(key, value);
+      });
 
-    element.current.appendChild(utterances);
-  }, [element]);
+      Object.entries(darkAttributes).forEach(([key, value]) => {
+        utterancesDark.setAttribute(key, value);
+      });
 
-  return <div ref={element} id={`utterances`} />;
+      elementLight.current.appendChild(utterances);
+      elementDark.current.appendChild(utterancesDark);
+    }
+  }, [elementDark, elementLight]);
+
+  return (
+    <>
+      <div ref={elementLight} id={"utterances-light"} />
+      <div ref={elementDark} id={"utterances-dark"} />
+    </>
+  );
 };
 
 export default CommentWidget;
