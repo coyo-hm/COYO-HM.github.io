@@ -56,7 +56,7 @@ const CommentWidget = () => {
       elementLight.current.appendChild(utterances);
       elementDark.current.appendChild(utterancesDark);
     }
-  }, [elementDark, elementLight]);
+  }, []);
 
   return (
     <>
