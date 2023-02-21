@@ -53,10 +53,10 @@ sortBy(정렬을 원하는 컬렉션, 정렬 기준 필드값).reverse();
 
 ```tsx
 const users = [
-  { user: "fred", age: 48 },
-  { user: "barney", age: 36 },
-  { user: "fred", age: 40 },
-  { user: "barney", age: 34 },
+  { user: "Fred", age: 48 },
+  { user: "Barney", age: 36 },
+  { user: "Fred", age: 40 },
+  { user: "Barney", age: 34 },
 ];
 
 const sortByFunc = sortBy(users, [
@@ -65,11 +65,11 @@ const sortByFunc = sortBy(users, [
   },
 ]);
 console.log(sortByFunc);
-// => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
+// => objects for [['Barney', 36], ['Barney', 34], ['Fred', 48], ['Fred', 40]]
 
 const sortByTwoArg = sortBy(users, ["user", "age"]);
 console.log(sortByTwoArg);
-// => objects for [['barney', 34], ['barney', 36], ['fred', 40], ['fred', 48]]
+// => objects for [['Barney', 34], ['Barney', 36], ['Fred', 40], ['Fred', 48]]
 ```
 
 # Lang 관련 함수
