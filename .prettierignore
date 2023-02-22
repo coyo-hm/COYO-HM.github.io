@@ -1,0 +1,13 @@
+# 아티팩트 무시:
+build
+coverage
+
+# 모든 HTML 파일 무시:
+*.html
+
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+
+*.mdx
