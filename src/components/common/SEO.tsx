@@ -37,7 +37,7 @@ export const PageSeo = ({
         url,
         title,
         description,
-        images: [{ alt: title, url: "/thumbnail.png" }],
+        images: [{ alt: title, url: "/static/images/moblie-profile.png" }],
       }}
     />
   );
