@@ -23,7 +23,7 @@ const SideBar = ({ tags }: { tags: TagWithCountType[] }) => {
         className={`fixed inset-0 m-0 p-0 w-full h-full opacity-70 bg-neutral-800`}
       />
       <div
-        className={`fixed inset-0 flex flex-col p-4 w-[300px] h-full bg-white overflow-y-auto dark:bg-neutral-700 dark:text-neutral-200`}
+        className={`fixed inset-0 flex flex-col p-4 w-[300px] h-full bg-white/90 overflow-y-auto dark:bg-neutral-700 dark:text-neutral-200`}
       >
         <button onClick={closeSidebar} className={`hover:text-blue-700`}>
           <RxCross1 size={24} />

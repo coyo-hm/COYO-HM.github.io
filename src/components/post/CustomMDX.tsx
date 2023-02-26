@@ -45,7 +45,7 @@ const components: MDXComponents = {
   ),
   a: (props) => {
     return props?.href && props.href[0] === "#" ? (
-      <a href={`${props?.href}`} {...props}>
+      <a href={`${props?.href}`} {...props} className={`underline`}>
         {props?.children}
       </a>
     ) : (
@@ -54,7 +54,7 @@ const components: MDXComponents = {
         {...props}
         target="_blank"
         rel="noreferrer"
-        className={`hover:text-blue-700`}
+        className={`hover:text-blue-700 underline`}
       >
         {props?.children}
       </a>
