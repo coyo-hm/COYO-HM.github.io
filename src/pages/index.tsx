@@ -108,19 +108,23 @@ export default function Home({
           })}
         </div>
       </div>
-      <div className={`mt-6 mb-4 px-4 max-sm:px-0`}>
-        <Link
-          href={"/project?page=0"}
-          className={`text-2xl font-extrabold text-blue-700 hover:text-blue-900 dark:hover:text-blue-400`}
-        >
-          <span>Project</span>
-        </Link>
-        <article className={`grid grid-cols-3 gap-4 my-4 max-sm:grid-cols-1 `}>
-          {projectPosts.map(({ frontMatter, fields: { slug } }) => (
-            <ThumbnailCard {...frontMatter} slug={slug} key={slug} />
-          ))}
-        </article>
-      </div>
+      {projectPosts.length > 0 && (
+        <div className={`mt-6 mb-4 px-4 max-sm:px-0`}>
+          <Link
+            href={"/project?page=0"}
+            className={`text-2xl font-extrabold text-blue-700 hover:text-blue-900 dark:hover:text-blue-400`}
+          >
+            <span>Project</span>
+          </Link>
+          <article
+            className={`grid grid-cols-3 gap-4 my-4 max-sm:grid-cols-1 `}
+          >
+            {projectPosts.map(({ frontMatter, fields: { slug } }) => (
+              <ThumbnailCard {...frontMatter} slug={slug} key={slug} />
+            ))}
+          </article>
+        </div>
+      )}
     </>
   );
 }
