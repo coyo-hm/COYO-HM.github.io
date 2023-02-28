@@ -9,6 +9,18 @@
 :root {
   --background: rgb(256, 256, 256);
   --text: rgb(38, 38, 38);
+  --color-main-blue: #1d4ed8;
+  --color-react: #61dbfb;
+  --color-javascript: #fac905;
+  --color-typescript: #3178c6;
+  --color-githubpage: #000000;
+  --color-jest: #99425b;
+  --color-redux: #764abc;
+  --color-gatsby: #663399;
+  --color-css: #1572b6;
+  --color-scss: #bf4080;
+  --color-styledcomponents: #ffa4e8;
+  --color-html: #e44f26;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,6 +37,16 @@
 * {
   box-sizing: border-box;
   font-family: "pretendard", "Pretendard-Regular";
+  scrollbar-width: 15px;
+  scrollbar-color: none var(--color-main-blue);
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-main-blue);
 }
 
 html,
