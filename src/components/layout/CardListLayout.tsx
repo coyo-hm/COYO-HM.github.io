@@ -1,15 +1,18 @@
-import { PostType } from "@src/type";
-import usePage from "@hooks/usePage";
+import { categoryType, PostType } from "@src/type";
 import { DEFAULT_NUMBER_OF_CARD_POST } from "@src/constants";
-import PreviewPostCard from "@components/common/PreviewPostCard";
-import PostListHeader from "@components/common/PostListHeader";
+import usePage from "@hooks/usePage";
+import ListTitle from "@components/common/ListTitle";
+import ThumbnailCard from "@components/common/ThumbnailCard";
 import Pagination from "@components/common/Pagination";
+
 const CardListLayout = ({
+  categoryId,
   tag,
   posts,
   currPage,
   path,
 }: {
+  categoryId: categoryType;
   tag?: string;
   posts: PostType[];
   currPage: number;
@@ -23,10 +26,10 @@ const CardListLayout = ({
 
   return (
     <>
-      <PostListHeader categoryId={"Project"} tag={tag} />
+      <ListTitle title={!!tag ? tag : categoryId.toUpperCase()} />
       <article className={`grid grid-cols-3 gap-4`}>
         {showPosts.map(({ frontMatter, fields: { slug } }) => (
-          <PreviewPostCard {...frontMatter} slug={slug} key={slug} />
+          <ThumbnailCard {...frontMatter} slug={slug} key={slug} />
         ))}
       </article>
       <Pagination

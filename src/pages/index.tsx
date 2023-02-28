@@ -1,7 +1,6 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
 import { FaEnvelope, FaGithub } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 
@@ -11,21 +10,17 @@ import { PageSeo } from "@components/common/SEO";
 import { DEFAULT_NUMBER_OF_RECENT_POST } from "@constants/index";
 import useSidebar from "@hooks/useSidebar";
 import { PostType, TagWithCountType } from "@type/index";
-import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
+import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import imgLoader from "@utils/imgLoader";
 
 export default function Home({
-  posts,
+  blogPosts,
   tags,
 }: {
-  posts: PostType[];
+  blogPosts: PostType[];
   tags: TagWithCountType[];
 }) {
-  const { setTags } = useSidebar();
-
-  useEffect(() => {
-    setTags(tags);
-  }, [setTags, tags]);
+  useSidebar(tags);
 
   return (
     <>
@@ -76,7 +71,7 @@ export default function Home({
             <Link
               href={`/blog/tags/${tag}`}
               key={tag}
-              className={`whitespace-nowrap mr-2 hover:font-bold hover:text-blue-900 dark:hover:text-blue-500 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
+              className={`whitespace-nowrap mr-2 hover:font-bold hover:text-blue-900 dark:hover:text-blue-400 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
             >
               {tag}
             </Link>
@@ -85,11 +80,11 @@ export default function Home({
       </div>
       <div
         id={"recent_post"}
-        className={`shadow-2xl rounded-2xl overflow-hidden`}
+        className={`shadow-2xl rounded-2xl overflow-hidden mb-4`}
       >
         <Link
           href={"/blog?page=0"}
-          className={`text-2xl text-blue-700 p-6 pb-0 flex justify-between bg-neutral-50 hover:text-blue-900 dark:bg-neutral-700`}
+          className={`text-2xl text-blue-700 hover:text-blue-900 dark:hover:text-blue-400 p-6 pb-0 flex justify-between bg-neutral-50  dark:bg-neutral-700`}
         >
           <span>Recent Blog Post</span>
           <BsArrowRight />
@@ -98,7 +93,7 @@ export default function Home({
           id={"tags"}
           className={`grid gap-5 grid-flow-col auto-cols-[200px] px-4 py-6 bg-neutral-50 overflow-x-auto dark:bg-neutral-700`}
         >
-          {posts.map(({ frontMatter, fields: { slug } }) => {
+          {blogPosts?.map(({ frontMatter, fields: { slug } }) => {
             return (
               <Link href={`/${slug}`} key={slug}>
                 <PostCard {...frontMatter} />
@@ -112,15 +107,15 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const recentPosts = (await getAllPosts()).slice(
+  const recentBlogPosts = (await getAllPosts("blog")).slice(
     0,
     DEFAULT_NUMBER_OF_RECENT_POST
   );
-  const allTags = await getAllTagsFromPosts();
+  const allTags = await getAllTagsFromBlog();
 
   return {
     props: {
-      posts: recentPosts.map((post) => ({ ...post, path: "" })),
+      blogPosts: recentBlogPosts.map((post) => ({ ...post, path: "" })),
       tags: allTags,
     },
   };

@@ -1,17 +1,18 @@
-import Link from "next/link";
 import { DEFAULT_NUMBER_OF_POST } from "@src/constants";
-import { PostType } from "@src/type";
-import PostBox from "@components/common/PostBox";
+import { categoryType, PostType } from "@src/type";
 import Pagination from "@components/common/Pagination";
 import usePage from "@hooks/usePage";
-import PostListHeader from "@components/common/PostListHeader";
+import ArticleCard from "@components/common/ArticleCard";
+import ListTitle from "@components/common/ListTitle";
 
 const PostListLayout = ({
   tag,
   posts,
   currPage,
   path,
+  categoryId,
 }: {
+  categoryId: categoryType;
   tag?: string;
   posts: PostType[];
   currPage: number;
@@ -25,10 +26,10 @@ const PostListLayout = ({
 
   return (
     <>
-      <PostListHeader categoryId={"Blog"} tag={tag} />
+      <ListTitle title={!!tag ? tag : categoryId.toUpperCase()} />
       <article className={`flex flex-col flex-nowrap gap-3`}>
         {showPosts.map(({ frontMatter, fields: { slug } }) => (
-          <PostBox {...frontMatter} slug={slug} key={slug} />
+          <ArticleCard {...frontMatter} slug={slug} key={slug} />
         ))}
       </article>
       <Pagination

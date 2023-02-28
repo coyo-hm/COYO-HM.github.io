@@ -4,7 +4,7 @@ import { FrontMatterType } from "@type/index";
 import getDate from "@utils/getDate";
 import imgLoader from "@utils/imgLoader";
 
-const PreviewPostCard = ({
+const ThumbnailCard = ({
   title,
   date,
   tags,
@@ -39,4 +39,4 @@ const PreviewPostCard = ({
     </Link>
   );
 };
-export default PreviewPostCard;
+export default ThumbnailCard;
