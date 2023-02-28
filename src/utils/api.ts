@@ -29,11 +29,11 @@ export async function getAllPosts(
         .replace(".mdx", "")
         .replace(".md", "");
 
-      if (
-        (published || process.env.NODE_ENV === "development") && !!category
-          ? slug.startsWith(category)
-          : true
-      ) {
+      if (!!category && !slug.startsWith(category)) {
+        return prev;
+      }
+
+      if (published || process.env.NODE_ENV === "development") {
         const tags: string[] = (fmTags || []).map((tag: string) => tag.trim());
 
         const result: PostType = {

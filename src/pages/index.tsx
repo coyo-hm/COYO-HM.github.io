@@ -6,8 +6,12 @@ import { BsArrowRight } from "react-icons/bs";
 
 import metadata from "config";
 import PostCard from "@components/common/PostCard";
+import ThumbnailCard from "@components/common/ThumbnailCard";
 import { PageSeo } from "@components/common/SEO";
-import { DEFAULT_NUMBER_OF_RECENT_POST } from "@constants/index";
+import {
+  DEFAULT_NUMBER_OF_HOME_PROJECT,
+  DEFAULT_NUMBER_OF_RECENT_POST,
+} from "@constants/index";
 import useSidebar from "@hooks/useSidebar";
 import { PostType, TagWithCountType } from "@type/index";
 import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
@@ -16,7 +20,9 @@ import imgLoader from "@utils/imgLoader";
 export default function Home({
   blogPosts,
   tags,
+  projectPosts,
 }: {
+  projectPosts: PostType[];
   blogPosts: PostType[];
   tags: TagWithCountType[];
 }) {
@@ -80,11 +86,11 @@ export default function Home({
       </div>
       <div
         id={"recent_post"}
-        className={`shadow-2xl rounded-2xl overflow-hidden mb-4`}
+        className={`shadow-2xl rounded-2xl overflow-hidden`}
       >
         <Link
           href={"/blog?page=0"}
-          className={`text-2xl text-blue-700 hover:text-blue-900 dark:hover:text-blue-400 p-6 pb-0 flex justify-between bg-neutral-50  dark:bg-neutral-700`}
+          className={`font-extrabold text-2xl text-blue-700 hover:text-blue-900 dark:hover:text-blue-400 p-6 pb-0 flex justify-between bg-neutral-50  dark:bg-neutral-700`}
         >
           <span>Recent Blog Post</span>
           <BsArrowRight />
@@ -102,6 +108,19 @@ export default function Home({
           })}
         </div>
       </div>
+      <div className={`mt-6 mb-4 px-4 max-sm:px-0`}>
+        <Link
+          href={"/project?page=0"}
+          className={`text-2xl font-extrabold text-blue-700 hover:text-blue-900 dark:hover:text-blue-400`}
+        >
+          <span>Project</span>
+        </Link>
+        <article className={`grid grid-cols-3 gap-4 my-4 max-sm:grid-cols-1 `}>
+          {projectPosts.map(({ frontMatter, fields: { slug } }) => (
+            <ThumbnailCard {...frontMatter} slug={slug} key={slug} />
+          ))}
+        </article>
+      </div>
     </>
   );
 }
@@ -111,10 +130,15 @@ export const getStaticProps: GetStaticProps = async () => {
     0,
     DEFAULT_NUMBER_OF_RECENT_POST
   );
+  const projectPosts = (await getAllPosts("project")).slice(
+    0,
+    DEFAULT_NUMBER_OF_HOME_PROJECT
+  );
   const allTags = await getAllTagsFromBlog();
 
   return {
     props: {
+      projectPosts,
       blogPosts: recentBlogPosts.map((post) => ({ ...post, path: "" })),
       tags: allTags,
     },
