@@ -1,5 +1,6 @@
 import { FrontMatterType } from "@type/index";
 import getDate from "@utils/getDate";
+import TagBox from "./TagBox";
 
 const PostCard = ({ title, date, tags, description }: FrontMatterType) => {
   const { dateStr } = getDate(date);
@@ -17,12 +18,7 @@ const PostCard = ({ title, date, tags, description }: FrontMatterType) => {
       </div>
       <div className={`flex overflow-hidden my-2`}>
         {tags.slice(0, 2).map((tag) => (
-          <div
-            key={tag}
-            className={`shrink-0 text-xs rounded p-1 mr-2 text-neutral-100 bg-neutral-400 dark:bg-neutral-600`}
-          >
-            #{tag}
-          </div>
+          <TagBox tag={tag} key={tag} />
         ))}
       </div>
       <div

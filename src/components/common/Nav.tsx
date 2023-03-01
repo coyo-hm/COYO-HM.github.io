@@ -1,8 +1,9 @@
+import { categoryType } from "@type/index";
 import Link from "next/link";
 import { useRouter } from "next/router";
-export const navLinks: { title: string; link: string }[] = [
-  { title: "Blog", link: "/blog" },
-  { title: "Project", link: "/project" },
+export const navLinks: { title: categoryType; link: string }[] = [
+  { title: "blog", link: "/blog" },
+  { title: "project", link: "/project" },
 ];
 const Nav = () => {
   const { route } = useRouter();

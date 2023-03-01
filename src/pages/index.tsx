@@ -1,31 +1,32 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
 import { FaEnvelope, FaGithub } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 
 import metadata from "config";
 import PostCard from "@components/common/PostCard";
+import ThumbnailCard from "@components/common/ThumbnailCard";
 import { PageSeo } from "@components/common/SEO";
-import { DEFAULT_NUMBER_OF_RECENT_POST } from "@constants/index";
+import {
+  DEFAULT_NUMBER_OF_HOME_PROJECT,
+  DEFAULT_NUMBER_OF_RECENT_POST,
+} from "@constants/index";
 import useSidebar from "@hooks/useSidebar";
 import { PostType, TagWithCountType } from "@type/index";
-import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
+import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import imgLoader from "@utils/imgLoader";
 
 export default function Home({
-  posts,
+  blogPosts,
   tags,
+  projectPosts,
 }: {
-  posts: PostType[];
+  projectPosts: PostType[];
+  blogPosts: PostType[];
   tags: TagWithCountType[];
 }) {
-  const { setTags } = useSidebar();
-
-  useEffect(() => {
-    setTags(tags);
-  }, [setTags, tags]);
+  useSidebar(tags);
 
   return (
     <>
@@ -76,7 +77,7 @@ export default function Home({
             <Link
               href={`/blog/tags/${tag}`}
               key={tag}
-              className={`whitespace-nowrap mr-2 hover:font-bold hover:text-blue-900 dark:hover:text-blue-500 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
+              className={`whitespace-nowrap mr-2 hover:font-bold hover:text-blue-900 dark:hover:text-blue-400 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
             >
               {tag}
             </Link>
@@ -89,7 +90,7 @@ export default function Home({
       >
         <Link
           href={"/blog?page=0"}
-          className={`text-2xl text-blue-700 p-6 pb-0 flex justify-between bg-neutral-50 hover:text-blue-900 dark:bg-neutral-700`}
+          className={`font-extrabold text-2xl text-blue-700 hover:text-blue-900 dark:hover:text-blue-400 p-6 pb-0 flex justify-between bg-neutral-50  dark:bg-neutral-700`}
         >
           <span>Recent Blog Post</span>
           <BsArrowRight />
@@ -98,7 +99,7 @@ export default function Home({
           id={"tags"}
           className={`grid gap-5 grid-flow-col auto-cols-[200px] px-4 py-6 bg-neutral-50 overflow-x-auto dark:bg-neutral-700`}
         >
-          {posts.map(({ frontMatter, fields: { slug } }) => {
+          {blogPosts?.map(({ frontMatter, fields: { slug } }) => {
             return (
               <Link href={`/${slug}`} key={slug}>
                 <PostCard {...frontMatter} />
@@ -107,20 +108,42 @@ export default function Home({
           })}
         </div>
       </div>
+      {projectPosts.length > 0 && (
+        <div className={`mt-6 mb-4 px-4 max-sm:px-0`}>
+          <Link
+            href={"/project?page=0"}
+            className={`text-2xl font-extrabold text-blue-700 hover:text-blue-900 dark:hover:text-blue-400`}
+          >
+            <span>Project</span>
+          </Link>
+          <article
+            className={`grid grid-cols-3 gap-4 my-4 max-sm:grid-cols-1 `}
+          >
+            {projectPosts.map(({ frontMatter, fields: { slug } }) => (
+              <ThumbnailCard {...frontMatter} slug={slug} key={slug} />
+            ))}
+          </article>
+        </div>
+      )}
     </>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const recentPosts = (await getAllPosts()).slice(
+  const recentBlogPosts = (await getAllPosts("blog")).slice(
     0,
     DEFAULT_NUMBER_OF_RECENT_POST
   );
-  const allTags = await getAllTagsFromPosts();
+  const projectPosts = (await getAllPosts("project")).slice(
+    0,
+    DEFAULT_NUMBER_OF_HOME_PROJECT
+  );
+  const allTags = await getAllTagsFromBlog();
 
   return {
     props: {
-      posts: recentPosts.map((post) => ({ ...post, path: "" })),
+      projectPosts,
+      blogPosts: recentBlogPosts.map((post) => ({ ...post, path: "" })),
       tags: allTags,
     },
   };

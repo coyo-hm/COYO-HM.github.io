@@ -29,3 +29,5 @@ export interface TagsType {
   [key: string]: string;
   tag: string;
 }
+
+export type categoryType = "blog" | "project" | "all";

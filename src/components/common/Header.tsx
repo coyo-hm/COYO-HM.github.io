@@ -50,7 +50,7 @@ const Header = () => {
       <div
         className={`flex flex-row items-center grow justify-center ml-4 max-md:justify-start max-md:m-0`}
       >
-        <Link href="/" className={`font-extralight text-lg max-md:pl-4`}>
+        <Link href="/" className={`text-lg max-md:pl-4`}>
           {metadata.title}
         </Link>
       </div>

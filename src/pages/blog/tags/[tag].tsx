@@ -1,8 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { PostType, TagsType, TagWithCountType } from "@type/index";
-import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
+import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import useSidebar from "@hooks/useSidebar";
 import PostListLayout from "@components/layout/PostListLayout";
 import { PageSeo } from "@components/common/SEO";
@@ -22,11 +21,7 @@ const BlogTagPage = ({
     query: { page },
   } = useRouter();
   const currPage = page ? parseInt(page as string) : 0;
-  const { setTags } = useSidebar();
-
-  useEffect(() => {
-    setTags(tags);
-  }, [setTags, tags]);
+  useSidebar(tags);
 
   return (
     <>
@@ -37,6 +32,7 @@ const BlogTagPage = ({
       />
       <PostListLayout
         tag={tag}
+        categoryId={"blog"}
         posts={posts}
         currPage={currPage}
         path={route}
@@ -48,7 +44,7 @@ const BlogTagPage = ({
 export default BlogTagPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allTags = await getAllTagsFromPosts();
+  const allTags = await getAllTagsFromBlog();
   const paths = allTags.map(({ tag }) => {
     return { params: { tag: tag } };
   });
@@ -61,11 +57,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { tag } = params as TagsType;
-  const allPosts = await getAllPosts();
-  const allTags = await getAllTagsFromPosts();
-  const posts = allPosts.filter(
-    ({ frontMatter: { tags }, fields: { slug } }) =>
-      tags.includes(tag) && slug.startsWith("blog")
+  const allPosts = await getAllPosts("blog");
+  const allTags = await getAllTagsFromBlog();
+  const posts = allPosts.filter(({ frontMatter: { tags } }) =>
+    tags.includes(tag)
   );
 
   return {

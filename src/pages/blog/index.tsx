@@ -1,8 +1,7 @@
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { PostType, TagWithCountType } from "@type/index";
-import { getAllPosts, getAllTagsFromPosts } from "@utils/api";
+import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import useSidebar from "@hooks/useSidebar";
 import PostListLayout from "@components/layout/PostListLayout";
 import { PageSeo } from "@components/common/SEO";
@@ -20,11 +19,7 @@ const Blog = ({
     query: { page },
   } = useRouter();
   const currPage = page ? parseInt(page as string) : 0;
-  const { setTags } = useSidebar();
-
-  useEffect(() => {
-    setTags(tags);
-  }, [setTags, tags]);
+  useSidebar(tags);
 
   return (
     <>
@@ -33,7 +28,12 @@ const Blog = ({
         description={metadata.description}
         url={metadata.siteUrl + `blog`}
       />
-      <PostListLayout posts={posts} currPage={currPage} path={route} />
+      <PostListLayout
+        categoryId={"blog"}
+        posts={posts}
+        currPage={currPage}
+        path={route}
+      />
     </>
   );
 };
@@ -41,12 +41,12 @@ const Blog = ({
 export default Blog;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllPosts();
-  const allTags = await getAllTagsFromPosts();
+  const posts = await getAllPosts("blog");
+  const allTags = await getAllTagsFromBlog();
 
   return {
     props: {
-      posts: posts.filter(({ fields: { slug } }) => slug.startsWith("blog")),
+      posts: posts,
       tags: allTags,
     },
   };

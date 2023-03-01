@@ -20,6 +20,7 @@
   --color-css: #1572b6;
   --color-scss: #bf4080;
   --color-styledcomponents: #ffa4e8;
+  --color-emotion: #d26ac2;
   --color-html: #e44f26;
 }
 
@@ -38,7 +39,7 @@
   box-sizing: border-box;
   font-family: "pretendard", "Pretendard-Regular";
   scrollbar-width: 15px;
-  scrollbar-color: none var(--color-main-blue);
+  scrollbar-color: none rgba(127, 146, 172, 0.466);
 }
 
 *::-webkit-scrollbar {
@@ -46,7 +47,8 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--color-main-blue);
+  background-color: rgba(127, 146, 172, 0.466);
+  border-radius: 5px;
 }
 
 html,
@@ -61,6 +63,11 @@ body {
 
 .dark {
   background-color: rgb(38, 38, 38);
+  scrollbar-color: none rgb(30, 58, 138);
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background-color: rgb(30, 58, 138, 0.8);
 }
 
 #utterances-dark {

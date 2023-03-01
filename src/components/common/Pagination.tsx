@@ -17,7 +17,7 @@ const Pagination = ({
   };
 
   return (
-    <div className={`flex text-blue-700 justify-center items-center my-2.5`}>
+    <div className={`flex text-blue-700 justify-center items-center my-5`}>
       <Link
         href={getPath(currPage - 1)}
         className={`hover:text-blue-900`}

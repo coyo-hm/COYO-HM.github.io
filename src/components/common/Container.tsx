@@ -19,7 +19,7 @@ const Container = (props: {
     | undefined;
 }) => {
   return (
-    <div className={`dark:bg-neutral-800 dark:text-neutral-100`}>
+    <div className={`bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-100`}>
       <div
         className={`min-h-screen md:max-lg:w-full lg:w-[1000px] flex flex-col items-center px-8 m-auto dark:bg-neutral-800`}
       >
