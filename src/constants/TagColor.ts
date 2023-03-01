@@ -50,7 +50,8 @@ const TEXT_HOVER: { [key: string]: string } = {
   Redux: "hover:text-[color:var(--color-redux)]",
   Gatsby: "hover:text-[color:var(--color-gatsby)]",
   Jest: "hover:text-[color:var(--color-jest)]",
-  GithubPage: "hover:text-[color:var(--color-githubpage)]",
+  GithubPage:
+    "hover:text-[color:var(--color-githubpage)] dark:hover:text-white",
   CSS: "hover:text-[color:var(--color-css)]",
   SCSS: "hover:text-[color:var(--color-scss)]",
   ["styled-components"]: "hover:text-[color:var(--color-styledcomponents)]",

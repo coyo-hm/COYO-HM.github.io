@@ -14,7 +14,7 @@ const ThumbnailCard = ({
   const { dateStr } = getDate(date);
   return (
     <Link
-      className={`overflow-hidden shadow-xl rounded-xl bg-neutral-100 grid grid-rows-[2fr_1fr] dark:bg-neutral-900`}
+      className={`hover:-translate-y-2 hover:duration-300 hover:ease-in-out overflow-hidden shadow-xl rounded-xl bg-neutral-100 grid grid-rows-[2fr_1fr] dark:bg-neutral-900`}
       href={`/${slug}`}
     >
       <div className={`relative`}>
