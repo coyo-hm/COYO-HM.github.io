@@ -1,0 +1,49 @@
+---
+date: "2022-06-24"
+title: "Python3 문자열 채우기: rjust / ljust / zfill"
+tags: ["Python3"]
+description: "Python3 rjust, ljust, zfill로 문자열 채우기"
+published: true
+---
+
+## rjust
+
+---
+
+> `rjust(string의 길이, 채워줄 문자)`
+오른쪽에 string의 남는 길이만큼 주어진 문자를 채워준다.
+>
+
+```python
+text = "hello".rjust(5, "0") // hello
+text = "hello".rjust(10, "0") // 00000hello
+text = "hello".rjust(7, "q") // qqhello
+```
+
+## ljust
+
+---
+
+> `ljust(string의 길이, 채워줄 문자)`
+왼쪽에 string의 남는 길이만큼 주어진 문자를 채워준다.
+>
+
+```python
+text = "hello".ljust(5, "0") // hello
+text = "hello".ljust(10, "0") // hello00000
+text = "hello".ljust(7, "q") // helloqq
+```
+
+## zfill
+
+---
+
+> `zfill(string의 길이)`
+왼쪽에 0을 채워준다
+>
+
+```python
+text = "hello".zfill(5) // hello
+text = "hello".zfill(10) // 00000hello
+text = "hello".zfill(7) // 00hello
+```
