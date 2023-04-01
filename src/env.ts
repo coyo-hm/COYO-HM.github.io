@@ -1,3 +1,5 @@
+import * as process from "process";
+
 const dev = "development";
 const beta = "test";
 const production = "production";
