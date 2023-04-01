@@ -27,7 +27,6 @@ export default function Home({
   tags: TagWithCountType[];
 }) {
   useSidebar(tags);
-
   return (
     <>
       <PageSeo
