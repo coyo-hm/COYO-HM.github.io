@@ -1,0 +1,119 @@
+---
+date: "2022-08-31"
+title: "Redux Persist"
+tags: ["JavaScript", "Redux-Persist", "Redux"]
+description: "Redux-Persist로 새로고침해도 데이터 유지하기"
+published: true
+# thumbnail: './add_table_of_contents_in_post.png'
+---
+#개념
+
+Redux의 Store는 앱을 종료하면 모든 state가 사라지기에 캐시 기능을 구현하는 또다른 장치가 필요
+
+→  Web에서는 localStorage 혹은 Session, Native에서는 AsyncStorage 등을 써서 state를 저장, 새로고침을 하여도 저장공간에 있는 데이터를 redux에 불러 올 수 있다.
+
+: token 등의 정보만 저장하면 문제가 없으나 많은 정보를 저장하게 되면, 불필요한 시간 증가 / 용량 부족
+
+⇒ <strong>Redux Persist</strong>를 사용하여 이러한 문제 해결
+
+# 설치
+
+<aside>
+❗ `react-redux`도 반드시 설치
+
+</aside>
+
+```bash
+npm install redux-persist
+```
+
+# 사용법
+
+## reducer에 persist 정의
+
+- localStorage에 저장하고 싶으면 `import storage from 'redux-persist/lib/storage`
+- session Storage에 저장하고 싶으면 `import storageSession from 'redux-persist/lib/storage/session`
+
+```jsx
+
+import { combineReducers } from "redux";
+import { persistReducer, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage"; // localStorage에 저장합니다.
+
+import auth from "./auth";
+import site from "./board";
+
+const persistConfig = {
+  key: "root",
+	transforms: [],
+  storage,
+  whitelist: ["auth"]
+	// whitelist: auth, site 2개의 reducer 중에 auth reducer만 localstorage에 저장합니다.
+  // blacklist: 그것만 제외합니다
+};
+
+export const rootReducer = combineReducers({
+  auth,
+  site,
+});
+
+const persistReducer = persistReducer(persistConfig, rootReducer);
+const store = createStore(rootReducer);
+const persist = persistStore(store);
+
+export default {store, persist}
+```
+
+- `persistConfig`
+
+    ```tsx
+    interface PersistConfig<S, RS = any, HSS = any, ESS = any> {
+      version?: number;
+      storage: Storage;
+      key: string;
+    	/**
+       *@deprecatedkeyPrefix is going to be removed in v6.
+       */
+    	keyPrefix?: string;
+      blacklist?: Array<string>;
+      whitelist?: Array<string>;
+      transforms?: Array<Transform<HSS, ESS, S, RS>>;
+      throttle?: number;
+      migrate?: PersistMigrate;
+      stateReconciler?: false | StateReconciler<S>;
+    	/**
+       *@descUsed for migrations.
+       */
+    	getStoredState?: (config: PersistConfig<S, RS, HSS, ESS>) => Promise<PersistedState>;
+      debug?: boolean;
+      serialize?: boolean;
+      timeout?: number;
+      writeFailHandler?: (err: Error) => void;
+    }
+    ```
+
+
+## persist store 사용
+
+`src/index.js`
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { store, persistor } from './Store';
+import { PersistGate } from 'redux-persist/integration/react';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
+    </Provider>
+  </React.StrictMode>
+);
+```
