@@ -1,10 +1,9 @@
 ---
 date: "2023-01-26"
-title: "TypeSript에서 Redux-ToolKit 사용하기"
+title: "TypeScript에서 Redux-ToolKit 사용하기"
 tags: ["React", "TypeScript", "Redux"]
 description: "TypeScript에서 redux-toolkit 설치부터, Store 설정, UseDispatch, UseSelector, CreateSlice(build), CreateAsyncThunk 사용해보기"
 published: true
-# thumbnail: './add_table_of_contents_in_post.png'
 ---
 
 # 설치
@@ -13,7 +12,6 @@ published: true
 npm install @reduxjs/toolkit
 
 yarn add @reduxjs/toolkit
-
 ```
 
 # Store
@@ -25,25 +23,25 @@ export const store = configureStore({
   reducer: {},
 })
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 ```
 
 `index.tsx`
 
 ```TypeScript
 import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
-import { store } from './app/store'
-import { Provider } from 'react-redux'
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root');
 )
 ```
 
