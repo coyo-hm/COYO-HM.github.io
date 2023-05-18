@@ -1,0 +1,58 @@
+---
+date: "2022-11-10"
+title: "Axios Intercepter 사용해보기"
+tags: ["React", "TypeScript", "Axios", "JavaScript"]
+description: "Axios: Intercepter 사용해보기"
+published: true
+---
+> Axios Interceptors
+>
+>
+> `then` 또는 `catch`로 처리되기 전에 요청과 응답을 가로챌 수 있다.
+>
+> [출처: Axios Docs Interceptors](https://axios-http.com/kr/docs/interceptors)
+>
+- 요청(request)을 보내기 전이나 응답(response)을 받은 직후 지정된 작업을 수행할 수 있게 한다.
+- Token 처리나 Error 처리에 용이하다.
+
+# Interceptors 추가하기
+
+```tsx
+// 요청 인터셉터 추가하기
+axios.interceptors.request.use(function (config: AxiosRequestConfig) {
+    // 요청이 전달되기 전에 작업 수행
+    return config;
+  }, function (error) {
+    // 요청 오류가 있는 작업 수행
+    return Promise.reject(error);
+  });
+
+// 응답 인터셉터 추가하기
+axios.interceptors.response.use(function (response: AxiosResponse) {
+    // 2xx 범위에 있는 상태 코드는 이 함수를 트리거 합니다.
+    // 응답 데이터가 있는 작업 수행
+    return response;
+  }, function (error: AxiosError) {
+    // 2xx 외의 범위에 있는 상태 코드는 이 함수를 트리거 합니다.
+    // 응답 오류가 있는 작업 수행
+    return Promise.reject(error);
+  });
+```
+
+# Interceptors 제거하기
+
+```tsx
+const myInterceptor = axios.interceptors.request.use(function () {/*...*/});
+axios.interceptors.request.eject(myInterceptor);
+```
+
+# Custom Instance에서 Interceptors 사용하기
+
+```tsx
+const instance = axios.create();
+instance.interceptors.request.use(function () {/*...*/});
+```
+
+# 참조
+
+- [Axios Docs Interceptors](https://axios-http.com/kr/docs/interceptors)
