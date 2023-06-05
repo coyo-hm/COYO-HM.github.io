@@ -24,6 +24,7 @@ const Container = (props: {
         className={`min-h-screen md:max-lg:w-full lg:w-[1000px] flex flex-col items-center px-8 m-auto dark:bg-neutral-800`}
       >
         <Header />
+
         <main className={`w-full grow flex flex-col my-6`}>
           {props.children}
         </main>

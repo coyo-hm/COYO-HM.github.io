@@ -12,7 +12,6 @@ import {
   DEFAULT_NUMBER_OF_HOME_PROJECT,
   DEFAULT_NUMBER_OF_RECENT_POST,
 } from "@constants/index";
-import useSidebar from "@hooks/useSidebar";
 import { PostType, TagWithCountType } from "@type/index";
 import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import imgLoader from "@utils/imgLoader";
@@ -26,8 +25,6 @@ export default function Home({
   blogPosts: PostType[];
   tags: TagWithCountType[];
 }) {
-  useSidebar(tags);
-
   return (
     <>
       <PageSeo

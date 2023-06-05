@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { PostType, TagsType, TagWithCountType } from "@type/index";
 import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
-import useSidebar from "@hooks/useSidebar";
 import PostListLayout from "@components/layout/PostListLayout";
 import { PageSeo } from "@components/common/SEO";
 import metadata from "@config/index";
@@ -21,7 +20,6 @@ const BlogTagPage = ({
     query: { page },
   } = useRouter();
   const currPage = page ? parseInt(page as string) : 0;
-  useSidebar(tags);
 
   return (
     <>
