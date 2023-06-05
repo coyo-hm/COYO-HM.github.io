@@ -15,6 +15,7 @@ import {
 import { PostType, TagWithCountType } from "@type/index";
 import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import imgLoader from "@utils/imgLoader";
+import useSideScroll from "@hooks/useSideScroll";
 
 export default function Home({
   blogPosts,
@@ -25,6 +26,8 @@ export default function Home({
   blogPosts: PostType[];
   tags: TagWithCountType[];
 }) {
+  const tagListRef = useSideScroll();
+
   return (
     <>
       <PageSeo
@@ -69,7 +72,11 @@ export default function Home({
         className={`flex flex-nowrap text-blue-700 border-y-2 border-blue-700 py-2 text-base my-4`}
       >
         <span className={"font-bold mr-4"}>#tags</span>
-        <div id={"tags"} className={`flex flex-nowrap overflow-auto`}>
+        <div
+          id={"tags"}
+          className={`flex flex-nowrap overflow-auto`}
+          ref={tagListRef}
+        >
           {tags.map(({ tag }) => (
             <Link
               href={`/blog/tags/${tag}`}

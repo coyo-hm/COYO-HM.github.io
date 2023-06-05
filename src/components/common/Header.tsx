@@ -23,27 +23,26 @@ const Header = () => {
   };
 
   return (
-    <header className={`w-full flex justify-between items-center pb-1 pt-4`}>
-      <div
-        className={`flex flex-row items-center grow justify-center ml-4 max-md:justify-start max-md:m-0`}
-      >
-        <Link href="/" className={`text-lg max-md:pl-4`}>
-          {metadata.title}
-        </Link>
+    <header
+      className={`w-full flex justify-center items-center pb-1 pt-4 relative`}
+    >
+      <Link href="/" className={`text-lg`}>
+        {metadata.title}
+      </Link>
+      <div className={`absolute right-0 grid gap-2 place-items-center`}>
+        <button
+          id={"btn-theme"}
+          className={`rounded-full bg-neutral-100 dark:bg-neutral-900 text-yellow-500 dark:text-blue-100`}
+          onClick={toggleTheme}
+        >
+          {isDarkTheme ? (
+            <BsFillMoonStarsFill size={20} />
+          ) : (
+            <BsSunFill size={20} />
+          )}
+        </button>
+        {/*TODO: Search*/}
       </div>
-      <Nav />
-      <button
-        id={"btn-theme"}
-        className={`rounded-full bg-neutral-100 p-2 ml-4 dark:bg-neutral-900 text-yellow-500 dark:text-blue-100`}
-        onClick={toggleTheme}
-      >
-        {isDarkTheme ? (
-          <BsFillMoonStarsFill size={20} />
-        ) : (
-          <BsSunFill size={20} />
-        )}
-      </button>
-      {/*TODO: Search*/}
     </header>
   );
 };
