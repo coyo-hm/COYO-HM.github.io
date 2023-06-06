@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const useSideScroll = () => {
+const useHorizontalScroll = () => {
   const elRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = elRef.current;
@@ -20,4 +20,4 @@ const useSideScroll = () => {
   return elRef;
 };
 
-export default useSideScroll;
+export default useHorizontalScroll;

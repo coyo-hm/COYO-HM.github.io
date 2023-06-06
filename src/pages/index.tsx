@@ -15,7 +15,7 @@ import {
 import { PostType, TagWithCountType } from "@type/index";
 import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import imgLoader from "@utils/imgLoader";
-import useSideScroll from "@hooks/useSideScroll";
+import useHorizontalScroll from "@hooks/useHorizontalScroll";
 
 export default function Home({
   blogPosts,
@@ -26,7 +26,7 @@ export default function Home({
   blogPosts: PostType[];
   tags: TagWithCountType[];
 }) {
-  const tagListRef = useSideScroll();
+  const tagListRef = useHorizontalScroll();
 
   return (
     <>

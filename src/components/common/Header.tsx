@@ -26,6 +26,7 @@ const Header = () => {
     <header
       className={`w-full flex justify-center items-center pb-1 pt-4 relative`}
     >
+      <Nav />
       <Link href="/" className={`text-lg`}>
         {metadata.title}
       </Link>
