@@ -4,7 +4,6 @@ import { PostType, TagWithCountType } from "@src/type/index";
 import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import parseMarkdownToMdx from "@utils/parseMarkdown";
 import PostLayout from "@components/layout/PostLayout";
-import useSidebar from "@hooks/useSidebar";
 
 const ProjectPost = ({
   post,
@@ -15,7 +14,6 @@ const ProjectPost = ({
   mdx: MDXRemoteSerializeResult;
   tags: TagWithCountType[];
 }) => {
-  useSidebar(tags);
   return <PostLayout post={post} mdx={mdx} />;
 };
 

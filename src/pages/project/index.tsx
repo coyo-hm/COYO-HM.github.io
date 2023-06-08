@@ -5,7 +5,6 @@ import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import { PageSeo } from "@components/common/SEO";
 import CardListLayout from "@components/layout/CardListLayout";
 import metadata from "@config/index";
-import useSidebar from "@hooks/useSidebar";
 
 export default function ProjectListPage({
   posts,
@@ -19,8 +18,6 @@ export default function ProjectListPage({
     query: { page },
   } = useRouter();
   const currPage = page ? parseInt(page as string) : 0;
-
-  useSidebar(tags);
 
   return (
     <>
