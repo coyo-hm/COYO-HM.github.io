@@ -8,7 +8,7 @@ const BG: { [key: string]: string } = {
   GithubPage: "bg-[color:var(--color-githubpage)]",
   CSS: "bg-[color:var(--color-css)]",
   SCSS: "bg-[color:var(--color-scss)]",
-  ["styled-components"]: "bg-[color:var(--color-styledcomponents)]",
+  ["Styled-Components"]: "bg-[color:var(--color-styledcomponents)]",
   Emotion: "bg-[color:var(--color-emotion)]",
   HTML: "bg-[color:var(--color-html)]",
 };
@@ -23,7 +23,7 @@ const BG_HOVER: { [key: string]: string } = {
   GithubPage: "hover:bg-[color:var(--color-githubpage)]",
   CSS: "hover:bg-[color:var(--color-css)]",
   SCSS: "hover:bg-[color:var(--color-scss)]",
-  ["styled-components"]: "hover:bg-[color:var(--color-styledcomponents)]",
+  ["Styled-Components"]: "hover:bg-[color:var(--color-styledcomponents)]",
   Emotion: "hover:bg-[color:var(--color-emotion)]",
   HTML: "hover:bg-[color:var(--color-html)]",
 };
@@ -38,7 +38,7 @@ const TEXT: { [key: string]: string } = {
   GithubPage: "text-[color:var(--color-githubpage)]",
   CSS: "text-[color:var(--color-css)]",
   SCSS: "text-[color:var(--color-scss)]",
-  ["styled-components"]: "text-[color:var(--color-styledcomponents)]",
+  ["Styled-Components"]: "text-[color:var(--color-styledcomponents)]",
   Emotion: "text-[color:var(--color-emotion)]",
   HTML: "text-[color:var(--color-html)]",
 };
@@ -54,11 +54,24 @@ const TEXT_HOVER: { [key: string]: string } = {
     "hover:text-[color:var(--color-githubpage)] dark:hover:text-white",
   CSS: "hover:text-[color:var(--color-css)]",
   SCSS: "hover:text-[color:var(--color-scss)]",
-  ["styled-components"]: "hover:text-[color:var(--color-styledcomponents)]",
+  ["Styled-Components"]: "hover:text-[color:var(--color-styledcomponents)]",
   Emotion: "hover:text-[color:var(--color-emotion)]",
   HTML: "hover:text-[color:var(--color-html)]",
 };
 
-const TAG_COLOR = { BG, BG_HOVER, TEXT, TEXT_HOVER };
-
+const BORDER: { [key: string]: string } = {
+  React: "border-[color:var(--color-react)]",
+  JavaScript: "border-[color:var(--color-javascript)]",
+  TypeScript: "border-[color:var(--color-typescript)]",
+  Redux: "border-[color:var(--color-redux)]",
+  Gatsby: "border-[color:var(--color-gatsby)]",
+  Jest: "border-[color:var(--color-jest)]",
+  GithubPage: "border-[color:var(--color-githubpage)]",
+  CSS: "border-[color:var(--color-css)]",
+  SCSS: "border-[color:var(--color-scss)]",
+  ["Styled-Components"]: "border-[color:var(--color-styledcomponents)]",
+  Emotion: "border-[color:var(--color-emotion)]",
+  HTML: "border-[color:var(--color-html)]",
+};
+const TAG_COLOR = { BG, BG_HOVER, TEXT, TEXT_HOVER, BORDER };
 export default TAG_COLOR;
