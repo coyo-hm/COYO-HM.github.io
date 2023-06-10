@@ -22,28 +22,27 @@ const ArticleCard = ({
         {title}
       </div>
       <div
-        className={`dark:text-neutral-300 text-xs leading-5 mb-2 w-full max-h-10 break-normal overflow-hidden text-ellipsis`}
+        className={`dark:text-neutral-300 mb-2 w-full max-h-10 break-normal overflow-hidden text-ellipsis flex items-center`}
       >
-        <span className={`text-neutral-400`}>
+        <span className={`text-neutral-400 text-xs`}>
           {postDate.getFullYear()}.{postDate.getMonth() + 1}.
           {postDate.getDate()}
         </span>
-        {!!description && (
-          <span
-            className={`text-neutral-600 dark:text-neutral-300 break-normal text-ellipsis pl-2 ml-2 border-l-2 border-neutral-200`}
-          >
-            {description}
-          </span>
-        )}
-      </div>
-
-      <div className={`flex items-center`}>
-        <div className={`flex overflow-hidden`}>
+        <div
+          className={`flex items-center border-l-2 border-neutral-200 overflow-hidden pl-2 ml-2`}
+        >
           {tags.map((tag) => (
             <TagBox tag={tag} key={tag} />
           ))}
         </div>
       </div>
+      {!!description && (
+        <div
+          className={`text-neutral-600 dark:text-neutral-300 break-normal text-ellipsis text-xs`}
+        >
+          {description}
+        </div>
+      )}
     </Link>
   );
 };
