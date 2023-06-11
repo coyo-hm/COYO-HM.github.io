@@ -24,12 +24,12 @@ const ArticleCard = ({
       <div
         className={`dark:text-neutral-300 mb-2 w-full max-h-10 break-normal overflow-hidden text-ellipsis flex items-center`}
       >
-        <span className={`text-neutral-400 text-xs`}>
+        <span className={`text-neutral-400 text-xs flex-shrink-0`}>
           {postDate.getFullYear()}.{postDate.getMonth() + 1}.
           {postDate.getDate()}
         </span>
         <div
-          className={`flex items-center border-l-2 border-neutral-200 overflow-hidden pl-2 ml-2`}
+          className={`flex items-center gap-1 flex-shrink flex-grow border-l-2 border-neutral-200 overflow-hidden pl-2 ml-2`}
         >
           {tags.map((tag) => (
             <TagBox tag={tag} key={tag} />
