@@ -19,8 +19,8 @@ const Nav = () => {
   return (
     <div className={`absolute left-0 flex max-md:flex-col`}>
       <button
-        className={`hidden p-2 rounded-full transition-all max-md:block hover:text-blue-700 active:bg-neutral-300 ${
-          isMenuOpened ? "bg-neutral-300" : ""
+        className={`hidden p-2 rounded-full transition-all max-md:block hover:text-blue-700 active:bg-neutral-300 dark:active:bg-neutral-900 ${
+          isMenuOpened ? "bg-neutral-300 dark:bg-neutral-900" : ""
         }`}
         onClick={() => {
           setIsMenuOpened((prev) => !prev);
@@ -29,9 +29,9 @@ const Nav = () => {
         {isMenuOpened ? <RxCross1 size={20} /> : <RxHamburgerMenu size={20} />}
       </button>
       <nav
-        className={`flex z-10 gap-3 max-md:gap-2 ${
+        className={`flex z-10 gap-3 max-md:gap-2 dark:bg-neutral-900 ${
           isMenuOpened
-            ? "block top-11 absolute w-28 flex-col bg-white rounded-md py-2 shadow-2xl opacity-95 bg-blend-overlay"
+            ? "block top-11 absolute w-28 flex-col bg-white rounded-md py-2 shadow-2xl opacity-95 "
             : "max-md:hidden"
         }`}
       >
