@@ -23,7 +23,7 @@
       "@fonts/*": ["public/static/fonts/*"],
       "@hooks/*": ["src/hooks/*"],
       "@styles/*": ["src/styles/*"],
-      "@type/*": ["src/type/*"],
+      "@models/*": ["src/models/*"],
       "@utils/*": ["src/utils/*"],
       "@src/*": ["src/*"]
     }

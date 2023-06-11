@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import { PostType, TagWithCountType } from "@src/type/index";
+import { PostType, TagWithCountType } from "@src/models/index";
 import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import parseMarkdownToMdx from "@utils/parseMarkdown";
 import PostLayout from "@components/layout/PostLayout";

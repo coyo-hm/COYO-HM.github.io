@@ -12,7 +12,7 @@ import {
   DEFAULT_NUMBER_OF_HOME_PROJECT,
   DEFAULT_NUMBER_OF_RECENT_POST,
 } from "@constants/index";
-import { PostType, TagWithCountType } from "@type/index";
+import { PostType, TagWithCountType } from "@src/models/index";
 import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import imgLoader from "@utils/imgLoader";
 import useHorizontalScroll from "@hooks/useHorizontalScroll";

@@ -2,18 +2,13 @@ import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { useMemo, useState } from "react";
 import { FaFilter } from "react-icons/fa";
-import { RxCross1, RxReset } from "react-icons/rx";
+import { RxCross1 } from "react-icons/rx";
 import metadata from "@config/index";
-import { DEFAULT_NUMBER_OF_POST } from "@src/constants";
-import { PostType, TagWithCountType } from "@src/type";
-import usePage from "@hooks/usePage";
+import { PostType, TagWithCountType } from "@models/index";
 import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import { PageSeo } from "@components/common/SEO";
-import ArticleCard from "@components/common/ArticleCard";
 import TagsDropdown from "@components/common/TagsDropdown";
-import Pagination from "@components/common/Pagination";
-import TagButton from "@components/common/TagButton";
-import Link from "next/link";
+import PostListLayout from "@components/layout/PostListLayout";
 
 const Blog = ({
   allPosts,
@@ -44,16 +39,6 @@ const Blog = ({
     return newPosts;
   }, [allPosts, selectedTags]);
 
-  const currPage = page ? parseInt(page as string) : 0;
-  const { startPage, endPage } = usePage(posts.length, currPage);
-
-  const showPosts = useMemo(() => {
-    return posts.slice(
-      currPage * DEFAULT_NUMBER_OF_POST,
-      (currPage + 1) * DEFAULT_NUMBER_OF_POST
-    );
-  }, [currPage, posts]);
-
   const [showFilter, setShowFilter] = useState(false);
 
   return (
@@ -63,7 +48,13 @@ const Blog = ({
         description={metadata.description}
         url={metadata.siteUrl + `blog`}
       />
-      <main className={`flex flex-col gap-5`}>
+      <PostListLayout
+        showType={"list"}
+        posts={posts}
+        currPage={page ? parseInt(page as string) : 0}
+        path={route}
+        query={{ tags: selectedTags }}
+      >
         <header className={`flex justify-end items-center gap-1 px-1`}>
           <h1 className={`font-bold text-3xl flex-grow`}>Blog</h1>
           <span className={`text-neutral-500 text-sm`}>
@@ -85,19 +76,7 @@ const Blog = ({
             path={route}
           />
         )}
-        <article className={`flex flex-col flex-nowrap gap-3`}>
-          {showPosts.map(({ frontMatter, fields: { slug } }) => (
-            <ArticleCard {...frontMatter} slug={slug} key={slug} />
-          ))}
-        </article>
-        <Pagination
-          currPage={currPage}
-          path={route}
-          selectedTags={selectedTags}
-          startPage={startPage}
-          endPage={endPage}
-        />
-      </main>
+      </PostListLayout>
     </>
   );
 };

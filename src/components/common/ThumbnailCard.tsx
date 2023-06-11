@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FrontMatterType } from "@type/index";
+import { FrontMatterType } from "@src/models/index";
 import getDate from "@utils/getDate";
 import imgLoader from "@utils/imgLoader";
 

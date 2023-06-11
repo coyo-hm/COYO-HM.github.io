@@ -6,7 +6,7 @@ import {
   FrontMatterType,
   TagWithCountType,
   categoryType,
-} from "@src/type/index";
+} from "@src/models/index";
 
 const DIR_REPLACE_STRING = "/content";
 

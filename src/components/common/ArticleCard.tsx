@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FrontMatterType } from "@type/index";
+import { FrontMatterType } from "@src/models/index";
 import TagBox from "./TagBox";
 
 const ArticleCard = ({

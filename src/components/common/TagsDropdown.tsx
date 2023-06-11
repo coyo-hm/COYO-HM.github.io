@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { RiSearchLine } from "react-icons/ri";
 import { RxReset } from "react-icons/rx";
-import { TagWithCountType } from "@type/index";
+import { TagWithCountType } from "@src/models/index";
 import useInput from "@hooks/useInput";
 import TagButton from "@components/common/TagButton";
 

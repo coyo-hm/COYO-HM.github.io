@@ -1,5 +1,5 @@
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import { PostType } from "@type/index";
+import { PostType } from "@src/models/index";
 import { PostSEO } from "@components/common/SEO";
 import PostHeader from "@components/post/PostHeader";
 import TableOfContents from "@components/post/TableOfContents";

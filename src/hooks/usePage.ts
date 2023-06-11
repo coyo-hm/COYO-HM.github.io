@@ -1,8 +1,12 @@
 import { DEFAULT_NUMBER_OF_POST } from "@src/constants";
 import { useEffect, useState } from "react";
+import { showType } from "@src/models";
 
-const usePage = (total: number, currPage: number) => {
-  const lastPage = Math.max(1, Math.ceil(total / DEFAULT_NUMBER_OF_POST));
+const usePage = (total: number, currPage: number, showType: showType) => {
+  const lastPage = Math.max(
+    1,
+    Math.ceil(total / DEFAULT_NUMBER_OF_POST[showType])
+  );
   const [startPage, setStartPage] = useState(0);
   const [endPage, setEndPage] = useState(0);
 

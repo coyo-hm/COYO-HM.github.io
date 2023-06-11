@@ -11,7 +11,12 @@ const TagsList = ({ tags, slug: path }: { tags: string[]; slug: string }) => {
         return (
           <Link
             className={`mr-2 mb-2 h-6 p-1 w-fit break-keep text-xs rounded bg-neutral-100 dark:bg-neutral-700 hover:text-white ${tagHoverColor}`}
-            href={`/blog/tags/${tag}`}
+            href={{
+              pathname: "/blog",
+              query: {
+                tags: [tag],
+              },
+            }}
             key={tag}
           >
             #{tag}

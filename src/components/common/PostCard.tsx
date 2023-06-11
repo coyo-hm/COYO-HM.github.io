@@ -1,4 +1,4 @@
-import { FrontMatterType } from "@type/index";
+import { FrontMatterType } from "@src/models/index";
 import getDate from "@utils/getDate";
 import TagBox from "./TagBox";
 
@@ -16,7 +16,7 @@ const PostCard = ({ title, date, tags, description }: FrontMatterType) => {
       <div className={`text-xs text-neutral-400 text-right mt-2`}>
         {dateStr}
       </div>
-      <div className={`flex overflow-hidden my-2`}>
+      <div className={`flex gap-2 overflow-hidden my-2`}>
         {tags.slice(0, 2).map((tag) => (
           <TagBox tag={tag} key={tag} />
         ))}

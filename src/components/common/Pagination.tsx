@@ -6,19 +6,19 @@ const Pagination = ({
   startPage,
   endPage,
   path,
-  selectedTags,
+  query,
 }: {
   currPage: number;
   startPage: number;
   endPage: number;
   path: string;
-  selectedTags: string[];
+  query?: object;
 }) => {
   const getPath = (page: number) => {
     return {
       pathname: path,
       query: {
-        tags: selectedTags,
+        ...query,
         page: page,
       },
     };
