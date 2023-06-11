@@ -56,6 +56,7 @@ const CommentWidget = () => {
       elementLight.current.appendChild(utterances);
       elementDark.current.appendChild(utterancesDark);
     }
+    // eslint-disable-next-line
   }, []);
 
   return (

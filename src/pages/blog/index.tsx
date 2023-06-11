@@ -25,7 +25,7 @@ const Blog = ({
 
   const posts = useMemo(() => {
     let newPosts = allPosts;
-    if (tags.length > 0) {
+    if (selectedTags.length > 0) {
       newPosts = allPosts.filter(({ frontMatter: { tags } }) => {
         for (const tag of tags) {
           const res = selectedTags.includes(tag);

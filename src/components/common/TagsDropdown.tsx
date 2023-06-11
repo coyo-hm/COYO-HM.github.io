@@ -19,6 +19,7 @@ const TagsDropdown = ({ allTags, prevSelectedTags = [], path }: Props) => {
 
   useEffect(() => {
     searchTags();
+    // eslint-disable-next-line
   }, [keyword]);
 
   const onClickTag = (tag: string) => {
