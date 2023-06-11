@@ -1,4 +1,4 @@
-import { FrontMatterType } from "@src/type";
+import { FrontMatterType } from "src/models";
 import getDate from "@utils/getDate";
 
 type PostHeaderPropsType = Pick<FrontMatterType, "title" | "date">;

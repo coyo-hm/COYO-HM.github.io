@@ -1,14 +1,13 @@
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
-import { PostType, TagWithCountType } from "@src/type";
+import { PostType, TagWithCountType } from "src/models";
 import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import { PageSeo } from "@components/common/SEO";
-import CardListLayout from "@components/layout/CardListLayout";
 import metadata from "@config/index";
+import PostListLayout from "@components/layout/PostListLayout";
 
 export default function ProjectListPage({
   posts,
-  tags,
 }: {
   posts: PostType[];
   tags: TagWithCountType[];
@@ -17,7 +16,6 @@ export default function ProjectListPage({
     route,
     query: { page },
   } = useRouter();
-  const currPage = page ? parseInt(page as string) : 0;
 
   return (
     <>
@@ -26,12 +24,14 @@ export default function ProjectListPage({
         description={metadata.description}
         url={metadata.siteUrl + "project"}
       />
-      <CardListLayout
-        categoryId={"project"}
+      <PostListLayout
         posts={posts}
-        currPage={currPage}
+        currPage={page ? parseInt(page as string) : 0}
         path={route}
-      />
+        showType={"card"}
+      >
+        <h1 className={`font-bold text-3xl flex-grow px-1`}>PROJECT</h1>
+      </PostListLayout>
     </>
   );
 }

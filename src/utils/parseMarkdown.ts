@@ -10,7 +10,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 /*
 interface ImageNode extends Node {
-  type: 'element'
+  models: 'element'
   tagName: 'img'
   properties: {
     src: string
@@ -22,7 +22,7 @@ interface ImageNode extends Node {
 function isImageNode(node: Node): node is ImageNode {
   const img = node as ImageNode
   return (
-    img.type === 'element' &&
+    img.models === 'element' &&
     img.tagName === 'img' &&
     img.properties &&
     typeof img.properties.src === 'string'

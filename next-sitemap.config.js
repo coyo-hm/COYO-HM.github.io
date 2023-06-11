@@ -1,4 +1,4 @@
-/** @type {import('next-sitemap').IConfig} */
+/** @models {import('next-sitemap').IConfig} */
 
 module.exports = {
   siteUrl: `https://coyo-hm.github.io/`,

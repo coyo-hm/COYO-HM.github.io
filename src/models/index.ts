@@ -31,3 +31,5 @@ export interface TagsType {
 }
 
 export type categoryType = "blog" | "project" | "all";
+
+export type showType = "list" | "card";
