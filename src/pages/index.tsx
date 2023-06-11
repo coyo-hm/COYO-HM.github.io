@@ -27,6 +27,7 @@ export default function Home({
   tags: TagWithCountType[];
 }) {
   const tagListRef = useHorizontalScroll();
+  const postListRef = useHorizontalScroll();
 
   return (
     <>
@@ -102,6 +103,7 @@ export default function Home({
         <div
           id={"tags"}
           className={`grid gap-5 grid-flow-col auto-cols-[200px] px-4 py-6 bg-neutral-50 overflow-x-auto dark:bg-neutral-700`}
+          ref={postListRef}
         >
           {blogPosts?.map(({ frontMatter, fields: { slug } }) => {
             return (
