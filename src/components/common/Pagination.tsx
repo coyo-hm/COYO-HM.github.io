@@ -6,14 +6,22 @@ const Pagination = ({
   startPage,
   endPage,
   path,
+  selectedTags,
 }: {
   currPage: number;
   startPage: number;
   endPage: number;
   path: string;
+  selectedTags: string[];
 }) => {
   const getPath = (page: number) => {
-    return `${path}?page=${page}`;
+    return {
+      pathname: path,
+      query: {
+        tags: selectedTags,
+        page: page,
+      },
+    };
   };
 
   return (
@@ -25,18 +33,16 @@ const Pagination = ({
       >
         <IoIosArrowBack />
       </Link>
-      <div
-        className={`grid grid-flow-col grid-cols-[repeat(auto-fill, auto)] gap-3 mx-2 text-base place-items-center text-center`}
-      >
+      <div className={`flex gap-3 items-center justify-center mx-2 text-base`}>
         {Array(endPage - startPage)
           .fill(0)
           .map((v: number, i) => {
             return (
               <Link
                 href={getPath(i + startPage)}
-                className={`hover:text-blue-900 ${
+                className={`hover:text-blue-900 flex items-center justify-center ${
                   i + startPage === currPage
-                    ? "h-8 w-8 border-4 rounded-full border-blue-700 text-center leading-6 font-semibold"
+                    ? "h-9 w-9 rounded-full border-blue-700 font-semibold border-4"
                     : ""
                 }`}
                 key={i + startPage}

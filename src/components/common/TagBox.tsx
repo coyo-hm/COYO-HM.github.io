@@ -5,7 +5,7 @@ const TagBox = ({ tag }: { tag: string }) => {
   return (
     <div
       key={tag}
-      className={`shrink-0 text-xs rounded p-1 mr-2 text-neutral-100 ${bgColor}`}
+      className={`shrink-0 rounded py-0.5 px-1 text-xs text-neutral-100 ${bgColor}`}
     >
       #{tag}
     </div>

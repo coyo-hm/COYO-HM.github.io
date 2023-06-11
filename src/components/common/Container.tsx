@@ -3,7 +3,6 @@ import {
   JSXElementConstructor,
   ReactFragment,
   ReactPortal,
-  useState,
 } from "react";
 import Footer from "./Footer";
 import Header from "./Header";

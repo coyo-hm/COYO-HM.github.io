@@ -79,7 +79,7 @@ export default function Home({
         >
           {tags.map(({ tag }) => (
             <Link
-              href={`/blog/tags/${tag}`}
+              href={{ pathname: `/blog`, query: { tags: [tag] } }}
               key={tag}
               className={`whitespace-nowrap mr-2 hover:font-bold hover:text-blue-900 dark:hover:text-blue-400 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
             >
