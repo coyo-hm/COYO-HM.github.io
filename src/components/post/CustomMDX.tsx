@@ -127,6 +127,13 @@ const components: MDXComponents = {
       </p>
     );
   },
+  li: (props) => {
+    return (
+      <li className={`font-light text py-2 leading-6`} {...props}>
+        {props.children}
+      </li>
+    );
+  },
 };
 
 const CustomMDX = (
