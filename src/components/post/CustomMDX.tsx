@@ -129,7 +129,7 @@ const components: MDXComponents = {
   },
   li: (props) => {
     return (
-      <li className={`font-light text py-2 leading-6`} {...props}>
+      <li className={`font-light text py-1 leading-6`} {...props}>
         {props.children}
       </li>
     );
