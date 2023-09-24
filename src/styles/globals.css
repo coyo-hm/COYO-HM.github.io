@@ -37,7 +37,8 @@
 
 * {
   box-sizing: border-box;
-  font-family: "pretendard", "Pretendard-Regular";
+  /*font-family: "pretendard", "Pretendard-Regular";*/
+  font-family: "NanumSquareRound";
   scrollbar-width: 15px;
   scrollbar-color: none rgba(127, 146, 172, 0.466);
 }
@@ -55,7 +56,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: "NanumSquareRound", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: var(--background);
   color: var(--text);
