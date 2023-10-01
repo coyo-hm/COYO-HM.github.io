@@ -5,7 +5,7 @@ import {
   PostType,
   FrontMatterType,
   TagWithCountType,
-  categoryType,
+  menuType,
 } from "@src/models/index";
 
 const DIR_REPLACE_STRING = "/content";
@@ -13,7 +13,7 @@ const DIR_REPLACE_STRING = "/content";
 const POST_PATH = `${process.cwd()}${DIR_REPLACE_STRING}`;
 
 export async function getAllPosts(
-  category?: categoryType
+  category?: menuType
 ): Promise<Array<PostType>> {
   const files = sync(`${POST_PATH}/**/*.md*`).reverse();
 

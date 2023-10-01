@@ -30,6 +30,17 @@ export interface TagsType {
   tag: string;
 }
 
-export type categoryType = "blog" | "project" | "all";
+export type menuType = "blog" | "project" | "all";
+
+export type categoryType =
+  | "COMPUTER SCIENCE"
+  | "CSS"
+  | "FRAMEWORK"
+  | "IDE"
+  | "LANGUAGE"
+  | "LIBRARY"
+  | "MANAGEMENT"
+  | "PACKAGE MANAGER"
+  | "TEST";
 
 export type showType = "list" | "card";

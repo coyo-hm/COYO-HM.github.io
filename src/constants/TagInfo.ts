@@ -1,4 +1,16 @@
-const TagInfo = {
+import { categoryType } from "@src/models";
+
+const TagInfo: {
+  [key: string]: {
+    category: categoryType;
+    label: string;
+    bg?: string;
+    bg_hover?: string;
+    text?: string;
+    text_hover?: string;
+    border?: string;
+  };
+} = {
   algorithm: { category: "COMPUTER SCIENCE", label: "Algorithm" },
   network: { category: "COMPUTER SCIENCE", label: "Network" },
   css: {
