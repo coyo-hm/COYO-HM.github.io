@@ -2,9 +2,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
-import { categoryType } from "@src/models/index";
+import { menuType } from "@src/models/index";
 
-export const navLinks: { id: categoryType; link: string; label: string }[] = [
+export const navLinks: { id: menuType; link: string; label: string }[] = [
   { id: "blog", link: "/blog", label: "BLOG" },
   { id: "project", link: "/project", label: "PROJECT" },
 ];
