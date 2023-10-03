@@ -63,6 +63,7 @@ body {
 }
 
 .dark {
+  color: var(--text);
   background-color: rgb(38, 38, 38);
   scrollbar-color: none rgb(30, 58, 138);
 }
