@@ -52,14 +52,14 @@ interface IntersectionObserverEntry {
 }
 ```
 
-![entries](/static/images/blog/intersection-observer-API-01.png)
+![entries](https://user-images.githubusercontent.com/56423604/272325810-8c24f62d-8894-4497-9343-770e04708476.png)
 
 - `boundingClientRect` : target의 DOMReactReadOnly를 반환한다. target의 `Element.getBoundingClientRect()`과 같은 값을 얻을 수 있다.
-  ![boundingClientRect](/static/images/blog/intersection-observer-API-02.png)
+  ![boundingClientRect](https://user-images.githubusercontent.com/56423604/272325829-8e44495d-8e39-4905-9c67-f3e54a3a63b1.png)
 - `intersectionRatio` : target과 root의 교차 영역 비율로 0.0과 1.0 사이의 숫자를 반환한다. (아래 options의 threshold와 관련있다.)
 
 - `intersectionRect` : target과 viewport인 root의 교차 영역에 대한 DOMReactReadOnly를 반환한다.
-  ![intersectionRect](/static/images/blog/intersection-observer-API-03.png)
+  ![intersectionRect](https://user-images.githubusercontent.com/56423604/272325832-ad4573ac-68d0-425a-bc2a-aefe1bc69d92.png)
 - `isIntersecting` : target이 지정한 root 영역에 교차 상태로 들어가는지 여부를 나타내주는 `boolean`값이다.
 
   `true`: root 내부에 포함
@@ -67,7 +67,7 @@ interface IntersectionObserverEntry {
   `false`: root 내부에 포함되지 않음
 
 - `rootBounds` : root 요소에 대한 DOMReactReadOnly를 반환한다. 이는 아래의 `rootMargin`이 반영된 값이며 별도의 root 값을 선언하지 않을 경우 `null`을 반환한다.
-  ![rootBounds](/static/images/blog/intersection-observer-API-04.png)
+  ![rootBounds](https://user-images.githubusercontent.com/56423604/272325836-612c0108-b724-428b-88e9-f9a519020c50.png)
 - `target` : target의 Element를 반환한다.
 
 - `time` : 문서가 작성된 시간을 기준으로 교차 상태 변경이 발생한 시간을 나타내는 `DOMHighResTimeStamp`을 반환한다.
@@ -88,7 +88,7 @@ interface IntersectionObserver {
 }
 ```
 
-![observer](/static/images/blog/intersection-observer-API-05.png)
+![observer](https://user-images.githubusercontent.com/56423604/272325839-89824c56-f0ae-4bc1-9f46-bf8a737332bc.png)
 
 # Options
 

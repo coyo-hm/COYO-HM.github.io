@@ -24,8 +24,9 @@ const ArticleCard = ({
             loader={(props) => imgLoader(props)}
             src={thumbnail}
             alt={title}
-            className={`object-cover`}
+            className={`object-cover h-auto`}
             fill
+            loading={"lazy"}
           />
         ) : (
           <div

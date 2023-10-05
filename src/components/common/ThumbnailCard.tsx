@@ -24,7 +24,9 @@ const ThumbnailCard = ({
             src={thumbnail}
             alt={title}
             className={`object-cover`}
+            priority
             fill
+            sizes={"(min-width:640px) 50vw, 100vw"}
           />
         )}
       </div>
