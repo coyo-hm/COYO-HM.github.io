@@ -44,9 +44,11 @@ export default function Home({
           loader={(props) => imgLoader(props)}
           src={`/static/images/profile.png`}
           alt={"profileImage"}
-          className={"row-span-4 col-span-1 place-self-center mb-5"}
-          width={150}
-          height={150}
+          width={0}
+          height={0}
+          className={
+            "row-span-4 col-span-1 place-self-center mb-5 w-[150px] h-auto"
+          }
         />
         <h1 className={`text-2xl font-semibold break-keep`}>
           안녕하세요, Frontend 개발자 {metadata.author.name} 입니다.
@@ -61,10 +63,15 @@ export default function Home({
             target={"_blank"}
             rel="noreferrer"
             className={"mr-3 hover:text-blue-700"}
+            aria-label={"link-github"}
           >
             <FaGithub size={24} />
           </a>
-          <a href="mailto:bsydwp@gmail.com" className={`hover:text-blue-700`}>
+          <a
+            href="mailto:bsydwp@gmail.com"
+            className={`hover:text-blue-700`}
+            aria-label={"link-email"}
+          >
             <FaEnvelope size={24} />
           </a>
         </div>
@@ -83,6 +90,7 @@ export default function Home({
               href={{ pathname: `/blog`, query: { tags: [tag] } }}
               key={tag}
               className={`whitespace-nowrap mr-2 hover:font-bold hover:text-blue-900 dark:hover:text-blue-400 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
+              aria-label={`link-${tag}`}
             >
               {tag}
             </Link>
@@ -96,6 +104,7 @@ export default function Home({
         <Link
           href={"/blog?page=0"}
           className={`font-extrabold text-2xl text-blue-700 hover:text-blue-900 dark:hover:text-blue-400 p-6 pb-0 flex justify-between bg-neutral-50  dark:bg-neutral-700`}
+          aria-label={"link-blog"}
         >
           <span>Recent Blog Post</span>
           <BsArrowRight />
@@ -107,7 +116,7 @@ export default function Home({
         >
           {blogPosts?.map(({ frontMatter, fields: { slug } }) => {
             return (
-              <Link href={`/${slug}`} key={slug}>
+              <Link href={`/${slug}`} key={slug} aria-label={`link-${slug}`}>
                 <PostCard {...frontMatter} />
               </Link>
             );
@@ -119,6 +128,7 @@ export default function Home({
           <Link
             href={"/project?page=0"}
             className={`text-2xl font-extrabold text-blue-700 hover:text-blue-900 dark:hover:text-blue-400`}
+            aria-label={`link-project`}
           >
             <span>Project</span>
           </Link>

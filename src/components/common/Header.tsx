@@ -35,6 +35,8 @@ const Header = () => {
           id={"btn-theme"}
           className={`rounded-full bg-neutral-100 dark:bg-neutral-900 text-yellow-500 dark:text-blue-100`}
           onClick={toggleTheme}
+          aria-label={"theme"}
+          type={"button"}
         >
           {isDarkTheme ? (
             <BsFillMoonStarsFill size={20} />
