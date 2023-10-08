@@ -8,6 +8,9 @@ import {
   menuType,
 } from "@src/models/index";
 
+import PublishedTagsTable from "public/static/table/publishedPostsTagTable.json";
+import UnpublishedTagsTable from "public/static/table/unpublishedPostsTagTable.json";
+
 const DIR_REPLACE_STRING = "/content";
 
 const POST_PATH = `${process.cwd()}${DIR_REPLACE_STRING}`;
@@ -87,19 +90,24 @@ export async function getAllTagsFromPosts(): Promise<Array<TagWithCountType>> {
 }
 
 export async function getAllTagsFromBlog(): Promise<Array<TagWithCountType>> {
-  const tags: string[] = (await getAllPosts("blog")).reduce<string[]>(
-    (prev: string[], curr: PostType) => {
-      curr.frontMatter.tags.forEach((tag: string) => {
-        prev.push(tag);
-      });
-      return prev;
-    },
-    []
-  );
+  // const tags: string[] = (await getAllPosts("blog")).reduce<string[]>(
+  //   (prev: string[], curr: PostType) => {
+  //     curr.frontMatter.tags.forEach((tag: string) => {
+  //       prev.push(tag);
+  //     });
+  //     return prev;
+  //   },
+  //   []
+  // );
 
-  const tagWithCount = Array.from(new Set(tags)).map((tag) => ({
+  const tagsTable: { [key: string]: string[] } =
+    process.env.NODE_ENV === "development"
+      ? UnpublishedTagsTable
+      : PublishedTagsTable;
+
+  const tagWithCount = Object.keys(tagsTable).map((tag) => ({
     tag,
-    count: tags.filter((t) => t === tag).length,
+    count: tagsTable[tag].length,
   }));
 
   return tagWithCount.sort(
