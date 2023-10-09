@@ -13,7 +13,7 @@ import {
   DEFAULT_NUMBER_OF_RECENT_POST,
 } from "@constants/index";
 import { PostType, TagWithCountType } from "@src/models/index";
-import { getAllPosts, getAllTagsFromBlog, getPosts } from "@utils/api";
+import { getAllPosts, getAllTags, getPosts } from "@utils/api";
 import imgLoader from "@utils/imgLoader";
 import useHorizontalScroll from "@hooks/useHorizontalScroll";
 import TagInfo from "@constants/TagInfo";
@@ -127,7 +127,7 @@ export default function Home({
       {projectPosts.length > 0 && (
         <div className={`mt-6 mb-4 px-4 max-sm:px-0`}>
           <Link
-            href={"/project?page=0"}
+            href={"/project/0/all"}
             className={`text-2xl font-extrabold text-blue-700 hover:text-blue-900 dark:hover:text-blue-400`}
             aria-label={`link-project`}
           >
@@ -158,7 +158,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const recentBlogPosts = await getPosts("blog");
   const projectPosts = await getPosts("project");
-  const allTags = await getAllTagsFromBlog();
+  const allTags = await getAllTags();
 
   return {
     props: {

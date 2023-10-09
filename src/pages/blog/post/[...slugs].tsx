@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { PostType, TagWithCountType } from "@src/models";
-import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
+import { getAllPosts, getAllTags } from "@utils/api";
 import parseMarkdownToMdx from "@utils/parseMarkdown";
 import PostLayout from "@components/layout/PostLayout";
 
@@ -43,7 +43,7 @@ interface SlugsType {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slugs } = params as SlugsType;
   const allPosts = await getAllPosts("blog");
-  const allTags = await getAllTagsFromBlog();
+  const allTags = await getAllTags();
   const post = allPosts.find(
     (p) => p?.fields?.slug === ["blog", "post", ...slugs].join("/")
   );

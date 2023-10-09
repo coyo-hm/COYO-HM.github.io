@@ -6,7 +6,7 @@ import { menuType } from "@src/models/index";
 
 export const navLinks: { id: menuType; link: string; label: string }[] = [
   { id: "blog", link: "/blog/0/all", label: "BLOG" },
-  { id: "project", link: "/project", label: "PROJECT" },
+  { id: "project", link: "/project/0/all", label: "PROJECT" },
 ];
 const Nav = () => {
   const { route } = useRouter();

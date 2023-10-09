@@ -144,7 +144,9 @@ export async function getPosts(
   );
 }
 
-export async function getAllTagsFromBlog(): Promise<Array<TagWithCountType>> {
+export async function getAllTags(
+  menu: Omit<menuType, "all"> = "blog"
+): Promise<Array<TagWithCountType>> {
   // const tags: string[] = (await getAllPosts("blog")).reduce<string[]>(
   //   (prev: string[], curr: PostType) => {
   //     curr.frontMatter.tags.forEach((tag: string) => {
@@ -155,11 +157,14 @@ export async function getAllTagsFromBlog(): Promise<Array<TagWithCountType>> {
   //   []
   // );
 
-  const selectedTagsTable: { [key: string]: string[] } =
+  const tagsTable: {
+    [key: string]: { [key: string]: string[] };
+  } =
     process.env.NODE_ENV === "development"
-      ? TagsTable.unpublished.blog
-      : TagsTable.published.blog;
-
+      ? TagsTable.unpublished
+      : TagsTable.published;
+  const selectedTagsTable: { [key: string]: string[] } =
+    tagsTable[menu as string];
   const tagWithCount = Object.keys(selectedTagsTable).map((tag) => ({
     tag,
     count: selectedTagsTable[tag].length,

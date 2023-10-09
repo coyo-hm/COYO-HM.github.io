@@ -8,7 +8,7 @@ import metadata from "@config/index";
 import { PageSeo } from "@components/common/SEO";
 import PostListLayout from "@components/layout/PostListLayout";
 import TagsDropdown from "@components/common/TagsDropdown";
-import { getAllTagsFromBlog, getPosts } from "@utils/api";
+import { getAllTags, getPosts } from "@utils/api";
 import { getLastPage } from "@utils/page";
 import { DEFAULT_NUMBER_OF_POST } from "@src/constants";
 import { PostType, TagWithCountType } from "@src/models";
@@ -67,7 +67,7 @@ const Blog = ({
 export default Blog;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allTags = await getAllTagsFromBlog();
+  const allTags = await getAllTags();
   const size = DEFAULT_NUMBER_OF_POST["list"];
   const paths = allTags.reduce(
     (arr: { params: { page: string; category: string } }[], { tag, count }) => [
@@ -86,7 +86,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { page, category } = params as { page: string; category: string };
-  const allTags = await getAllTagsFromBlog();
+  const allTags = await getAllTags();
   const posts = await getPosts(
     "blog",
     +page,
