@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import { PostType, TagWithCountType } from "@src/models/index";
+import { PostType, TagWithCountType } from "@src/models";
 import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
 import parseMarkdownToMdx from "@utils/parseMarkdown";
 import PostLayout from "@components/layout/PostLayout";
@@ -22,7 +22,11 @@ export default BlogPost;
 export const getStaticPaths: GetStaticPaths = async () => {
   const allPosts = await getAllPosts("blog");
   const paths = allPosts.map(({ fields: { slug } }) => {
-    return { params: { slugs: slug.replace("blog/", "").split("/") } };
+    return {
+      params: {
+        slugs: slug.replace("blog/", "").replace("post/", "").split("/"),
+      },
+    };
   });
 
   return {
@@ -41,7 +45,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const allPosts = await getAllPosts("blog");
   const allTags = await getAllTagsFromBlog();
   const post = allPosts.find(
-    (p) => p?.fields?.slug === ["blog", ...slugs].join("/")
+    (p) => p?.fields?.slug === ["blog", "post", ...slugs].join("/")
   );
 
   if (post) {

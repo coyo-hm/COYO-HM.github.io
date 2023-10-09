@@ -11,31 +11,48 @@ const createPostTable = () => {
 
   try {
     let fileAttributes = {};
-    let tagsTablePublished = {};
-    let tagsTableUnpublished = {};
+    let tagsTablePublished = { blog: { all: [] }, project: { all: [] } };
+    let tagsTableUnpublished = { blog: { all: [] }, project: { all: [] } };
+
     for (const filePath of files) {
       const file = fs.readFileSync(filePath, { encoding: "utf8" });
       const { attributes } = frontMatter(file);
       const { date, title, tags, description, published } = attributes;
-      const fileKey = filePath
-        .replace(`${CONTENT_DIR_PATH}/`, "")
-        .replace(path.extname(filePath), "");
-      const fileTags = tags.map((tag) =>
+
+      const postPath = filePath.replace(`${CONTENT_DIR_PATH}/`, "");
+      const postKey = postPath.replace(path.extname(filePath), "");
+      const postTags = tags.map((tag) =>
         tag.toLowerCase().replace(/\s|-/gi, "_")
       );
-      fileTags.forEach((t) => {
-        tagsTableUnpublished[t] = tagsTableUnpublished[t]
-          ? [...tagsTableUnpublished[t], fileKey]
-          : [fileKey];
+      const postMenu = postPath.split("/")[0];
+
+      tagsTableUnpublished[postMenu].all = [
+        ...tagsTableUnpublished[postMenu].all,
+        postKey,
+      ];
+      if (published) {
+        tagsTablePublished[postMenu].all = [
+          ...tagsTablePublished[postMenu].all,
+          postKey,
+        ];
+      }
+
+      postTags.forEach((t) => {
+        tagsTableUnpublished[postMenu][t] = tagsTableUnpublished[postMenu][t]
+          ? [...tagsTableUnpublished[postMenu][t], postKey]
+          : [postKey];
+
         if (published) {
-          tagsTablePublished[t] = tagsTablePublished[t]
-            ? [...tagsTablePublished[t], fileKey]
-            : [fileKey];
+          tagsTablePublished[postMenu][t] = tagsTablePublished[postMenu][t]
+            ? [...tagsTablePublished[postMenu][t], postKey]
+            : [postKey];
         }
       });
-      fileAttributes[fileKey] = {
+      fileAttributes[postKey] = {
+        path: postPath,
+        menu: postMenu,
         title,
-        tags: fileTags,
+        tags: postTags,
         date: date ? new Date(date).toISOString().substring(0, 19) : "",
         published,
       };
@@ -48,13 +65,11 @@ const createPostTable = () => {
       "utf-8"
     );
     fs.writeFileSync(
-      path.join(TABLE_DIR_PATH, `publishedPostsTagTable.json`),
-      JSON.stringify(tagsTablePublished),
-      "utf-8"
-    );
-    fs.writeFileSync(
-      path.join(TABLE_DIR_PATH, `unpublishedPostsTagTable.json`),
-      JSON.stringify(tagsTableUnpublished),
+      path.join(TABLE_DIR_PATH, `tagsTable.json`),
+      JSON.stringify({
+        published: tagsTablePublished,
+        unpublished: tagsTableUnpublished,
+      }),
       "utf-8"
     );
   } catch (e) {

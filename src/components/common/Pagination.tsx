@@ -1,28 +1,21 @@
 import Link from "next/link";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { menuType } from "@src/models";
 
 const Pagination = ({
   currPage,
   startPage,
   endPage,
-  path,
-  query,
+  category,
+  menu,
 }: {
   currPage: number;
   startPage: number;
   endPage: number;
-  path: string;
-  query?: object;
+  category: string;
+  menu: menuType;
 }) => {
-  const getPath = (page: number) => {
-    return {
-      pathname: path,
-      query: {
-        ...query,
-        page: page,
-      },
-    };
-  };
+  const getPath = (page: number) => `/${menu}/${page}/${category}`;
 
   return (
     <div className={`flex text-blue-700 justify-center items-center my-5`}>

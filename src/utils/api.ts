@@ -8,84 +8,139 @@ import {
   menuType,
 } from "@src/models/index";
 
-import PublishedTagsTable from "public/static/table/publishedPostsTagTable.json";
-import UnpublishedTagsTable from "public/static/table/unpublishedPostsTagTable.json";
+import TagsTable from "public/static/table/tagsTable.json";
+import PostsTable from "public/static/table/postsTable.json";
+import { DEFAULT_NUMBER_OF_POST } from "@src/constants";
 
 const DIR_REPLACE_STRING = "/content";
 
 const POST_PATH = `${process.cwd()}${DIR_REPLACE_STRING}`;
 
-export async function getAllPosts(
-  category?: menuType
-): Promise<Array<PostType>> {
-  const files = sync(`${POST_PATH}/**/*.md*`).reverse();
+export async function getPostAttributeList(
+  menu: menuType = "all",
+  category?: string
+): Promise<
+  {
+    key: string;
+    path: string;
+    menu: Omit<menuType, "all">;
+    title: string;
+    tags: string[];
+    date: string;
+    published: boolean;
+  }[]
+> {
+  const postsAttributesObj: {
+    [key: string]: {
+      path: string;
+      menu: Omit<menuType, "all">;
+      title: string;
+      tags: string[];
+      date: string;
+      published: boolean;
+    };
+  } = PostsTable;
 
-  const posts = files
-    .reduce<PostType[]>((prev, path) => {
-      const file = fs.readFileSync(path, { encoding: "utf8" });
-      const { attributes, body } = frontMatter<FrontMatterType>(file);
-      const fm: FrontMatterType = attributes;
-      const { tags: fmTags, published, date } = fm;
-
-      const slug = path
-        .slice(path.indexOf(DIR_REPLACE_STRING) + DIR_REPLACE_STRING.length + 1)
-        .replace(".mdx", "")
-        .replace(".md", "");
-
-      if (!!category && !slug.startsWith(category)) {
-        return prev;
-      }
-
-      if (published || process.env.NODE_ENV === "development") {
-        const tags: string[] = (fmTags || []).map((tag: string) => tag.trim());
-
-        const result: PostType = {
-          frontMatter: {
-            ...fm,
-            tags,
-            date: new Date(date).toISOString().substring(0, 19),
-          },
-          body,
-          fields: {
-            slug,
-          },
-          path,
-        };
-        prev.push(result);
-      }
-      return prev;
-    }, [])
+  return Object.keys(PostsTable)
+    .reduce(
+      (
+        arr: {
+          key: string;
+          path: string;
+          menu: Omit<menuType, "all">;
+          title: string;
+          tags: string[];
+          date: string;
+          published: boolean;
+        }[],
+        key
+      ) =>
+        (menu === "all" || menu === postsAttributesObj[key].menu) &&
+        (postsAttributesObj[key].published ||
+          process.env.NODE_ENV === "development") &&
+        (category === undefined ||
+          postsAttributesObj[key].tags?.includes(category))
+          ? [...arr, { ...postsAttributesObj[key], key }]
+          : arr,
+      []
+    )
     .sort((a, b) => {
-      if (a.frontMatter.date < b.frontMatter.date) {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      if (dateA < dateB) {
         return 1;
       }
-      if (a.frontMatter.date > b.frontMatter.date) {
+      if (dateA > dateB) {
         return -1;
       }
       return 0;
     });
-
-  return posts;
 }
 
-export async function getAllTagsFromPosts(): Promise<Array<TagWithCountType>> {
-  const tags: string[] = (await getAllPosts()).reduce<string[]>(
-    (prev: string[], curr: PostType) => {
-      curr.frontMatter.tags.forEach((tag: string) => {
-        prev.push(tag);
-      });
-      return prev;
-    },
-    []
+export async function getAllPosts(
+  menu: menuType = "all",
+  category?: string
+): Promise<Array<PostType>> {
+  const postsList = await getPostAttributeList(menu, category);
+  return postsList.map(({ path, key, date, tags, menu: _menu }) => {
+    const file = fs.readFileSync(`${POST_PATH}/${path}`, {
+      encoding: "utf8",
+    });
+    const { attributes, body } = frontMatter<FrontMatterType>(file);
+    return {
+      frontMatter: {
+        ...attributes,
+        tags,
+        date: new Date(date).toISOString().substring(0, 19),
+      },
+      body,
+      fields: {
+        slug: `${_menu}/post/${key
+          .replace("blog/", "")
+          .replace("project/", "")}`,
+      },
+      path,
+    };
+  });
+}
+
+export async function getPosts(
+  menu: menuType = "all",
+  page: number = 0,
+  category?: string
+): Promise<Array<PostType>> {
+  const postsAttributesTable = await getPostAttributeList(menu, category);
+  const postNumber =
+    menu === "project"
+      ? DEFAULT_NUMBER_OF_POST.card
+      : DEFAULT_NUMBER_OF_POST.list;
+
+  const selectedPostAttributes = postsAttributesTable.slice(
+    page * postNumber,
+    (page + 1) * postNumber
   );
 
-  const tagWithCount = Array.from(new Set(tags)).map((tag) => ({
-    tag,
-    count: tags.filter((t) => t === tag).length,
-  }));
-
-  return tagWithCount.sort(
-    (a: TagWithCountType, b: TagWithCountType) => b.count - a.count
+  return selectedPostAttributes.map(
+    ({ path, key, date, tags, menu: _menu }) => {
+      const file = fs.readFileSync(`${POST_PATH}/${path}`, {
+        encoding: "utf8",
+      });
+      const { attributes, body } = frontMatter<FrontMatterType>(file);
+      return {
+        frontMatter: {
+          ...attributes,
+          tags,
+          date: new Date(date).toISOString().substring(0, 19),
+        },
+        body,
+        fields: {
+          slug: `${_menu}/post/${key
+            .replace("blog/", "")
+            .replace("project/", "")}`,
+        },
+        path,
+      };
+    }
   );
 }
 
@@ -100,14 +155,14 @@ export async function getAllTagsFromBlog(): Promise<Array<TagWithCountType>> {
   //   []
   // );
 
-  const tagsTable: { [key: string]: string[] } =
+  const selectedTagsTable: { [key: string]: string[] } =
     process.env.NODE_ENV === "development"
-      ? UnpublishedTagsTable
-      : PublishedTagsTable;
+      ? TagsTable.unpublished.blog
+      : TagsTable.published.blog;
 
-  const tagWithCount = Object.keys(tagsTable).map((tag) => ({
+  const tagWithCount = Object.keys(selectedTagsTable).map((tag) => ({
     tag,
-    count: tagsTable[tag].length,
+    count: selectedTagsTable[tag].length,
   }));
 
   return tagWithCount.sort(

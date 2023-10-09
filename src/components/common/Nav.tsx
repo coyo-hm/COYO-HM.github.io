@@ -5,7 +5,7 @@ import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 import { menuType } from "@src/models/index";
 
 export const navLinks: { id: menuType; link: string; label: string }[] = [
-  { id: "blog", link: "/blog", label: "BLOG" },
+  { id: "blog", link: "/blog/0/all", label: "BLOG" },
   { id: "project", link: "/project", label: "PROJECT" },
 ];
 const Nav = () => {
