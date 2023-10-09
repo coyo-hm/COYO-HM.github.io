@@ -13,6 +13,7 @@ const TagInfo: {
   };
 } = {
   algorithm: { category: "COMPUTER SCIENCE", label: "Algorithm" },
+  programming: { category: "COMPUTER SCIENCE", label: "Programming" },
   network: { category: "COMPUTER SCIENCE", label: "Network" },
   css: {
     category: "CSS",
@@ -44,7 +45,7 @@ const TagInfo: {
     text_hover: "hover:text-[#d26ac2]",
     border: "border-[#d26ac2]",
   },
-  style_components: {
+  styled_components: {
     category: "CSS",
     label: "Styled-Components",
     color: "#ffa4e8",

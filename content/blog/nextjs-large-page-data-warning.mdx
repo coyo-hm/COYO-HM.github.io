@@ -1,0 +1,96 @@
+---
+date: "2023-10-09"
+title: "NextJS Large Page Data Warning 해결하기"
+tags: ["nextjs"]
+description: "NextJS Large Page Data Warning 해결 과정"
+published: true
+thumbnail: 'https://user-images.githubusercontent.com/56423604/273578963-e3f37379-368c-460d-9b37-c4b98cfba9e7.png'
+---
+# ⚠️ 문제
+언제부터인가 위와 같은 경고 문구가 출력되었다. 처음에는 이미지 때문인줄 알았는데 이미지를 다른 사이트에 업로드하고 해당 이미지 링크만 불러와도 같은 문구가 출력되는 것을 알 수 있었다.
+<img src={"https://user-images.githubusercontent.com/56423604/273622904-4a226424-b912-46b8-be9b-524a3ddfbd12.png"} alt={"nextjs-large-data-warning-message"} style={{margin:"20px auto"}}/>
+
+NextJS 공식 홈페이지를 살펴보면 `getStaticProps`에서 필요한 일정량의 데이터만 렌더해주어야한다고 되어있다.
+
+페이징을 client 단에서 진행했고, 모든 tag 또한 보여줘야 했기 때문에 이를 위해서 모든 페이지에서 모든 포스트를 불러오고 있었는데 포스트의 양이 늘면서 이와 같은 문제가 발생했다고 판단했다.
+<img src={"https://user-images.githubusercontent.com/56423604/273624007-9db1879b-6a09-40a4-a005-a7c0d035fcc2.png"} alt={"nextjs-large-data"} style={{margin:"20px auto 5px"}}/>
+  <div style={{color: "rgb(163 163 163)", fontSize:"12px", margin: "0 0 10px"}}>이미지 출처: [[NextJS] Large Page Data](https://nextjs.org/docs/messages/large-page-data)</div>
+
+# 🔧 해결
+그래서 post의 정보와 tag 정보를 가진 json 파일을 생성하도록 해주었다.
+
+```jsx
+const createPostTable = () => {
+  const files = sync(`${CONTENT_DIR_PATH}/**/*.md*`).reverse();
+
+  try {
+    let fileAttributes = {};
+    let tagsTablePublished = { blog: {}, project: {} };
+    let tagsTableUnpublished = { blog: {}, project: {} };
+
+    for (const filePath of files) {
+      const file = fs.readFileSync(filePath, { encoding: "utf8" });
+      const { attributes } = frontMatter(file);
+      const { date, title, tags, description, published } = attributes;
+
+      const postPath = filePath.replace(`${CONTENT_DIR_PATH}/`, "");
+      const postKey = postPath.replace(path.extname(filePath), "");
+      const postTags = tags.map((tag) =>
+        tag.toLowerCase().replace(/\s|-/gi, "_")
+      );
+      const postMenu = postPath.split("/")[0];
+
+      postTags.forEach((t) => {
+        tagsTableUnpublished[postMenu][t] = tagsTableUnpublished[postMenu][t]
+          ? [...tagsTableUnpublished[postMenu][t], postKey]
+          : [postKey];
+        if (published) {
+          tagsTablePublished[postMenu][t] = tagsTablePublished[postMenu][t]
+            ? [...tagsTablePublished[postMenu][t], postKey]
+            : [postKey];
+        }
+      });
+      fileAttributes[postKey] = {
+        path: postPath,
+        menu: postMenu,
+        title,
+        tags: postTags,
+        date: date ? new Date(date).toISOString().substring(0, 19) : "",
+        published,
+      };
+    }
+
+    fs.mkdirSync(TABLE_DIR_PATH, { recursive: true });
+    fs.writeFileSync(
+      path.join(TABLE_DIR_PATH, `postsTable.json`),
+      JSON.stringify(fileAttributes),
+      "utf-8"
+    );
+    fs.writeFileSync(
+      path.join(TABLE_DIR_PATH, `tagsTable.json`),
+      JSON.stringify({
+        published: tagsTablePublished,
+        unpublished: tagsTableUnpublished,
+      }),
+      "utf-8"
+    );
+  } catch (e) {
+    console.error(e);
+  }
+};
+```
+public/static/table 안에 json 파일이 생성된 것을 확인할 수 있었다.
+
+<img alt={"nextjs-large-data-directory"} style={{margin:"20px auto"}} src={"https://user-images.githubusercontent.com/56423604/273626948-9a1c6b8c-51fc-434a-b0e8-29bd94cdf565.png"}/>
+
+
+생성한 데이터는 다음과 같은 파일 구조를 가지고 있다. key 값으로 포스트의 위치를 담아주었다.
+<img alt={"posts-table"} style={{margin:"20px auto"}} src={"https://user-images.githubusercontent.com/56423604/273625889-f035259f-9608-4686-8537-6d6b89d4d491.png"}/>
+
+
+getStaticProps 에서 post를 불러오는 부분에서 page를 받아서 page에 해당하는 post만을 불러올 수 있도록 변경해주었다.
+그랬더니 다음과 같이 콘솔창에서 경고 문구가 나오지 않는 것을 확인할 수 있었다!
+<img alt={"nextjs-large-page-data-solve"} style={{margin:"20px auto"}} src={"https://user-images.githubusercontent.com/56423604/273627309-ac016625-ea6d-4e22-b3cc-7c46b0f6e964.png"}/>
+
+# 참조
+- [[NextJS] Large Page Data](https://nextjs.org/docs/messages/large-page-data)

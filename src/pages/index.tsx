@@ -13,9 +13,10 @@ import {
   DEFAULT_NUMBER_OF_RECENT_POST,
 } from "@constants/index";
 import { PostType, TagWithCountType } from "@src/models/index";
-import { getAllPosts, getAllTagsFromBlog } from "@utils/api";
+import { getAllPosts, getAllTags, getPosts } from "@utils/api";
 import imgLoader from "@utils/imgLoader";
 import useHorizontalScroll from "@hooks/useHorizontalScroll";
+import TagInfo from "@constants/TagInfo";
 
 export default function Home({
   blogPosts,
@@ -87,12 +88,12 @@ export default function Home({
         >
           {tags.map(({ tag }) => (
             <Link
-              href={{ pathname: `/blog`, query: { tags: [tag] } }}
+              href={`/blog/0/${tag}`}
               key={tag}
               className={`whitespace-nowrap mr-2 hover:font-bold hover:text-blue-900 dark:hover:text-blue-400 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
               aria-label={`link-${tag}`}
             >
-              {tag}
+              {TagInfo[tag]?.label || tag}
             </Link>
           ))}
         </div>
@@ -102,7 +103,7 @@ export default function Home({
         className={`shadow-2xl rounded-2xl overflow-hidden`}
       >
         <Link
-          href={"/blog?page=0"}
+          href={"/blog/0/all"}
           className={`font-extrabold text-2xl text-blue-700 hover:text-blue-900 dark:hover:text-blue-400 p-6 pb-0 flex justify-between bg-neutral-50  dark:bg-neutral-700`}
           aria-label={"link-blog"}
         >
@@ -126,7 +127,7 @@ export default function Home({
       {projectPosts.length > 0 && (
         <div className={`mt-6 mb-4 px-4 max-sm:px-0`}>
           <Link
-            href={"/project?page=0"}
+            href={"/project/0/all"}
             className={`text-2xl font-extrabold text-blue-700 hover:text-blue-900 dark:hover:text-blue-400`}
             aria-label={`link-project`}
           >
@@ -146,15 +147,18 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const recentBlogPosts = (await getAllPosts("blog")).slice(
-    0,
-    DEFAULT_NUMBER_OF_RECENT_POST
-  );
-  const projectPosts = (await getAllPosts("project")).slice(
-    0,
-    DEFAULT_NUMBER_OF_HOME_PROJECT
-  );
-  const allTags = await getAllTagsFromBlog();
+  // const recentBlogPosts = (await getAllPosts("blog")).slice(
+  //   0,
+  //   DEFAULT_NUMBER_OF_RECENT_POST
+  // );
+  // const projectPosts = (await getAllPosts("project")).slice(
+  //   0,
+  //   DEFAULT_NUMBER_OF_HOME_PROJECT
+  // );
+
+  const recentBlogPosts = await getPosts("blog");
+  const projectPosts = await getPosts("project");
+  const allTags = await getAllTags();
 
   return {
     props: {
