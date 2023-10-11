@@ -12,6 +12,7 @@ published: false
 > Immutability(변경불가성)는 객체가 생성된 이후 그 상태를 변경할 수 없는 디자인 패턴
 
 - JavaScript의 모든 `obejcts`와 `arrays`는 모두 기본적으로 변경 가능(mutable) 하다.
+
   ```jsx
   const obj = { a: 1, b: 2 };
   // still the same object outside, but the contents have changed
@@ -22,8 +23,10 @@ published: false
   arr.push("c");
   arr[1] = "d";
   ```
+
   이를 mutating the object or array(object나 array를 변환)라고 부른다. 메모리에서 똑같은 object나 array를 참조하기에 같은 값을 참조하는 다른 object나 array를 변화하면 기존의 object나 array에서도 새로운 값이 호출된다.
   ⇒ 값을 변경하지 않고(Immutably) 업데이트하려면 코드가 기존 object/array의 복사본을 만든다음 복사본을 수정해야 한다.
+
   ```jsx
   const obj = {
     a: {
