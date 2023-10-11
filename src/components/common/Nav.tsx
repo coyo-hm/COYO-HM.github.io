@@ -11,7 +11,8 @@ export const navLinks: { id: menuType; link: string; label: string }[] = [
 const Nav = () => {
   const { route } = useRouter();
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-  const navRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     setIsMenuOpened(false);
@@ -20,20 +21,28 @@ const Nav = () => {
   useEffect(() => {
     if (isMenuOpened) {
       window.addEventListener("click", (e) => {
-        if (!navRef.current?.contains(e?.target as Node)) {
+        // console.log(
+        //   !navRef.current?.contains(e?.target as Node),
+        //   !buttonRef.current?.contains(e?.target as Node)
+        // );
+        if (
+          !navRef.current?.contains(e?.target as Node) &&
+          !buttonRef.current?.contains(e?.target as Node)
+        ) {
           setIsMenuOpened(false);
         }
       });
       window.addEventListener("resize", (e) => setIsMenuOpened(false));
     }
-  }, [isMenuOpened, navRef]);
+  }, [isMenuOpened, navRef, buttonRef]);
 
   return (
-    <div className={`absolute left-0 flex max-md:flex-col`} ref={navRef}>
+    <div className={`absolute left-0 flex max-md:flex-col`}>
       <button
         className={`hidden p-2 rounded-full transition-all max-md:block hover:text-blue-700 active:bg-neutral-300 dark:active:bg-neutral-900 ${
           isMenuOpened ? "bg-neutral-300 dark:bg-neutral-900" : ""
         }`}
+        ref={buttonRef}
         onClick={() => {
           setIsMenuOpened((prev) => !prev);
         }}
@@ -46,6 +55,7 @@ const Nav = () => {
             ? "block top-11 absolute w-28 flex-col bg-white rounded-md py-2 shadow-2xl opacity-95 dark:bg-neutral-900"
             : "max-md:hidden"
         }`}
+        ref={navRef}
       >
         {navLinks.map((nav) => (
           <Link
