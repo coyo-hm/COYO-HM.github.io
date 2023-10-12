@@ -10,5 +10,7 @@ export default function imgLoader({
   width: number;
   quality?: number;
 }) {
-  return `${prefix}${src}?w=${width}&q=${quality || 75}`;
+  return `${src.includes("http") ? "" : prefix}${src}?w=${width}&q=${
+    quality || 75
+  }`;
 }

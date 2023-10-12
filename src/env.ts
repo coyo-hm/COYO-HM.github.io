@@ -5,9 +5,7 @@ const beta = "test";
 const production = "production";
 const local = "local";
 
-const LEVEL = process.env.NODE_ENV
-  ? String(process.env.NODE_ENV)
-  : dev;
+const LEVEL = process.env.NODE_ENV ? String(process.env.NODE_ENV) : dev;
 
 if (LEVEL !== dev) {
   console.log = function () {};

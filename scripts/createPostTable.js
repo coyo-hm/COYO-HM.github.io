@@ -49,6 +49,7 @@ const createPostTable = () => {
         }
       });
       fileAttributes[postKey] = {
+        ...attributes,
         path: postPath,
         menu: postMenu,
         title,
