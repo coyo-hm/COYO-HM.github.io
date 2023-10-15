@@ -321,7 +321,7 @@
     "title": "Gatsby Markdown Post에 목차 추가하기",
     "tags": ["react", "typescript", "emotion", "gatsby"],
     "description": "Gatsby Blog, Markdown Post에 목차 추가하고 링크 걸기 + 페이지 맨 위/아래로 가기 버튼 추가하기",
-    "thumbnail": "./add_table_of_contents_in_post.png",
+    "thumbnail": "https://user-images.githubusercontent.com/56423604/275324825-c75b8367-2633-47b9-888b-4bb0cd4daf7a.png",
     "published": true,
     "path": "blog/gatsby/add_table_of_contents_in_gatsby.mdx",
     "menu": "blog"
