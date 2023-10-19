@@ -63,7 +63,7 @@ const components: MDXComponents = {
   h1: (props) => {
     return (
       <h1
-        className={`font-bold text-2xl pt-8 pb-2 max-md:text-xl`}
+        className={`font-extrabold text-2xl pt-8 pb-2 max-md:text-xl`}
         id={getHeaderId(props)}
       >
         {props.children}
@@ -73,7 +73,7 @@ const components: MDXComponents = {
   h2: (props) => {
     return (
       <h2
-        className={`font-bold text-xl pt-8 pb-2 max-md:text-lg`}
+        className={`font-extrabold text-xl pt-8 pb-2 max-md:text-lg`}
         id={getHeaderId(props)}
       >
         {props.children}
@@ -83,7 +83,7 @@ const components: MDXComponents = {
   h3: (props) => {
     return (
       <h3
-        className={`font-bold pt-6 pb-2 text-lg max-md:text`}
+        className={`font-extrabold pt-6 pb-2 text-lg max-md:text`}
         id={getHeaderId(props)}
       >
         {props.children}
@@ -93,7 +93,7 @@ const components: MDXComponents = {
   h4: (props) => {
     return (
       <h4
-        className={`font-bold pt-6 pb-2 text-lg max-md:text`}
+        className={`font-extrabold pt-6 pb-2 text-lg max-md:text`}
         id={getHeaderId(props)}
       >
         {props.children}
@@ -103,7 +103,7 @@ const components: MDXComponents = {
   h5: (props) => {
     return (
       <h5
-        className={`font-bold pt-4 pb-2 text-lg max-md:text`}
+        className={`font-extrabold pt-4 pb-2 text-lg max-md:text`}
         id={getHeaderId(props)}
       >
         {props.children}
@@ -113,7 +113,7 @@ const components: MDXComponents = {
   h6: (props) => {
     return (
       <h6
-        className={`font-bold pt-4 pb-2 text-lg max-md:text`}
+        className={`font-extrabold pt-4 pb-2 text-lg max-md:text`}
         id={getHeaderId(props)}
       >
         {props.children}
