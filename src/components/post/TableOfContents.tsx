@@ -70,7 +70,7 @@ const TableOfContents = ({ content }: { content: string }) => {
             <Link
               key={title}
               href={`#${id}`}
-              className={`hover:text-blue-700 box-decoration-slice py-1.5 pr-1 ${
+              className={`hover:text-blue-700 box-decoration-slice py-1.5 pr-1 text-xs ${
                 activeHeaderId === id ? "bg-blue-100 dark:bg-blue-900" : ""
               } header-${count}`}
             >
