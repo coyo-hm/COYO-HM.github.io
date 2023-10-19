@@ -61,13 +61,13 @@
     "path": "blog/styled-components-global-style.mdx",
     "menu": "blog"
   },
-  "blog/redux/RTK-with-ts": {
+  "blog/redux-RTK-with-ts": {
     "date": "2023-01-26T00:00:00",
     "title": "TypeScript에서 Redux-ToolKit 사용하기",
     "tags": ["react", "typescript", "redux"],
     "description": "TypeScript에서 redux-toolkit 설치부터, Store 설정, UseDispatch, UseSelector, CreateSlice(build), CreateAsyncThunk 사용해보기",
     "published": true,
-    "path": "blog/redux/RTK-with-ts.mdx",
+    "path": "blog/redux-RTK-with-ts.mdx",
     "menu": "blog"
   },
   "blog/react/useMemo-useCallback": {
@@ -279,6 +279,16 @@
     "path": "blog/javascript/concat-push.mdx",
     "menu": "blog"
   },
+  "blog/husky-git-hook": {
+    "date": "2023-10-11T00:00:00",
+    "title": "husky로 git hook 편하게 관리하기",
+    "tags": ["husky", "git"],
+    "description": "git hook은 무엇인지 살펴보고 husky로 git hook 쉽게 적용해보기",
+    "published": true,
+    "thumbnail": "https://user-images.githubusercontent.com/56423604/276647708-f2c4971b-48db-40bc-8601-d1bd708d34c1.png",
+    "path": "blog/husky-git-hook.mdx",
+    "menu": "blog"
+  },
   "blog/git/github-page-publish": {
     "date": "2023-02-22T00:00:00",
     "title": "Github Page로 React 프로젝트 무료로 배포해보기",
@@ -344,22 +354,22 @@
     "path": "blog/cs/mvc-pattern.mdx",
     "menu": "blog"
   },
-  "blog/axios/axios-interceptor": {
+  "blog/axios-interceptor": {
     "date": "2022-11-10T00:00:00",
     "title": "Axios Intercepter 사용해보기",
     "tags": ["react", "typescript", "axios", "javascript"],
     "description": "Axios: Intercepter 사용해보기",
     "published": true,
-    "path": "blog/axios/axios-interceptor.mdx",
+    "path": "blog/axios-interceptor.mdx",
     "menu": "blog"
   },
-  "blog/axios/axios-config": {
+  "blog/axios-config": {
     "date": "2022-09-19T00:00:00",
     "title": "Axios Config 기본값 정리",
     "tags": ["react", "typescript", "axios", "javascript"],
     "description": "Axios Config 기본값 정리",
     "published": true,
-    "path": "blog/axios/axios-config.mdx",
+    "path": "blog/axios-config.mdx",
     "menu": "blog"
   },
   "blog/algorithm-greedy": {
