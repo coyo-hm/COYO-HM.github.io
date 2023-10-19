@@ -4,7 +4,7 @@
       "all": [
         "blog/yarn-berry-pnp",
         "blog/styled-components-global-style",
-        "blog/redux/RTK-with-ts",
+        "blog/redux-RTK-with-ts",
         "blog/react/redux-persist",
         "blog/react/react_class_render",
         "blog/react/lodash",
@@ -17,12 +17,13 @@
         "blog/javascript/intersection-observer-API",
         "blog/javascript/forEach-map",
         "blog/javascript/concat-push",
+        "blog/husky-git-hook",
         "blog/git/github-page-publish",
         "blog/git/git-commit-template",
         "blog/gatsby/add_table_of_contents_in_gatsby",
         "blog/cs/mvc-pattern",
-        "blog/axios/axios-interceptor",
-        "blog/axios/axios-config"
+        "blog/axios-interceptor",
+        "blog/axios-config"
       ],
       "npm": ["blog/yarn-berry-pnp"],
       "yarn": ["blog/yarn-berry-pnp"],
@@ -34,23 +35,23 @@
       ],
       "react": [
         "blog/styled-components-global-style",
-        "blog/redux/RTK-with-ts",
+        "blog/redux-RTK-with-ts",
         "blog/react/react_class_render",
         "blog/react/lodash",
         "blog/git/github-page-publish",
         "blog/gatsby/add_table_of_contents_in_gatsby",
-        "blog/axios/axios-interceptor",
-        "blog/axios/axios-config"
+        "blog/axios-interceptor",
+        "blog/axios-config"
       ],
       "typescript": [
         "blog/styled-components-global-style",
-        "blog/redux/RTK-with-ts",
+        "blog/redux-RTK-with-ts",
         "blog/react/lodash",
         "blog/gatsby/add_table_of_contents_in_gatsby",
-        "blog/axios/axios-interceptor",
-        "blog/axios/axios-config"
+        "blog/axios-interceptor",
+        "blog/axios-config"
       ],
-      "redux": ["blog/redux/RTK-with-ts", "blog/react/redux-persist"],
+      "redux": ["blog/redux-RTK-with-ts", "blog/react/redux-persist"],
       "javascript": [
         "blog/react/redux-persist",
         "blog/react/react_class_render",
@@ -59,8 +60,8 @@
         "blog/javascript/forEach-map",
         "blog/javascript/concat-push",
         "blog/git/github-page-publish",
-        "blog/axios/axios-interceptor",
-        "blog/axios/axios-config"
+        "blog/axios-interceptor",
+        "blog/axios-config"
       ],
       "redux_persist": ["blog/react/redux-persist"],
       "lodash": ["blog/react/lodash"],
@@ -72,13 +73,14 @@
         "blog/network/cookie-session",
         "blog/network/browser-rendering"
       ],
+      "husky": ["blog/husky-git-hook"],
+      "git": ["blog/husky-git-hook", "blog/git/git-commit-template"],
       "githubpage": ["blog/git/github-page-publish"],
-      "git": ["blog/git/git-commit-template"],
       "intellij": ["blog/git/git-commit-template"],
       "emotion": ["blog/gatsby/add_table_of_contents_in_gatsby"],
       "gatsby": ["blog/gatsby/add_table_of_contents_in_gatsby"],
       "programming": ["blog/cs/mvc-pattern"],
-      "axios": ["blog/axios/axios-interceptor", "blog/axios/axios-config"]
+      "axios": ["blog/axios-interceptor", "blog/axios-config"]
     },
     "project": {
       "all": ["project/simple-kanban-board", "project/real-time-coin-info"],
@@ -105,7 +107,7 @@
         "blog/yarn-berry-pnp",
         "blog/test",
         "blog/styled-components-global-style",
-        "blog/redux/RTK-with-ts",
+        "blog/redux-RTK-with-ts",
         "blog/react/useMemo-useCallback",
         "blog/react/redux-persist",
         "blog/react/react_class_render",
@@ -129,6 +131,7 @@
         "blog/javascript/Immutable",
         "blog/javascript/forEach-map",
         "blog/javascript/concat-push",
+        "blog/husky-git-hook",
         "blog/git/github-page-publish",
         "blog/git/git",
         "blog/git/git-commit-template",
@@ -136,8 +139,8 @@
         "blog/gatsby/add_table_of_contents_in_gatsby",
         "blog/cs/programming-paradigm",
         "blog/cs/mvc-pattern",
-        "blog/axios/axios-interceptor",
-        "blog/axios/axios-config",
+        "blog/axios-interceptor",
+        "blog/axios-config",
         "blog/algorithm-greedy"
       ],
       "npm": ["blog/yarn-berry-pnp", "blog/npm-basic"],
@@ -146,7 +149,7 @@
       "react": [
         "blog/test",
         "blog/styled-components-global-style",
-        "blog/redux/RTK-with-ts",
+        "blog/redux-RTK-with-ts",
         "blog/react/useMemo-useCallback",
         "blog/react/react_class_render",
         "blog/react/lodash",
@@ -154,23 +157,23 @@
         "blog/react/hook-state",
         "blog/git/github-page-publish",
         "blog/gatsby/add_table_of_contents_in_gatsby",
-        "blog/axios/axios-interceptor",
-        "blog/axios/axios-config"
+        "blog/axios-interceptor",
+        "blog/axios-config"
       ],
       "typescript": [
         "blog/test",
         "blog/styled-components-global-style",
-        "blog/redux/RTK-with-ts",
+        "blog/redux-RTK-with-ts",
         "blog/react/lodash",
         "blog/nextjs-image",
         "blog/nextjs-image-upload",
         "blog/gatsby/add_table_of_contents_in_gatsby",
-        "blog/axios/axios-interceptor",
-        "blog/axios/axios-config"
+        "blog/axios-interceptor",
+        "blog/axios-config"
       ],
       "redux": [
         "blog/test",
-        "blog/redux/RTK-with-ts",
+        "blog/redux-RTK-with-ts",
         "blog/react/redux-persist"
       ],
       "scss": ["blog/test"],
@@ -201,8 +204,8 @@
         "blog/javascript/forEach-map",
         "blog/javascript/concat-push",
         "blog/git/github-page-publish",
-        "blog/axios/axios-interceptor",
-        "blog/axios/axios-config"
+        "blog/axios-interceptor",
+        "blog/axios-config"
       ],
       "redux_persist": ["blog/react/redux-persist"],
       "lodash": ["blog/react/lodash"],
@@ -213,17 +216,19 @@
         "blog/nextjs-image-upload"
       ],
       "jest": ["blog/jest/jest"],
-      "githubpage": ["blog/git/github-page-publish"],
+      "husky": ["blog/husky-git-hook"],
       "git": [
+        "blog/husky-git-hook",
         "blog/git/git",
         "blog/git/git-commit-template",
         "blog/git/git-branch"
       ],
+      "githubpage": ["blog/git/github-page-publish"],
       "intellij": ["blog/git/git-commit-template"],
       "emotion": ["blog/gatsby/add_table_of_contents_in_gatsby"],
       "gatsby": ["blog/gatsby/add_table_of_contents_in_gatsby"],
       "programming": ["blog/cs/programming-paradigm", "blog/cs/mvc-pattern"],
-      "axios": ["blog/axios/axios-interceptor", "blog/axios/axios-config"],
+      "axios": ["blog/axios-interceptor", "blog/axios-config"],
       "algorithm": ["blog/algorithm-greedy"]
     },
     "project": {
