@@ -18,6 +18,7 @@
         "blog/javascript/forEach-map",
         "blog/javascript/concat-push",
         "blog/husky-git-hook",
+        "blog/husky-commlint",
         "blog/git/github-page-publish",
         "blog/git/git-commit-template",
         "blog/gatsby/add_table_of_contents_in_gatsby",
@@ -73,8 +74,13 @@
         "blog/network/cookie-session",
         "blog/network/browser-rendering"
       ],
-      "husky": ["blog/husky-git-hook"],
-      "git": ["blog/husky-git-hook", "blog/git/git-commit-template"],
+      "husky": ["blog/husky-git-hook", "blog/husky-commlint"],
+      "git": [
+        "blog/husky-git-hook",
+        "blog/husky-commlint",
+        "blog/git/git-commit-template"
+      ],
+      "commitlint": ["blog/husky-commlint"],
       "githubpage": ["blog/git/github-page-publish"],
       "intellij": ["blog/git/git-commit-template"],
       "emotion": ["blog/gatsby/add_table_of_contents_in_gatsby"],
@@ -132,6 +138,7 @@
         "blog/javascript/forEach-map",
         "blog/javascript/concat-push",
         "blog/husky-git-hook",
+        "blog/husky-commlint",
         "blog/git/github-page-publish",
         "blog/git/git",
         "blog/git/git-commit-template",
@@ -216,13 +223,15 @@
         "blog/nextjs-image-upload"
       ],
       "jest": ["blog/jest/jest"],
-      "husky": ["blog/husky-git-hook"],
+      "husky": ["blog/husky-git-hook", "blog/husky-commlint"],
       "git": [
         "blog/husky-git-hook",
+        "blog/husky-commlint",
         "blog/git/git",
         "blog/git/git-commit-template",
         "blog/git/git-branch"
       ],
+      "commitlint": ["blog/husky-commlint"],
       "githubpage": ["blog/git/github-page-publish"],
       "intellij": ["blog/git/git-commit-template"],
       "emotion": ["blog/gatsby/add_table_of_contents_in_gatsby"],
