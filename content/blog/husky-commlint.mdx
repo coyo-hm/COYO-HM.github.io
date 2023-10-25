@@ -134,7 +134,24 @@ npx husky add .husky/commit-msg 'npm run commitlint ${1}'
 [Conventional Commits Rule](https://www.conventionalcommits.org/en/v1.0.0/) 에 이전에 커스텀한 type-enum을 적용해주었다. 또한 type의 경우 개인의 취향이 대문자여서 모두 대문자로 처리하였고 만일 규칙에 어긋날 경우 모두 오류가 발생하도록 처리해주었다.
 
 ## 테스트
-잘 적용되었는지
+
+잘 적용되었는지 확인해보기 위해 고의적으로 규칙에 맞지 않게 ‘committest’라고 commit message를 적었다.
+
+![image](https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/059bcd54-0e45-46db-8da4-7a0c5f138c5c)
+
+error가 발생하여 commit 에 실패한 것을 확인할 수 있었다. error message를 살펴보면 어떤 오류가 발생했는지 알 수 있다.
+
+![image](https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/983f5eb4-a355-4f50-9fa0-481f79c8e4fa)
+
+type과 subject를 적지 않았음을 알 수 있다.
+
+이번엔 규칙에 맞게 commit message를 작성해보았다.
+
+![image](https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/15369756-b994-4e47-9e93-c132fc745d82)
+
+아무 문제 없이 커밋되는 것을 확인할 수 있었다.
+
+![image](https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/aabfb190-5ab3-4a26-b330-6af0002dbcd5)
 
 
 # 참조
