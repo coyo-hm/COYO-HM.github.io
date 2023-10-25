@@ -289,6 +289,16 @@
     "path": "blog/husky-git-hook.mdx",
     "menu": "blog"
   },
+  "blog/husky-commlint": {
+    "date": "2023-10-26T00:00:00",
+    "title": "commitlint로 commit-message 관리하기",
+    "tags": ["husky", "git", "commitlint"],
+    "description": "commitlint로 규칙 커스텀해서 커밋 메세지 관리해보자",
+    "published": true,
+    "thumbnail": "https://user-images.githubusercontent.com/56423604/278075494-8932e44f-b2ea-49d8-8c5d-c1b2805fd0ab.png",
+    "path": "blog/husky-commlint.mdx",
+    "menu": "blog"
+  },
   "blog/git/github-page-publish": {
     "date": "2023-02-22T00:00:00",
     "title": "Github Page로 React 프로젝트 무료로 배포해보기",

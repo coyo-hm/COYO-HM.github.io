@@ -1,0 +1,144 @@
+---
+date: "2023-10-26"
+title: "commitlint로 commit-message 관리하기"
+tags: ["husky",  "git", "commitlint"]
+description: "commitlint로 규칙 커스텀해서 커밋 메세지 관리해보자"
+published: true
+thumbnail: 'https://user-images.githubusercontent.com/56423604/278075494-8932e44f-b2ea-49d8-8c5d-c1b2805fd0ab.png'
+---
+
+husky 설치 및 git hook에 관련한 내용은 [링크된 포스트](https://coyo-hm.github.io/blog/post/husky-git-hook)를 참고하자.
+
+이전 포스트에서 git template을 사용하여 git commit message를 작성할 때 가이드 라인을 생성해주었다. 그런데 이는 말그대로 가이드 라인이기에 규칙을 어기더라도 아무런 일이 일어나지 않는다. 규칙을 강제하지 않는다.
+
+그래서 오타가 나거나 규칙이 어긋나더라도 그대로 commit message가 올라간다. 이러한 불상사를 방지하기 위해서 git hook을 사용하여 만일 commit message가 설정한 규칙에 벗어나면 commit 되지 않도록 해주도록 해보자.
+
+# commitlint
+
+직접 스크립트를 작성하는 방법도 있지만 `[commitlint](https://commitlint.js.org/#/)` 를 사용해주었다. `commitlint` 는 `commitlint.config.js` 파일을 생성해서 적용해주면 규칙을 커스텀할 수 있다.
+
+## 설치
+
+```bash
+# npm을 사용하는 경우
+npm install --dev @commitlint/config-conventional @commitlint/cli
+
+# yarn을 사용하는 경우
+yarn add --dev @commitlint/config-conventional @commitlint/cli
+```
+
+설치 후 프로젝트 루트 디렉토리에 `commitlint.config.js` 생성하고 `@commitlint/config-conventional`를 extends 추가해주어 [Conventional Commits Rule](https://www.conventionalcommits.org/en/v1.0.0/)을 따를 수 있도록 해준다.
+
+```json
+{
+  "extends": ["@commitlint/config-conventional"],
+}
+```
+
+## 적용
+
+`commlint`를 commit-msg hook 에 축가해준다.
+
+```bash
+# 스크립트 생성 없이 하는 방법
+npx husky add .husky/commit-msg "npx commitlint --edit "$1""
+
+or
+
+# 스크립트 생성하는 방법
+npm pkg set scripts.commitlint="commitlint --edit"
+npx husky add .husky/commit-msg 'npm run commitlint ${1}'
+```
+
+<aside>
+  💡 다음과 같이 패키지 설치 없이 바로 적용할 수 있다.
+
+  ```bash
+  #!/bin/sh
+  . "$(dirname "$0")/_/husky.sh"
+
+  npx --no -- commitlint --edit ${1}
+  ```
+
+</aside>
+
+다음과 같이 commit-msg 에 commlint 스크립트가 생성된 것을 확인할 수 있다.
+
+![commit-msg-hook](https://user-images.githubusercontent.com/56423604/278076031-666343a5-4391-465c-a204-7508df2fe80a.png)
+
+## 규칙 커스텀하기
+
+[commlint docs](https://github.com/conventional-changelog/commitlint/blob/master/docs/reference-rules.md)에 보면 자세한 규칙 설정 방법과 지원하는 규칙을 확인할 수 있다. `rules`에 커스텀 규칙을 추가하면 된다.
+
+```json
+ "subject-case": [
+      2,
+      "always",
+      ["sentence-case", "start-case", "pascal-case", "upper-case", "lower-case"]
+    ],
+```
+
+위의 규칙을 살펴보면 `subject-case` 라는 규칙에 적용 방식이 배열로 들어간다. 순서대로 level, applicable, value를 지정할 수 있다.
+
+- level (`0`, `1`, `2`): 규칙을 어떤식으로 처리할 지 지정한다. `0`은 비활성화, `1`은 경고, `2`는 오류로 처리한다.
+- applicable (`always`, `never`): `always`는 규칙 허용, `never`은 해당 규칙 비허용(규칙 반대 적용)이란 의미로
+
+만일, `subject-empty` 규칙이 비허용이란 말은 subject 부분이 비면 안된다는 규칙이다.
+
+- value는 각각 규칙에 적용되는 값으로, 대문자 허용 여부 등등의 각각의 규칙마다 다르지만 보통 아래의 규칙 등을 적용할 수 있고, 실제로 포함되어야 하는 값들을 설정할 수도 있다.
+
+  ```
+  [
+    'lower-case', // default
+    'upper-case', // UPPERCASE
+    'camel-case', // camelCase
+    'kebab-case', // kebab-case
+    'pascal-case', // PascalCase
+    'sentence-case', // Sentence case
+    'snake-case', // snake_case
+    'start-case', // Start Case
+  ];
+    ```
+
+
+```json
+{
+  "extends": ["@commitlint/config-conventional"],
+  "rules": {
+    "subject-case": [
+      2,
+      "always",
+      ["sentence-case", "start-case", "pascal-case", "upper-case", "lower-case"]
+    ],
+    "type-enum": [
+      2,
+      "always",
+      [
+        "BUILD",
+        "CHORE",
+        "CONTENT",
+        "DOCS",
+        "FEAT",
+        "FIX",
+        "REFACTOR",
+        "STYLE",
+        "TEST",
+        "DEPLOY"
+      ]
+    ],
+    "type-case": [2, "always","upper-case"]
+  }
+}
+```
+
+[Conventional Commits Rule](https://www.conventionalcommits.org/en/v1.0.0/) 에 이전에 커스텀한 type-enum을 적용해주었다. 또한 type의 경우 개인의 취향이 대문자여서 모두 대문자로 처리하였고 만일 규칙에 어긋날 경우 모두 오류가 발생하도록 처리해주었다.
+
+## 테스트
+잘 적용되었는지
+
+
+# 참조
+
+- [효율적인 커밋 메세지 관리를 위한 Conventional Commits 적용하기](https://blog.flynnpark.dev/13)
+- [Github: commitlint > docs > reference-rules](https://github.com/conventional-changelog/commitlint/blob/master/docs/reference-rules.md)
+- [Conventional Commits Rule](https://www.conventionalcommits.org/en/v1.0.0/)
