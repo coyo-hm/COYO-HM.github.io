@@ -1,7 +1,7 @@
 {
   "name": "coyo-log",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "release": {
     "branches": [
       "main"
@@ -17,8 +17,7 @@
     "deploy": "next build && next export && touch out/.nojekyll && git add -f out/ && git commit -m 'DEPLOY: deploy to gh-pages' && git subtree push --prefix out origin gh-pages",
     "prepare": "husky install",
     "table": "node scripts/createPostTable.js",
-    "format": "prettier --cache --write public/static/table",
-    "semantic-release": "semantic-release --no-ci --dry-run false"
+    "format": "prettier --cache --write public/static/table"
   },
   "license": "MIT",
   "dependencies": {
