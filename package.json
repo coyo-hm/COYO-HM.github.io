@@ -1,7 +1,7 @@
 {
   "name": "coyo-log",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "release": {
     "branches": [
       "main"
