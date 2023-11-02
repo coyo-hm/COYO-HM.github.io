@@ -17,7 +17,8 @@
     "deploy": "next build && next export && touch out/.nojekyll && git add -f out/ && git commit -m 'DEPLOY: deploy to gh-pages' && git subtree push --prefix out origin gh-pages",
     "prepare": "husky install",
     "table": "node scripts/createPostTable.js",
-    "format": "prettier --cache --write public/static/table"
+    "format": "prettier --cache --write public/static/table",
+    "semantic-release": "semantic-release --no-ci --dry-run false"
   },
   "license": "MIT",
   "dependencies": {
