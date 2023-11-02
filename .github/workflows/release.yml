@@ -1,4 +1,4 @@
-name: Semantic-release
+name: Release
 on:
   push:
     branches: ["main"]
@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: npm
-          node-version: 16
+          node-version: "lts/*"
       - run: npm ci
       - run: npx semantic-release
         env:
