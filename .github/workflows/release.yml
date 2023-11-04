@@ -13,6 +13,6 @@ jobs:
           cache: npm
           node-version: "lts/*"
       - run: npm ci
-      - run: npx semantic-release
+      - run: npx semantic-release --no-ci --dry-run false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
