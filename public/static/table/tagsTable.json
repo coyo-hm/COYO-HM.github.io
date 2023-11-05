@@ -4,6 +4,7 @@
       "all": [
         "blog/yarn-berry-pnp",
         "blog/styled-components-global-style",
+        "blog/semantic-release",
         "blog/redux-RTK-with-ts",
         "blog/react/redux-persist",
         "blog/react/react_class_render",
@@ -36,6 +37,7 @@
       ],
       "react": [
         "blog/styled-components-global-style",
+        "blog/semantic-release",
         "blog/redux-RTK-with-ts",
         "blog/react/react_class_render",
         "blog/react/lodash",
@@ -113,6 +115,7 @@
         "blog/yarn-berry-pnp",
         "blog/test",
         "blog/styled-components-global-style",
+        "blog/semantic-release",
         "blog/redux-RTK-with-ts",
         "blog/react/useMemo-useCallback",
         "blog/react/redux-persist",
@@ -123,8 +126,6 @@
         "blog/python/rjust-ljust-zfill",
         "blog/npm-basic",
         "blog/nextjs-large-page-data-warning",
-        "blog/nextjs-image",
-        "blog/nextjs-image-upload",
         "blog/network/url-uri",
         "blog/network/socket",
         "blog/network/rest-api",
@@ -147,8 +148,7 @@
         "blog/cs/programming-paradigm",
         "blog/cs/mvc-pattern",
         "blog/axios-interceptor",
-        "blog/axios-config",
-        "blog/algorithm-greedy"
+        "blog/axios-config"
       ],
       "npm": ["blog/yarn-berry-pnp", "blog/npm-basic"],
       "yarn": ["blog/yarn-berry-pnp"],
@@ -156,6 +156,7 @@
       "react": [
         "blog/test",
         "blog/styled-components-global-style",
+        "blog/semantic-release",
         "blog/redux-RTK-with-ts",
         "blog/react/useMemo-useCallback",
         "blog/react/react_class_render",
@@ -172,8 +173,6 @@
         "blog/styled-components-global-style",
         "blog/redux-RTK-with-ts",
         "blog/react/lodash",
-        "blog/nextjs-image",
-        "blog/nextjs-image-upload",
         "blog/gatsby/add_table_of_contents_in_gatsby",
         "blog/axios-interceptor",
         "blog/axios-config"
@@ -217,11 +216,7 @@
       "redux_persist": ["blog/react/redux-persist"],
       "lodash": ["blog/react/lodash"],
       "python3": ["blog/python/rjust-ljust-zfill"],
-      "nextjs": [
-        "blog/nextjs-large-page-data-warning",
-        "blog/nextjs-image",
-        "blog/nextjs-image-upload"
-      ],
+      "nextjs": ["blog/nextjs-large-page-data-warning"],
       "jest": ["blog/jest/jest"],
       "husky": ["blog/husky-git-hook", "blog/husky-commlint"],
       "git": [
@@ -237,8 +232,7 @@
       "emotion": ["blog/gatsby/add_table_of_contents_in_gatsby"],
       "gatsby": ["blog/gatsby/add_table_of_contents_in_gatsby"],
       "programming": ["blog/cs/programming-paradigm", "blog/cs/mvc-pattern"],
-      "axios": ["blog/axios-interceptor", "blog/axios-config"],
-      "algorithm": ["blog/algorithm-greedy"]
+      "axios": ["blog/axios-interceptor", "blog/axios-config"]
     },
     "project": {
       "all": ["project/simple-kanban-board", "project/real-time-coin-info"],
