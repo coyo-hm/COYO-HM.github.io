@@ -61,6 +61,15 @@
     "path": "blog/styled-components-global-style.mdx",
     "menu": "blog"
   },
+  "blog/semantic-release": {
+    "date": "2023-02-24T00:00:00",
+    "title": "React Hook: State Hook",
+    "tags": ["react"],
+    "description": "useState, useReducer 정리",
+    "published": true,
+    "path": "blog/semantic-release.mdx",
+    "menu": "blog"
+  },
   "blog/redux-RTK-with-ts": {
     "date": "2023-01-26T00:00:00",
     "title": "TypeScript에서 Redux-ToolKit 사용하기",
@@ -150,24 +159,6 @@
     "published": true,
     "thumbnail": "https://user-images.githubusercontent.com/56423604/273578963-e3f37379-368c-460d-9b37-c4b98cfba9e7.png",
     "path": "blog/nextjs-large-page-data-warning.mdx",
-    "menu": "blog"
-  },
-  "blog/nextjs-image": {
-    "date": "2023-02-11T00:00:00",
-    "title": "NextJS Image 정리",
-    "tags": ["nextjs", "typescript"],
-    "description": "NextJS 공식 Docs 정리 해보기",
-    "published": false,
-    "path": "blog/nextjs-image.md",
-    "menu": "blog"
-  },
-  "blog/nextjs-image-upload": {
-    "date": "2023-02-10T00:00:00",
-    "title": "NextJS 블로그 배포 시 이미지 경로 설정",
-    "tags": ["nextjs", "typescript"],
-    "description": "NextJS 블로그 배포 시에 이미지 경로 설정하기",
-    "published": false,
-    "path": "blog/nextjs-image-upload.md",
     "menu": "blog"
   },
   "blog/network/url-uri": {
@@ -380,15 +371,6 @@
     "description": "Axios Config 기본값 정리",
     "published": true,
     "path": "blog/axios-config.mdx",
-    "menu": "blog"
-  },
-  "blog/algorithm-greedy": {
-    "date": "2023-02-21T00:00:00",
-    "title": "Greedy 알고리즘",
-    "tags": ["algorithm"],
-    "description": "",
-    "published": false,
-    "path": "blog/algorithm-greedy.md",
     "menu": "blog"
   }
 }
