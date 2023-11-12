@@ -1,6 +1,7 @@
 import "@fonts/jetBrainsMono/jetBrainsMono.css";
 import "@fonts/pretendard/pretendard.css";
 import "@fonts/NanumSquareRound/NanumSquareRound.css";
+import "@fonts/Inter/inter.css";
 import "@styles/tailwind.css";
 import "@styles/globals.css";
 import "@styles/prism-dracula.css";
