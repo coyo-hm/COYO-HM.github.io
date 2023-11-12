@@ -18,7 +18,7 @@ const TagList = forwardRef(function TagList(
           className={`absolute whitespace-nowrap paused animate-scrollLeft`}
           ref={tagListRef}
         >
-          {tagList.map(({ tag }) => (
+          {[...tagList, ...tagList, ...tagList].map(({ tag }) => (
             <Link
               href={`/post/page/0/${tag}`}
               key={tag}

@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        scrollLeft: "scrollLeft 60s linear infinite",
+        scrollLeft: "scrollLeft 180s linear infinite",
       },
       keyframes: {
         scrollLeft: {
