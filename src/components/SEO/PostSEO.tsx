@@ -1,48 +1,7 @@
-import { NextSeo, ArticleJsonLd } from "next-seo";
-import metadata from "config";
+import { ArticleJsonLd, NextSeo } from "next-seo";
+import metadata from "@config/index";
 
-export const SEO = {
-  title: metadata.title,
-  description: metadata.description,
-  openGraph: {
-    type: "website",
-    locale: "ko-KR",
-    url: metadata.siteUrl,
-    title: metadata.title,
-    description: metadata.description,
-  },
-  additionalMetaTags: [
-    {
-      name: "author",
-      content: metadata.author.name,
-    },
-  ],
-};
-
-export const PageSeo = ({
-  title,
-  description,
-  url,
-}: {
-  title: string;
-  description: string;
-  url: string;
-}) => {
-  return (
-    <NextSeo
-      title={`${metadata.title} | ${title}`}
-      description={description}
-      canonical={url}
-      openGraph={{
-        url,
-        title,
-        description,
-        images: [{ alt: title, url: "/static/images/moblie-profile.png" }],
-      }}
-    />
-  );
-};
-export const PostSEO = ({
+const PostSEO = ({
   title,
   summary,
   date,
@@ -103,3 +62,5 @@ export const PostSEO = ({
     </>
   );
 };
+
+export default PostSEO;
