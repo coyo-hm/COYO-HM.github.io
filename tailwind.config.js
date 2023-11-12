@@ -7,7 +7,17 @@ module.exports = {
     "./src/constants/*.ts",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        scrollLeft: "scrollLeft 60s linear infinite",
+      },
+      keyframes: {
+        scrollLeft: {
+          from: { transform: "translate3d(0, 0, 0)" },
+          to: { transform: "translate3d(-100%, 0, 0)" },
+        },
+      },
+    },
   },
   plugins: [],
 };
