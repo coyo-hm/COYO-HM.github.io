@@ -5,3 +5,7 @@ export interface SeriesInfoNode {
   thumbnail: string;
   posts: string[];
 }
+
+export interface SeriesInfoTable {
+  [key: string]: SeriesInfoNode;
+}

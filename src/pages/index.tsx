@@ -1,33 +1,31 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import { FaEnvelope, FaGithub } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 
+import PageSeo from "@components/SEO/PageSEO";
+import TagList from "@components/Tag/TagList";
+import PageTitle from "@components/Title/PageTitle";
+import PageSubtitle from "@components/Title/PageSubtitle";
 import metadata from "config";
-import PostCard from "@components/common/PostCard";
-import ThumbnailCard from "@components/common/ThumbnailCard";
-import { PageSeo } from "@components/common/SEO";
-import {
-  DEFAULT_NUMBER_OF_HOME_PROJECT,
-  DEFAULT_NUMBER_OF_RECENT_POST,
-} from "@constants/index";
-import { PostType, TagWithCountType } from "@src/models/index";
-import { getAllPosts, getAllTags, getPosts } from "@utils/api";
-import imgLoader from "@utils/imgLoader";
+import { CATEGORY_INFO, CATEGORY_KEYS } from "@constants/category";
 import useHorizontalScroll from "@hooks/useHorizontalScroll";
-import TagInfo from "@constants/TagInfo";
+import { PostType } from "@models/post";
+import { TagWithCountType } from "@models/tag";
+import { getPosts } from "@utils/getPosts";
+import getAllTags from "@utils/getAllTags";
+import Carousel from "@components/Carousel/Carousel";
+import getAllSeriesInfo from "@utils/getAllSeriesInfo";
+import { SeriesInfoTable } from "@models/series";
 
 export default function Home({
-  blogPosts,
+  recentPosts,
   tags,
-  projectPosts,
+  allSeriesInfo,
 }: {
-  projectPosts: PostType[];
-  blogPosts: PostType[];
+  recentPosts: PostType[];
   tags: TagWithCountType[];
+  allSeriesInfo: SeriesInfoTable;
 }) {
-  const tagListRef = useHorizontalScroll();
   const postListRef = useHorizontalScroll();
 
   return (
@@ -37,134 +35,39 @@ export default function Home({
         description={metadata.description}
         url={metadata.siteUrl}
       />
-      <div
-        id={"profile"}
-        className={`grid gap-2 grid-rows-4 grid-cols-[240px_1fr] px-6 max-md:grid-cols-1 max-md:auto-rows-auto`}
-      >
-        <Image
-          loader={(props) => imgLoader(props)}
-          src={`/static/images/profile.png`}
-          alt={"profileImage"}
-          width={0}
-          height={0}
-          className={
-            "row-span-4 col-span-1 place-self-center mb-5 w-[150px] h-auto"
-          }
-        />
-        <h1 className={`text-2xl font-semibold break-keep`}>
-          안녕하세요, Frontend 개발자 {metadata.author.name} 입니다.
-        </h1>
-        <p className={`row-span-2 break-keep`}>
-          React와 TypeScript를 주로 사용하여 개발하고 있습니다.
-          <br /> 블로그를 통해 공부 기록을 남기고 있습니다.
-        </p>
-        <div className={`flex`}>
-          <a
-            href="https://github.com/COYO-HM"
-            target={"_blank"}
-            rel="noreferrer"
-            className={"mr-3 hover:text-blue-700"}
-            aria-label={"link-github"}
-          >
-            <FaGithub size={24} />
-          </a>
-          <a
-            href="mailto:bsydwp@gmail.com"
-            className={`hover:text-blue-700`}
-            aria-label={"link-email"}
-          >
-            <FaEnvelope size={24} />
-          </a>
-        </div>
-      </div>
-      <div
-        className={`flex flex-nowrap text-blue-700 border-y-2 border-blue-700 py-2 text-base my-4`}
-      >
-        <span className={"font-bold mr-4"}>#tags</span>
-        <div
-          id={"tags"}
-          className={`flex flex-nowrap overflow-auto`}
-          ref={tagListRef}
-        >
-          {tags.map(({ tag }) => (
-            <Link
-              href={`/blog/0/${tag}`}
-              key={tag}
-              className={`whitespace-nowrap mr-2 hover:font-bold hover:text-blue-900 dark:hover:text-blue-400 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
-              aria-label={`link-${tag}`}
-            >
-              {TagInfo[tag]?.label || tag}
-            </Link>
-          ))}
-        </div>
-      </div>
-      <div
-        id={"recent_post"}
-        className={`shadow-2xl rounded-2xl overflow-hidden`}
-      >
-        <Link
-          href={"/blog/0/all"}
-          className={`font-extrabold text-2xl text-blue-700 hover:text-blue-900 dark:hover:text-blue-400 p-6 pb-0 flex justify-between bg-neutral-50  dark:bg-neutral-700`}
-          aria-label={"link-blog"}
-        >
-          <span>Recent Blog Post</span>
-          <BsArrowRight />
-        </Link>
-        <div
-          id={"tags"}
-          className={`grid gap-5 grid-flow-col auto-cols-[200px] px-4 py-6 bg-neutral-50 overflow-x-auto dark:bg-neutral-700`}
-          ref={postListRef}
-        >
-          {blogPosts?.map(({ frontMatter, fields: { slug } }) => {
-            return (
-              <Link href={`/${slug}`} key={slug} aria-label={`link-${slug}`}>
-                <PostCard {...frontMatter} />
-              </Link>
-            );
-          })}
-        </div>
-      </div>
-      {projectPosts.length > 0 && (
-        <div className={`mt-6 mb-4 px-4 max-sm:px-0`}>
+      <PageTitle title={metadata.title} />
+      <nav className={`flex gap-3 justify-center my-10`}>
+        {CATEGORY_KEYS.map((key) => (
           <Link
-            href={"/project/0/all"}
-            className={`text-2xl font-extrabold text-blue-700 hover:text-blue-900 dark:hover:text-blue-400`}
-            aria-label={`link-project`}
+            href={CATEGORY_INFO[key].link}
+            key={CATEGORY_INFO[key].id}
+            className={`hover:text-blue-700`}
           >
-            <span>Project</span>
+            {CATEGORY_INFO[key].label}
           </Link>
-          <article
-            className={`grid grid-cols-3 gap-4 my-4 max-sm:grid-cols-1 `}
-          >
-            {projectPosts.map(({ frontMatter, fields: { slug } }) => (
-              <ThumbnailCard {...frontMatter} slug={slug} key={slug} />
-            ))}
-          </article>
-        </div>
-      )}
+        ))}
+      </nav>
+      <TagList tagList={tags} />
+      <Link href={"/post/page/0/all"} aria-label={"link-blog"}>
+        <PageSubtitle className={`flex justify-between hover:text-blue-700`}>
+          <span>Recent Post</span>
+          <BsArrowRight />
+        </PageSubtitle>
+      </Link>
+      <Carousel posts={recentPosts} allSeriesInfo={allSeriesInfo} />
     </>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  // const recentBlogPosts = (await getAllPosts("blog")).slice(
-  //   0,
-  //   DEFAULT_NUMBER_OF_RECENT_POST
-  // );
-  // const projectPosts = (await getAllPosts("project")).slice(
-  //   0,
-  //   DEFAULT_NUMBER_OF_HOME_PROJECT
-  // );
-
-  const recentBlogPosts = await getPosts("blog");
-  const projectPosts = await getPosts("project");
+  const recentPosts = await getPosts(0, 5);
   const allTags = await getAllTags();
-
+  const allSeriesInfo = await getAllSeriesInfo();
   return {
     props: {
-      projectPosts,
-      blogPosts: recentBlogPosts.map((post) => ({ ...post, path: "" })),
+      recentPosts,
       tags: allTags,
+      allSeriesInfo: allSeriesInfo,
     },
   };
 };

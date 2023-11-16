@@ -9,6 +9,7 @@ export interface FrontMatterType {
   socialImageUrl?: string;
   socialImageCredit?: string;
   thumbnail?: string;
+  series?: string;
 }
 
 export interface PostAttributeProps {
