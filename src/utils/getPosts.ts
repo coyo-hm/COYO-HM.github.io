@@ -43,7 +43,9 @@ export async function getPosts(
     (page + 1) * size
   );
 
-  return selectedPostAttributes.map(({ path, key, date, tags }) => {
+  return selectedPostAttributes.map((postAttribute) => {
+    const { path, key, date, tags } = postAttribute;
+
     const file = fs.readFileSync(`${POST_PATH}/${path}`, {
       encoding: "utf8",
     });
@@ -51,6 +53,7 @@ export async function getPosts(
     return {
       frontMatter: {
         ...attributes,
+        series: postAttribute?.series || "",
         tags,
         date: new Date(date).toISOString().substring(0, 19),
       },
