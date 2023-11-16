@@ -11,6 +11,16 @@ export interface FrontMatterType {
   thumbnail?: string;
 }
 
+export interface PostAttributeProps {
+  key: string;
+  path: string;
+  series?: string;
+  title: string;
+  tags: string[];
+  date: string;
+  published: boolean;
+}
+
 export interface PostType {
   fields: {
     slug: string;
@@ -20,27 +30,6 @@ export interface PostType {
   path: string;
 }
 
-export interface TagWithCountType {
-  tag: string;
-  count: number;
-}
-
-export interface TagsType {
-  [key: string]: string;
-  tag: string;
-}
-
 export type menuType = "blog" | "project" | "all";
-
-export type categoryType =
-  | "COMPUTER SCIENCE"
-  | "CSS"
-  | "FRAMEWORK"
-  | "IDE"
-  | "LANGUAGE"
-  | "LIBRARY"
-  | "MANAGEMENT"
-  | "PACKAGE MANAGER"
-  | "TEST";
 
 export type showType = "list" | "card";
