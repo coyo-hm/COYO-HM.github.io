@@ -13,14 +13,12 @@ const isIntroPost = (postKey = "") => {
   return fileName === "intro";
 };
 
-const getSeriesTitle = (postKey = "") => {
+const getSeriesKey = (postKey = "") => {
   const postDirectory = postKey.split("/");
   const isSeries = postDirectory[0] === "series";
-
   if (isSeries) {
     return postDirectory[1];
   }
-
   return undefined;
 };
 
@@ -41,11 +39,21 @@ const createTable = () => {
 
       const postPath = filePath.replace(`${CONTENT_DIR_PATH}/`, "");
       const postKey = postPath.replace(path.extname(filePath), "");
+      const series = getSeriesKey(postKey);
 
       if (isIntroPost(postKey)) {
+        seriesTablePublished[series] = {
+          ...attributes,
+          posts: seriesTablePublished[series]?.posts || [],
+        };
+
+        seriesTableUnpublished[series] = {
+          ...attributes,
+          posts: seriesTableUnpublished[series]?.posts || [],
+        };
         continue;
       }
-      const series = getSeriesTitle(postKey);
+
       const postTags = tags?.map((tag) =>
         tag.toLowerCase().replace(/\s|-/gi, "_")
       );
@@ -53,6 +61,24 @@ const createTable = () => {
       tagsTableUnpublished.all = [...tagsTableUnpublished.all, postKey];
       if (published) {
         tagsTablePublished.all = [...tagsTablePublished.all, postKey];
+      }
+
+      if (!!series) {
+        seriesTableUnpublished[series] = seriesTableUnpublished[series]
+          ? {
+              ...seriesTableUnpublished[series],
+              posts: [...seriesTableUnpublished[series].posts, postKey],
+            }
+          : { posts: [postKey] };
+
+        if (published) {
+          seriesTablePublished[series] = seriesTablePublished[series]
+            ? {
+                ...seriesTablePublished[series],
+                posts: [...seriesTablePublished[series].posts, postKey],
+              }
+            : { posts: [postKey] };
+        }
       }
 
       postTags.forEach((t) => {
