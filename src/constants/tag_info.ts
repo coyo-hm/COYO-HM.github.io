@@ -1,22 +1,20 @@
-import { categoryType } from "@src/models";
+export interface TagInfoNode {
+  label: string;
+  color?: string;
+  bg?: string;
+  bg_hover?: string;
+  text?: string;
+  text_hover?: string;
+  border?: string;
+}
 
-const TagInfo: {
-  [key: string]: {
-    category: categoryType;
-    label: string;
-    color?: string;
-    bg?: string;
-    bg_hover?: string;
-    text?: string;
-    text_hover?: string;
-    border?: string;
-  };
+const TAG_INFO: {
+  [key: string]: TagInfoNode;
 } = {
-  algorithm: { category: "COMPUTER SCIENCE", label: "Algorithm" },
-  programming: { category: "COMPUTER SCIENCE", label: "Programming" },
-  network: { category: "COMPUTER SCIENCE", label: "Network" },
+  algorithm: { label: "Algorithm" },
+  programming: { label: "Programming" },
+  network: { label: "Network" },
   css: {
-    category: "CSS",
     label: "CSS",
     color: "#1572b6",
     bg: "bg-[#1572b6]",
@@ -26,7 +24,6 @@ const TagInfo: {
     border: "border-[#1572b6]",
   },
   scss: {
-    category: "CSS",
     label: "SCSS",
     color: "#bf4080",
     bg: "bg-[#bf4080]",
@@ -36,7 +33,6 @@ const TagInfo: {
     border: "border-[#bf4080]",
   },
   emotion: {
-    category: "CSS",
     label: "Emotion",
     color: "#d26ac2",
     bg: "bg-[#d26ac2]",
@@ -46,7 +42,6 @@ const TagInfo: {
     border: "border-[#d26ac2]",
   },
   styled_components: {
-    category: "CSS",
     label: "Styled-Components",
     color: "#ffa4e8",
     bg: "bg-[#ffa4e8]",
@@ -56,7 +51,6 @@ const TagInfo: {
     border: "border-[#ffa4e8]",
   },
   gatsby: {
-    category: "FRAMEWORK",
     label: "Gatsby",
     color: "#663399",
     bg: "bg-[#663399]",
@@ -65,10 +59,8 @@ const TagInfo: {
     text_hover: "hover:text-[#663399]",
     border: "border-[#663399]",
   },
-  nextjs: { category: "FRAMEWORK", label: "Next.js" },
-  intellij: { category: "IDE", label: "IntelliJ" },
+  intellij: { label: "IntelliJ" },
   javascript: {
-    category: "LANGUAGE",
     label: "JavaScript",
     color: "#fac905",
     bg: "bg-[#fac905]",
@@ -78,7 +70,6 @@ const TagInfo: {
     border: "border-[#fac905]",
   },
   typescript: {
-    category: "LANGUAGE",
     label: "TypeScript",
     color: "#3178c6",
     bg: "bg-[#3178c6]",
@@ -87,9 +78,8 @@ const TagInfo: {
     text_hover: "hover:text-[#3178c6]",
     border: "border-[#3178c6]",
   },
-  python3: { category: "LANGUAGE", label: "Python3" },
+  python3: { label: "Python3" },
   html: {
-    category: "LANGUAGE",
     label: "HTML",
     color: "#e44f26",
     bg: "bg-[#e44f26]",
@@ -99,7 +89,6 @@ const TagInfo: {
     border: "border-[#e44f26]",
   },
   react: {
-    category: "LIBRARY",
     label: "React",
     color: "#61dbfb",
     bg: "bg-[#61dbfb]",
@@ -108,9 +97,8 @@ const TagInfo: {
     text_hover: "hover:text-[#61dbfb]",
     border: "border-[#61dbfb]",
   },
-  redux_persist: { category: "LIBRARY", label: "Redux-Persist" },
+  redux_persist: { label: "Redux-Persist" },
   redux: {
-    category: "LIBRARY",
     label: "Redux",
     color: "#764abc",
     bg: "bg-[#764abc]",
@@ -119,11 +107,10 @@ const TagInfo: {
     text_hover: "hover:text-[#764abc]",
     border: "border-[#764abc]",
   },
-  recoil: { category: "LIBRARY", label: "Recoil" },
-  axios: { category: "LIBRARY", label: "Axios" },
-  lodash: { category: "LIBRARY", label: "Lodash" },
+  recoil: { label: "Recoil" },
+  axios: { label: "Axios" },
+  lodash: { label: "Lodash" },
   git: {
-    category: "MANAGEMENT",
     label: "Git",
     color: "#000000",
     bg: "bg-black",
@@ -133,7 +120,6 @@ const TagInfo: {
     border: "border-black",
   },
   git_hub: {
-    category: "MANAGEMENT",
     label: "GitHub",
     color: "#000000",
     bg: "bg-black",
@@ -142,11 +128,10 @@ const TagInfo: {
     text_hover: "hover:text-black",
     border: "border-black",
   },
-  npm: { category: "PACKAGE MANAGER", label: "npm" },
-  yarn: { category: "PACKAGE MANAGER", label: "yarn" },
-  yarn_berry: { category: "PACKAGE MANAGER", label: "yarn berry" },
+  npm: { label: "npm" },
+  yarn: { label: "yarn" },
+  yarn_berry: { label: "yarn berry" },
   jest: {
-    category: "TEST",
     label: "Jest",
     color: "#99425b",
     bg: "bg-[#99425b]",
@@ -156,4 +141,4 @@ const TagInfo: {
     border: "border-[#99425b]",
   },
 };
-export default TagInfo;
+export default TAG_INFO;
