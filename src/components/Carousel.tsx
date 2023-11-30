@@ -2,13 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import ShadowRoundedCard from "@components/Card/ShadowRoundedCard";
-import RecentPostCard from "@components/PostCard/RecentPostCard";
+import ShadowRoundedCard from "@components/ShadowRoundedCard";
+import RecentPostCard from "@components/RecentPostCard";
 import { PostType } from "@models/post";
 import DirectionType from "@models/direction";
 import { SeriesInfoTable } from "@models/series";
 import getDate from "@utils/getDate";
 import imgLoader from "@utils/imgLoader";
+import LeftForwardIcon from "@components/LeftForwardIcon";
+import RightForwardIcon from "@components/RightForwardIcon";
+import TagIcon from "@components/TagIcon";
+import TAG_INFO from "@constants/tag_info";
 
 const svgVariants = {
   initial: {
@@ -66,7 +70,7 @@ interface Props {
   allSeriesInfo: SeriesInfoTable;
 }
 
-const INTERVAL_TIME = 5000;
+const INTERVAL_TIME = 4000;
 
 const Carousel = ({ posts, allSeriesInfo }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -112,13 +116,13 @@ const Carousel = ({ posts, allSeriesInfo }: Props) => {
 
   return (
     <>
-      <div className={`flex justify-between pb-1.5`}>
-        <div className={`gap-1.5`}>
+      <div className={`pb-1.5 gap-5 flex justify-between`}>
+        <div className={`flex gap-1.5 items-center`}>
           <button
             onClick={() => setDirection("left")}
             className={`w-6 hover:scale-110 hover:text-blue-700`}
           >
-            <LeftIcon />
+            <LeftForwardIcon />
           </button>
           <button
             onClick={() => setIsPaused((prev) => !prev)}
@@ -132,10 +136,10 @@ const Carousel = ({ posts, allSeriesInfo }: Props) => {
             onClick={() => setDirection("right")}
             className={`w-6 hover:scale-110 hover:text-blue-700`}
           >
-            <RightIcon />
+            <RightForwardIcon />
           </button>
         </div>
-        <div className={`flex gap-1`}>
+        <div className={`flex gap-1 justify-end`}>
           {posts?.map((_, idx) => (
             <motion.button
               key={`circle_${idx}`}
@@ -185,6 +189,49 @@ const Carousel = ({ posts, allSeriesInfo }: Props) => {
                         sizes={"(min-width:640px) 50vw, 100vw"}
                       />
                     )}
+                    <motion.div
+                      className={`flex flex-col absolute top-0 left-0 h-full w-full rounded-xl gap-4 opacity-0 hover:opacity-100 bg-neutral-900/80 overflow-hidden`}
+                    >
+                      <motion.div className={`text-white p-10 flex-grow`}>
+                        <h1
+                          className={`text-left text-3xl italic font-bold flex gap-1.5 `}
+                        >
+                          <div className={"w-8"}>
+                            <TagIcon />
+                          </div>
+                          Tag
+                        </h1>
+                        <div
+                          className={`text-lg leading-8 font-light pt-3 break-keep whitespace-pre-wrap flex flex-wrap gap-2`}
+                        >
+                          {posts[currentIndex].frontMatter?.tags.map((tag) => {
+                            const tagInfo = TAG_INFO[tag];
+                            return (
+                              <div
+                                key={tag}
+                                className={`${tagInfo?.border} ${tagInfo?.text} border-2 py-1 px-4 rounded-3xl text-sm font-semibold`}
+                              >
+                                {tagInfo?.label || tag}
+                              </div>
+                            );
+                          })}
+                        </div>
+                        <h1
+                          className={`text-left text-3xl italic font-bold mt-7`}
+                        >
+                          Description
+                        </h1>
+                        <p
+                          className={`text-lg leading-8 font-light pt-3 break-keep whitespace-pre-wrap`}
+                        >
+                          {posts[currentIndex].frontMatter?.description}
+                        </p>
+                      </motion.div>
+                      {/*<motion.div*/}
+                      {/*  className={"w-full h-3 bg-neutral-900 rounded-2xl"}*/}
+                      {/*  id={"playBar"}*/}
+                      {/*></motion.div>*/}
+                    </motion.div>
                   </ShadowRoundedCard>
                   <div className={`flex justify-end items-center`}>
                     {getSeriesTitle(
@@ -200,7 +247,9 @@ const Carousel = ({ posts, allSeriesInfo }: Props) => {
                         )}
                       </div>
                     )}
-                    <div className={`flex-grow text-right text-neutral-500`}>
+                    <div
+                      className={`flex-grow text-right text-lg text-neutral-500`}
+                    >
                       {getDate(posts[currentIndex].frontMatter.date)?.dateStr}
                     </div>
                   </div>
@@ -298,55 +347,6 @@ const PlayIcon = () => (
         d="M155 797 c-3 -6 -4 -167 -3 -357 3 -303 5 -345 19 -348 8 -1 156 74
 327 169 232 127 312 175 312 189 0 14 -80 62 -311 189 -171 94 -318 171 -326
 171 -7 0 -16 -6 -18 -13z"
-      />
-    </g>
-  </svg>
-);
-
-const RightIcon = () => (
-  <svg
-    width={"100%"}
-    height={"100%"}
-    viewBox={"0 0 90 90"}
-    fill={"none"}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g
-      transform="translate(0.000000,90.000000) scale(0.100000,-0.100000)"
-      fill={"currentColor"}
-      stroke="none"
-    >
-      <motion.path
-        d="M185 707 c-3 -7 -4 -127 -3 -267 3 -229 5 -255 20 -258 22 -4 368
-248 368 268 0 18 -341 270 -365 270 -9 0 -18 -6 -20 -13z"
-      />
-      <path
-        d="M642 708 c-17 -17 -17 -499 0 -516 17 -17 44 -15 62 4 14 13 16 51
-16 258 0 254 -2 266 -45 266 -12 0 -26 -5 -33 -12z"
-      />
-    </g>
-  </svg>
-);
-const LeftIcon = () => (
-  <svg
-    width={"100%"}
-    height={"100%"}
-    viewBox={"0 0 90 90"}
-    fill={"none"}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g
-      transform="translate(0.000000,90.000000) scale(0.100000,-0.100000)"
-      fill={"currentColor"}
-      stroke="none"
-    >
-      <motion.path
-        d="M192 708 c-17 -17 -17 -499 0 -516 17 -17 44 -15 62 4 14 13 16 51
-16 258 0 254 -2 266 -45 266 -12 0 -26 -5 -33 -12z"
-      />
-      <motion.path
-        d="M505 594 c-117 -86 -170 -131 -170 -144 0 -24 338 -273 363 -268 15
-3 17 28 17 268 0 258 -1 265 -20 267 -12 1 -88 -48 -190 -123z"
       />
     </g>
   </svg>

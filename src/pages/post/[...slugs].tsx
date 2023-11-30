@@ -1,11 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import { PostType, TagWithCountType } from "@src/models";
-import { getAllPosts, getAllTags } from "@utils/api";
+import { PostType } from "@models/post";
 import parseMarkdownToMdx from "@utils/parseMarkdown";
 import PostLayout from "@components/layout/PostLayout";
+import { TagWithCountType } from "@models/tag";
+import getAllTags from "@utils/getAllTags";
+import { getAllPosts } from "@utils/getPosts";
 
-const ProjectPost = ({
+const BlogPost = ({
   post,
   mdx,
   tags,
@@ -17,17 +19,15 @@ const ProjectPost = ({
   return <PostLayout post={post} mdx={mdx} />;
 };
 
-export default ProjectPost;
+export default BlogPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const allPosts = await getAllPosts();
-  const paths = allPosts.map(({ fields: { slug } }) => {
-    return {
-      params: {
-        slugs: slug.replace("project/", "").replace("post/", "").split("/"),
-      },
-    };
-  });
+  const paths = allPosts.map(({ fields: { slug } }) => ({
+    params: {
+      slugs: slug.split("/"),
+    },
+  }));
 
   return {
     paths,
@@ -42,15 +42,14 @@ interface SlugsType {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slugs } = params as SlugsType;
-  const allPosts = await getAllPosts("project");
+  const allPosts = await getAllPosts();
   const allTags = await getAllTags();
   const post = allPosts.find(
-    (p) => p?.fields?.slug === ["project", "post", ...slugs].join("/")
+    (p) => p?.fields?.slug === ["post", ...slugs].join("/")
   );
 
   if (post) {
     const source = await parseMarkdownToMdx(post.body);
-
     return {
       props: {
         post,

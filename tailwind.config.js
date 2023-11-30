@@ -8,6 +8,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      rotateY: {},
       animation: {
         scrollLeft: "scrollLeft 180s linear infinite",
       },
