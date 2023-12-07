@@ -54,7 +54,7 @@ const Pagination = ({
             return (
               <Link href={getPath(i + startPage)} key={i + startPage}>
                 <motion.div
-                  className={`flex items-center justify-center w-3 font-semibold`}
+                  className={`flex items-center justify-center w-3 font-light`}
                   variants={pageVariants}
                   initial={"initial"}
                   animate={i + startPage === currPage ? "animate" : ""}
