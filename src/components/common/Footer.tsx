@@ -4,7 +4,7 @@ import metadata from "@config/index";
 const Footer = () => {
   return (
     <footer
-      className={`w-full flex flex-col items-center text-neutral-700 pb-3 dark:text-neutral-500`}
+      className={`flex flex-col items-center pb-7 text-neutral-700 dark:text-neutral-500`}
     >
       <div className={"flex justify-center mb-2"}>
         <a

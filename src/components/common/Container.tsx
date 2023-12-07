@@ -20,13 +20,13 @@ const Container = (props: {
 }) => {
   return (
     <div
-      className={`bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-100 min-w-[320px]`}
+      className={`bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-100 overflow-hidden mx-auto min-h-screen w-full`}
     >
       <div
-        className={`min-h-screen md:max-lg:w-full lg:w-[1000px] flex flex-col items-center px-8 m-auto dark:bg-neutral-800`}
+        className={`bg-transparent flex flex-col justify-center px-8 lg:w-[1000px] m-auto min-h-screen`}
       >
         <Header />
-        <main className={`w-full grow flex flex-col my-6`}>
+        <main className={`w-full flex flex-col grow shrink`}>
           {props.children}
         </main>
         <Footer />
