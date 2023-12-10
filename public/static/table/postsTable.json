@@ -1,55 +1,45 @@
 {
-  "series/trouble_shooting/nextjs-large-page-data-warning": {
-    "date": "2023-10-09T00:00:00",
-    "title": "NextJS Large Page Data Warning 해결하기",
-    "tags": ["nextjs"],
-    "description": "NextJS Large Page Data Warning 해결 과정",
-    "published": true,
-    "thumbnail": "https://user-images.githubusercontent.com/56423604/273578963-e3f37379-368c-460d-9b37-c4b98cfba9e7.png",
-    "path": "series/trouble_shooting/nextjs-large-page-data-warning.mdx",
-    "series": "trouble_shooting"
-  },
-  "post/yarn-berry-pnp": {
+  "yarn-berry-pnp": {
     "date": "2023-09-06T00:00:00",
     "title": "Yarn Berry는 왜 빠른가?",
     "tags": ["npm", "yarn", "yarn_berry"],
     "description": "yarn berry pnp에 대해 알아보자",
     "published": true,
-    "path": "post/yarn-berry-pnp.mdx"
+    "path": "yarn-berry-pnp.mdx"
   },
-  "post/url-uri": {
+  "url-uri": {
     "date": "2022-09-15T00:00:00",
     "title": "URI와 URL",
     "tags": ["network"],
     "description": "",
     "published": false,
-    "path": "post/url-uri.md"
+    "path": "url-uri.md"
   },
-  "post/test": {
+  "test": {
     "date": "2023-02-02T00:00:00",
     "title": "TEST",
     "tags": ["react", "typescript", "redux", "scss", "css", "network"],
     "description": "개발용 테스트 문서입니다. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "published": false,
-    "path": "post/test.mdx"
+    "path": "test.mdx"
   },
-  "post/styled-components-global-style": {
+  "styled-components-global-style": {
     "date": "2022-06-25T00:00:00",
     "title": "Styled Components Global Style 설정하기",
     "tags": ["styled_components", "css", "react", "typescript"],
     "description": "Styled Components 전체 프로젝트에 적용되는  Global Style 설정하기",
     "published": true,
-    "path": "post/styled-components-global-style.mdx"
+    "path": "styled-components-global-style.mdx"
   },
-  "post/socket": {
+  "socket": {
     "date": "2022-09-13T00:00:00",
     "title": "Socket 통신",
     "tags": ["network"],
     "description": " 프로세스가 데이터를 주고 받는 창구 역할을 한다. 떨어져 있는 두 호스트가 서로 데이터를 주고 받도록 연결해주는 구조체",
     "published": true,
-    "path": "post/socket.mdx"
+    "path": "socket.mdx"
   },
-  "post/simple-kanban-board": {
+  "simple-kanban-board": {
     "date": "2022-10-03T00:00:00",
     "title": "Simple Kanban Board",
     "tags": [
@@ -63,41 +53,41 @@
     "description": "react-beautiful-dnd를 이용한 간단한 칸반 보드",
     "published": false,
     "thumbnail": "/static/images/project/simple_kanban_board.jpg",
-    "path": "post/simple-kanban-board.mdx"
+    "path": "simple-kanban-board.mdx"
   },
-  "post/semantic-release": {
+  "semantic-release": {
     "date": "2023-02-24T00:00:00",
     "title": "React Hook: State Hook",
     "tags": ["react"],
     "description": "useState, useReducer 정리",
     "published": false,
-    "path": "post/semantic-release.mdx"
+    "path": "semantic-release.mdx"
   },
-  "post/rest-api": {
+  "rest-api": {
     "date": "2022-03-17T00:00:00",
     "title": "REST API",
     "tags": ["network"],
     "description": "REST 아키텍쳐의 제약조건을 준수하는 어플리케이션 프로그래밍 인터페이스",
     "published": false,
-    "path": "post/rest-api.md"
+    "path": "rest-api.md"
   },
-  "post/redux-RTK-with-ts": {
+  "redux-RTK-with-ts": {
     "date": "2023-01-26T00:00:00",
     "title": "TypeScript에서 Redux-ToolKit 사용하기",
     "tags": ["react", "typescript", "redux"],
     "description": "TypeScript에서 redux-toolkit 설치부터, Store 설정, UseDispatch, UseSelector, CreateSlice(build), CreateAsyncThunk 사용해보기",
     "published": true,
-    "path": "post/redux-RTK-with-ts.mdx"
+    "path": "redux-RTK-with-ts.mdx"
   },
-  "post/redux-persist": {
+  "redux-persist": {
     "date": "2022-08-31T00:00:00",
     "title": "Redux Persist",
     "tags": ["javascript", "redux_persist", "redux"],
     "description": "Redux-Persist로 새로고침해도 데이터 유지하기",
     "published": true,
-    "path": "post/redux-persist.mdx"
+    "path": "redux-persist.mdx"
   },
-  "post/real-time-coin-info": {
+  "real-time-coin-info": {
     "date": "2022-09-15T00:00:00",
     "title": "REAL TIME COIN INFO",
     "tags": [
@@ -112,227 +102,251 @@
     "description": "코인 정보와 실시간 가격을 CANDLE STICK CHART로 볼 수 있는 서비스",
     "published": false,
     "thumbnail": "/static/images/project/real-time-coin-info.gif",
-    "path": "post/real-time-coin-info.mdx"
+    "path": "real-time-coin-info.mdx"
   },
-  "post/react-useMemo-useCallback": {
+  "react-useMemo-useCallback": {
     "date": "2022-03-22T00:00:00",
     "title": "React useMemo와 useCallback",
     "tags": ["react", "javascript"],
     "description": "React useMemo와 useCallback",
     "published": false,
-    "path": "post/react-useMemo-useCallback.md"
+    "path": "react-useMemo-useCallback.md"
   },
-  "post/react-hook": {
+  "react-hook": {
     "date": "2023-02-23T00:00:00",
     "title": "React Hook",
     "tags": ["react"],
     "description": "",
     "published": false,
-    "path": "post/react-hook.md"
+    "path": "react-hook.md"
   },
-  "post/react-hook-state": {
+  "react-hook-state": {
     "date": "2023-02-24T00:00:00",
     "title": "React Hook: State Hook",
     "tags": ["react"],
     "description": "useState, useReducer 정리",
     "published": false,
-    "path": "post/react-hook-state.mdx"
+    "path": "react-hook-state.mdx"
   },
-  "post/react-class-render": {
+  "react-class-render": {
     "date": "2021-07-12T00:00:00",
     "title": "React Class Component Life Cycle",
     "tags": ["react", "javascript"],
     "description": "React Class Component 의 Life Cycle 정리",
     "published": true,
-    "path": "post/react-class-render.mdx"
+    "path": "react-class-render.mdx"
   },
-  "post/python-rjust-ljust-zfill": {
+  "python-rjust-ljust-zfill": {
     "date": "2022-06-24T00:00:00",
     "title": "Python3 문자열 채우기: rjust / ljust / zfill",
     "tags": ["python3"],
     "description": "Python3 rjust, ljust, zfill로 문자열 채우기",
     "published": true,
-    "path": "post/python-rjust-ljust-zfill.mdx"
+    "path": "python-rjust-ljust-zfill.mdx"
   },
-  "post/programming-paradigm": {
+  "programming-paradigm": {
     "date": "2023-04-11T00:00:00",
     "title": "프로그래밍 패러다임",
     "tags": ["programming"],
     "description": "프로그래밍 패러다임에 대해 알아보기",
     "published": false,
-    "path": "post/programming-paradigm.mdx"
+    "path": "programming-paradigm.mdx"
   },
-  "post/npm-basic": {
+  "npm-basic": {
     "date": "2023-02-06T00:00:00",
     "title": "npm 정리",
     "tags": ["npm"],
     "description": "",
     "published": false,
-    "path": "post/npm-basic.md"
+    "path": "npm-basic.md"
   },
-  "post/mvc-pattern": {
+  "nextjs-large-page-data-warning": {
+    "date": "2023-10-09T00:00:00",
+    "title": "NextJS Large Page Data Warning 해결하기",
+    "tags": ["nextjs"],
+    "series": ["trouble_shooting", "blog"],
+    "description": "NextJS Large Page Data Warning 해결 과정",
+    "published": true,
+    "thumbnail": "https://user-images.githubusercontent.com/56423604/273578963-e3f37379-368c-460d-9b37-c4b98cfba9e7.png",
+    "path": "nextjs-large-page-data-warning.mdx"
+  },
+  "mvc-pattern": {
     "date": "2022-07-04T00:00:00",
     "title": "MVC 패턴",
     "tags": ["programming"],
     "description": "MVC 패턴에 대해 알아보기",
     "published": true,
-    "path": "post/mvc-pattern.mdx"
+    "path": "mvc-pattern.mdx"
   },
-  "post/lodash": {
+  "lodash": {
     "date": "2022-01-10T00:00:00",
     "title": "Lodash 자주 사용하는 함수 정리",
     "tags": ["react", "typescript", "lodash", "javascript"],
     "description": "자주 사용하는 lodash 함수 정리",
     "published": true,
-    "path": "post/lodash.mdx"
+    "path": "lodash.mdx"
   },
-  "post/jest": {
+  "jest": {
     "date": "2022-01-12T00:00:00",
     "title": "Jest",
     "tags": ["jest", "javascript"],
     "description": "",
     "published": false,
-    "path": "post/jest.md"
+    "path": "jest.md"
   },
-  "post/javascript-undefined-null": {
+  "javascript-undefined-null": {
     "date": "2022-01-16T00:00:00",
     "title": "JavaScript",
     "tags": ["javascript"],
     "description": "undefined와 null 비교",
     "published": false,
-    "path": "post/javascript-undefined-null.md"
+    "path": "javascript-undefined-null.md"
   },
-  "post/javascript-intersection-observer-API": {
+  "javascript-intersection-observer-API": {
     "date": "2023-02-13T00:00:00",
     "title": "Intersection Observer API",
     "tags": ["javascript"],
     "description": "Intersection Observer API 공식문서 읽고 정리해보기",
     "published": true,
-    "path": "post/javascript-intersection-observer-API.mdx"
+    "path": "javascript-intersection-observer-API.mdx"
   },
-  "post/javascript-Immutable": {
+  "javascript-Immutable": {
     "date": "2022-09-01T00:00:00",
     "title": "Immutability",
     "tags": ["javascript"],
     "description": "Immutability",
     "published": false,
-    "path": "post/javascript-Immutable.md"
+    "path": "javascript-Immutable.md"
   },
-  "post/javascript-forEach-map": {
+  "javascript-forEach-map": {
     "date": "2022-07-12T00:00:00",
     "title": "JavaScript map과 forEach 비교",
     "tags": ["javascript"],
     "description": "JavaScript map과 forEach 비교하기",
     "published": true,
-    "path": "post/javascript-forEach-map.mdx"
+    "path": "javascript-forEach-map.mdx"
   },
-  "post/javascript-concat-push": {
+  "javascript-concat-push": {
     "date": "2022-07-13T00:00:00",
     "title": "JavaScript concat과 push 비교",
     "tags": ["javascript"],
     "description": "JavaScript concat과 push 비교하기",
     "published": true,
-    "path": "post/javascript-concat-push.mdx"
+    "path": "javascript-concat-push.mdx"
   },
-  "post/husky-git-hook": {
+  "husky-git-hook": {
     "date": "2023-10-11T00:00:00",
     "title": "husky로 git hook 편하게 관리하기",
     "tags": ["husky", "git"],
+    "series": [],
     "description": "git hook은 무엇인지 살펴보고 husky로 git hook 쉽게 적용해보기",
     "published": true,
     "thumbnail": "https://user-images.githubusercontent.com/56423604/276647708-f2c4971b-48db-40bc-8601-d1bd708d34c1.png",
-    "path": "post/husky-git-hook.mdx"
+    "path": "husky-git-hook.mdx"
   },
-  "post/husky-commlint": {
+  "husky-commlint": {
     "date": "2023-10-26T00:00:00",
     "title": "commitlint로 commit-message 관리하기",
     "tags": ["husky", "git", "commitlint"],
+    "series": [],
     "description": "commitlint로 규칙 커스텀해서 커밋 메세지 관리해보자",
     "published": true,
     "thumbnail": "https://user-images.githubusercontent.com/56423604/278075494-8932e44f-b2ea-49d8-8c5d-c1b2805fd0ab.png",
-    "path": "post/husky-commlint.mdx"
+    "path": "husky-commlint.mdx"
   },
-  "post/http": {
+  "http": {
     "date": "2022-09-18T00:00:00",
     "title": "HTTP 통신",
     "tags": ["network"],
     "description": "HTML 파일을 전송하는 프로토콜",
     "published": true,
-    "path": "post/http.mdx"
+    "path": "http.mdx"
   },
-  "post/github-page-publish": {
+  "github-page-publish": {
     "date": "2023-02-22T00:00:00",
     "title": "Github Page로 React 프로젝트 무료로 배포해보기",
     "tags": ["javascript", "react", "githubpage"],
     "description": "Github Page로 CRA로 만든 프로젝트를 무료로 배포해보자",
     "published": true,
-    "path": "post/github-page-publish.mdx"
+    "path": "github-page-publish.mdx"
   },
-  "post/git": {
+  "git": {
     "date": "2022-01-13T00:00:00",
     "title": "Git 내용정리",
     "tags": ["git"],
     "description": "git 초기 설정, git 커밋 메세지 수정",
     "published": false,
-    "path": "post/git.md"
+    "path": "git.md"
   },
-  "post/git-commit-template": {
+  "git-commit-template": {
     "date": "2023-09-25T00:00:00",
     "title": "git commit template 등록하기",
     "tags": ["git", "intellij"],
+    "series": [],
     "description": "git commit template 등록하고 IntelliJ에서 사용해보기",
     "published": true,
     "thumbnail": "https://user-images.githubusercontent.com/56423604/272324652-55a437a4-af2d-4809-9308-5a915847004f.png",
-    "path": "post/git-commit-template.mdx"
+    "path": "git-commit-template.mdx"
   },
-  "post/git-branch": {
+  "git-branch": {
     "date": "2021-07-13T00:00:00",
     "title": "Git branch 정리",
     "tags": ["git"],
     "description": "Git branch 관련 정리",
     "published": false,
-    "path": "post/git-branch.md"
+    "path": "git-branch.md"
   },
-  "post/gatsby-add-table-of-contents-in-gatsby": {
+  "gatsby-add-table-of-contents-in-gatsby": {
     "date": "2022-10-23T00:00:00",
     "title": "Gatsby Markdown Post에 목차 추가하기",
     "tags": ["react", "typescript", "emotion", "gatsby"],
+    "series": ["blog"],
     "description": "Gatsby Blog, Markdown Post에 목차 추가하고 링크 걸기 + 페이지 맨 위/아래로 가기 버튼 추가하기",
     "thumbnail": "https://user-images.githubusercontent.com/56423604/275324825-c75b8367-2633-47b9-888b-4bb0cd4daf7a.png",
     "published": true,
-    "path": "post/gatsby-add-table-of-contents-in-gatsby.mdx"
+    "path": "gatsby-add-table-of-contents-in-gatsby.mdx"
   },
-  "post/cookie-session": {
+  "cookie-session": {
     "date": "2022-11-14T00:00:00",
     "title": "쿠키와 세션",
     "tags": ["network"],
     "description": "쿠키와 세션의 각각 특징과 비교",
     "published": true,
-    "path": "post/cookie-session.mdx"
+    "path": "cookie-session.mdx"
   },
-  "post/browser-rendering": {
+  "browser-rendering": {
     "date": "2023-09-13T00:00:00",
     "title": "브라우저 렌더링 과정 살펴보기",
     "tags": ["network", "css"],
     "description": "Rendering Engine 에 대해 알아보자",
     "published": true,
     "thumbnail": "https://user-images.githubusercontent.com/56423604/272330679-3d6f37c2-fe0a-44f7-995a-8f600257b83f.png",
-    "path": "post/browser-rendering.mdx"
+    "path": "browser-rendering.mdx"
   },
-  "post/axios-interceptor": {
+  "blog-version-2": {
+    "date": "2023-12-10T00:00:00",
+    "title": "블로그 개편해보자",
+    "tags": ["nextjs", "framer_motion", "tailwind"],
+    "series": ["blog"],
+    "description": "블로그 개편사항 요약해보기",
+    "published": true,
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/6e3156e2-0623-410b-8b52-011e99b0811f",
+    "path": "blog-version-2.mdx"
+  },
+  "axios-interceptor": {
     "date": "2022-11-10T00:00:00",
     "title": "Axios Intercepter 사용해보기",
     "tags": ["react", "typescript", "axios", "javascript"],
     "description": "Axios: Intercepter 사용해보기",
     "published": true,
-    "path": "post/axios-interceptor.mdx"
+    "path": "axios-interceptor.mdx"
   },
-  "post/axios-config": {
+  "axios-config": {
     "date": "2022-09-19T00:00:00",
     "title": "Axios Config 기본값 정리",
     "tags": ["react", "typescript", "axios", "javascript"],
     "description": "Axios Config 기본값 정리",
     "published": true,
-    "path": "post/axios-config.mdx"
+    "path": "axios-config.mdx"
   }
 }
