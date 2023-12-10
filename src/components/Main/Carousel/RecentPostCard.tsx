@@ -1,9 +1,8 @@
-import { Dispatch, SetStateAction } from "react";
-import TagBox from "@components/Tag/TagBox";
-import { FrontMatterType } from "@models/post";
+import TagColorBox from "@components/Tag/TagColorBox";
+import { PostAttributeType } from "@models/post";
 import getDate from "@utils/getDate";
 
-interface Props extends FrontMatterType {
+interface Props extends PostAttributeType {
   onMouseOver: () => void;
   onMouseOut: () => void;
   isActive?: boolean;
@@ -33,7 +32,7 @@ const RecentPostCard = ({
       <span className={`text-xs text-neutral-400`}>{dateStr}</span>
       <div className={`flex gap-2 flex-wrap`}>
         {tags.map((tag) => (
-          <TagBox tag={tag} key={tag} />
+          <TagColorBox tag={tag} key={tag} />
         ))}
       </div>
     </div>
