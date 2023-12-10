@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { FaChevronUp, FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import getHeaders from "@utils/getHeaders";
 
 const TableOfContents = ({ content }: { content: string }) => {

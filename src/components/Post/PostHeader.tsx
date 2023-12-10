@@ -1,13 +1,16 @@
-import { FrontMatterType } from "src/models";
 import getDate from "@utils/getDate";
+import { PostAttributeType } from "@models/post";
+import PostTitle from "@components/Title/PostTitle";
 
-type PostHeaderPropsType = Pick<FrontMatterType, "title" | "date">;
+type PostHeaderPropsType = Pick<PostAttributeType, "title" | "date">;
 
 const PostHeader = ({ title, date }: PostHeaderPropsType) => {
   const { dateStr } = getDate(date);
   return (
     <header className={`pt-28 pb-14 text-5xl font-semibold text-center`}>
-      <h1 className={`break-keep max-md:text-xl leading-snug`}>{title}</h1>
+      <PostTitle className={`break-keep max-md:text-xl leading-snug`}>
+        {title}
+      </PostTitle>
       <p className={`text-sm text-neutral-500 mt-10`}>{dateStr}</p>
     </header>
   );
