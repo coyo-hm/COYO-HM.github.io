@@ -1,4 +1,4 @@
-import { FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaGithub } from "react-icons/fa";
 import metadata from "@config/index";
 
 const Footer = () => {

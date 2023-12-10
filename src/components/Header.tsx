@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
-import { BsSunFill, BsFillMoonStarsFill } from "react-icons/bs";
+import { BsFillMoonStarsFill, BsSunFill } from "react-icons/bs";
 
 import metadata from "@config/index";
 import { CATEGORY_INFO, CATEGORY_KEYS } from "@constants/category";
