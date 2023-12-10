@@ -7,7 +7,7 @@ import "@styles/globals.css";
 import "@styles/prism-dracula.css";
 import "@styles/code.css";
 import type { AppProps } from "next/app";
-import Container from "@components/common/Container";
+import Container from "@components/Container";
 import ThemeProvider from "@contexts/ThemeContext";
 
 export default function App({ Component, pageProps }: AppProps) {
