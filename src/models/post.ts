@@ -1,36 +1,24 @@
-export interface FrontMatterType {
-  title: string;
-  category: string;
-  tags: string[];
-  published: boolean;
-  date: string;
-  description: string;
-  path: string;
-  socialImageUrl?: string;
-  socialImageCredit?: string;
-  thumbnail?: string;
-  series?: string;
-}
-
-export interface PostAttributeProps {
+export interface PostAttributeType {
   key: string;
   path: string;
-  series?: string;
   title: string;
-  tags: string[];
-  date: string;
   published: boolean;
+  description: string;
+  date: string;
+  tags: string[];
+  series?: string[];
+  thumbnail?: string;
 }
 
 export interface PostType {
+  frontMatter: PostAttributeType;
+  body: string;
+  path: string;
   fields: {
     slug: string;
   };
-  frontMatter: FrontMatterType;
-  body: string;
-  path: string;
 }
 
-export type menuType = "blog" | "project" | "all";
-
 export type showType = "list" | "card";
+
+export type PostTableNode = Omit<PostAttributeType, "key">;
