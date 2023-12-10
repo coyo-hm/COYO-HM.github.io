@@ -3,7 +3,8 @@ const path = require("path");
 const { sync } = require("glob");
 const frontMatter = require("front-matter");
 
-const CONTENT_DIR_PATH = path.join(process.cwd(), "content");
+const POST_DIR_PATH = path.join(process.cwd(), "content/Post");
+const SERIES_DIR_PATH = path.join(process.cwd(), "content/series");
 const TABLE_DIR_PATH = path.join(process.cwd(), "public/static/table");
 
 const isIntroPost = (postKey = "") => {
@@ -23,7 +24,8 @@ const getSeriesKey = (postKey = "") => {
 };
 
 const createTable = () => {
-  const files = sync(`${CONTENT_DIR_PATH}/**/*.md*`).reverse();
+  const files = sync(`${POST_DIR_PATH}/**/*.md*`).reverse();
+  const seriesFiles = sync(`${SERIES_DIR_PATH}/**/*.md*`).reverse();
 
   try {
     let fileAttributes = {};
@@ -32,27 +34,30 @@ const createTable = () => {
     let tagsTablePublished = { all: [] };
     let tagsTableUnpublished = { all: [] };
 
+    for (const filePath of seriesFiles) {
+      const file = fs.readFileSync(filePath, { encoding: "utf8" });
+      const { attributes } = frontMatter(file);
+      const seriesPath = filePath.replace(`${SERIES_DIR_PATH}/`, "");
+      const seriesKey = seriesPath?.replace(path.extname(filePath), "");
+
+      seriesTablePublished[seriesKey] = {
+        ...attributes,
+        posts: [],
+      };
+
+      seriesTableUnpublished[seriesKey] = {
+        ...attributes,
+        posts: [],
+      };
+    }
+
     for (const filePath of files) {
       const file = fs.readFileSync(filePath, { encoding: "utf8" });
       const { attributes } = frontMatter(file);
-      const { date, title, tags, description, published } = attributes;
+      const { date, tags, series, published } = attributes;
 
-      const postPath = filePath.replace(`${CONTENT_DIR_PATH}/`, "");
+      const postPath = filePath.replace(`${POST_DIR_PATH}/`, "");
       const postKey = postPath.replace(path.extname(filePath), "");
-      const series = getSeriesKey(postKey);
-
-      if (isIntroPost(postKey)) {
-        seriesTablePublished[series] = {
-          ...attributes,
-          posts: seriesTablePublished[series]?.posts || [],
-        };
-
-        seriesTableUnpublished[series] = {
-          ...attributes,
-          posts: seriesTableUnpublished[series]?.posts || [],
-        };
-        continue;
-      }
 
       const postTags = tags?.map((tag) =>
         tag.toLowerCase().replace(/\s|-/gi, "_")
@@ -64,21 +69,23 @@ const createTable = () => {
       }
 
       if (!!series) {
-        seriesTableUnpublished[series] = seriesTableUnpublished[series]
-          ? {
-              ...seriesTableUnpublished[series],
-              posts: [...seriesTableUnpublished[series].posts, postKey],
-            }
-          : { posts: [postKey] };
-
-        if (published) {
-          seriesTablePublished[series] = seriesTablePublished[series]
+        series.forEach((seriesKey) => {
+          seriesTableUnpublished[seriesKey] = seriesTableUnpublished[seriesKey]
             ? {
-                ...seriesTablePublished[series],
-                posts: [...seriesTablePublished[series].posts, postKey],
+                ...seriesTableUnpublished[seriesKey],
+                posts: [...seriesTableUnpublished[seriesKey].posts, postKey],
               }
             : { posts: [postKey] };
-        }
+
+          if (published) {
+            seriesTablePublished[seriesKey] = seriesTablePublished[seriesKey]
+              ? {
+                  ...seriesTablePublished[seriesKey],
+                  posts: [...seriesTablePublished[seriesKey].posts, postKey],
+                }
+              : { posts: [postKey] };
+          }
+        });
       }
 
       postTags.forEach((t) => {
@@ -95,8 +102,6 @@ const createTable = () => {
       fileAttributes[postKey] = {
         ...attributes,
         path: postPath,
-        series,
-        title,
         tags: postTags,
         date: date ? new Date(date).toISOString().substring(0, 19) : "",
         published,

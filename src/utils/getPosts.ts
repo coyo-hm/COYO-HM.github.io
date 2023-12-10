@@ -1,21 +1,20 @@
 import fs from "fs";
 import frontMatter from "front-matter";
-import { PostType, FrontMatterType } from "@models/post";
+import { PostAttributeType, PostType } from "@models/post";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
-import getPostAttributeList from "@utils/getPostAttributeList";
+import getPostAttributesList from "@utils/getPostAttributesList";
+import { POST_DIR_PATH } from "@constants/api";
 
-const DIR_REPLACE_STRING = "/content";
-
-const POST_PATH = `${process.cwd()}${DIR_REPLACE_STRING}`;
+const POST_PATH = `${process.cwd()}${POST_DIR_PATH}`;
 
 export async function getAllPosts(tag?: string): Promise<Array<PostType>> {
-  const postsList = await getPostAttributeList(tag);
+  const postsList = await getPostAttributesList(tag);
 
   return postsList.map(({ path, key, date, tags }) => {
     const file = fs.readFileSync(`${POST_PATH}/${path}`, {
       encoding: "utf8",
     });
-    const { attributes, body } = frontMatter<FrontMatterType>(file);
+    const { attributes, body } = frontMatter<PostAttributeType>(file);
     return {
       frontMatter: {
         ...attributes,
@@ -36,7 +35,7 @@ export async function getPosts(
   size: number = DEFAULT_NUMBER_OF_POST.list,
   tag?: string
 ): Promise<Array<PostType>> {
-  const postsAttributesTable = await getPostAttributeList(tag);
+  const postsAttributesTable = await getPostAttributesList(tag);
 
   const selectedPostAttributes = postsAttributesTable.slice(
     page * size,
@@ -44,19 +43,14 @@ export async function getPosts(
   );
 
   return selectedPostAttributes.map((postAttribute) => {
-    const { path, key, date, tags } = postAttribute;
+    const { path, key } = postAttribute;
 
     const file = fs.readFileSync(`${POST_PATH}/${path}`, {
       encoding: "utf8",
     });
-    const { attributes, body } = frontMatter<FrontMatterType>(file);
+    const { body } = frontMatter<PostAttributeType>(file);
     return {
-      frontMatter: {
-        ...attributes,
-        series: postAttribute?.series || "",
-        tags,
-        date: new Date(date).toISOString().substring(0, 19),
-      },
+      frontMatter: postAttribute,
       body,
       fields: {
         slug: key,

@@ -1,20 +1,21 @@
-import { PostAttributeProps } from "@models/post";
 import PostsTable from "public/static/table/postsTable.json";
+import { PostAttributeType, PostTableNode, PostType } from "@models/post";
 import sortPostByDate from "@utils/sortPostByDate";
-type PostTableNode = Omit<PostAttributeProps, "key">;
 
-const getPostAttributeList = async (
+const getPostAttributesList = async (
   tag?: string
-): Promise<PostAttributeProps[]> => {
+): Promise<PostAttributeType[]> => {
   const postsAttributesObj: {
     [key: string]: PostTableNode;
   } = PostsTable;
 
   const postAttributeList = Object.keys(PostsTable).reduce(
-    (arr: PostAttributeProps[], key) =>
+    (arr: PostAttributeType[], key) =>
       (postsAttributesObj[key].published ||
         process.env.NODE_ENV === "development") &&
-      (tag === undefined || postsAttributesObj[key].tags?.includes(tag))
+      (tag === undefined ||
+        tag === "all" ||
+        postsAttributesObj[key].tags?.includes(tag))
         ? [...arr, { ...postsAttributesObj[key], key }]
         : arr,
     []
@@ -23,4 +24,4 @@ const getPostAttributeList = async (
   return sortPostByDate(postAttributeList);
 };
 
-export default getPostAttributeList;
+export default getPostAttributesList;

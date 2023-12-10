@@ -1,7 +1,7 @@
 import SeriesTable from "public/static/table/seriesTable.json";
-import { SeriesInfoTable } from "@models/series";
+import { SeriesAttributeTableType } from "@models/series";
 
-const getAllSeriesInfo = async (): Promise<SeriesInfoTable> => {
+const getAllSeriesInfo = async (): Promise<SeriesAttributeTableType> => {
   return process.env.NODE_ENV === "development"
     ? SeriesTable.unpublished
     : SeriesTable.published;
