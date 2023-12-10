@@ -1,7 +1,7 @@
-import TagInfo from "@constants/TagInfo";
+import TAG_INFO from "@constants/tag_info";
 
-const TagBox = ({ tag }: { tag: string }) => {
-  const tagInfo = TagInfo[tag];
+const TagColorBox = ({ tag }: { tag: string }) => {
+  const tagInfo = TAG_INFO[tag];
   const bgColor = tagInfo?.bg || "bg-neutral-400";
 
   return (
@@ -14,4 +14,4 @@ const TagBox = ({ tag }: { tag: string }) => {
   );
 };
 
-export default TagBox;
+export default TagColorBox;
