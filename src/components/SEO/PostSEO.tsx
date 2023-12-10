@@ -3,7 +3,7 @@ import metadata from "@config/index";
 
 const PostSEO = ({
   title,
-  summary,
+  description,
   date,
   updatedAt,
   url,
@@ -11,7 +11,7 @@ const PostSEO = ({
   images = [],
 }: {
   title: string;
-  summary: string;
+  description: string;
   date: string;
   updatedAt?: string;
   url: string;
@@ -32,7 +32,7 @@ const PostSEO = ({
     <>
       <NextSeo
         title={`${metadata.title} | ${title}`}
-        description={summary}
+        description={description}
         canonical={url}
         openGraph={{
           type: "article",
@@ -44,7 +44,7 @@ const PostSEO = ({
           },
           url,
           title,
-          description: summary,
+          description: description,
           images: featuredImages,
         }}
       />
@@ -52,7 +52,7 @@ const PostSEO = ({
         authorName={metadata.author.name}
         dateModified={modifiedAt}
         datePublished={publishedAt}
-        description={summary}
+        description={description}
         images={images}
         publisherName={metadata.author.name}
         title={title}
