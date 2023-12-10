@@ -7,7 +7,18 @@ module.exports = {
     "./src/constants/*.ts",
   ],
   theme: {
-    extend: {},
+    extend: {
+      rotateY: {},
+      animation: {
+        scrollLeft: "scrollLeft 180s linear infinite",
+      },
+      keyframes: {
+        scrollLeft: {
+          from: { transform: "translate3d(0, 0, 0)" },
+          to: { transform: "translate3d(-100%, 0, 0)" },
+        },
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };

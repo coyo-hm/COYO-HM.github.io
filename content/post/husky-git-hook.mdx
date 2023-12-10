@@ -1,0 +1,167 @@
+---
+date: "2023-10-11"
+title: "husky로 git hook 편하게 관리하기"
+tags: ["husky",  "git"]
+series: []
+description: "git hook은 무엇인지 살펴보고 husky로 git hook 쉽게 적용해보기"
+published: true
+thumbnail: 'https://user-images.githubusercontent.com/56423604/276647708-f2c4971b-48db-40bc-8601-d1bd708d34c1.png'
+---
+
+# Git Hooks
+
+git 에서 제공하는 특정 상황에서 특정 스크립트를 실행할 수 있는 기능으로 크게 클라이언트 훅과 서버 훅으로 나눌 수 있다.
+
+## 서버 훅
+
+- 서버 훅 은 Git repository 로 push 가 발생했을 때 서버에서 실행하는 훅
+
+<aside>
+  💡 저장소를 Clone 해도 클라이언트 훅은 복사되지 않는다. 만든 설정한 훅이 반드시 적용되도록 하려면 서버 훅을 이용해야만 한다.
+
+</aside>
+
+## 클라이언트 훅
+
+- 클라이언트 훅은 커밋, Merge 가 발생하거나 push 가 발생하기 전 클라이언트에서 실행하는 훅
+- 클라이언트 훅은 committing-workflow hooks, email-workflow hooks, 그리고 기타 hooks 으로 분류할 수 있다.
+
+### Committing-Workflow Hooks
+
+`git commit` 명령으로 커밋을 할 때 실행하는 Hook
+
+| hook | description |
+| --- | --- |
+| pre-commit | commit할 때 가장 먼저 호출되는 훅으로 commit message를 작성하기 전에 실행 |
+| prepare-commit-msg | Git이 commit message를 생성하고 나서 편집기를 실행하기 전에 실행 |
+| commit-msg | 최종적으로 commit이 완료되기 전에 프로젝트 상태나 commit message를 검증하기 위해 실행 |
+| post-commit | commit 을 완료한 후 실행 |
+
+### Email Workflow Hooks
+
+`git am` 명령으로 이메일을 통해 patch 파일을 적용할 때 실행하는 Hook
+
+| hook | description |
+| --- | --- |
+| applypatch-msg | `git am` 명령 실행 시 제일 먼저 실행 |
+| pre-applypatch | patch 적용 후 실행하며, `git am` 명령(patch)을 취소시킬 수 있음 |
+| post-applypatch | `git am` 명령에서 마지막으로 실행하며, patch 를 중단시킬 수 없음 |
+
+### Etc Hooks
+
+rebase, merge, push 와 같은 이벤트를 실행할 때 실행하는 Hook
+
+| hook | description |
+| --- | --- |
+| pre-rebase | rebase 하기 전에 실행, 이미 Push 한 커밋을 rebase 하지 못하게 할 수 있다.  |
+| post-rewrite | `git commit –amend`, `git rebase` 와 같이 commit을 변경하는 명령을 실행한 후 실행 |
+| post-merge | merge 가 끝나고 나서 실행 |
+| pre-push | `git push` 명령 실행 시 동작하며 리모트 정보를 업데이트 하고 난 후 리모트로 데이터를 전송하기 전에 실행, push 를 중단시킬 수 있음 |
+
+## Git Hooks 적용 방법
+
+git을 설정한 파일 디렉토리 안에 .git 디렉토리가 만일 생성되지 않았다면 숨김 파일도 보기를 켜놓았는지 확인해봐야 한다.
+
+hook을 달리 설정한 것이 없다면 .git/hooks 폴더 안에 다음과 같이 위에서 보았던 Hook과 이름이 동일하지만 뒤에 `.sample` 이라는 확장자가 붙은 파일을 확인할 수 있다.
+
+hook은 실행 가능한 스크립트이며, 설정하고자 하는 훅 이름을 확장자 없이 파일명으로 지정하면 되기에 원하는 hook 의 `.sample` 이라는 확장자를 지우면 각 상황에 샘플이 바로 적용된다.
+
+<img alt={"git-hook-dir"} style={{margin:"20px auto 10px"}} src={"https://user-images.githubusercontent.com/56423604/276653286-714e61cf-ebc9-4724-b804-4891aeb90351.png"}/>
+
+git hook을 직접 작성하여 사용하거나 다른 디렉토리에 백업하여 공유하는 방법들이 있으나 [🐶 husky](https://typicode.github.io/husky/)를 사용하면 보다 더 편리하게 git hook을 관리할 수 있다.
+
+# 🐶 husky
+
+husky 는 Git Hooks 를 보다 쉽게 설정하고 관리할 수 있는 npm 모듈이다.
+
+## 설치
+
+쟈동으로 설치하는 방법이다. 수동으로 설치하고 싶다면 [🐶 husky](https://typicode.github.io/husky/) 공식 문서를 참조하자.
+
+```bash
+#npm을 사용할 때
+npx husky-init && npm install
+
+#yarn을 사용할 때
+yarn dlx husky-init --yarn2 && yarn
+```
+
+설치를 진행하면 해당 디렉토리에 다음과 같은 폴더가 생성된 것을 확인할 수 있다. 또한 pre-commit이라는 훅이 자동적으로 생성된 것도 볼 수 있다.
+<img alt={"git-hook-dir"} style={{margin:"20px auto 10px"}} src={"https://user-images.githubusercontent.com/56423604/276660300-5e0acbf4-ea3f-423d-aef9-3a85b4979a0b.png"}/>
+생성된 hook을 살펴보면 commit 이전에 npm test를 실행하도록 설정되어 있는데 만일 필요없다면 지워줘도 무방하다.
+<img alt={"husky-pre-commit"} style={{margin:"20px auto 10px"}} src={"https://user-images.githubusercontent.com/56423604/276660756-d9cc9040-b9cc-4eda-8b44-f6c9efb36620.png"}/>
+`package.json` 에도 해당 스크립트가 자동으로 생성된 것을 확인할 수 있다.
+<img alt={"package-husky-prepare"} style={{margin:"20px auto 10px"}} src={"https://user-images.githubusercontent.com/56423604/276661357-c225c9e6-74a3-4294-8218-43f44b193e92.png"}/>
+
+## 적용
+
+스크립트를 적용하는 방법으로는 2가지 방법이 있다.
+
+1. 직접 파일 생성하고 작성하기
+
+파일이름을 훅 이름으로 생성하여 스크립트를 직접 작성하는 방법
+
+2. shell 명령어 사용하기
+
+ ```bash
+ npx husky add .husky/pre-commit "npm test"
+```
+
+# 직접 husky로 git hook 적용해보기
+
+<aside>
+  <strong>✅&nbsp;&nbsp;husky로 js 실행하고 생성 파일 prettier 적용하기</strong><br/><br/>
+  매 `commit` 전에 포스트 정보를 담은 `json` 파일을 생성하는 js 파일([관련 내용](https://coyo-hm.github.io/blog/post/git/git-commit-template))을 동작시키고 해당 json 파일에 prettier를 적용하여 `commit` 할 것 이다.
+</aside>
+
+## hook 생성하기
+
+우선 `package.json`에 table을 만드는 스크립트를 추가해주었다.
+
+```json
+"scripts": {
+    ...
+    "prepare": "husky install",
+    "table": "node scripts/createPostTable.js",
+    ...
+  },
+```
+
+그리고 나서 shell 창을 이용해서 다음 명령어를 입력해준다. commit message 생성 전에 실행하기 위해 `pre-commit`에 추가해 주었다.
+
+<img alt={"shell-command-npm-table"} style={{margin:"20px auto 10px"}} src={"https://user-images.githubusercontent.com/56423604/276676938-cefe9b8c-57dc-40fc-881e-d4681450e2bd.png"}/>
+
+그러면 pre-commit에 해당 명령어가 입력된 것을 확인할 수 있다.
+
+<img alt={"husky-pre-commit-npm-table"} style={{margin:"20px auto 10px"}} src={"https://user-images.githubusercontent.com/56423604/276678444-914f78c5-e2b2-4066-9786-6f7ad39e52b7.png"}/>
+
+이와 같은 방식으로 해당 폴더에 prettier를 실행하고 실행한 json 파일들을 git add 해주는 스크립트를 생성하고 이번에는 pre-commit에 명령어를 직접 입력해주었다.
+
+```json
+"scripts": {
+    ...
+    "prepare": "husky install",
+    "table": "node scripts/createPostTable.js",
+		"format": "prettier --cache --write public/static/table && git add -f public/static/table/"
+    ...
+  },
+```
+
+<img alt={"husky-pre-commit-npm-format"} style={{margin:"20px auto 10px"}} src={"https://user-images.githubusercontent.com/56423604/276679315-4e7ba008-e40b-436a-a7d6-48bd56290559.png"}/>
+
+## 실행 결과
+
+실행 여부를 확인하기 위해 기존에 존재했던 public/static/table 폴더를 삭제해주었다.
+
+<img alt={"before-commit"} style={{margin:"20px auto 10px"}} src={"https://user-images.githubusercontent.com/56423604/276680189-d886d35a-1eab-4bc0-952b-8438d378c5da.png"}/>
+
+commit을 실행한 후 commit 내역을 보면 json 파일들이 생성된 것을 확인할 수 있다.
+
+<img alt={"commit-log"} style={{margin:"20px auto 10px"}} src={"https://user-images.githubusercontent.com/56423604/276682422-5cce1bda-4c1e-4640-aa23-a2a262ffeb51.png"}/>
+
+
+# 참조
+
+- [훅으로 Git에 훅 들어가기](https://techblog.woowahan.com/2530/)
+- [husky 로 git hook 하자](https://library.gabia.com/contents/8492/)
+- [8.3 Customizing Git - Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)

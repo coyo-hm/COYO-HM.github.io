@@ -16,7 +16,7 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "deploy": "next build && next export && touch out/.nojekyll && git add -f out/ && git commit -m 'DEPLOY: deploy to gh-pages' && git subtree push --prefix out origin gh-pages",
     "prepare": "husky install",
-    "table": "node scripts/createPostTable.js",
+    "table": "node src/scripts/createTable.js",
     "format": "prettier --cache --write public/static/table"
   },
   "license": "MIT",
@@ -27,6 +27,7 @@
     "@types/react-dom": "18.0.10",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "framer-motion": "^10.16.5",
     "front-matter": "^4.0.2",
     "glob": "^7.1.7",
     "gray-matter": "^4.0.3",
@@ -42,6 +43,7 @@
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
     "remark-slug": "^7.0.1",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "typescript": "4.9.4"
   },
   "devDependencies": {

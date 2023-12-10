@@ -8,7 +8,7 @@ const getDate = (dateStr: string) => {
     year,
     month,
     date,
-    dateStr: `${year}.${month}.${date}`,
+    dateStr: `${year}/${month}/${date}`,
   };
 };
 

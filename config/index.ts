@@ -5,7 +5,7 @@ const metadata = {
   title: `COYO-LOG:D `,
   description: `주니어 개발자의 개발 일지`,
   siteUrl: `https://coyo-hm.github.io/`,
-  copyright: `coyo © All rights reserved.`,
+  copyright: `© 2021 - 2023 COYO All rights reserved.`,
   author: {
     name: `COYO`,
   },

@@ -7,7 +7,7 @@
 }
 
 :root {
-  --background: rgb(256, 256, 256);
+  --background: rgb(255, 255, 255);
   --text: rgb(38, 38, 38);
   --color-main-blue: #1d4ed8;
   --color-react: #61dbfb;
@@ -37,10 +37,10 @@
 
 * {
   box-sizing: border-box;
-  /*font-family: "pretendard", "Pretendard-Regular";*/
-  font-family: "NanumSquareRound";
+  font-family: "Inter";
   scrollbar-width: 15px;
   scrollbar-color: none rgba(127, 146, 172, 0.466);
+  transition: 0.2s;
 }
 
 *::-webkit-scrollbar {
@@ -56,16 +56,16 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "NanumSquareRound", -apple-system, BlinkMacSystemFont, Segoe UI,
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
-  background-color: var(--background);
+  background: var(--background);
   color: var(--text);
 }
 
 .dark {
   color: var(--text);
-  background-color: rgb(38, 38, 38);
+  background: var(--background);
   scrollbar-color: none rgb(30, 58, 138);
 }
 
@@ -168,4 +168,8 @@ aside {
   border-radius: 3px;
   background-color: #e74d3cbe;
   box-decoration-break: clone;
+}
+
+.paused:hover {
+  animation-play-state: paused;
 }
