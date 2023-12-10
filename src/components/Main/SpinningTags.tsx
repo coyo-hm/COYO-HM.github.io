@@ -3,7 +3,7 @@ import Link from "next/link";
 import TAG_INFO from "@constants/tag_info";
 import { TagWithCountType } from "@models/tag";
 
-const TagList = forwardRef(function TagList(
+const SpinningTags = forwardRef(function TagList(
   { tagList }: { tagList: TagWithCountType[] },
   tagListRef?: ForwardedRef<HTMLDivElement>
 ) {
@@ -18,10 +18,10 @@ const TagList = forwardRef(function TagList(
           className={`absolute whitespace-nowrap paused animate-scrollLeft`}
           ref={tagListRef}
         >
-          {[...tagList, ...tagList, ...tagList].map(({ tag }) => (
+          {[...tagList, ...tagList, ...tagList].map(({ tag }, idx) => (
             <Link
               href={`/post/page/0/${tag}`}
-              key={tag}
+              key={`${tag}_${idx}`}
               className={`whitespace-nowrap mr-2 hover:font-bold hover:text-blue-700 hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
               aria-label={`link-${tag}`}
             >
@@ -33,4 +33,4 @@ const TagList = forwardRef(function TagList(
     </div>
   );
 });
-export default TagList;
+export default SpinningTags;
