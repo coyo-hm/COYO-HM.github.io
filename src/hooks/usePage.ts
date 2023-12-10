@@ -1,6 +1,6 @@
-import { DEFAULT_NUMBER_OF_POST } from "@src/constants";
 import { useEffect, useState } from "react";
-import { showType } from "@src/models";
+import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
+import { showType } from "@models/post";
 
 const usePage = (total: number, currPage: number, showType: showType) => {
   const lastPage = Math.max(
