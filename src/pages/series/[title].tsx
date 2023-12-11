@@ -12,7 +12,7 @@ import PageSeo from "@components/SEO/PageSEO";
 import { SeriesPostType } from "@models/series";
 import getDate from "@utils/getDate";
 import getAllSeriesInfo from "@utils/getAllSeriesInfo";
-import getSeriesInfo from "@utils/getSeriesInfo";
+import getSeriesIntro from "@utils/getSeriesIntro";
 import parseMarkdownToMdx from "@utils/parseMarkdown";
 import imgLoader from "@utils/imgLoader";
 import PostTitle from "@components/Title/PostTitle";
@@ -142,7 +142,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { title } = params as { title: string };
-  const seriesInfo = await getSeriesInfo(title);
+  const seriesInfo = await getSeriesIntro(title);
 
   if (seriesInfo) {
     const source = await parseMarkdownToMdx(seriesInfo.body);
