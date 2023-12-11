@@ -9,6 +9,11 @@ export interface SeriesAttributeType {
   posts: string[];
 }
 
+export interface SeriesAttributeWithPostType
+  extends Omit<SeriesAttributeType, "posts"> {
+  posts: PostAttributeType[];
+}
+
 export interface SeriesPostType {
   key: string;
   posts: PostAttributeType[];

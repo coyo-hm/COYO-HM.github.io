@@ -9,7 +9,7 @@ import frontMatter from "front-matter";
 
 const SERIES_PATH = `${process.cwd()}${SERIES_DIR_PATH}`;
 
-const getSeriesInfo = async (seriesKey: string): Promise<SeriesPostType> => {
+const getSeriesIntro = async (seriesKey: string): Promise<SeriesPostType> => {
   const seriesInfoTable: { [key: string]: SeriesTableNode } =
     process.env.NODE_ENV === "development"
       ? SeriesTable.unpublished
@@ -40,4 +40,4 @@ const getSeriesInfo = async (seriesKey: string): Promise<SeriesPostType> => {
     path: seriesKey,
   };
 };
-export default getSeriesInfo;
+export default getSeriesIntro;
