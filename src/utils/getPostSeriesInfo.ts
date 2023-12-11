@@ -2,7 +2,7 @@ import SeriesTable from "public/static/table/seriesTable.json";
 import PostsTable from "public/static/table/postsTable.json";
 
 import { SeriesAttributeWithPostType, SeriesTableNode } from "@models/series";
-import { PostAttributeType, PostTableNode } from "@models/post";
+import { PostTableNode } from "@models/post";
 
 const NUMBER_OF_POST = 5;
 
@@ -28,10 +28,15 @@ const getPostSeriesInfo = async (
         let endIdx = Math.min(seriesAttribute.posts.length, postIdx + 3);
 
         const posts =
-          seriesAttribute?.posts.slice(startIdx, endIdx).map((postKey) => ({
-            ...postsAttributesTable[postKey],
-            key: postKey,
-          })) || [];
+          seriesAttribute?.posts
+            .slice(startIdx, endIdx)
+            .map((postKey, idx) => ({
+              ...postsAttributesTable[postKey],
+              title: `${startIdx + idx + 1}. ${
+                postsAttributesTable[postKey].title
+              }`,
+              key: postKey,
+            })) || [];
 
         return [...arr, { ...seriesAttribute, key: seriesKey, posts }];
       }
