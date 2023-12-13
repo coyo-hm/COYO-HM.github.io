@@ -47,7 +47,7 @@ const SeriesIntroPage = ({
         description={description}
         url={`${metadata.siteUrl}/series/${key}`}
       />
-      <main className={`flex flex-col mx-auto w-full lg:w-[800px] px-10 pt-5`}>
+      <main className={`flex flex-col mx-auto w-full lg:w-[800px] pt-5`}>
         <div className={`relative h-[200px] z-0`}>
           <Image
             loader={(props) => imgLoader(props)}

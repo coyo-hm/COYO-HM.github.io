@@ -44,7 +44,7 @@ const Post = ({
       <article className={`flex flex-col`} id={"post"}>
         <PostHeader {...frontMatter} />
         <div
-          className={`flex flex-row flex-nowrap relative border-y border-y-blue-700 max-md:flex-col-reverse`}
+          className={`relative border-y border-y-blue-700 flex flex-row flex-nowrap max-md:flex-col-reverse`}
         >
           <div
             className={`grow shrink pr-10 pt-5 min-w-0 max-md:p-0 max-md:pb-4`}
@@ -61,7 +61,6 @@ const Post = ({
             <CustomMDX {...mdx} />
             <TagsList tags={tags} slug={slug} />
           </div>
-
           <TableOfContents content={body} />
         </div>
         <CommentWidget />
