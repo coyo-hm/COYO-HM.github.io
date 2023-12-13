@@ -10,6 +10,9 @@ import CustomMDX from "@components/Post/CustomMDX";
 import TagsList from "@components/Post/TagsList";
 import TableOfContents from "@components/Post/TableOfContents";
 import CommentWidget from "@components/Post/CommentWidget";
+import getPostSeriesInfo from "@utils/getPostSeriesInfo";
+import { SeriesAttributeWithPostType } from "@models/series";
+import SeriesPostsList from "@components/Post/SeriesPostsList";
 
 const Post = ({
   post: {
@@ -18,9 +21,11 @@ const Post = ({
     body,
     path,
   },
+  allSeriesInfo,
   mdx,
 }: {
   post: PostType;
+  allSeriesInfo: SeriesAttributeWithPostType[];
   mdx: MDXRemoteSerializeResult;
 }) => {
   const { key, series, title, tags, date, description, thumbnail } =
@@ -39,11 +44,20 @@ const Post = ({
       <article className={`flex flex-col`} id={"post"}>
         <PostHeader {...frontMatter} />
         <div
-          className={`flex flex-row flex-nowrap relative border-y border-y-blue-700 max-md:flex-col-reverse`}
+          className={`relative border-y border-y-blue-700 flex flex-row flex-nowrap max-md:flex-col-reverse`}
         >
           <div
             className={`grow shrink pr-10 pt-5 min-w-0 max-md:p-0 max-md:pb-4`}
           >
+            <div className={`flex flex-col gap-3`}>
+              {allSeriesInfo.map((series) => (
+                <SeriesPostsList
+                  key={series.key}
+                  selectedPostKey={slug}
+                  seriesInfo={series}
+                />
+              ))}
+            </div>
             <CustomMDX {...mdx} />
             <TagsList tags={tags} slug={slug} />
           </div>
@@ -83,9 +97,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   if (post) {
     const source = await parseMarkdownToMdx(post.body);
+    const seriesInfo = await getPostSeriesInfo(
+      slugs.join("/"),
+      post.frontMatter.series || []
+    );
     return {
       props: {
         post,
+        allSeriesInfo: seriesInfo,
         mdx: source,
       },
     };

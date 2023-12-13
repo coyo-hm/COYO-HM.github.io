@@ -17,6 +17,7 @@ import parseMarkdownToMdx from "@utils/parseMarkdown";
 import imgLoader from "@utils/imgLoader";
 import PostTitle from "@components/Title/PostTitle";
 import PostSubTitle from "@components/Title/PostSubTitle";
+import { CATEGORY_INFO } from "@constants/category";
 
 const postVariants = {
   initial: { y: 0 },
@@ -46,7 +47,7 @@ const SeriesIntroPage = ({
         description={description}
         url={`${metadata.siteUrl}/series/${key}`}
       />
-      <main className={`flex flex-col mx-auto w-full lg:w-[800px] px-10 pt-5`}>
+      <main className={`flex flex-col mx-auto w-full lg:w-[800px] pt-5`}>
         <div className={`relative h-[200px] z-0`}>
           <Image
             loader={(props) => imgLoader(props)}
@@ -60,7 +61,14 @@ const SeriesIntroPage = ({
             className={`h-full w-full bg-gradient-to-b from-white/0 dark:from-neutral-800/0 via-white/70 dark:via-neutral-800/70 to-white/100 dark:to-neutral-800/100 absolute`}
           ></div>
         </div>
-        <PostTitle className={`mb-20 mt-[-25px] z-10`}>{title}</PostTitle>
+        <PostTitle className={`mb-20 mt-[-5px] z-10`}>
+          <h1
+            className={`text-lg w-fit font-normal italic bg-transparent border-b-2 border-black dark:border-white mb-4 mx-auto`}
+          >
+            {CATEGORY_INFO.series.label}
+          </h1>
+          {title}
+        </PostTitle>
         <div className={`py-7`}>
           <PostSubTitle
             className={`text-blue-700 border-b-2 py-2 border-blue-700 mb-4`}
