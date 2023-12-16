@@ -53,6 +53,7 @@
     ],
     "description": "react-beautiful-dnd를 이용한 간단한 칸반 보드",
     "published": false,
+    "series": ["toy_project"],
     "thumbnail": "/static/images/project/simple_kanban_board.jpg",
     "path": "simple-kanban-board.mdx"
   },
@@ -102,6 +103,7 @@
     ],
     "description": "코인 정보와 실시간 가격을 CANDLE STICK CHART로 볼 수 있는 서비스",
     "published": false,
+    "series": ["toy_project"],
     "thumbnail": "/static/images/project/real-time-coin-info.gif",
     "path": "real-time-coin-info.mdx"
   },
