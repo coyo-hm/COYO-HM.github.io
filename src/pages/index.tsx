@@ -7,7 +7,6 @@ import Carousel from "@components/Main/Carousel/Carousel";
 import SpinningTags from "@components/Main/SpinningTags";
 import PageSeo from "@components/SEO/PageSEO";
 import { CATEGORY_INFO, CATEGORY_KEYS } from "@constants/category";
-import useHorizontalScroll from "@hooks/useHorizontalScroll";
 import { PostType } from "@models/post";
 import { SeriesAttributeTableType } from "@models/series";
 import { TagWithCountType } from "@models/tag";
@@ -27,8 +26,6 @@ export default function Home({
   tags: TagWithCountType[];
   allSeriesInfo: SeriesAttributeTableType;
 }) {
-  const seriesRef = useHorizontalScroll();
-
   return (
     <>
       <PageSeo
