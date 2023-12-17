@@ -21,23 +21,23 @@ thumbnail: 'https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/7d38e65
 
 google analytics는 google에서 제공하는 내 서비스의 트래픽이나 사용자 유입 등을 파악할 수 있도록 도와주는 분석 도구입니다.
 
-# ****gtag4 블로그에 적용하기****
+# gtag4 블로그에 적용하기
 
 ## 측정 ID 생성하기
 
 우선 [google analytics](https://analytics.google.com/analytics/web/provision/#/provision) 에서 측정 시작을 눌러 계정을 만들어줍니다. 이미 계정이 있으신 경우에는 새 속성을 만들어 주시거나 기존 측정 ID를 사용하시면 됩니다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/b9f7b15d-530d-494a-82d4-8ecd5686ea40/b60afa50-72fb-4eb2-8d8c-c14ceafcb2c1/Untitled.png)
+<img src={"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/054e9d4b-974a-4458-85ab-074db9402899"} alt={"google-analytics-0"} style={{margin:"5px auto 20px"}}/>
 
 계정 이름에 팀 명 혹은 회사명을 입력합니다. 아래의 계정 데이터 공유 설정은 각자 맞게 읽어보고 선택하시면 됩니다. 저는 default로 진행했습니다. 생성 후에도 계정 설정에서 수정하실 수 있습니다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/b9f7b15d-530d-494a-82d4-8ecd5686ea40/0d5e2f06-565f-496e-97f0-191445ad7324/Untitled.png)
+<img src={"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/0ae8a4dd-9194-4ecf-90bb-16049a8b0204"} alt={"google-analytics-1"} style={{margin:"5px auto 20px"}}/>
 
 계속해서 정보를 입력하시고 약관 동의까지 해서 속성까지 생성해 줍니다.
 
 속성까지 생성하면 다음과 같은 홈화면이 나옵니다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/b9f7b15d-530d-494a-82d4-8ecd5686ea40/f041c59e-93aa-44a0-a825-203459ae79bb/Untitled.png)
+<img src={"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/16d21d56-4c82-4e67-8b9b-73e568e4b1f8"} alt={"google-analytics-2"} style={{margin:"5px auto 20px"}}/>
 
 상단의 모든 계정을 클릭하여 자신이 생성한 계정과 속성을 한눈에 볼 수 있습니다.
 
@@ -45,20 +45,19 @@ google analytics는 google에서 제공하는 내 서비스의 트래픽이나 �
 
 웹 스트림 세부정보에서 발급받은 측정 ID를 확인하고 복사하실 수 있습니다. 측정 ID는 프로젝트에서 환경 변수로 저장해 줄 것이기에 복사해줍니다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/b9f7b15d-530d-494a-82d4-8ecd5686ea40/4cb2fa35-bf44-4048-b4a4-e41e657e3ce5/Untitled.png)
+<img src={"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/76d16c87-c908-4b3a-b06a-9fb757b0978a"} alt={"google-analytics-3"} style={{margin:"5px auto 20px"}}/>
 
-## 프로젝트에 ****gtag 적용하기****
+## 프로젝트에 gtag 적용하기
 
 gtag를 설치줍니다. 만약 `typescript` 가 아닌 `javascript` + `nextjs` 인 경우에는 [nextjs의 공식 예시](https://github.com/vercel/next.js/tree/canary/examples/with-google-analytics)를 따라주시면 됩니다.
 
 ```bash
 npm install -D @types/gtag.js
 ```
-
+<br/>
 아까 복사해 둔 측정 ID를 .env 파일 안에 환경 변수로 설정합니다.
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/b9f7b15d-530d-494a-82d4-8ecd5686ea40/a936ac22-c40b-4dd1-9c78-3ca3c505ab65/Untitled.png)
-
+<img src={"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/417a70f3-d9a8-4a94-9ff4-0be4d38fcc0b"} alt={"env"} style={{margin:"5px auto 20px"}}/>
+<br/>
 루트 디렉토리에 `lib/gtag.ts`  파일을 생성해주고, 다음 코드들을 작성합니다.
 
 `lib/gtag.ts`
@@ -171,10 +170,9 @@ export const event = (
 
   export default App;
 ```
+<br/>코드까지 작성하면 완성입니다. Google Analytics 에 들어가면 성공적으로 연결된 것을 확인할 수 있습니다!
 
-코드까지 작성하면 완성입니다. Google Analytics 에 들어가면 성공적으로 연결된 것을 확인할 수 있습니다!
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/b9f7b15d-530d-494a-82d4-8ecd5686ea40/fddb72c1-4823-4fbb-9c47-2bb918ec073a/Untitled.png)
+<img src={"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/8606eafe-ba20-4a16-9e19-81b51e5d65e3"} alt={"google-analytics-done"} style={{margin:"5px auto 20px"}}/>
 
 # 참조
 
