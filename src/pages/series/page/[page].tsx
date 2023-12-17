@@ -23,7 +23,11 @@ const Series = ({
   seriesTotal: number;
   page: number;
 }) => {
-  const { startPage, endPage } = usePage(seriesTotal, page, "list");
+  const { startPage, endPage } = usePage(
+    seriesTotal,
+    page,
+    DEFAULT_NUMBER_OF_POST.list
+  );
   return (
     <>
       <PageSeo
