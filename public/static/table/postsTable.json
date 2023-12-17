@@ -178,7 +178,7 @@
     "title": "NextJS에 GA4(Google Analytics) 적용하기",
     "tags": ["nextjs", "gtag", "google_analytics", "typescript"],
     "series": ["blog"],
-    "description": "gtag에 알아보고 NextJS 블로에 gtag4를 적용해보기",
+    "description": "gtag에 알아보고 NextJS 블로그에 gtag4를 적용해보기",
     "published": true,
     "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/7d38e65e-5b4a-453d-9055-b1104d899c79",
     "path": "nextjs-gtag.mdx"
