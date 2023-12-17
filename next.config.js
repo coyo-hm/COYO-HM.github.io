@@ -7,4 +7,7 @@ module.exports = {
     loader: "imgix",
     path: "https://coyo-hm.github.io/",
   },
+  env: {
+    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
+  },
 };

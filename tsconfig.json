@@ -26,7 +26,10 @@
       "@models/*": ["src/models/*"],
       "@utils/*": ["src/utils/*"],
       "@src/*": ["src/*"]
-    }
+    },
+    "types": [
+      "@types/gtag.js"
+    ]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.config.js"],
   "exclude": ["node_modules"]
