@@ -24,6 +24,10 @@ export default function Document() {
           sizes="16x16"
           href="/favicons/logo_16x16.png"
         />
+        <meta
+          name="google-site-verification"
+          content="HzJb0HTR2Qal7mndqRpQ6uBSJbCRXpZPnh7_Cn1oOgA"
+        />
       </Head>
       <body>
         <Main />
