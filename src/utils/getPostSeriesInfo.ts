@@ -3,6 +3,7 @@ import PostsTable from "public/static/table/postsTable.json";
 
 import { SeriesAttributeWithPostType, SeriesTableNode } from "@models/series";
 import { PostTableNode } from "@models/post";
+import sortPostByDate from "@utils/sortPostByDate";
 
 const NUMBER_OF_POST = 5;
 
@@ -38,7 +39,14 @@ const getPostSeriesInfo = async (
               key: postKey,
             })) || [];
 
-        return [...arr, { ...seriesAttribute, key: seriesKey, posts }];
+        return [
+          ...arr,
+          {
+            ...seriesAttribute,
+            key: seriesKey,
+            posts: sortPostByDate(posts, true),
+          },
+        ];
       }
       return arr;
     }, []);
