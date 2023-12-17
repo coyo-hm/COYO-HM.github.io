@@ -10,7 +10,7 @@
   "homepage": "https://coyo-hm.github.io/",
   "scripts": {
     "dev": "next table && next dev",
-    "build": "next table && next build && next postbuild && next export",
+    "build": "next build && next postbuild && next export",
     "start": "next start",
     "lint": "next lint",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
