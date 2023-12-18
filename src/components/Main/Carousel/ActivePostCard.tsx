@@ -71,7 +71,7 @@ const ActivePostCard = ({
               loader={(props) => imgLoader(props)}
               src={thumbnail}
               alt={title}
-              className={`object-cover`}
+              className={`object-contain`}
               priority
               fill
               sizes={"(min-width:640px) 50vw, 100vw"}

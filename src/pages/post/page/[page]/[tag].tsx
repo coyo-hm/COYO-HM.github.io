@@ -27,8 +27,13 @@ const Blog = ({
   page: number;
 }) => {
   const isAllTag = selectedTag === "all";
-  const total = allTags.find(({ tag }) => tag === tag)?.count || 0;
-  const { startPage, endPage } = usePage(total, page, "list");
+  const total = allTags.find(({ tag }) => selectedTag === tag)?.count || 0;
+  const { startPage, endPage } = usePage(
+    total,
+    page,
+    DEFAULT_NUMBER_OF_POST.list
+  );
+
   return (
     <>
       <PageSeo

@@ -173,6 +173,16 @@
     "thumbnail": "https://user-images.githubusercontent.com/56423604/273578963-e3f37379-368c-460d-9b37-c4b98cfba9e7.png",
     "path": "nextjs-large-page-data-warning.mdx"
   },
+  "nextjs-gtag": {
+    "date": "2023-12-17T00:00:00",
+    "title": "NextJS에 GA4(Google Analytics) 적용하기",
+    "tags": ["nextjs", "gtag", "google_analytics", "typescript"],
+    "series": ["blog"],
+    "description": "gtag에 알아보고 NextJS 블로그에 gtag4를 적용해보기",
+    "published": true,
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/a5ef6447-15c7-495c-821c-1a254bcb6bfc",
+    "path": "nextjs-gtag.mdx"
+  },
   "mvc-pattern": {
     "date": "2022-07-04T00:00:00",
     "title": "MVC 패턴",
@@ -236,6 +246,16 @@
     "description": "JavaScript concat과 push 비교하기",
     "published": true,
     "path": "javascript-concat-push.mdx"
+  },
+  "husky-precommit-unauthorized": {
+    "date": "2023-12-18T00:00:00",
+    "title": "husky not set as executable 오류",
+    "tags": ["husky"],
+    "series": ["trouble_shooting"],
+    "description": "husky not set as executable 오류 해결하기",
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/5b9bd72c-fbb3-487d-afbb-b3127e4a77d0",
+    "published": true,
+    "path": "husky-precommit-unauthorized.mdx"
   },
   "husky-git-hook": {
     "date": "2023-10-11T00:00:00",

@@ -19,6 +19,7 @@ import ThemeProvider from "@contexts/ThemeContext";
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
   useEffect(() => {
+    if (process.env.NODE_ENV === "development") return;
     const handleRouteChange = (url: URL) => {
       gtag.pageview(url);
     };
