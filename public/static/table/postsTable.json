@@ -251,7 +251,7 @@
     "date": "2023-12-18T00:00:00",
     "title": "husky not set as executable 오류",
     "tags": ["husky"],
-    "series": ["error"],
+    "series": ["trouble_shooting"],
     "description": "husky not set as executable 오류 해결하기",
     "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/5b9bd72c-fbb3-487d-afbb-b3127e4a77d0",
     "published": true,
