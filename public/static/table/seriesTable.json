@@ -32,7 +32,8 @@
         "gatsby-add-table-of-contents-in-gatsby",
         "blog-version-2"
       ]
-    }
+    },
+    "error": { "posts": ["husky-precommit-unauthorized"] }
   },
   "unpublished": {
     "trouble_shooting": {
@@ -67,6 +68,7 @@
         "gatsby-add-table-of-contents-in-gatsby",
         "blog-version-2"
       ]
-    }
+    },
+    "error": { "posts": ["husky-precommit-unauthorized"] }
   }
 }

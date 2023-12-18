@@ -247,6 +247,16 @@
     "published": true,
     "path": "javascript-concat-push.mdx"
   },
+  "husky-precommit-unauthorized": {
+    "date": "2023-12-18T00:00:00",
+    "title": "husky not set as executable 오류",
+    "tags": ["husky"],
+    "series": ["error"],
+    "description": "husky not set as executable 오류 해결하기",
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/5b9bd72c-fbb3-487d-afbb-b3127e4a77d0",
+    "published": true,
+    "path": "husky-precommit-unauthorized.mdx"
+  },
   "husky-git-hook": {
     "date": "2023-10-11T00:00:00",
     "title": "husky로 git hook 편하게 관리하기",
