@@ -5,9 +5,7 @@
       "tags": [],
       "description": "프로젝트 진행 도중 나오는 문제 해결 기록",
       "thumbnail": "https://user-images.githubusercontent.com/56423604/283492423-a261b95e-c0e1-4651-9351-83fc538db17d.png",
-      "posts": [
-        "nextjs-large-page-data-warning"
-      ]
+      "posts": ["nextjs-large-page-data-warning"]
     },
     "toy_project": {
       "title": "Toy Project",
@@ -30,7 +28,7 @@
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/6e3156e2-0623-410b-8b52-011e99b0811f",
       "posts": [
         "nextjs-large-page-data-warning",
-        "nextjs-ga4",
+        "nextjs-gtag",
         "gatsby-add-table-of-contents-in-gatsby",
         "blog-version-2"
       ]
@@ -42,19 +40,14 @@
       "tags": [],
       "description": "프로젝트 진행 도중 나오는 문제 해결 기록",
       "thumbnail": "https://user-images.githubusercontent.com/56423604/283492423-a261b95e-c0e1-4651-9351-83fc538db17d.png",
-      "posts": [
-        "nextjs-large-page-data-warning"
-      ]
+      "posts": ["nextjs-large-page-data-warning"]
     },
     "toy_project": {
       "title": "Toy Project",
       "tags": [],
       "description": "소소한 프로젝트들",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/e5565bd4-839d-4c77-9bfc-600ea3990312",
-      "posts": [
-        "simple-kanban-board",
-        "real-time-coin-info"
-      ]
+      "posts": ["simple-kanban-board", "real-time-coin-info"]
     },
     "code_snippets": {
       "title": "⌨️ Code Snippets",
@@ -70,7 +63,7 @@
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/6e3156e2-0623-410b-8b52-011e99b0811f",
       "posts": [
         "nextjs-large-page-data-warning",
-        "nextjs-ga4",
+        "nextjs-gtag",
         "gatsby-add-table-of-contents-in-gatsby",
         "blog-version-2"
       ]
