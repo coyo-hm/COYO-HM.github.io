@@ -15,6 +15,7 @@
       "javascript-intersection-observer-API",
       "javascript-forEach-map",
       "javascript-concat-push",
+      "husky-precommit-unauthorized",
       "husky-git-hook",
       "husky-commlint",
       "http",
@@ -75,7 +76,11 @@
     "google_analytics": ["nextjs-gtag"],
     "programming": ["mvc-pattern"],
     "lodash": ["lodash"],
-    "husky": ["husky-git-hook", "husky-commlint"],
+    "husky": [
+      "husky-precommit-unauthorized",
+      "husky-git-hook",
+      "husky-commlint"
+    ],
     "git": ["husky-git-hook", "husky-commlint", "git-commit-template"],
     "commitlint": ["husky-commlint"],
     "githubpage": ["github-page-publish"],
@@ -116,6 +121,7 @@
       "javascript-Immutable",
       "javascript-forEach-map",
       "javascript-concat-push",
+      "husky-precommit-unauthorized",
       "husky-git-hook",
       "husky-commlint",
       "http",
@@ -212,7 +218,11 @@
     "google_analytics": ["nextjs-gtag"],
     "lodash": ["lodash"],
     "jest": ["jest"],
-    "husky": ["husky-git-hook", "husky-commlint"],
+    "husky": [
+      "husky-precommit-unauthorized",
+      "husky-git-hook",
+      "husky-commlint"
+    ],
     "git": [
       "husky-git-hook",
       "husky-commlint",
