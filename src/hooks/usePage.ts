@@ -14,7 +14,7 @@ const usePage = (total: number, currPage: number, size: number) => {
       start = 0;
     }
 
-    let end = start + 4;
+    let end = start + 5;
     if (end > lastPage) {
       end = lastPage;
     }

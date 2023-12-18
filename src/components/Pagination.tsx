@@ -48,7 +48,7 @@ const Pagination = ({
         <IoIosArrowBack />
       </Link>
       <div className={`flex gap-3 items-center justify-center mx-2 text-base`}>
-        {Array(endPage - startPage + 1)
+        {Array(endPage - startPage)
           .fill(0)
           .map((v: number, i) => {
             return (
@@ -69,7 +69,7 @@ const Pagination = ({
       <Link
         className={`hover:text-blue-700`}
         href={getPath(currPage + 1)}
-        onClick={(e) => endPage < currPage + 1 && e.preventDefault()}
+        onClick={(e) => endPage === currPage + 1 && e.preventDefault()}
       >
         <IoIosArrowForward />
       </Link>
