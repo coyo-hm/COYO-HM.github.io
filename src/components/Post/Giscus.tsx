@@ -1,5 +1,9 @@
 import { useEffect, useRef } from "react";
 import useTheme from "@hooks/useTheme";
+import * as process from "process";
+
+const NEXT_PUBLIC_REPO_ID = process.env.NEXT_PUBLIC_REPO_ID as string;
+const NEXT_PUBLIC_CATEGORY_ID = process.env.NEXT_PUBLIC_CATEGORY_ID as string;
 
 const Giscus = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -18,7 +22,9 @@ const Giscus = () => {
     scriptElem.crossOrigin = "anonymous";
 
     scriptElem.setAttribute("data-repo", "COYO-HM/COYO-HM.github.io");
-    scriptElem.setAttribute("data-category", "General");
+    scriptElem.setAttribute("data-repo-id", NEXT_PUBLIC_REPO_ID);
+    scriptElem.setAttribute("data-category", "Comments");
+    scriptElem.setAttribute("data-category-id", NEXT_PUBLIC_CATEGORY_ID);
     scriptElem.setAttribute("data-mapping", "pathname");
     scriptElem.setAttribute("data-strict", "0");
     scriptElem.setAttribute("data-reactions-enabled", "1");
