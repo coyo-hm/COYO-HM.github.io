@@ -1,5 +1,6 @@
 {
   "name": "coyo-log",
+  "author": "coyo",
   "version": "0.1.0",
   "private": true,
   "release": {

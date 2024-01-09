@@ -13,6 +13,7 @@ import CommentWidget from "@components/Post/CommentWidget";
 import getPostSeriesInfo from "@utils/getPostSeriesInfo";
 import { SeriesAttributeWithPostType } from "@models/series";
 import SeriesPostsList from "@components/Post/SeriesPostsList";
+import Giscus from "@components/Post/Giscus";
 
 const Post = ({
   post: {
@@ -63,7 +64,7 @@ const Post = ({
           </div>
           <TableOfContents content={body} />
         </div>
-        <CommentWidget />
+        <Giscus />
       </article>
     </>
   );
