@@ -9,5 +9,7 @@ module.exports = {
   },
   env: {
     NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
+    NEXT_PUBLIC_REPO_ID: process.env.NEXT_PUBLIC_REPO_ID,
+    NEXT_PUBLIC_CATEGORY_ID: process.env.NEXT_PUBLIC_CATEGORY_ID,
   },
 };

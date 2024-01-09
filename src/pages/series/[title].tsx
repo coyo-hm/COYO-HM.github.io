@@ -18,6 +18,7 @@ import imgLoader from "@utils/imgLoader";
 import PostTitle from "@components/Title/PostTitle";
 import PostSubTitle from "@components/Title/PostSubTitle";
 import { CATEGORY_INFO } from "@constants/category";
+import Giscus from "@components/Post/Giscus";
 
 const postVariants = {
   initial: { y: 0 },
@@ -131,7 +132,7 @@ const SeriesIntroPage = ({
           </section>
         </div>
         <div className={`mt-12`}>
-          <CommentWidget />
+          <Giscus />
         </div>
       </main>
     </>
