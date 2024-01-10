@@ -30,6 +30,7 @@
       "description": "블로그 자체 제작기",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/6e3156e2-0623-410b-8b52-011e99b0811f",
       "posts": [
+        "utterances-to-giscus",
         "nextjs-large-page-data-warning",
         "nextjs-gtag",
         "gatsby-add-table-of-contents-in-gatsby",
@@ -68,6 +69,7 @@
       "description": "블로그 자체 제작기",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/6e3156e2-0623-410b-8b52-011e99b0811f",
       "posts": [
+        "utterances-to-giscus",
         "nextjs-large-page-data-warning",
         "nextjs-gtag",
         "gatsby-add-table-of-contents-in-gatsby",
