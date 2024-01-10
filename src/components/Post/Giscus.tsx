@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import useTheme from "@hooks/useTheme";
-import * as process from "process";
 
 const NEXT_PUBLIC_REPO_ID = process.env.NEXT_PUBLIC_REPO_ID as string;
 const NEXT_PUBLIC_CATEGORY_ID = process.env.NEXT_PUBLIC_CATEGORY_ID as string;

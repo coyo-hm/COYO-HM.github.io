@@ -2,6 +2,7 @@
   "published": {
     "all": [
       "yarn-berry-pnp",
+      "utterances-to-giscus",
       "styled-components-global-style",
       "socket",
       "redux-RTK-with-ts",
@@ -31,6 +32,24 @@
     "npm": ["yarn-berry-pnp"],
     "yarn": ["yarn-berry-pnp"],
     "yarn_berry": ["yarn-berry-pnp"],
+    "nextjs": [
+      "utterances-to-giscus",
+      "nextjs-large-page-data-warning",
+      "nextjs-gtag",
+      "blog-version-2"
+    ],
+    "giscus": ["utterances-to-giscus"],
+    "typescript": [
+      "utterances-to-giscus",
+      "styled-components-global-style",
+      "redux-RTK-with-ts",
+      "nextjs-gtag",
+      "lodash",
+      "gatsby-add-table-of-contents-in-gatsby",
+      "axios-interceptor",
+      "axios-config"
+    ],
+    "utterances": ["utterances-to-giscus"],
     "styled_components": ["styled-components-global-style"],
     "css": ["styled-components-global-style", "browser-rendering"],
     "react": [
@@ -39,15 +58,6 @@
       "react-class-render",
       "lodash",
       "github-page-publish",
-      "gatsby-add-table-of-contents-in-gatsby",
-      "axios-interceptor",
-      "axios-config"
-    ],
-    "typescript": [
-      "styled-components-global-style",
-      "redux-RTK-with-ts",
-      "nextjs-gtag",
-      "lodash",
       "gatsby-add-table-of-contents-in-gatsby",
       "axios-interceptor",
       "axios-config"
@@ -67,11 +77,6 @@
     ],
     "redux_persist": ["redux-persist"],
     "python3": ["python-rjust-ljust-zfill"],
-    "nextjs": [
-      "nextjs-large-page-data-warning",
-      "nextjs-gtag",
-      "blog-version-2"
-    ],
     "gtag": ["nextjs-gtag"],
     "google_analytics": ["nextjs-gtag"],
     "programming": ["mvc-pattern"],
@@ -94,6 +99,7 @@
   "unpublished": {
     "all": [
       "yarn-berry-pnp",
+      "utterances-to-giscus",
       "url-uri",
       "test",
       "styled-components-global-style",
@@ -139,6 +145,27 @@
     "npm": ["yarn-berry-pnp", "npm-basic"],
     "yarn": ["yarn-berry-pnp"],
     "yarn_berry": ["yarn-berry-pnp"],
+    "nextjs": [
+      "utterances-to-giscus",
+      "nextjs-large-page-data-warning",
+      "nextjs-gtag",
+      "blog-version-2"
+    ],
+    "giscus": ["utterances-to-giscus"],
+    "typescript": [
+      "utterances-to-giscus",
+      "test",
+      "styled-components-global-style",
+      "simple-kanban-board",
+      "redux-RTK-with-ts",
+      "real-time-coin-info",
+      "nextjs-gtag",
+      "lodash",
+      "gatsby-add-table-of-contents-in-gatsby",
+      "axios-interceptor",
+      "axios-config"
+    ],
+    "utterances": ["utterances-to-giscus"],
     "network": [
       "url-uri",
       "test",
@@ -161,18 +188,6 @@
       "react-class-render",
       "lodash",
       "github-page-publish",
-      "gatsby-add-table-of-contents-in-gatsby",
-      "axios-interceptor",
-      "axios-config"
-    ],
-    "typescript": [
-      "test",
-      "styled-components-global-style",
-      "simple-kanban-board",
-      "redux-RTK-with-ts",
-      "real-time-coin-info",
-      "nextjs-gtag",
-      "lodash",
       "gatsby-add-table-of-contents-in-gatsby",
       "axios-interceptor",
       "axios-config"
@@ -209,11 +224,6 @@
     "react_apexcharts": ["real-time-coin-info"],
     "python3": ["python-rjust-ljust-zfill"],
     "programming": ["programming-paradigm", "mvc-pattern"],
-    "nextjs": [
-      "nextjs-large-page-data-warning",
-      "nextjs-gtag",
-      "blog-version-2"
-    ],
     "gtag": ["nextjs-gtag"],
     "google_analytics": ["nextjs-gtag"],
     "lodash": ["lodash"],

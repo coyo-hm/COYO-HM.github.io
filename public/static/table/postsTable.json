@@ -8,6 +8,16 @@
     "published": true,
     "path": "yarn-berry-pnp.mdx"
   },
+  "utterances-to-giscus": {
+    "date": "2024-01-10T00:00:00",
+    "title": "NextJS 블로그 giscus 적용하기",
+    "tags": ["nextjs", "giscus", "typescript", "utterances"],
+    "series": ["blog"],
+    "description": "Next.js 블로그 utterances에서 giscus로 마이그레이션해보자",
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/3af4ab5c-7099-4d79-9a30-8c9e8f7504af",
+    "published": true,
+    "path": "utterances-to-giscus.mdx"
+  },
   "url-uri": {
     "date": "2022-09-15T00:00:00",
     "title": "URI와 URL",
