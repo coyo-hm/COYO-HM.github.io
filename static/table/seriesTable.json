@@ -22,7 +22,7 @@
       "tags": ["network"],
       "description": "컴퓨터 네트워크 강의 내용 정리하기",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/d1f6edca-b29b-4a4a-9149-314bc1e7b31a",
-      "posts": []
+      "posts": ["network-note-01"]
     },
     "code_snippets": {
       "title": "⌨️ Code Snippets",
@@ -68,7 +68,7 @@
       "tags": ["network"],
       "description": "컴퓨터 네트워크 강의 내용 정리하기",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/d1f6edca-b29b-4a4a-9149-314bc1e7b31a",
-      "posts": []
+      "posts": ["network-note-01"]
     },
     "code_snippets": {
       "title": "⌨️ Code Snippets",

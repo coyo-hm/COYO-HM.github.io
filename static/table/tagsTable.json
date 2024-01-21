@@ -12,6 +12,7 @@
       "python-rjust-ljust-zfill",
       "nextjs-large-page-data-warning",
       "nextjs-gtag",
+      "network-note-01",
       "mvc-pattern",
       "lodash",
       "javascript-intersection-observer-API",
@@ -70,7 +71,13 @@
     "utterances": ["utterances-to-giscus"],
     "styled_components": ["styled-components-global-style"],
     "css": ["styled-components-global-style", "browser-rendering"],
-    "network": ["socket", "http", "cookie-session", "browser-rendering"],
+    "network": [
+      "socket",
+      "network-note-01",
+      "http",
+      "cookie-session",
+      "browser-rendering"
+    ],
     "redux": ["redux-RTK-with-ts", "redux-persist"],
     "javascript": [
       "redux-persist",
@@ -87,6 +94,7 @@
     "python3": ["python-rjust-ljust-zfill"],
     "gtag": ["nextjs-gtag"],
     "google_analytics": ["nextjs-gtag"],
+    "computer_science": ["network-note-01"],
     "programming": ["mvc-pattern"],
     "lodash": ["lodash"],
     "husky": [
@@ -127,6 +135,7 @@
       "npm-basic",
       "nextjs-large-page-data-warning",
       "nextjs-gtag",
+      "network-note-01",
       "mvc-pattern",
       "lodash",
       "jest",
@@ -203,6 +212,7 @@
       "test",
       "socket",
       "rest-api",
+      "network-note-01",
       "http",
       "cookie-session",
       "browser-rendering"
@@ -241,6 +251,7 @@
     "programming": ["programming-paradigm", "mvc-pattern"],
     "gtag": ["nextjs-gtag"],
     "google_analytics": ["nextjs-gtag"],
+    "computer_science": ["network-note-01"],
     "lodash": ["lodash"],
     "jest": ["jest"],
     "husky": [
