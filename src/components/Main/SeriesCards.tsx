@@ -52,12 +52,15 @@ const BackSide = ({ posts, description }: SeriesTableNode) => {
 
 const SeriesCards = ({ allSeriesInfo }: Props) => {
   const seriesRef = useHorizontalScroll();
+  const sortedSeriesKey = Object.keys(allSeriesInfo).sort(
+    (a, b) => allSeriesInfo[b].posts.length - allSeriesInfo[a].posts.length
+  );
   return (
     <div
       className={"flex gap-5 overflow-auto pb-10 px-5 scrollbar-hide"}
       ref={seriesRef}
     >
-      {Object.keys(allSeriesInfo).map((seriesKey) => (
+      {sortedSeriesKey.map((seriesKey) => (
         <Link href={`/series/${seriesKey}`} key={seriesKey}>
           <FlippedShadowRoundedCard
             frontComponent={<FrontSide {...allSeriesInfo[seriesKey]} />}

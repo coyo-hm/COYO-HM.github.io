@@ -1,0 +1,61 @@
+---
+date: "2024-01-22"
+title: "Vite + React + TypeScript 환경에서 Emotion Css Prop 사용하기"
+tags: ["vite", "react", "emotion", "typescript"]
+series: []
+description: "vite + react + typescript 환경에서 emotion css prop 사용하기"
+thumbnail: 'https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/a8924712-3db6-4ab6-abc8-eb2795ff4121'
+published: true
+---
+
+`Vite` + `React` + `TypeScript` 환경에서 `Emotion` `css prop`를 사용하니 다음과 같이 계속 오류가 나는 것을 확인할 수 있었습니다.
+
+![Marquee-error](https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/941a92c1-5c15-459b-9709-663013f390bb)
+
+
+
+검색해보니 `TypeScript` 말고도 `Vite`에서도 `css prop`를 사용하려면 추가 설정을 해줘야 하는 것을 알게 되어서 한번 정리해두려고 합니다.
+
+# TypeScript 설정
+
+`tsconfig.json`
+
+```json
+{
+  "compilerOptions": {
+    ...
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    ...
+  },
+  ...
+}
+```
+
+[[emotion 공식 문서] typescript](https://emotion.sh/docs/typescript)
+
+# Vite 설정
+
+`vite.config.ts`
+
+```tsx
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    react({
+      jsxImportSource: "@emotion/react",
+      babel: {
+        plugins: ["@emotion/babel-plugin"],
+      },
+    }),
+  ],
+});
+```
+
+# 참조
+
+- [Configure Emotion with your Vite React Project](https://dev.to/glocore/configure-emotion-with-your-vite-react-project-7jl)
+- [[emotion 공식 문서] typescript](https://emotion.sh/docs/typescript)
