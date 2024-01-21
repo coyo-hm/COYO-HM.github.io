@@ -2,6 +2,7 @@
   "published": {
     "all": [
       "yarn-berry-pnp",
+      "vite-react-ts-emotion-props-config",
       "utterances-to-giscus",
       "styled-components-global-style",
       "socket",
@@ -32,27 +33,9 @@
     "npm": ["yarn-berry-pnp"],
     "yarn": ["yarn-berry-pnp"],
     "yarn_berry": ["yarn-berry-pnp"],
-    "nextjs": [
-      "utterances-to-giscus",
-      "nextjs-large-page-data-warning",
-      "nextjs-gtag",
-      "blog-version-2"
-    ],
-    "giscus": ["utterances-to-giscus"],
-    "typescript": [
-      "utterances-to-giscus",
-      "styled-components-global-style",
-      "redux-RTK-with-ts",
-      "nextjs-gtag",
-      "lodash",
-      "gatsby-add-table-of-contents-in-gatsby",
-      "axios-interceptor",
-      "axios-config"
-    ],
-    "utterances": ["utterances-to-giscus"],
-    "styled_components": ["styled-components-global-style"],
-    "css": ["styled-components-global-style", "browser-rendering"],
+    "vite": ["vite-react-ts-emotion-props-config"],
     "react": [
+      "vite-react-ts-emotion-props-config",
       "styled-components-global-style",
       "redux-RTK-with-ts",
       "react-class-render",
@@ -62,6 +45,31 @@
       "axios-interceptor",
       "axios-config"
     ],
+    "emotion": [
+      "vite-react-ts-emotion-props-config",
+      "gatsby-add-table-of-contents-in-gatsby"
+    ],
+    "typescript": [
+      "vite-react-ts-emotion-props-config",
+      "utterances-to-giscus",
+      "styled-components-global-style",
+      "redux-RTK-with-ts",
+      "nextjs-gtag",
+      "lodash",
+      "gatsby-add-table-of-contents-in-gatsby",
+      "axios-interceptor",
+      "axios-config"
+    ],
+    "nextjs": [
+      "utterances-to-giscus",
+      "nextjs-large-page-data-warning",
+      "nextjs-gtag",
+      "blog-version-2"
+    ],
+    "giscus": ["utterances-to-giscus"],
+    "utterances": ["utterances-to-giscus"],
+    "styled_components": ["styled-components-global-style"],
+    "css": ["styled-components-global-style", "browser-rendering"],
     "network": ["socket", "http", "cookie-session", "browser-rendering"],
     "redux": ["redux-RTK-with-ts", "redux-persist"],
     "javascript": [
@@ -90,7 +98,6 @@
     "commitlint": ["husky-commlint"],
     "githubpage": ["github-page-publish"],
     "intellij": ["git-commit-template"],
-    "emotion": ["gatsby-add-table-of-contents-in-gatsby"],
     "gatsby": ["gatsby-add-table-of-contents-in-gatsby"],
     "framer_motion": ["blog-version-2"],
     "tailwind": ["blog-version-2"],
@@ -99,6 +106,7 @@
   "unpublished": {
     "all": [
       "yarn-berry-pnp",
+      "vite-react-ts-emotion-props-config",
       "utterances-to-giscus",
       "url-uri",
       "test",
@@ -145,37 +153,9 @@
     "npm": ["yarn-berry-pnp", "npm-basic"],
     "yarn": ["yarn-berry-pnp"],
     "yarn_berry": ["yarn-berry-pnp"],
-    "nextjs": [
-      "utterances-to-giscus",
-      "nextjs-large-page-data-warning",
-      "nextjs-gtag",
-      "blog-version-2"
-    ],
-    "giscus": ["utterances-to-giscus"],
-    "typescript": [
-      "utterances-to-giscus",
-      "test",
-      "styled-components-global-style",
-      "simple-kanban-board",
-      "redux-RTK-with-ts",
-      "real-time-coin-info",
-      "nextjs-gtag",
-      "lodash",
-      "gatsby-add-table-of-contents-in-gatsby",
-      "axios-interceptor",
-      "axios-config"
-    ],
-    "utterances": ["utterances-to-giscus"],
-    "network": [
-      "url-uri",
-      "test",
-      "socket",
-      "rest-api",
-      "http",
-      "cookie-session",
-      "browser-rendering"
-    ],
+    "vite": ["vite-react-ts-emotion-props-config"],
     "react": [
+      "vite-react-ts-emotion-props-config",
       "test",
       "styled-components-global-style",
       "simple-kanban-board",
@@ -191,6 +171,41 @@
       "gatsby-add-table-of-contents-in-gatsby",
       "axios-interceptor",
       "axios-config"
+    ],
+    "emotion": [
+      "vite-react-ts-emotion-props-config",
+      "gatsby-add-table-of-contents-in-gatsby"
+    ],
+    "typescript": [
+      "vite-react-ts-emotion-props-config",
+      "utterances-to-giscus",
+      "test",
+      "styled-components-global-style",
+      "simple-kanban-board",
+      "redux-RTK-with-ts",
+      "real-time-coin-info",
+      "nextjs-gtag",
+      "lodash",
+      "gatsby-add-table-of-contents-in-gatsby",
+      "axios-interceptor",
+      "axios-config"
+    ],
+    "nextjs": [
+      "utterances-to-giscus",
+      "nextjs-large-page-data-warning",
+      "nextjs-gtag",
+      "blog-version-2"
+    ],
+    "giscus": ["utterances-to-giscus"],
+    "utterances": ["utterances-to-giscus"],
+    "network": [
+      "url-uri",
+      "test",
+      "socket",
+      "rest-api",
+      "http",
+      "cookie-session",
+      "browser-rendering"
     ],
     "redux": ["test", "redux-RTK-with-ts", "redux-persist"],
     "scss": ["test"],
@@ -243,7 +258,6 @@
     "commitlint": ["husky-commlint"],
     "githubpage": ["github-page-publish"],
     "intellij": ["git-commit-template"],
-    "emotion": ["gatsby-add-table-of-contents-in-gatsby"],
     "gatsby": ["gatsby-add-table-of-contents-in-gatsby"],
     "framer_motion": ["blog-version-2"],
     "tailwind": ["blog-version-2"],
