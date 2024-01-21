@@ -8,6 +8,16 @@
     "published": true,
     "path": "yarn-berry-pnp.mdx"
   },
+  "vite-react-ts-emotion-props-config": {
+    "date": "2024-01-22T00:00:00",
+    "title": "Vite + React + TypeScript 환경에서 Emotion Css Prop 사용하기",
+    "tags": ["vite", "react", "emotion", "typescript"],
+    "series": [],
+    "description": "vite + react + typescript 환경에서 emotion css prop 사용하기",
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/a8924712-3db6-4ab6-abc8-eb2795ff4121",
+    "published": true,
+    "path": "vite-react-ts-emotion-props-config.mdx"
+  },
   "utterances-to-giscus": {
     "date": "2024-01-10T00:00:00",
     "title": "NextJS 블로그 giscus 적용하기",
@@ -192,6 +202,16 @@
     "published": true,
     "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/a5ef6447-15c7-495c-821c-1a254bcb6bfc",
     "path": "nextjs-gtag.mdx"
+  },
+  "network-note-01": {
+    "date": "2024-01-04T00:00:00",
+    "title": "컴퓨터 네트워크의 기본",
+    "tags": ["network", "computer_science"],
+    "series": ["network_note"],
+    "description": "컴퓨터 네트워크 및 인터넷 역사",
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/241afd74-559a-417b-aabf-757027c20513",
+    "published": true,
+    "path": "network-note-01.mdx"
   },
   "mvc-pattern": {
     "date": "2022-07-04T00:00:00",
