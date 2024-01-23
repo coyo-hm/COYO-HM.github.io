@@ -1,5 +1,5 @@
 import PostsTable from "public/static/table/postsTable.json";
-import { PostAttributeType, PostTableNode, PostType } from "@models/post";
+import { PostAttributeType, PostTableNode } from "@models/post";
 import sortPostByDate from "@utils/sortPostByDate";
 
 const getPostAttributesList = async (
