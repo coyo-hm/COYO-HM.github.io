@@ -121,14 +121,24 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { page } = params as { page: string };
   const size = DEFAULT_NUMBER_OF_POST["list"];
   const allSeriesInfo = await getAllSeriesInfo();
-  const seriesKeys = Object.keys(allSeriesInfo).slice(
-    +page * size,
-    (+page + 1) * size + 1
-  );
+  const seriesKeys = Object.keys(allSeriesInfo);
+  const seriesList = seriesKeys.map((key) => ({ key, ...allSeriesInfo[key] }));
+  const sortedSeriesList = seriesList.sort((a, b) => {
+    const dateA = new Date(a.endDate);
+    const dateB = new Date(b.endDate);
+
+    if (dateA < dateB) {
+      return 1;
+    }
+    if (dateA > dateB) {
+      return -1;
+    }
+    return 0;
+  });
 
   return {
     props: {
-      series: seriesKeys.map((key) => ({ key, ...allSeriesInfo[key] })),
+      series: sortedSeriesList.slice(+page * size, (+page + 1) * size + 1),
       seriesTotal: Object.keys(allSeriesInfo).length,
       page: +page,
     },

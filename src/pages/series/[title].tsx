@@ -32,11 +32,11 @@ const postVariants = {
 const SeriesIntroPage = ({
   seriesInfo,
   mdx,
-  key,
+  seriesKey,
 }: {
   seriesInfo: SeriesPostType;
   mdx: MDXRemoteSerializeResult;
-  key: string;
+  seriesKey: string;
 }) => {
   const { frontMatter, posts } = seriesInfo;
   const { title, description, thumbnail } = frontMatter;
@@ -46,7 +46,7 @@ const SeriesIntroPage = ({
       <PageSeo
         title={`${title}`}
         description={description}
-        url={`${metadata.siteUrl}/series/${key}`}
+        url={`${metadata.siteUrl}/series/${seriesKey}`}
       />
       <main className={`flex flex-col mx-auto w-full lg:w-[800px] pt-5`}>
         <div className={`relative h-[200px] z-0`}>
@@ -159,7 +159,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       props: {
         seriesInfo,
         mdx: source,
-        key: title,
+        seriesKey: title,
       },
     };
   }
