@@ -13,6 +13,7 @@ import getLastPage from "@utils/getLastPage";
 import Image from "next/image";
 import imgLoader from "@utils/imgLoader";
 import PageTitle from "@components/Title/PageTitle";
+import getSeries from "@utils/getSeries";
 
 const Series = ({
   series,
@@ -26,8 +27,9 @@ const Series = ({
   const { startPage, endPage } = usePage(
     seriesTotal,
     page,
-    DEFAULT_NUMBER_OF_POST.list
+    DEFAULT_NUMBER_OF_POST.series
   );
+
   return (
     <>
       <PageSeo
@@ -106,7 +108,7 @@ export default Series;
 export const getStaticPaths: GetStaticPaths = async () => {
   const allSeriesInfo = await getAllSeriesInfo();
   const total = Object.keys(allSeriesInfo).length;
-  const size = DEFAULT_NUMBER_OF_POST["list"];
+  const size = DEFAULT_NUMBER_OF_POST["series"];
   const paths = new Array(getLastPage(total, size)).fill(0).map((_, p) => ({
     params: { page: "" + p },
   }));
@@ -119,26 +121,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { page } = params as { page: string };
-  const size = DEFAULT_NUMBER_OF_POST["list"];
   const allSeriesInfo = await getAllSeriesInfo();
-  const seriesKeys = Object.keys(allSeriesInfo);
-  const seriesList = seriesKeys.map((key) => ({ key, ...allSeriesInfo[key] }));
-  const sortedSeriesList = seriesList.sort((a, b) => {
-    const dateA = new Date(a.endDate);
-    const dateB = new Date(b.endDate);
-
-    if (dateA < dateB) {
-      return 1;
-    }
-    if (dateA > dateB) {
-      return -1;
-    }
-    return 0;
-  });
+  const series = await getSeries(+page, DEFAULT_NUMBER_OF_POST["series"]);
 
   return {
     props: {
-      series: sortedSeriesList.slice(+page * size, (+page + 1) * size + 1),
+      series: series,
       seriesTotal: Object.keys(allSeriesInfo).length,
       page: +page,
     },
