@@ -1,6 +1,7 @@
 {
   "published": {
     "all": [
+      "yarn-berry-start",
       "yarn-berry-pnp",
       "vite-react-ts-emotion-props-config",
       "utterances-to-giscus",
@@ -31,8 +32,8 @@
       "axios-interceptor",
       "axios-config"
     ],
+    "yarn": ["yarn-berry-start", "yarn-berry-pnp"],
     "npm": ["yarn-berry-pnp"],
-    "yarn": ["yarn-berry-pnp"],
     "yarn_berry": ["yarn-berry-pnp"],
     "vite": ["vite-react-ts-emotion-props-config"],
     "react": [
@@ -113,6 +114,7 @@
   },
   "unpublished": {
     "all": [
+      "yarn-berry-start",
       "yarn-berry-pnp",
       "vite-react-ts-emotion-props-config",
       "utterances-to-giscus",
@@ -158,8 +160,8 @@
       "axios-interceptor",
       "axios-config"
     ],
+    "yarn": ["yarn-berry-start", "yarn-berry-pnp"],
     "npm": ["yarn-berry-pnp", "npm-basic"],
-    "yarn": ["yarn-berry-pnp"],
     "yarn_berry": ["yarn-berry-pnp"],
     "vite": ["vite-react-ts-emotion-props-config"],
     "react": [
