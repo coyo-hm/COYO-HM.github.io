@@ -9,7 +9,6 @@ import PostHeader from "@components/Post/PostHeader";
 import CustomMDX from "@components/Post/CustomMDX";
 import TagsList from "@components/Post/TagsList";
 import TableOfContents from "@components/Post/TableOfContents";
-import CommentWidget from "@components/Post/CommentWidget";
 import getPostSeriesInfo from "@utils/getPostSeriesInfo";
 import { SeriesAttributeWithPostType } from "@models/series";
 import SeriesPostsList from "@components/Post/SeriesPostsList";
