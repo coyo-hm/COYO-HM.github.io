@@ -4,5 +4,7 @@
 
 # Tech Stack
 * NextJS
+* TypeScript
 * Tailwind-css
+* Framer-Motion
 * githubPage
