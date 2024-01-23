@@ -6,6 +6,8 @@ export interface SeriesAttributeType {
   tags: string[];
   description: string;
   thumbnail: string;
+  startDate: string;
+  endDate: string;
   posts: string[];
 }
 

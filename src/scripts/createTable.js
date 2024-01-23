@@ -23,6 +23,22 @@ const getSeriesKey = (postKey = "") => {
   return undefined;
 };
 
+const getDate = (type, a, b) => {
+  if (a === "") {
+    return b;
+  }
+  const dateA = new Date(a);
+  const dateB = new Date(b);
+
+  if (type === "start") {
+    return dateA < dateB ? dateA : dateB;
+  }
+
+  if (type === "end") {
+    return dateA > dateB ? dateA : dateB;
+  }
+};
+
 const createTable = () => {
   const files = sync(`${POST_DIR_PATH}/**/*.md*`).reverse();
   const seriesFiles = sync(`${SERIES_DIR_PATH}/**/*.md*`).reverse();
@@ -42,11 +58,15 @@ const createTable = () => {
 
       seriesTablePublished[seriesKey] = {
         ...attributes,
+        startDate: "",
+        endDate: "",
         posts: [],
       };
 
       seriesTableUnpublished[seriesKey] = {
         ...attributes,
+        startDate: "",
+        endDate: "",
         posts: [],
       };
     }
@@ -73,6 +93,16 @@ const createTable = () => {
           seriesTableUnpublished[seriesKey] = seriesTableUnpublished[seriesKey]
             ? {
                 ...seriesTableUnpublished[seriesKey],
+                startDate: getDate(
+                  "start",
+                  seriesTableUnpublished[seriesKey].startDate,
+                  date
+                ),
+                endDate: getDate(
+                  "end",
+                  seriesTableUnpublished[seriesKey].endDate,
+                  date
+                ),
                 posts: [...seriesTableUnpublished[seriesKey].posts, postKey],
               }
             : { posts: [postKey] };
@@ -81,6 +111,16 @@ const createTable = () => {
             seriesTablePublished[seriesKey] = seriesTablePublished[seriesKey]
               ? {
                   ...seriesTablePublished[seriesKey],
+                  startDate: getDate(
+                    "start",
+                    seriesTablePublished[seriesKey].startDate,
+                    date
+                  ),
+                  endDate: getDate(
+                    "end",
+                    seriesTablePublished[seriesKey].endDate,
+                    date
+                  ),
                   posts: [...seriesTablePublished[seriesKey].posts, postKey],
                 }
               : { posts: [postKey] };
