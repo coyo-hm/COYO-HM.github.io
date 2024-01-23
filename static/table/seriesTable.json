@@ -31,7 +31,7 @@
       "posts": ["network-note-01"]
     },
     "commit-msg-management": {
-      "title": "커밋 메세지로 버전 관리와 변경 로그까지",
+      "title": "커밋 메세지 관리하기",
       "tags": [
         "github",
         "git",
@@ -39,7 +39,7 @@
         "commitlint",
         "semantic-release"
       ],
-      "description": "자주 사용하는 코드 조각 모음",
+      "description": "커밋 메세지로 버전 관리와 변경 로그까지",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/f79f521a-7002-42cd-9931-dbd1e1f16798",
       "startDate": "2023-09-25T00:00:00.000Z",
       "endDate": "2023-10-26T00:00:00.000Z",
@@ -102,7 +102,7 @@
       "posts": ["network-note-01"]
     },
     "commit-msg-management": {
-      "title": "커밋 메세지로 버전 관리와 변경 로그까지",
+      "title": "커밋 메세지 관리하기",
       "tags": [
         "github",
         "git",
@@ -110,7 +110,7 @@
         "commitlint",
         "semantic-release"
       ],
-      "description": "자주 사용하는 코드 조각 모음",
+      "description": "커밋 메세지로 버전 관리와 변경 로그까지",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/f79f521a-7002-42cd-9931-dbd1e1f16798",
       "startDate": "2023-09-25T00:00:00.000Z",
       "endDate": "2023-10-26T00:00:00.000Z",
