@@ -168,7 +168,6 @@
       "test",
       "styled-components-global-style",
       "simple-kanban-board",
-      "semantic-release",
       "redux-RTK-with-ts",
       "real-time-coin-info",
       "react-useMemo-useCallback",

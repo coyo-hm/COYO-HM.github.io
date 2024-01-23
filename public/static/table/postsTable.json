@@ -78,10 +78,11 @@
     "path": "simple-kanban-board.mdx"
   },
   "semantic-release": {
-    "date": "2023-02-24T00:00:00",
-    "title": "React Hook: State Hook",
-    "tags": ["react"],
-    "description": "useState, useReducer 정리",
+    "date": "2024-01-24T00:00:00",
+    "title": "Semantic Versioning 자동화하기",
+    "tags": [],
+    "series": ["commit-msg-management"],
+    "description": "",
     "published": false,
     "path": "semantic-release.mdx"
   },
@@ -302,7 +303,7 @@
     "date": "2023-10-26T00:00:00",
     "title": "commitlint로 commit-message 관리하기",
     "tags": ["husky", "git", "commitlint"],
-    "series": [],
+    "series": ["commit-msg-management"],
     "description": "commitlint로 규칙 커스텀해서 커밋 메세지 관리해보자",
     "published": true,
     "thumbnail": "https://user-images.githubusercontent.com/56423604/278075494-8932e44f-b2ea-49d8-8c5d-c1b2805fd0ab.png",
@@ -337,7 +338,7 @@
     "date": "2023-09-25T00:00:00",
     "title": "git commit template 등록하기",
     "tags": ["git", "intellij"],
-    "series": [],
+    "series": ["commit-msg-management"],
     "description": "git commit template 등록하고 IntelliJ에서 사용해보기",
     "published": true,
     "thumbnail": "https://user-images.githubusercontent.com/56423604/272324652-55a437a4-af2d-4809-9308-5a915847004f.png",
