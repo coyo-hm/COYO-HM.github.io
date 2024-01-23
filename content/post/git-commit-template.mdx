@@ -2,7 +2,7 @@
 date: "2023-09-25"
 title: "git commit template 등록하기"
 tags: ["Git", "IntelliJ"]
-series: []
+series: ["commit-msg-management"]
 description: "git commit template 등록하고 IntelliJ에서 사용해보기"
 published: true
 thumbnail: 'https://user-images.githubusercontent.com/56423604/272324652-55a437a4-af2d-4809-9308-5a915847004f.png'
@@ -10,19 +10,19 @@ thumbnail: 'https://user-images.githubusercontent.com/56423604/272324652-55a437a
 
 > **git commit template**
 >
-> commit 시에 등록한 commit template을 보여주어 commit message를 작성할 때 일정한 스타일을 유지할 수 있도록 도와준다.
+> commit 시에 등록한 commit template을 보여주어 commit message를 작성할 때 일정한 스타일을 유지할 수 있도록 도와줍니다.
 
 # git commit template 등록하기
 
 ## template 파일 생성하고 작성하기
 
-1. `.git` 폴더가 있는 위치에 `.gitmessage.txt` 파일을 생성한다.
+1. `.git` 폴더가 있는 위치에 `.gitmessage.txt` 파일을 생성
 
 <img style={{margin:"0 auto 10px"}} alt={"git_message_txt"} src={"https://user-images.githubusercontent.com/56423604/270172830-eca18299-d8a3-4aee-9e0f-9c1323305df9.png"}/>
 
-2. 생성한 .gitmessage.txt 에 내용을 작성하면 된다.
- - `#` 으로 시작하면 주석 처리되어 커밋에 보이지 않는다.
- - 다음 사이트를 참고하여 본인에 맞게 룰을 작성하면 된다.
+2. 생성한 .gitmessage.txt 에 내용을 작성
+ - `#` 으로 시작하면 주석 처리되어 커밋에 보이지 않습니다.
+ - 다음 사이트를 참고하여 본인에 맞게 룰을 작성하면 됩니다.
 
 <aside>
   🔗 Commit message rule
@@ -32,81 +32,87 @@ thumbnail: 'https://user-images.githubusercontent.com/56423604/272324652-55a437a
   - [Writing Meaningful Git Commit Messages](https://medium.com/@menuka/writing-meaningful-git-commit-messages-a62756b65c81)
 </aside>
 
-  ```
-  # <타입> : <제목> 형식으로 작성하며 제목은 최대 50글자 정도로만 입력한다.
+```
+  ################
+  # <type>(<scope>): <subject> 형식으로 작성하며 제목은 최대 50글자 정도로만 입력한다.
 
   ################
   # 본문(추가 설명)을 아랫줄에 작성한다.
 
   ################
   # 꼬리말(footer)을 아랫줄에 작성한다.
+  # footer에 'BREAKING CHANGE:'를 넣으면 major 변경
 
   ################
-  # FEAT : 새로운 기능 추가
-  # FIX : 버그 수정
-  # DOCS : 문서 수정
-  # TEST : 테스트 코드 추가
-  # REFACTOR : 코드 리팩토링
-  # STYLE : 코드 의미에 영향을 주지 않는 변경사항
-  # CHORE : 빌드 부분 혹은 패키지 매니저 수정사항
+  # build: 빌드 시스템 또는 외부 패키지와 관련된 수정사항 (example scopes: gulp, broccoli, npm)
+  # chore: 빌드 부분 혹은 패키지 매니저 관련 사소한 수정사항
+  # ci: CI 설정 파일 또는 스크립트 수정사항 (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+  # docs: 문서 수정사항
+  # feat: 새로운 기능 추가
+  # fix: 버그 수정
+  # perf: 성능 관련 수정 사항
+  # refactor: 코드 리팩토링
+  # revert: 이전 코드로 복원
+  # style: 코드 의미에 영향을 주지 않는 변경사항 (포맷팅 관련)
+  # test: 테스트 코드 추가
   ################
-        ```
+```
 
 
 ## commit message template 설정하기
 
-아래 명령어를 terminal 에 입력한다.
+아래 명령어를 terminal 에 입력합니다.
 
 ```bash
 git config --global commit.template .gitmessage.txt
 ```
 
-template을 적용하면 git commit 할때마다 지정한 파일이 `vi` 로 나온다.
+template을 적용하면 git commit 할때마다 지정한 파일이 `vi` 로 나옵니다.
 
 <img style={{margin:"0 auto 10px"}} alt={"git_template_vim"} src={"https://user-images.githubusercontent.com/56423604/270172961-313f6ee3-20ab-450a-a758-581a0be2e384.png"}/>
 
-`i` 를 눌러 제목 본문 꼬리말을 작성하고 `esc`를 누른 후에 `:wq!`를 입력한 후 `enter`를 눌러 작성한 것을 저장하여 커밋한다.
+`i` 를 눌러 제목 본문 꼬리말을 작성하고 `esc`를 누른 후에 `:wq!`를 입력한 후 `enter`를 눌러 작성한 것을 저장하여 커밋합니다.
 
 # IntelliJ에서 사용해보기
 
 ## Custom commit template 사용하기
 
-위에서 설정한 commit message template을 IntelliJ에서 commit 할때 사용할 수 있다.
+위에서 설정한 commit message template을 IntelliJ에서 commit 할때 사용할 수 있습니다.
 
-1. Settings > Plugins > MarketPlace 에서 해당 plugin 을 찾아 설치해준다.
+1. Settings > Plugins > MarketPlace 에서 해당 plugin 을 찾아 설치
 
 <img style={{margin:"0 auto 10px"}} alt={"commit_message_template"} src={"https://user-images.githubusercontent.com/56423604/270173032-c1b65887-c651-45fa-b573-c2c35b479e54.png"}/>
 
 
-1. 설정한 commit message template 적용하기
- - Settings > Tools > Commit Message Template 에서 template을 적용한다.
- - 위에 text를 직접 입력해도 되고, Load Template File에 만들어둔 text 파일 directory 주소를 입력해도 된다.
+2. 설정한 commit message template 적용
+ - Settings > Tools > Commit Message Template 에서 template을 적용해줍니다.
+ - 위에 text를 직접 입력해도 되고, Load Template File에 만들어둔 text 파일 directory 주소를 입력해도 됩니다.
 
-맥의 경우 파일을 찾을 때, `.gitmessage.txt` 파일의 경우 숨겨질 수 있기에 `command` + `shift` + `.` 을 눌러 숨김 파일도 볼 수 있도록 해주자.
+맥의 경우 파일을 찾을 때, `.gitmessage.txt` 파일의 경우 숨겨질 수 있기에 `command` + `shift` + `.` 을 누르면 숨긴 파일도 볼 수 있습니다.
 
 
     <img style={{margin:"0 auto 10px"}} alt={"commit_message_template_tools"} src={"https://user-images.githubusercontent.com/56423604/270173233-597e3a7d-19b5-4c73-a3a7-88957668d1be.png"}/>
 
-    적용해주면 commit 할때, 다음과 같이 입력한 template 이 나온다.
+적용해주면 commit 할때, 다음과 같이 입력한 template 이 나옵니다.
 
     <img style={{margin:"0 auto 10px"}} alt={"git_commit_template_example"} src={"https://user-images.githubusercontent.com/56423604/270173232-c39ce874-df0c-487f-94a9-6e706cad0c1c.png"}/>
 
 
-## ****Conventional**** commit template 사용하기
+## Conventional commit template 사용하기
 
-template 설정 없이 기존의 conventional commit template을 사용하는 plugin도 있다.
+template 설정 없이 기존의 conventional commit template을 사용하는 plugin도 있습니다.
 
 <img style={{margin:"0 auto 10px"}} alt={"git_commit_template_plugin"} src={"https://user-images.githubusercontent.com/56423604/270173230-205f29af-127d-45d0-a2a9-cadc27cad49c.png"}/>
 
-해당 plugin은 설치한 후에 commit 할때 create commit message 버튼 (아래 사진에 동그라미 쳐진 버튼) 을 클릭하면
+해당 plugin 은 설치한 후에 commit 할때 create commit message 버튼 (아래 사진에 동그라미 쳐진 버튼) 을 클릭하면
 
 <img style={{margin:"0 auto 10px"}} alt={"git_commit_template_commit1"} src={"https://user-images.githubusercontent.com/56423604/270173229-5e16e8a9-67e0-427b-91d8-482f01b8f78a.png"}/>
 
-다음과 같은 창이  나온다. 해당 창에서 내용을 입력하고 OK 버튼을 누르면,
+다음과 같은 창이 나옵니다. 해당 창에서 내용을 입력하고 OK 버튼을 누르면,
 
 <img style={{margin:"0 auto 10px"}} alt={"git_commit_template_commit2"} src={"https://user-images.githubusercontent.com/56423604/270173227-92414cb3-8b8f-4366-ae11-95a81c3c8efe.png"}/>
 
-다음과 같이 커밋 메세지를 작성해준다.
+다음과 같이 커밋 메세지를 작성해줍니다.
 
 <img style={{margin:"0 auto 10px"}} alt={"git_commit_template_commit3"} src={"https://user-images.githubusercontent.com/56423604/270173223-83358c13-96c8-4d27-9fa2-7f86d2ae76ff.png"}/>
 
