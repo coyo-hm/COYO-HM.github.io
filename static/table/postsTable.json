@@ -1,4 +1,14 @@
 {
+  "yarn-berry-start": {
+    "date": "2024-01-23T15:00:00",
+    "title": "yarn berry 적용하기",
+    "tags": ["yarn"],
+    "series": [],
+    "description": "yarn berry 적용하기",
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/db966763-6723-4444-a699-2aaddcc3110d",
+    "published": true,
+    "path": "yarn-berry-start.mdx"
+  },
   "yarn-berry-pnp": {
     "date": "2023-09-06T00:00:00",
     "title": "Yarn Berry는 왜 빠른가?",
