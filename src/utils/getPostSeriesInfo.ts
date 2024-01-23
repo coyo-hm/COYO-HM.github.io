@@ -23,29 +23,38 @@ const getPostSeriesInfo = async (
   const seriesAttributeList: SeriesAttributeWithPostType[] =
     seriesKeyList.reduce((arr: SeriesAttributeWithPostType[], seriesKey) => {
       const seriesAttribute = seriesAttributeTable[seriesKey];
+
       if (seriesAttribute) {
-        const postIdx = seriesAttribute.posts.indexOf(selectedPostKey);
+        const posts =
+          seriesAttribute?.posts.map((postKey) => ({
+            ...postsAttributesTable[postKey],
+            key: postKey,
+          })) || [];
+        const sortedPosts = sortPostByDate(posts, true);
+        const postIdx = sortedPosts.indexOf(selectedPostKey);
         let startIdx = Math.max(0, postIdx - 3);
         let endIdx = Math.min(
           seriesAttribute.posts.length,
           startIdx + NUMBER_OF_POST
         );
-        const posts =
-          seriesAttribute?.posts.slice(startIdx, endIdx).map((postKey) => ({
-            ...postsAttributesTable[postKey],
-            key: postKey,
-          })) || [];
-        const sortedPosts = sortPostByDate(posts, true);
+        startIdx = Math.max(startIdx - NUMBER_OF_POST, 0);
+
+        const selectedPosts = sortedPosts
+          .slice(startIdx, endIdx)
+          .map((post, idx) => ({
+            ...post,
+            title: `${startIdx + idx + 1}. ${post.title}`,
+          }));
+
+        console.log(sortedPosts);
+        console.log(posts);
 
         return [
           ...arr,
           {
             ...seriesAttribute,
             key: seriesKey,
-            posts: sortedPosts.map((post, idx) => ({
-              ...post,
-              title: `${startIdx + idx + 1}. ${post.title}`,
-            })),
+            posts: selectedPosts,
           },
         ];
       }
