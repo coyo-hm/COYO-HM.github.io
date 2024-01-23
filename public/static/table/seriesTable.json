@@ -113,8 +113,8 @@
       "description": "자주 사용하는 코드 조각 모음",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/f79f521a-7002-42cd-9931-dbd1e1f16798",
       "startDate": "2023-09-25T00:00:00.000Z",
-      "endDate": "2024-01-24T00:00:00.000Z",
-      "posts": ["semantic-release", "husky-commlint", "git-commit-template"]
+      "endDate": "2023-10-26T00:00:00.000Z",
+      "posts": ["husky-commlint", "git-commit-template"]
     },
     "code_snippets": {
       "title": "⌨️ Code Snippets",

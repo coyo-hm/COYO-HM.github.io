@@ -77,15 +77,6 @@
     "thumbnail": "/static/images/project/simple_kanban_board.jpg",
     "path": "simple-kanban-board.mdx"
   },
-  "semantic-release": {
-    "date": "2024-01-24T00:00:00",
-    "title": "Semantic Versioning 자동화하기",
-    "tags": [],
-    "series": ["commit-msg-management"],
-    "description": "",
-    "published": false,
-    "path": "semantic-release.mdx"
-  },
   "rest-api": {
     "date": "2022-03-17T00:00:00",
     "title": "REST API",
