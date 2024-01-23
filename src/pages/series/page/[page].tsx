@@ -26,8 +26,10 @@ const Series = ({
   const { startPage, endPage } = usePage(
     seriesTotal,
     page,
-    DEFAULT_NUMBER_OF_POST.list
+    DEFAULT_NUMBER_OF_POST.series
   );
+  console.log(series);
+
   return (
     <>
       <PageSeo
@@ -106,7 +108,7 @@ export default Series;
 export const getStaticPaths: GetStaticPaths = async () => {
   const allSeriesInfo = await getAllSeriesInfo();
   const total = Object.keys(allSeriesInfo).length;
-  const size = DEFAULT_NUMBER_OF_POST["list"];
+  const size = DEFAULT_NUMBER_OF_POST["series"];
   const paths = new Array(getLastPage(total, size)).fill(0).map((_, p) => ({
     params: { page: "" + p },
   }));
@@ -119,7 +121,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { page } = params as { page: string };
-  const size = DEFAULT_NUMBER_OF_POST["list"];
+  const size = DEFAULT_NUMBER_OF_POST["series"];
   const allSeriesInfo = await getAllSeriesInfo();
   const seriesKeys = Object.keys(allSeriesInfo);
   const seriesList = seriesKeys.map((key) => ({ key, ...allSeriesInfo[key] }));

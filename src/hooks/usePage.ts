@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
-import { showType } from "@models/post";
 import getLastPage from "@utils/getLastPage";
 
 const usePage = (total: number, currPage: number, size: number) => {
