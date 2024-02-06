@@ -18,6 +18,16 @@
     "published": true,
     "path": "yarn-berry-pnp.mdx"
   },
+  "vite-ts-react-path": {
+    "date": "2024-02-07T00:00:00",
+    "title": "Vite 환경에서 절대 경로 설정하기",
+    "tags": ["vite", "typescript", "react", "javascript"],
+    "series": [],
+    "description": "Vite 환경에서 TypeScript 또는 JavaScript인 경우 절대 경로 설정하는 방법",
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/2cc0e288-09ae-40d7-ad70-92c570d0ef6f",
+    "published": true,
+    "path": "vite-ts-react-path.mdx"
+  },
   "vite-react-ts-emotion-props-config": {
     "date": "2024-01-22T00:00:00",
     "title": "Vite + React + TypeScript 환경에서 Emotion Css Prop 사용하기",
