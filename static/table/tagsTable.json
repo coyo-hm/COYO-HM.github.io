@@ -3,6 +3,7 @@
     "all": [
       "yarn-berry-start",
       "yarn-berry-pnp",
+      "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
       "utterances-to-giscus",
       "styled-components-global-style",
@@ -36,8 +37,21 @@
     "yarn": ["yarn-berry-start", "yarn-berry-pnp"],
     "npm": ["yarn-berry-pnp"],
     "yarn_berry": ["yarn-berry-pnp"],
-    "vite": ["vite-react-ts-emotion-props-config"],
+    "vite": ["vite-ts-react-path", "vite-react-ts-emotion-props-config"],
+    "typescript": [
+      "vite-ts-react-path",
+      "vite-react-ts-emotion-props-config",
+      "utterances-to-giscus",
+      "styled-components-global-style",
+      "redux-RTK-with-ts",
+      "nextjs-gtag",
+      "lodash",
+      "gatsby-add-table-of-contents-in-gatsby",
+      "axios-interceptor",
+      "axios-config"
+    ],
     "react": [
+      "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
       "styled-components-global-style",
       "redux-RTK-with-ts",
@@ -48,20 +62,21 @@
       "axios-interceptor",
       "axios-config"
     ],
+    "javascript": [
+      "vite-ts-react-path",
+      "redux-persist",
+      "react-class-render",
+      "lodash",
+      "javascript-intersection-observer-API",
+      "javascript-forEach-map",
+      "javascript-concat-push",
+      "github-page-publish",
+      "axios-interceptor",
+      "axios-config"
+    ],
     "emotion": [
       "vite-react-ts-emotion-props-config",
       "gatsby-add-table-of-contents-in-gatsby"
-    ],
-    "typescript": [
-      "vite-react-ts-emotion-props-config",
-      "utterances-to-giscus",
-      "styled-components-global-style",
-      "redux-RTK-with-ts",
-      "nextjs-gtag",
-      "lodash",
-      "gatsby-add-table-of-contents-in-gatsby",
-      "axios-interceptor",
-      "axios-config"
     ],
     "nextjs": [
       "utterances-to-giscus",
@@ -81,17 +96,6 @@
       "browser-rendering"
     ],
     "redux": ["redux-RTK-with-ts", "redux-persist"],
-    "javascript": [
-      "redux-persist",
-      "react-class-render",
-      "lodash",
-      "javascript-intersection-observer-API",
-      "javascript-forEach-map",
-      "javascript-concat-push",
-      "github-page-publish",
-      "axios-interceptor",
-      "axios-config"
-    ],
     "redux_persist": ["redux-persist"],
     "python3": ["python-rjust-ljust-zfill"],
     "gtag": ["nextjs-gtag"],
@@ -122,6 +126,7 @@
     "all": [
       "yarn-berry-start",
       "yarn-berry-pnp",
+      "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
       "utterances-to-giscus",
       "url-uri",
@@ -170,8 +175,24 @@
     "yarn": ["yarn-berry-start", "yarn-berry-pnp"],
     "npm": ["yarn-berry-pnp", "npm-basic"],
     "yarn_berry": ["yarn-berry-pnp"],
-    "vite": ["vite-react-ts-emotion-props-config"],
+    "vite": ["vite-ts-react-path", "vite-react-ts-emotion-props-config"],
+    "typescript": [
+      "vite-ts-react-path",
+      "vite-react-ts-emotion-props-config",
+      "utterances-to-giscus",
+      "test",
+      "styled-components-global-style",
+      "simple-kanban-board",
+      "redux-RTK-with-ts",
+      "real-time-coin-info",
+      "nextjs-gtag",
+      "lodash",
+      "gatsby-add-table-of-contents-in-gatsby",
+      "axios-interceptor",
+      "axios-config"
+    ],
     "react": [
+      "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
       "test",
       "styled-components-global-style",
@@ -188,23 +209,25 @@
       "axios-interceptor",
       "axios-config"
     ],
+    "javascript": [
+      "vite-ts-react-path",
+      "redux-persist",
+      "react-useMemo-useCallback",
+      "react-class-render",
+      "lodash",
+      "jest",
+      "javascript-undefined-null",
+      "javascript-intersection-observer-API",
+      "javascript-Immutable",
+      "javascript-forEach-map",
+      "javascript-concat-push",
+      "github-page-publish",
+      "axios-interceptor",
+      "axios-config"
+    ],
     "emotion": [
       "vite-react-ts-emotion-props-config",
       "gatsby-add-table-of-contents-in-gatsby"
-    ],
-    "typescript": [
-      "vite-react-ts-emotion-props-config",
-      "utterances-to-giscus",
-      "test",
-      "styled-components-global-style",
-      "simple-kanban-board",
-      "redux-RTK-with-ts",
-      "real-time-coin-info",
-      "nextjs-gtag",
-      "lodash",
-      "gatsby-add-table-of-contents-in-gatsby",
-      "axios-interceptor",
-      "axios-config"
     ],
     "nextjs": [
       "utterances-to-giscus",
@@ -235,21 +258,6 @@
     "react_beautiful_dnd": ["simple-kanban-board"],
     "react_hook_form": ["simple-kanban-board"],
     "recoil": ["simple-kanban-board", "real-time-coin-info"],
-    "javascript": [
-      "redux-persist",
-      "react-useMemo-useCallback",
-      "react-class-render",
-      "lodash",
-      "jest",
-      "javascript-undefined-null",
-      "javascript-intersection-observer-API",
-      "javascript-Immutable",
-      "javascript-forEach-map",
-      "javascript-concat-push",
-      "github-page-publish",
-      "axios-interceptor",
-      "axios-config"
-    ],
     "redux_persist": ["redux-persist"],
     "react_helmet": ["real-time-coin-info"],
     "react_query": ["real-time-coin-info"],
