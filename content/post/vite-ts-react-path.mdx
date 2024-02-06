@@ -1,0 +1,116 @@
+---
+date: "2024-02-07"
+title: "Vite 환경에서 절대 경로 설정하기"
+tags: ["vite", "typescript", "react", "javascript"]
+series: []
+description: "Vite 환경에서 TypeScript 또는 JavaScript인 경우 절대 경로 설정하는 방법"
+thumbnail: "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/2cc0e288-09ae-40d7-ad70-92c570d0ef6f"
+published: true
+---
+# JavaScript 인 경우 절대 경로 설정하기
+
+`vite.config.js`
+
+```jsx
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import { resolve } from 'path';
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: [
+      { find: '@', replacement: resolve(__dirname, 'src') },
+      { find: '@pages', replacement: resolve(__dirname, 'src/pages') },
+    ]
+  }
+})
+```
+
+# TypeScript 인 경우 절대 경로 설정하기
+
+## 모듈 설치하기
+
+```bash
+// npm을 사용하는 경우
+npm i -D @types/node
+
+// yarn을 사용하는 경우
+yarn add -D @types/node
+```
+
+`tsconfig.json`
+
+```json
+{
+  "compilerOptions": {
+    ...
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@pages/*": ["src/pages/*"]
+    }
+  },
+  ...
+}
+```
+
+## vite-tsconfig-paths 모듈 미사용시
+
+`vite.config.ts`
+
+```jsx
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { resolve } from "path";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react(), tsconfigPaths()],
+  resolve: {
+    alias: [
+      { find: "@", replacement: resolve(__dirname, "src") },
+      { find: "@pages", replacement: resolve(__dirname, "src/pages") },
+    ],
+  },
+});
+```
+
+## vite-tsconfig-paths 모듈 사용시
+
+### 모듈 설치하기
+
+```bash
+// npm을 사용하는 경우
+npm i -D vite-tsconfig-paths
+
+// yarn을 사용하는 경우
+yarn add -D vite-tsconfig-paths
+```
+
+`vite.config.ts`
+
+```jsx
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react(), tsconfigPaths()],
+});
+```
+
+
+<img style={{margin:"30px 0 0"}} alt={"absolute_path"} src={"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/0a6c01ed-8c10-49da-9b3e-832c77027452"}/>
+
+
+위와 같은 상대 경로를 절대 경로로 변경 시에 다음과 같이 변경되는 것을 확인할 수 있었습니다.
+
+<img style={{margin:"0 0 30px"}} alt={"relative_path"} src={"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/c45918a6-99b4-4bde-a8aa-edb9a0669c20"}/>
+
+
+# 참조
+
+- [Vite Docs: Config resolve.alias](https://vitejs-kr.github.io/config/shared-options.html#resolve-alias)
+- [TypeScript Docs: Path mapping](https://www.typescriptlang.org/ko/docs/handbook/module-resolution.html#%EA%B2%BD%EB%A1%9C-%EB%A7%A4%ED%95%91-path-mapping)
