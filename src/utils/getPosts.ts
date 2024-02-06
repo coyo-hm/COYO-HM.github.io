@@ -19,7 +19,6 @@ export async function getAllPosts(tag?: string): Promise<Array<PostType>> {
       frontMatter: {
         ...attributes,
         tags,
-        date: new Date(date).toISOString().substring(0, 19),
       },
       body,
       fields: {
@@ -43,14 +42,16 @@ export async function getPosts(
   );
 
   return selectedPostAttributes.map((postAttribute) => {
-    const { path, key } = postAttribute;
+    const { path, key, date } = postAttribute;
 
     const file = fs.readFileSync(`${POST_PATH}/${path}`, {
       encoding: "utf8",
     });
     const { body } = frontMatter<PostAttributeType>(file);
     return {
-      frontMatter: postAttribute,
+      frontMatter: {
+        ...postAttribute,
+      },
       body,
       fields: {
         slug: key,
