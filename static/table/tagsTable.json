@@ -104,9 +104,13 @@
       "husky-git-hook",
       "husky-commlint"
     ],
-    "git": ["husky-git-hook", "husky-commlint", "git-commit-template"],
+    "git": [
+      "husky-git-hook",
+      "husky-commlint",
+      "github-repo-union",
+      "git-commit-template"
+    ],
     "commitlint": ["husky-commlint"],
-    "github": ["github-repo-union"],
     "githubpage": ["github-page-publish"],
     "intellij": ["git-commit-template"],
     "gatsby": ["gatsby-add-table-of-contents-in-gatsby"],
@@ -265,12 +269,12 @@
     "git": [
       "husky-git-hook",
       "husky-commlint",
+      "github-repo-union",
       "git",
       "git-commit-template",
       "git-branch"
     ],
     "commitlint": ["husky-commlint"],
-    "github": ["github-repo-union"],
     "githubpage": ["github-page-publish"],
     "intellij": ["git-commit-template"],
     "gatsby": ["gatsby-add-table-of-contents-in-gatsby"],
