@@ -318,6 +318,16 @@
     "published": true,
     "path": "http.mdx"
   },
+  "github-repo-union": {
+    "date": "2024-02-06T00:00:00",
+    "title": "Github Repository 하나로 합치기",
+    "tags": ["github"],
+    "series": [],
+    "description": "여러 Repository들 하나의 폴더로 합치기",
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/11f4d42e-440e-4c15-9529-1dec925d4319",
+    "published": true,
+    "path": "github-repo-union.mdx"
+  },
   "github-page-publish": {
     "date": "2023-02-22T00:00:00",
     "title": "Github Page로 React 프로젝트 무료로 배포해보기",
