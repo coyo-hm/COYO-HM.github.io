@@ -28,6 +28,7 @@
       "github-page-publish",
       "git-commit-template",
       "gatsby-add-table-of-contents-in-gatsby",
+      "error-emeedauth",
       "cookie-session",
       "browser-rendering",
       "blog-version-2",
@@ -35,7 +36,7 @@
       "axios-config"
     ],
     "yarn": ["yarn-berry-start", "yarn-berry-pnp"],
-    "npm": ["yarn-berry-pnp"],
+    "npm": ["yarn-berry-pnp", "error-emeedauth"],
     "yarn_berry": ["yarn-berry-pnp"],
     "vite": ["vite-ts-react-path", "vite-react-ts-emotion-props-config"],
     "typescript": [
@@ -112,7 +113,8 @@
       "husky-git-hook",
       "husky-commlint",
       "github-repo-union",
-      "git-commit-template"
+      "git-commit-template",
+      "error-emeedauth"
     ],
     "commitlint": ["husky-commlint"],
     "githubpage": ["github-page-publish"],
@@ -166,6 +168,7 @@
       "git-commit-template",
       "git-branch",
       "gatsby-add-table-of-contents-in-gatsby",
+      "error-emeedauth",
       "cookie-session",
       "browser-rendering",
       "blog-version-2",
@@ -173,7 +176,7 @@
       "axios-config"
     ],
     "yarn": ["yarn-berry-start", "yarn-berry-pnp"],
-    "npm": ["yarn-berry-pnp", "npm-basic"],
+    "npm": ["yarn-berry-pnp", "npm-basic", "error-emeedauth"],
     "yarn_berry": ["yarn-berry-pnp"],
     "vite": ["vite-ts-react-path", "vite-react-ts-emotion-props-config"],
     "typescript": [
@@ -280,7 +283,8 @@
       "github-repo-union",
       "git",
       "git-commit-template",
-      "git-branch"
+      "git-branch",
+      "error-emeedauth"
     ],
     "commitlint": ["husky-commlint"],
     "githubpage": ["github-page-publish"],

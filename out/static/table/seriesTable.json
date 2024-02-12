@@ -60,12 +60,13 @@
       "description": "블로그 자체 제작기",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/6e3156e2-0623-410b-8b52-011e99b0811f",
       "startDate": "2022-10-23T00:00:00.000Z",
-      "endDate": "2024-01-10T00:00:00.000Z",
+      "endDate": "2024-02-13T00:00:00.000Z",
       "posts": [
         "utterances-to-giscus",
         "nextjs-large-page-data-warning",
         "nextjs-gtag",
         "gatsby-add-table-of-contents-in-gatsby",
+        "error-emeedauth",
         "blog-version-2"
       ]
     }
@@ -131,12 +132,13 @@
       "description": "블로그 자체 제작기",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/6e3156e2-0623-410b-8b52-011e99b0811f",
       "startDate": "2022-10-23T00:00:00.000Z",
-      "endDate": "2024-01-10T00:00:00.000Z",
+      "endDate": "2024-02-13T00:00:00.000Z",
       "posts": [
         "utterances-to-giscus",
         "nextjs-large-page-data-warning",
         "nextjs-gtag",
         "gatsby-add-table-of-contents-in-gatsby",
+        "error-emeedauth",
         "blog-version-2"
       ]
     }
