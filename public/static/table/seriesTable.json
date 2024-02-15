@@ -6,10 +6,11 @@
       "description": "프로젝트 진행 도중 나오는 문제 해결 기록",
       "thumbnail": "https://user-images.githubusercontent.com/56423604/283492423-a261b95e-c0e1-4651-9351-83fc538db17d.png",
       "startDate": "2023-10-09T00:00:00.000Z",
-      "endDate": "2023-12-18T00:00:00.000Z",
+      "endDate": "2024-02-13T00:00:00.000Z",
       "posts": [
         "nextjs-large-page-data-warning",
-        "husky-precommit-unauthorized"
+        "husky-precommit-unauthorized",
+        "error-emeedauth"
       ]
     },
     "toy_project": {
@@ -60,13 +61,12 @@
       "description": "블로그 자체 제작기",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/6e3156e2-0623-410b-8b52-011e99b0811f",
       "startDate": "2022-10-23T00:00:00.000Z",
-      "endDate": "2024-02-13T00:00:00.000Z",
+      "endDate": "2024-01-10T00:00:00.000Z",
       "posts": [
         "utterances-to-giscus",
         "nextjs-large-page-data-warning",
         "nextjs-gtag",
         "gatsby-add-table-of-contents-in-gatsby",
-        "error-emeedauth",
         "blog-version-2"
       ]
     }
@@ -78,10 +78,11 @@
       "description": "프로젝트 진행 도중 나오는 문제 해결 기록",
       "thumbnail": "https://user-images.githubusercontent.com/56423604/283492423-a261b95e-c0e1-4651-9351-83fc538db17d.png",
       "startDate": "2023-10-09T00:00:00.000Z",
-      "endDate": "2023-12-18T00:00:00.000Z",
+      "endDate": "2024-02-13T00:00:00.000Z",
       "posts": [
         "nextjs-large-page-data-warning",
-        "husky-precommit-unauthorized"
+        "husky-precommit-unauthorized",
+        "error-emeedauth"
       ]
     },
     "toy_project": {
@@ -132,13 +133,12 @@
       "description": "블로그 자체 제작기",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/6e3156e2-0623-410b-8b52-011e99b0811f",
       "startDate": "2022-10-23T00:00:00.000Z",
-      "endDate": "2024-02-13T00:00:00.000Z",
+      "endDate": "2024-01-10T00:00:00.000Z",
       "posts": [
         "utterances-to-giscus",
         "nextjs-large-page-data-warning",
         "nextjs-gtag",
         "gatsby-add-table-of-contents-in-gatsby",
-        "error-emeedauth",
         "blog-version-2"
       ]
     }

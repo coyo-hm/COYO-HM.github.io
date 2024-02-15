@@ -38,6 +38,16 @@
     "published": true,
     "path": "vite-react-ts-emotion-props-config.mdx"
   },
+  "vite-library-typescript": {
+    "date": "2024-02-02T00:00:00",
+    "title": "vite library type 정의하기: vite-plugin-dts",
+    "tags": ["vite", "react", "npm", "typescript"],
+    "series": [],
+    "description": "vite 환경에서 만든 라이브러리 type 정의하기",
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/effc5e91-070c-49d8-ba23-8be6283779c0",
+    "published": true,
+    "path": "vite-library-typescript.mdx"
+  },
   "utterances-to-giscus": {
     "date": "2024-01-10T00:00:00",
     "title": "NextJS 블로그 giscus 적용하기",
@@ -387,7 +397,7 @@
     "date": "2024-02-13T00:00:00",
     "title": "npm publish ENEEDAUTH 오류 해결하기",
     "tags": ["npm", "git"],
-    "series": ["blog"],
+    "series": ["trouble_shooting"],
     "description": "gtag에 알아보고 NextJS 블로에 gtag4를 적용해보기",
     "thumbnail": "https://github.com/COYO-HM/coyo-ui/assets/56423604/ce77552f-20d5-495d-a9a2-99e44349956b",
     "published": true,
