@@ -5,6 +5,7 @@
       "yarn-berry-pnp",
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-library-typescript",
       "utterances-to-giscus",
       "styled-components-global-style",
       "socket",
@@ -36,12 +37,17 @@
       "axios-config"
     ],
     "yarn": ["yarn-berry-start", "yarn-berry-pnp"],
-    "npm": ["yarn-berry-pnp", "error-emeedauth"],
+    "npm": ["yarn-berry-pnp", "vite-library-typescript", "error-emeedauth"],
     "yarn_berry": ["yarn-berry-pnp"],
-    "vite": ["vite-ts-react-path", "vite-react-ts-emotion-props-config"],
+    "vite": [
+      "vite-ts-react-path",
+      "vite-react-ts-emotion-props-config",
+      "vite-library-typescript"
+    ],
     "typescript": [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-library-typescript",
       "utterances-to-giscus",
       "styled-components-global-style",
       "redux-RTK-with-ts",
@@ -54,6 +60,7 @@
     "react": [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-library-typescript",
       "styled-components-global-style",
       "redux-RTK-with-ts",
       "react-class-render",
@@ -130,6 +137,7 @@
       "yarn-berry-pnp",
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-library-typescript",
       "utterances-to-giscus",
       "url-uri",
       "test",
@@ -176,12 +184,22 @@
       "axios-config"
     ],
     "yarn": ["yarn-berry-start", "yarn-berry-pnp"],
-    "npm": ["yarn-berry-pnp", "npm-basic", "error-emeedauth"],
+    "npm": [
+      "yarn-berry-pnp",
+      "vite-library-typescript",
+      "npm-basic",
+      "error-emeedauth"
+    ],
     "yarn_berry": ["yarn-berry-pnp"],
-    "vite": ["vite-ts-react-path", "vite-react-ts-emotion-props-config"],
+    "vite": [
+      "vite-ts-react-path",
+      "vite-react-ts-emotion-props-config",
+      "vite-library-typescript"
+    ],
     "typescript": [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-library-typescript",
       "utterances-to-giscus",
       "test",
       "styled-components-global-style",
@@ -197,6 +215,7 @@
     "react": [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-library-typescript",
       "test",
       "styled-components-global-style",
       "simple-kanban-board",
