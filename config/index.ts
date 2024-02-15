@@ -7,7 +7,7 @@ const metadata = {
   siteUrl: `https://coyo-hm.github.io/`,
   copyright: `© 2021 - 2023 COYO All rights reserved.`,
   author: {
-    name: `COYO`,
+    name: `coyo-hm`,
   },
   generateRobotsTxt: true,
 };
