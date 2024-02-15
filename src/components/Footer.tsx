@@ -8,7 +8,7 @@ const Footer = () => {
     >
       <div className={"flex justify-center mb-2"}>
         <a
-          href="https://github.com/COYO-HM"
+          href="https://github.com/coyo-hm"
           target={"_blank"}
           rel="noreferrer"
           className={`mr-4 hover:text-blue-700`}
