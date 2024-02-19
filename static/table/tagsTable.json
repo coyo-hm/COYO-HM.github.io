@@ -16,6 +16,7 @@
       "nextjs-large-page-data-warning",
       "nextjs-gtag",
       "network-note-01",
+      "network-application-02",
       "mvc-pattern",
       "lodash",
       "javascript-intersection-observer-API",
@@ -99,6 +100,7 @@
     "network": [
       "socket",
       "network-note-01",
+      "network-application-02",
       "http",
       "cookie-session",
       "browser-rendering"
@@ -108,7 +110,7 @@
     "python3": ["python-rjust-ljust-zfill"],
     "gtag": ["nextjs-gtag"],
     "google_analytics": ["nextjs-gtag"],
-    "computer_science": ["network-note-01"],
+    "computer_science": ["network-note-01", "network-application-02"],
     "programming": ["mvc-pattern"],
     "lodash": ["lodash"],
     "husky": [
@@ -158,6 +160,7 @@
       "nextjs-large-page-data-warning",
       "nextjs-gtag",
       "network-note-01",
+      "network-application-02",
       "mvc-pattern",
       "lodash",
       "jest",
@@ -265,6 +268,7 @@
       "socket",
       "rest-api",
       "network-note-01",
+      "network-application-02",
       "http",
       "cookie-session",
       "browser-rendering"
@@ -288,7 +292,7 @@
     "programming": ["programming-paradigm", "mvc-pattern"],
     "gtag": ["nextjs-gtag"],
     "google_analytics": ["nextjs-gtag"],
-    "computer_science": ["network-note-01"],
+    "computer_science": ["network-note-01", "network-application-02"],
     "lodash": ["lodash"],
     "jest": ["jest"],
     "husky": [

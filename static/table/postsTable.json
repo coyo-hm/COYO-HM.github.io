@@ -235,6 +235,16 @@
     "published": true,
     "path": "network-note-01.mdx"
   },
+  "network-application-02": {
+    "date": "2024-02-20T00:00:00",
+    "title": "Application Layer: 2. DNS",
+    "tags": ["network", "computer_science"],
+    "series": ["network_note"],
+    "description": "DNA",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/156d2cd6-ac5f-496b-8a89-2dde74058d58",
+    "published": true,
+    "path": "network-application-02.mdx"
+  },
   "mvc-pattern": {
     "date": "2022-07-04T00:00:00",
     "title": "MVC 패턴",
