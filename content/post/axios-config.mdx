@@ -3,13 +3,12 @@ date: "2022-09-19"
 title: "Axios Config 기본값 정리"
 tags: ["React", "TypeScript", "Axios", "JavaScript"]
 description: "Axios Config 기본값 정리"
+thumbnail: "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/616f1229-bb39-46a0-929f-cdd47d9628b3"
 published: true
-# thumbnail: './add_table_of_contents_in_post.png'
 ---
 > 모든 요청에 적용될 config 기본값을 지정할 수 있다.
->
 
-# **전역 Axios 기본값**
+# 전역 Axios 기본값
 
 ```tsx
 axios.defaults.baseURL = 'https://api.example.com';
@@ -50,7 +49,7 @@ instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 const response = await instance.post('login', params);
 ```
 
-# **Config 우선 순위**
+# Config 우선 순위
 
 Config는 우선 순위에 따라 병합된다.
 

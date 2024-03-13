@@ -3,6 +3,7 @@ date: "2022-06-25"
 title: "Styled Components Global Style 설정하기"
 tags: ["Styled-Components","CSS", "React", "TypeScript"]
 description: "Styled Components 전체 프로젝트에 적용되는  Global Style 설정하기"
+thumbnail: "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/152d59ef-b884-4c4b-955d-02dd4cd391f4"
 published: true
 ---
 > `createGlobalStyle`
@@ -10,25 +11,25 @@ published: true
 >
 
 ```tsx
-import { createGlobalStyle } from "styled-components";
-import Router from "./Router";
+  import { createGlobalStyle } from "styled-components";
+  import Router from "./Router";
 
-const GlobalStyle = createGlobalStyle`
-body {
-  //global style 작성
-}
-`;
+  const GlobalStyle = createGlobalStyle`
+  body {
+    //global style 작성
+  }
+  `;
 
-function App() {
-  return (
-    <>
-      <GlobalStyle />
-      <Router />
-    </>
-  );
-}
+  function App() {
+    return (
+      <>
+        <GlobalStyle />
+        <Router />
+      </>
+    );
+  }
 
-export default App;
+  export default App;
 ```
 
 # Global Style 지정
@@ -36,77 +37,53 @@ export default App;
 `globalStyle.tsx`
 
 <aside>
-💡 Reset CSS
-[https://github.com/zacanger/styled-reset/blob/master/src/post.ts](https://github.com/zacanger/styled-reset/blob/master/src/post.ts)
-
+💡 [Reset CSS](https://meyerweb.com/eric/tools/css/reset/)
 </aside>
 
 ```tsx
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-/* http://meyerweb.com/eric/tools/css/reset/
-   v5.0.1 | 20191019
-   License: none (public domain)
-*/
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, menu, ol, ul, li,
+i, center,
+dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
-main, menu, nav, output, ruby, section, summary,
+menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  font-family: 'Source Sans Pro', sans-serif;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, main, menu, nav, section {
-  display: block;
-}
-/* HTML5 hidden-attribute fix for newer browsers */
-*[hidden] {
-    display: none;
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
 body {
-  line-height: 1;
+	line-height: 1;
   margin: 0;
   background: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.textColor};
 }
-menu, ol, ul {
-  list-style: none;
+ol, ul {
+	list-style: none;
 }
 blockquote, q {
-  quotes: none;
+	quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
-  content: none;
+	content: '';
+	content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-a{
-  text-decoration: none;
-  color: inherit;
-}
-*{
-  box-sizing: border-box;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 `;
 ```
@@ -116,24 +93,24 @@ a{
 `App.tsx`
 
 ```tsx
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { GlobalStyle } from "./style/globalStyle";
-import { ThemeProvider } from "styled-components";
+  import React from "react";
+  import { BrowserRouter, Route, Routes } from "react-router-dom";
+  import { GlobalStyle } from "./style/globalStyle";
+  import { ThemeProvider } from "styled-components";
 
-function App() {
+  function App() {
 
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <BrowserRouter>
-        <Routes>
-          <Route path={"/"} element={<Home />} />
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
-  );
-}
+    return (
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <BrowserRouter>
+          <Routes>
+            <Route path={"/"} element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    );
+  }
 
-export default App;
+  export default App;
 ```
