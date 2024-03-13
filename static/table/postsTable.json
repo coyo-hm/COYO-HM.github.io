@@ -58,27 +58,12 @@
     "published": true,
     "path": "utterances-to-giscus.mdx"
   },
-  "url-uri": {
-    "date": "2022-09-15T00:00:00",
-    "title": "URI와 URL",
-    "tags": ["network"],
-    "description": "",
-    "published": false,
-    "path": "url-uri.md"
-  },
-  "test": {
-    "date": "2023-02-02T00:00:00",
-    "title": "TEST",
-    "tags": ["react", "typescript", "redux", "scss", "css", "network"],
-    "description": "개발용 테스트 문서입니다. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "published": false,
-    "path": "test.mdx"
-  },
   "styled-components-global-style": {
     "date": "2022-06-25T00:00:00",
     "title": "Styled Components Global Style 설정하기",
     "tags": ["styled_components", "css", "react", "typescript"],
     "description": "Styled Components 전체 프로젝트에 적용되는  Global Style 설정하기",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/152d59ef-b884-4c4b-955d-02dd4cd391f4",
     "published": true,
     "path": "styled-components-global-style.mdx"
   },
@@ -86,7 +71,8 @@
     "date": "2022-09-13T00:00:00",
     "title": "Socket 통신",
     "tags": ["network"],
-    "description": " 프로세스가 데이터를 주고 받는 창구 역할을 한다. 떨어져 있는 두 호스트가 서로 데이터를 주고 받도록 연결해주는 구조체",
+    "description": "프로세스가 데이터를 주고 받는 창구 역할을 한다. 떨어져 있는 두 호스트가 서로 데이터를 주고 받도록 연결해주는 구조체",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/147e09dc-00f3-4932-ba20-97145258466b",
     "published": true,
     "path": "socket.mdx"
   },
@@ -107,19 +93,12 @@
     "thumbnail": "/static/images/project/simple_kanban_board.jpg",
     "path": "simple-kanban-board.mdx"
   },
-  "rest-api": {
-    "date": "2022-03-17T00:00:00",
-    "title": "REST API",
-    "tags": ["network"],
-    "description": "REST 아키텍쳐의 제약조건을 준수하는 어플리케이션 프로그래밍 인터페이스",
-    "published": false,
-    "path": "rest-api.md"
-  },
   "redux-RTK-with-ts": {
     "date": "2023-01-26T00:00:00",
     "title": "TypeScript에서 Redux-ToolKit 사용하기",
     "tags": ["react", "typescript", "redux"],
     "description": "TypeScript에서 redux-toolkit 설치부터, Store 설정, UseDispatch, UseSelector, CreateSlice(build), CreateAsyncThunk 사용해보기",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/7233d12c-0a57-4190-9111-82c1e0ea129b",
     "published": true,
     "path": "redux-RTK-with-ts.mdx"
   },
@@ -127,7 +106,8 @@
     "date": "2022-08-31T00:00:00",
     "title": "Redux Persist",
     "tags": ["javascript", "redux_persist", "redux"],
-    "description": "Redux-Persist로 새로고침해도 데이터 유지하기",
+    "description": "Redux-Persist로 새로고침해도 store state 유지하기",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/000fb047-8568-4a11-af36-e89afcf2ad38",
     "published": true,
     "path": "redux-persist.mdx"
   },
@@ -148,14 +128,6 @@
     "series": ["toy_project"],
     "thumbnail": "/static/images/project/real-time-coin-info.gif",
     "path": "real-time-coin-info.mdx"
-  },
-  "react-useMemo-useCallback": {
-    "date": "2022-03-22T00:00:00",
-    "title": "React useMemo와 useCallback",
-    "tags": ["react", "javascript"],
-    "description": "React useMemo와 useCallback",
-    "published": false,
-    "path": "react-useMemo-useCallback.md"
   },
   "react-hook": {
     "date": "2023-02-23T00:00:00",
@@ -178,6 +150,7 @@
     "title": "React Class Component Life Cycle",
     "tags": ["react", "javascript"],
     "description": "React Class Component 의 Life Cycle 정리",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/97305e46-405e-40c7-9497-972f23fe44e3",
     "published": true,
     "path": "react-class-render.mdx"
   },
@@ -186,24 +159,9 @@
     "title": "Python3 문자열 채우기: rjust / ljust / zfill",
     "tags": ["python3"],
     "description": "Python3 rjust, ljust, zfill로 문자열 채우기",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/60313c86-9b9f-4a22-95ce-55af6ae0f54e",
     "published": true,
     "path": "python-rjust-ljust-zfill.mdx"
-  },
-  "programming-paradigm": {
-    "date": "2023-04-11T00:00:00",
-    "title": "프로그래밍 패러다임",
-    "tags": ["programming"],
-    "description": "프로그래밍 패러다임에 대해 알아보기",
-    "published": false,
-    "path": "programming-paradigm.mdx"
-  },
-  "npm-basic": {
-    "date": "2023-02-06T00:00:00",
-    "title": "npm 정리",
-    "tags": ["npm"],
-    "description": "",
-    "published": false,
-    "path": "npm-basic.md"
   },
   "nextjs-large-page-data-warning": {
     "date": "2023-10-09T00:00:00",
@@ -240,16 +198,17 @@
     "title": "Application Layer: 2. DNS",
     "tags": ["network", "computer_science"],
     "series": ["network_note"],
-    "description": "DNA",
+    "description": "DNS",
     "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/156d2cd6-ac5f-496b-8a89-2dde74058d58",
     "published": true,
     "path": "network-application-02.mdx"
   },
   "mvc-pattern": {
     "date": "2022-07-04T00:00:00",
-    "title": "MVC 패턴",
-    "tags": ["programming"],
-    "description": "MVC 패턴에 대해 알아보기",
+    "title": "MVC(Model-View-Controller) 패턴",
+    "tags": ["computer_science"],
+    "description": "MVC 패턴에 대해 알아보자",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/5d7241a9-235b-4a89-9b11-f9840ea1fc31",
     "published": true,
     "path": "mvc-pattern.mdx"
   },
@@ -258,24 +217,9 @@
     "title": "Lodash 자주 사용하는 함수 정리",
     "tags": ["react", "typescript", "lodash", "javascript"],
     "description": "자주 사용하는 lodash 함수 정리",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/f68eeff0-6ee9-4ea9-9543-7046c91430b6",
     "published": true,
     "path": "lodash.mdx"
-  },
-  "jest": {
-    "date": "2022-01-12T00:00:00",
-    "title": "Jest",
-    "tags": ["jest", "javascript"],
-    "description": "",
-    "published": false,
-    "path": "jest.md"
-  },
-  "javascript-undefined-null": {
-    "date": "2022-01-16T00:00:00",
-    "title": "JavaScript",
-    "tags": ["javascript"],
-    "description": "undefined와 null 비교",
-    "published": false,
-    "path": "javascript-undefined-null.md"
   },
   "javascript-intersection-observer-API": {
     "date": "2023-02-13T00:00:00",
@@ -286,19 +230,12 @@
     "published": true,
     "path": "javascript-intersection-observer-API.mdx"
   },
-  "javascript-Immutable": {
-    "date": "2022-09-01T00:00:00",
-    "title": "Immutability",
-    "tags": ["javascript"],
-    "description": "Immutability",
-    "published": false,
-    "path": "javascript-Immutable.md"
-  },
   "javascript-forEach-map": {
     "date": "2022-07-12T00:00:00",
     "title": "JavaScript map과 forEach 비교",
     "tags": ["javascript"],
     "description": "JavaScript map과 forEach 비교하기",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/fe137c63-766e-4b91-828f-462a6d3a0f02",
     "published": true,
     "path": "javascript-forEach-map.mdx"
   },
@@ -307,6 +244,7 @@
     "title": "JavaScript concat과 push 비교",
     "tags": ["javascript"],
     "description": "JavaScript concat과 push 비교하기",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/1169a106-f572-499c-8209-996b1c82b32b",
     "published": true,
     "path": "javascript-concat-push.mdx"
   },
@@ -345,6 +283,7 @@
     "title": "HTTP 통신",
     "tags": ["network"],
     "description": "HTML 파일을 전송하는 프로토콜",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/6e6f2d03-8026-4050-8d56-da0d8af4b0cb",
     "published": true,
     "path": "http.mdx"
   },
@@ -367,14 +306,6 @@
     "published": true,
     "path": "github-page-publish.mdx"
   },
-  "git": {
-    "date": "2022-01-13T00:00:00",
-    "title": "Git 내용정리",
-    "tags": ["git"],
-    "description": "git 초기 설정, git 커밋 메세지 수정",
-    "published": false,
-    "path": "git.md"
-  },
   "git-commit-template": {
     "date": "2023-09-25T00:00:00",
     "title": "git commit template 등록하기",
@@ -384,14 +315,6 @@
     "published": true,
     "thumbnail": "https://user-images.githubusercontent.com/56423604/272324652-55a437a4-af2d-4809-9308-5a915847004f.png",
     "path": "git-commit-template.mdx"
-  },
-  "git-branch": {
-    "date": "2021-07-13T00:00:00",
-    "title": "Git branch 정리",
-    "tags": ["git"],
-    "description": "Git branch 관련 정리",
-    "published": false,
-    "path": "git-branch.md"
   },
   "gatsby-add-table-of-contents-in-gatsby": {
     "date": "2022-10-23T00:00:00",
@@ -418,6 +341,7 @@
     "title": "쿠키와 세션",
     "tags": ["network"],
     "description": "쿠키와 세션의 각각 특징과 비교",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/3c498253-2a5d-404e-aee8-828824c93e54",
     "published": true,
     "path": "cookie-session.mdx"
   },
@@ -445,6 +369,7 @@
     "title": "Axios Intercepter 사용해보기",
     "tags": ["react", "typescript", "axios", "javascript"],
     "description": "Axios: Intercepter 사용해보기",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/c6eebc61-641e-456c-b419-f7c22e28b32a",
     "published": true,
     "path": "axios-interceptor.mdx"
   },
@@ -453,6 +378,7 @@
     "title": "Axios Config 기본값 정리",
     "tags": ["react", "typescript", "axios", "javascript"],
     "description": "Axios Config 기본값 정리",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/616f1229-bb39-46a0-929f-cdd47d9628b3",
     "published": true,
     "path": "axios-config.mdx"
   }
