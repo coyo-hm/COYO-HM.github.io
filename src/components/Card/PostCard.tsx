@@ -30,9 +30,9 @@ const PostCard = ({ thumbnail, title, date, slug, tags }: Props) => {
             />
           </div>
         )}
-        <div className={`p-5 flex-col grow`}>
+        <div className={`p-5 flex flex-col grow`}>
           <h3
-            className={`text-neutral-800 dark:text-neutral-100 font-semibold text-xl pb-2`}
+            className={`text-neutral-800 dark:text-neutral-100 font-semibold text-xl pb-2 grow`}
           >
             {title}
           </h3>
