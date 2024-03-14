@@ -93,6 +93,16 @@
     "thumbnail": "/static/images/project/simple_kanban_board.jpg",
     "path": "simple-kanban-board.mdx"
   },
+  "semantic-release": {
+    "date": "2024-03-14T00:00:00",
+    "title": "semantic-release: 커밋 메세지로 버전 및 변경 로그 관리까지",
+    "tags": ["semamtic_release", "github_actions"],
+    "series": ["commit-msg-management"],
+    "description": "커밋 메세지로 Semantic Versioning 자동화부터 Change-log 자동 관리하기",
+    "thumbnail": "https://github.com/coyo-hm/coyo-ui/assets/56423604/ed4f42e7-931f-4ea8-9088-65ed1943f6f2",
+    "published": true,
+    "path": "semantic-release.mdx"
+  },
   "redux-RTK-with-ts": {
     "date": "2023-01-26T00:00:00",
     "title": "TypeScript에서 Redux-ToolKit 사용하기",
