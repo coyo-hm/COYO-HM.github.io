@@ -14,6 +14,7 @@ import getLastPage from "@utils/getLastPage";
 import getAllTags from "@utils/getAllTags";
 import PostCard from "@components/Card/PostCard";
 import TagCapsule from "@components/Tag/TagCapsule";
+import getBlurImg from "@utils/getBlurImg";
 
 const Blog = ({
   posts,
@@ -108,7 +109,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { page, tag } = params as { page: string; tag: string };
   const allTags = await getAllTags();
-  const posts = await getPosts(+page, DEFAULT_NUMBER_OF_POST.list, tag);
+  const postsInfo = await getPosts(+page, DEFAULT_NUMBER_OF_POST.list, tag);
+
+  const posts = await Promise.all(
+    postsInfo.map(async (post: PostType) => {
+      const blurThumbnail = await getBlurImg(post.frontMatter.thumbnail);
+      return { ...post, frontMatter: { ...post.frontMatter, blurThumbnail } };
+    })
+  );
 
   return {
     props: {

@@ -14,6 +14,8 @@ import Image from "next/image";
 import imgLoader from "@utils/imgLoader";
 import PageTitle from "@components/Title/PageTitle";
 import getSeries from "@utils/getSeries";
+import getBlurImg from "@utils/getBlurImg";
+import { PostType } from "@models/post";
 
 const Series = ({
   series,
@@ -46,7 +48,18 @@ const Series = ({
         </div>
         <article className={`flex flex-col flex-nowrap gap-3 w-full`}>
           {series.map(
-            ({ key, title, thumbnail, tags, description, posts }, idx) => (
+            (
+              {
+                key,
+                title,
+                thumbnail,
+                blurThumbnail,
+                tags,
+                description,
+                posts,
+              },
+              idx
+            ) => (
               <Link
                 key={key}
                 href={`/series/${key}`}
@@ -60,7 +73,8 @@ const Series = ({
                       alt={title}
                       className={`object-cover h-auto`}
                       fill
-                      loading={"lazy"}
+                      placeholder={"blur"}
+                      blurDataURL={blurThumbnail}
                     />
                   ) : (
                     <div
@@ -122,11 +136,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { page } = params as { page: string };
   const allSeriesInfo = await getAllSeriesInfo();
-  const series = await getSeries(+page, DEFAULT_NUMBER_OF_POST["series"]);
+  const seriesInfo = await getSeries(+page, DEFAULT_NUMBER_OF_POST["series"]);
+
+  const series = await Promise.all(
+    seriesInfo.map(async (s: SeriesAttributeType) => {
+      const blurThumbnail = await getBlurImg(s.thumbnail);
+      return { ...s, blurThumbnail };
+    })
+  );
 
   return {
     props: {
-      series: series,
+      series,
       seriesTotal: Object.keys(allSeriesInfo).length,
       page: +page,
     },

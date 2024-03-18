@@ -144,6 +144,7 @@
     "title": "React Hook",
     "tags": ["react"],
     "description": "",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/97305e46-405e-40c7-9497-972f23fe44e3",
     "published": false,
     "path": "react-hook.md"
   },
@@ -152,6 +153,7 @@
     "title": "React Hook: State Hook",
     "tags": ["react"],
     "description": "useState, useReducer 정리",
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/97305e46-405e-40c7-9497-972f23fe44e3",
     "published": false,
     "path": "react-hook-state.mdx"
   },

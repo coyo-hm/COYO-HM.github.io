@@ -9,21 +9,19 @@ interface Props {
   allSeriesInfo: SeriesAttributeTableType;
 }
 
-const FrontSide = ({ thumbnail, title }: SeriesTableNode) => {
+const FrontSide = ({ thumbnail, title, blurThumbnail }: SeriesTableNode) => {
   return (
     <>
       <div className={"w-full h-[250px] relative top-0 left-0 "}>
-        {thumbnail && (
-          <Image
-            loader={(props) => imgLoader(props)}
-            src={thumbnail}
-            alt={title}
-            className={`object-contain`}
-            priority
-            fill
-            sizes={"(min-width:640px) 50vw, 100vw"}
-          />
-        )}
+        <Image
+          loader={(props) => imgLoader(props)}
+          src={thumbnail}
+          alt={title}
+          className={`object-contain`}
+          fill
+          placeholder={"blur"}
+          blurDataURL={blurThumbnail}
+        />
       </div>
       <h1
         className={`px-5 pt-5 text-2xl italic font-bold break-keep whitespace-pre-line text-center`}

@@ -11,7 +11,14 @@ interface Props extends PostAttributeType {
   slug: string;
 }
 
-const PostCard = ({ thumbnail, title, date, slug, tags }: Props) => {
+const PostCard = ({
+  thumbnail,
+  title,
+  date,
+  slug,
+  tags,
+  blurThumbnail,
+}: Props) => {
   const _date = getDate(date);
   return (
     <Link href={`/post/${slug}`}>
@@ -26,7 +33,8 @@ const PostCard = ({ thumbnail, title, date, slug, tags }: Props) => {
               alt={title}
               className={`object-cover h-auto`}
               fill
-              loading={"lazy"}
+              placeholder={"blur"}
+              blurDataURL={blurThumbnail}
             />
           </div>
         )}

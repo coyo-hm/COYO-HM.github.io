@@ -7,7 +7,8 @@ export interface PostAttributeType {
   date: string;
   tags: string[];
   series?: string[];
-  thumbnail?: string;
+  thumbnail: string;
+  blurThumbnail?: string;
 }
 
 export interface PostType {
