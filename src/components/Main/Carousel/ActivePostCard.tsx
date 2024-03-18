@@ -43,7 +43,15 @@ const ActivePostCard = ({
   direction,
   allSeriesInfo,
   fields: { slug },
-  frontMatter: { title, tags, date, thumbnail, description, series },
+  frontMatter: {
+    title,
+    tags,
+    date,
+    thumbnail,
+    description,
+    series,
+    blurThumbnail,
+  },
 }: Props) => {
   const getSeriesTitle = (seriesKey?: string) => {
     if (seriesKey && allSeriesInfo && allSeriesInfo[seriesKey]) {
@@ -66,17 +74,15 @@ const ActivePostCard = ({
         <ShadowRoundedCard
           className={`relative h-[80%] rounded-xl bg-white dark:bg-white overflow-hidden`}
         >
-          {thumbnail && (
-            <Image
-              loader={(props) => imgLoader(props)}
-              src={thumbnail}
-              alt={title}
-              className={`object-contain`}
-              priority
-              fill
-              sizes={"(min-width:640px) 50vw, 100vw"}
-            />
-          )}
+          <Image
+            loader={(props) => imgLoader(props)}
+            src={thumbnail}
+            alt={title}
+            className={`object-contain`}
+            fill
+            placeholder={"blur"}
+            blurDataURL={blurThumbnail}
+          />
           <motion.div
             className={`flex flex-col absolute top-0 left-0 h-full w-full rounded-xl gap-4 opacity-0 hover:opacity-100 bg-neutral-900/80 overflow-hidden`}
           >

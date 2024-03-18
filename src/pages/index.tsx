@@ -13,6 +13,7 @@ import { TagWithCountType } from "@models/tag";
 import { getPosts } from "@utils/getPosts";
 import getAllTags from "@utils/getAllTags";
 import getAllSeriesInfo from "@utils/getAllSeriesInfo";
+import getBlurImg from "@utils/getBlurImg";
 import PageTitle from "@components/Title/PageTitle";
 import PageSubTitle from "@components/Title/PageSubTitle";
 import SeriesCards from "@components/Main/SeriesCards";
@@ -73,9 +74,25 @@ export const getStaticProps: GetStaticProps = async () => {
   const recentPosts = await getPosts(0, 5);
   const allTags = await getAllTags();
   const allSeriesInfo = await getAllSeriesInfo();
+
+  const posts = await Promise.all(
+    recentPosts.map(async (post: PostType) => {
+      const blurThumbnail = await getBlurImg(post.frontMatter.thumbnail);
+      return { ...post, frontMatter: { ...post.frontMatter, blurThumbnail } };
+    })
+  );
+
+  for (const allSeriesInfoKey in allSeriesInfo) {
+    const series = allSeriesInfo[allSeriesInfoKey];
+    const blurThumbnail = await getBlurImg(series.thumbnail);
+    if (blurThumbnail) {
+      allSeriesInfo[allSeriesInfoKey].blurThumbnail = blurThumbnail;
+    }
+  }
+
   return {
     props: {
-      recentPosts,
+      recentPosts: posts,
       tags: allTags,
       allSeriesInfo: allSeriesInfo,
     },

@@ -103,7 +103,8 @@ const SeriesIntroPage = ({
                         alt={title}
                         className={`object-cover h-auto`}
                         fill
-                        loading={"lazy"}
+                        placeholder={"blur"}
+                        blurDataURL={post?.blurThumbnail}
                       />
                     </div>
                   )}

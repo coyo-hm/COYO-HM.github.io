@@ -1,11 +1,12 @@
 import SeriesTable from "public/static/table/seriesTable.json";
 import PostsTable from "public/static/table/postsTable.json";
 import { SeriesTableNode, SeriesPostType } from "@models/series";
-import { PostTableNode } from "@models/post";
+import { PostAttributeType, PostTableNode, PostType } from "@models/post";
 import sortPostByDate from "@utils/sortPostByDate";
 import { SERIES_DIR_PATH } from "@constants/api";
 import fs from "fs";
 import frontMatter from "front-matter";
+import getBlurImg from "@utils/getBlurImg";
 
 const SERIES_PATH = `${process.cwd()}${SERIES_DIR_PATH}`;
 
@@ -26,8 +27,16 @@ const getSeriesIntro = async (seriesKey: string): Promise<SeriesPostType> => {
   });
   const { body } = frontMatter<SeriesTableNode>(file);
 
-  const postsInfo =
-    seriesInfo?.posts.map((key) => ({ ...postsAttributesObj[key], key })) || [];
+  let postsInfo: PostAttributeType[] = [];
+  if (seriesInfo?.posts) {
+    postsInfo = await Promise.all(
+      seriesInfo.posts.map(async (key: string) => {
+        const post = postsAttributesObj[key];
+        const blurThumbnail = await getBlurImg(post.thumbnail);
+        return { ...post, blurThumbnail, key };
+      })
+    );
+  }
 
   return {
     frontMatter: seriesInfo,

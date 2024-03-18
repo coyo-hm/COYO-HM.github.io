@@ -15,6 +15,7 @@
       "react-class-render",
       "python-rjust-ljust-zfill",
       "nextjs-large-page-data-warning",
+      "nextjs-image-blur",
       "nextjs-gtag",
       "network-note-01",
       "network-application-02",
@@ -91,6 +92,7 @@
     "nextjs": [
       "utterances-to-giscus",
       "nextjs-large-page-data-warning",
+      "nextjs-image-blur",
       "nextjs-gtag",
       "blog-version-2"
     ],
@@ -111,6 +113,7 @@
     "redux": ["redux-RTK-with-ts", "redux-persist"],
     "redux_persist": ["redux-persist"],
     "python3": ["python-rjust-ljust-zfill"],
+    "plaiceholder": ["nextjs-image-blur"],
     "gtag": ["nextjs-gtag"],
     "google_analytics": ["nextjs-gtag"],
     "computer_science": [
@@ -159,6 +162,7 @@
       "react-class-render",
       "python-rjust-ljust-zfill",
       "nextjs-large-page-data-warning",
+      "nextjs-image-blur",
       "nextjs-gtag",
       "network-note-01",
       "network-application-02",
@@ -241,6 +245,7 @@
     "nextjs": [
       "utterances-to-giscus",
       "nextjs-large-page-data-warning",
+      "nextjs-image-blur",
       "nextjs-gtag",
       "blog-version-2"
     ],
@@ -271,6 +276,7 @@
     "react_query": ["real-time-coin-info"],
     "react_apexcharts": ["real-time-coin-info"],
     "python3": ["python-rjust-ljust-zfill"],
+    "plaiceholder": ["nextjs-image-blur"],
     "gtag": ["nextjs-gtag"],
     "google_analytics": ["nextjs-gtag"],
     "computer_science": [

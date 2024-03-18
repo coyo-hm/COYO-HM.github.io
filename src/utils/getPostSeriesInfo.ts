@@ -2,7 +2,7 @@ import SeriesTable from "public/static/table/seriesTable.json";
 import PostsTable from "public/static/table/postsTable.json";
 
 import { SeriesAttributeWithPostType, SeriesTableNode } from "@models/series";
-import { PostTableNode } from "@models/post";
+import { PostAttributeType, PostTableNode } from "@models/post";
 import sortPostByDate from "@utils/sortPostByDate";
 
 const NUMBER_OF_POST = 5;
@@ -31,13 +31,15 @@ const getPostSeriesInfo = async (
             key: postKey,
           })) || [];
         const sortedPosts = sortPostByDate(posts, true);
-        const postIdx = sortedPosts.indexOf(selectedPostKey);
+        const postIdx = sortedPosts.findIndex(
+          (post: PostAttributeType) => post.key === selectedPostKey
+        );
         let startIdx = Math.max(0, postIdx - 3);
         let endIdx = Math.min(
           seriesAttribute.posts.length,
           startIdx + NUMBER_OF_POST
         );
-        startIdx = Math.max(startIdx - NUMBER_OF_POST, 0);
+        startIdx = Math.max(endIdx - NUMBER_OF_POST, 0);
 
         const selectedPosts = sortedPosts
           .slice(startIdx, endIdx)
@@ -45,9 +47,6 @@ const getPostSeriesInfo = async (
             ...post,
             title: `${startIdx + idx + 1}. ${post.title}`,
           }));
-
-        console.log(sortedPosts);
-        console.log(posts);
 
         return [
           ...arr,

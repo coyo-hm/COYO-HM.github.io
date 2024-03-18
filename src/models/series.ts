@@ -6,6 +6,7 @@ export interface SeriesAttributeType {
   tags: string[];
   description: string;
   thumbnail: string;
+  blurThumbnail?: string;
   startDate: string;
   endDate: string;
   posts: string[];
