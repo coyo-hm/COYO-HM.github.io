@@ -12,4 +12,12 @@ module.exports = {
     NEXT_PUBLIC_REPO_ID: process.env.NEXT_PUBLIC_REPO_ID,
     NEXT_PUBLIC_CATEGORY_ID: process.env.NEXT_PUBLIC_CATEGORY_ID,
   },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
+    return config;
+  },
 };

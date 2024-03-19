@@ -21,6 +21,7 @@
       "@constants/*": ["src/constants/*"],
       "@contexts/*": ["src/contexts/*"],
       "@fonts/*": ["public/static/fonts/*"],
+      "@images/*": ["public/static/images/*"],
       "@hooks/*": ["src/hooks/*"],
       "@styles/*": ["src/styles/*"],
       "@models/*": ["src/models/*"],

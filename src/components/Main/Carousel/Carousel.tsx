@@ -11,6 +11,7 @@ import RightForwardIcon from "@components/Icon/RightForwardIcon";
 import PauseIcon from "@components/Icon/PauseIcon";
 import PlayIcon from "@components/Icon/PlayIcon";
 import ActivePostCard from "@components/Main/Carousel/ActivePostCard";
+import ClockWiseIcon from "@images/clockwise.svg";
 
 const svgVariants = {
   initial: {
@@ -91,7 +92,23 @@ const Carousel = ({ posts, allSeriesInfo }: Props) => {
       <div className={`pb-3 gap-5 flex justify-between items-end`}>
         <div className={`flex gap-1.5 items-center`}>
           <button
-            onClick={() => setDirection("left")}
+            onClick={() =>
+              setDirection((prev) => (prev === "left" ? "right" : "left"))
+            }
+            className={`w-5 hover:text-blue-700 hover:animate-spin`}
+          >
+            {direction === "left" ? (
+              <ClockWiseIcon />
+            ) : (
+              <ClockWiseIcon className={`scale-x-[-1]`} />
+            )}
+          </button>
+          <button
+            onClick={() =>
+              setCurrentIndex((prev) =>
+                prev === 0 ? posts.length - 1 : prev - 1
+              )
+            }
             className={`w-6 hover:scale-110 hover:text-blue-700`}
           >
             <LeftForwardIcon />
@@ -109,7 +126,11 @@ const Carousel = ({ posts, allSeriesInfo }: Props) => {
             </AnimatePresence>
           </button>
           <button
-            onClick={() => setDirection("right")}
+            onClick={() =>
+              setCurrentIndex((prev) =>
+                prev + 1 === posts.length ? 0 : prev + 1
+              )
+            }
             className={`w-6 hover:scale-110 hover:text-blue-700`}
           >
             <RightForwardIcon />
