@@ -1,175 +1,173 @@
 @font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
 }
 
 :root {
-  --background: rgb(255, 255, 255);
-  --text: rgb(38, 38, 38);
-  --color-main-blue: #1d4ed8;
-  --color-react: #61dbfb;
-  --color-javascript: #fac905;
-  --color-typescript: #3178c6;
-  --color-githubpage: #000000;
-  --color-jest: #99425b;
-  --color-redux: #764abc;
-  --color-gatsby: #663399;
-  --color-css: #1572b6;
-  --color-scss: #bf4080;
-  --color-styledcomponents: #ffa4e8;
-  --color-emotion: #d26ac2;
-  --color-html: #e44f26;
+    --background: rgb(255, 255, 255);
+    --text: rgb(38, 38, 38);
+    --color-main-blue: #1d4ed8;
+    --color-react: #61dbfb;
+    --color-javascript: #fac905;
+    --color-typescript: #3178c6;
+    --color-githubpage: #000000;
+    --color-jest: #99425b;
+    --color-redux: #764abc;
+    --color-gatsby: #663399;
+    --color-css: #1572b6;
+    --color-scss: #bf4080;
+    --color-styledcomponents: #ffa4e8;
+    --color-emotion: #d26ac2;
+    --color-html: #e44f26;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+    html {
+        color-scheme: dark;
+    }
 
-  :root {
-    --background: rgb(38, 38, 38);
-    --text: rgb(229, 229, 229);
-  }
+    :root {
+        --background: rgb(38, 38, 38);
+        --text: rgb(229, 229, 229);
+    }
 }
 
 * {
-  box-sizing: border-box;
-  font-family: "Inter";
-  scrollbar-width: 15px;
-  scrollbar-color: none rgba(127, 146, 172, 0.466);
-  transition: 0.2s;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: "Inter";
+    scrollbar-width: 15px;
+    scrollbar-color: none rgba(127, 146, 172, 0.466);
+    transition: 0.2s;
 }
 
 *::-webkit-scrollbar {
-  width: 15px;
+    width: 15px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: rgba(127, 146, 172, 0.466);
-  border-radius: 5px;
+    background-color: rgba(127, 146, 172, 0.466);
+    border-radius: 5px;
 }
 
-html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI,
-    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-    sans-serif;
-  background: var(--background);
-  color: var(--text);
+    padding: 0;
+    margin: 0;
+    background-image: var(--background);
+    overscroll-behavior: contain;
+    /*width: 100vw;*/
+    height: 100vh;
 }
 
 .dark {
-  color: var(--text);
-  background: var(--background);
-  scrollbar-color: none rgb(30, 58, 138);
+    color: var(--text);
+    background: var(--background);
+    scrollbar-color: none rgb(30, 58, 138);
 }
 
 .dark *::-webkit-scrollbar-thumb {
-  background-color: rgb(30, 58, 138, 0.8);
+    background-color: rgb(30, 58, 138, 0.8);
 }
 
 #utterances-dark {
-  display: none;
+    display: none;
 }
 
 #utterances-light {
-  display: block;
+    display: block;
 }
 
 .dark #utterances-dark {
-  display: block;
+    display: block;
 }
 
 .dark #utterances-light {
-  display: none;
+    display: none;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .header-1 {
-  padding-left: 6px;
+    padding-left: 6px;
 }
 
 .header-2 {
-  padding-left: 12px;
+    padding-left: 12px;
 }
 
 .header-3 {
-  padding-left: 18px;
+    padding-left: 18px;
 }
 
 .header-4 {
-  padding-left: 24px;
+    padding-left: 24px;
 }
 
 .header-5 {
-  padding-left: 30px;
+    padding-left: 30px;
 }
 
 .header-6 {
-  padding-left: 36px;
+    padding-left: 36px;
 }
 
 #toc {
-  max-height: calc(100vh - 174px);
-  overflow-y: auto;
+    max-height: calc(100vh - 174px);
+    overflow-y: auto;
 }
 
 #toc::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 #toc::-webkit-scrollbar-thumb {
-  background-color: rgb(219 234 254);
+    background-color: rgb(219 234 254);
 }
 
 .dark #toc::-webkit-scrollbar-thumb {
-  background-color: rgb(30 58 138);
+    background-color: rgb(30 58 138);
 }
 
 #tags::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .utterances {
-  margin: 0;
-  max-width: 100%;
+    margin: 0;
+    max-width: 100%;
 }
 
 aside {
-  background-color: rgb(235, 235, 235);
-  padding: 20px 20px;
-  border-radius: 5px;
-  margin: 15px 0;
+    background-color: rgb(235, 235, 235);
+    padding: 20px 20px;
+    border-radius: 5px;
+    margin: 15px 0;
 }
 
 .dark aside {
-  background-color: rgb(64, 64, 64);
+    background-color: rgb(64, 64, 64);
 }
 
 .yellow {
-  padding: 0 4px;
-  border-radius: 3px;
-  background-color: #f1c40fbe;
-  box-decoration-break: clone;
+    padding: 0 4px;
+    border-radius: 3px;
+    background-color: #f1c40fbe;
+    box-decoration-break: clone;
 }
 
 .red {
-  padding: 0 4px;
-  border-radius: 3px;
-  background-color: #e74d3cbe;
-  box-decoration-break: clone;
+    padding: 0 4px;
+    border-radius: 3px;
+    background-color: #e74d3cbe;
+    box-decoration-break: clone;
 }
 
 .paused:hover {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }

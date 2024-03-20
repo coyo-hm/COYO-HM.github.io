@@ -151,7 +151,7 @@ const Carousel = ({ posts, allSeriesInfo }: Props) => {
         </div>
       </div>
       <div className={`grid grid-cols-[3fr_1fr] max-md:grid-cols-1 gap-5`}>
-        <div className={`relative h-full max-md:h-[400px]`}>
+        <div className={`relative max-md:h-[400px]`}>
           <AnimatePresence custom={direction}>
             <ActivePostCard
               {...posts[currentIndex]}
