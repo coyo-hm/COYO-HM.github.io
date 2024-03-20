@@ -72,14 +72,15 @@ const ActivePostCard = ({
         className={`flex flex-col absolute top-0 left-0 h-full w-full gap-4 hover:text-blue-700`}
       >
         <ShadowRoundedCard
-          className={`relative h-[80%] rounded-xl bg-white dark:bg-white overflow-hidden`}
+          className={`relative h-4/5 rounded-xl bg-white dark:bg-white overflow-hidden flex items-center`}
         >
           <Image
             loader={(props) => imgLoader(props)}
             src={thumbnail}
             alt={title}
-            className={`object-contain`}
-            fill
+            className={`object-contain w-full h-auto`}
+            width={100}
+            height={100}
             placeholder={"blur"}
             blurDataURL={blurThumbnail}
           />
@@ -125,13 +126,13 @@ const ActivePostCard = ({
             {/*></motion.div>*/}
           </motion.div>
         </ShadowRoundedCard>
-        <div className={`flex justify-end items-center`}>
+        <div className={`flex justify-end items-center flex-wrap`}>
           {!!series && (
-            <div className={`flex gap-2`}>
+            <div className={`flex gap-2 flex-shrink-0`}>
               {series.map((seriesKey) => (
                 <div
                   className={
-                    "px-4 py-1 border-blue-700 border-2 rounded-3xl bg-white text-blue-700 dark:bg-blue-700 dark:text-white"
+                    "px-4 py-1 border-blue-700 border-2 rounded-3xl bg-white text-blue-700 dark:bg-blue-700 dark:text-white "
                   }
                   key={seriesKey}
                 >
@@ -140,7 +141,9 @@ const ActivePostCard = ({
               ))}
             </div>
           )}
-          <div className={`flex-grow text-right text-lg text-neutral-500`}>
+          <div
+            className={`flex-grow text-right text-lg text-neutral-500 flex-shrink-0`}
+          >
             {getDate(date)?.dateStr}
           </div>
         </div>
