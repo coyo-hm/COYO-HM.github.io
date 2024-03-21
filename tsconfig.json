@@ -20,6 +20,7 @@
       "@config/*": ["config/*"],
       "@constants/*": ["src/constants/*"],
       "@contexts/*": ["src/contexts/*"],
+      "@providers/*": ["src/providers/*"],
       "@fonts/*": ["public/static/fonts/*"],
       "@images/*": ["public/static/images/*"],
       "@hooks/*": ["src/hooks/*"],

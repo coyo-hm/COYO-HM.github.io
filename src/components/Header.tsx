@@ -1,30 +1,19 @@
+"use client";
+
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTheme } from "next-themes";
 import { useMemo } from "react";
 import { BsFillMoonStarsFill, BsSunFill } from "react-icons/bs";
 
 import metadata from "@config/index";
 import { CATEGORY_INFO, CATEGORY_KEYS } from "@constants/category";
-import useTheme from "@hooks/useTheme";
 
 const Header = () => {
   const { route } = useRouter();
-  const { isDarkTheme, setIsDarkTheme } = useTheme();
-  const isHome = useMemo(() => route === "/", [route]);
 
-  const toggleTheme = () => {
-    setIsDarkTheme((prevState) => {
-      if (prevState) {
-        localStorage.theme = "default";
-        document.documentElement.classList.remove("dark");
-        return false;
-      } else {
-        localStorage.theme = "dark";
-        document.documentElement.classList.add("dark");
-        return true;
-      }
-    });
-  };
+  const { theme, setTheme } = useTheme();
+  const isHome = useMemo(() => route === "/", [route]);
 
   return (
     <header className={`flex justify-end items-center pb-1 pt-5 relative h-12`}>
@@ -53,12 +42,12 @@ const Header = () => {
       <div className={`grid gap-2 place-items-center`}>
         <button
           id={"btn-theme"}
-          className={`rounded-full bg-transparent text-yellow-500 dark:text-blue-100`}
-          onClick={toggleTheme}
+          className={`rounded-full bg-transparent text-yellow-500 dark:text-blue-100 transition-none`}
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           aria-label={"theme"}
           type={"button"}
         >
-          {isDarkTheme ? (
+          {theme === "dark" ? (
             <BsFillMoonStarsFill size={20} />
           ) : (
             <BsSunFill size={20} />

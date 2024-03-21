@@ -1,15 +1,12 @@
 import { useEffect, useRef } from "react";
-import useTheme from "@hooks/useTheme";
+import { useTheme } from "next-themes";
 
 const NEXT_PUBLIC_REPO_ID = process.env.NEXT_PUBLIC_REPO_ID as string;
 const NEXT_PUBLIC_CATEGORY_ID = process.env.NEXT_PUBLIC_CATEGORY_ID as string;
 
 const Giscus = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { isDarkTheme } = useTheme();
-
-  // https://github.com/giscus/giscus/tree/main/styles/themes
-  const theme = isDarkTheme ? "dark" : "light";
+  const { resolvedTheme } = useTheme();
 
   // https://github.com/utterance/utterances/issues/161
   useEffect(() => {
@@ -29,11 +26,11 @@ const Giscus = () => {
     scriptElem.setAttribute("data-reactions-enabled", "1");
     scriptElem.setAttribute("data-emit-metadata", "0");
     scriptElem.setAttribute("data-input-position", "bottom");
-    scriptElem.setAttribute("data-theme", theme);
+    scriptElem.setAttribute("data-theme", resolvedTheme || "light");
     scriptElem.setAttribute("data-lang", "ko");
 
     ref.current.appendChild(scriptElem);
-  }, [theme]);
+  }, [resolvedTheme]);
 
   // https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#isetconfigmessage
   useEffect(() => {
@@ -41,10 +38,10 @@ const Giscus = () => {
       "iframe.giscus-frame"
     );
     iframe?.contentWindow?.postMessage(
-      { giscus: { setConfig: { theme } } },
+      { giscus: { setConfig: { resolvedTheme } } },
       "https://giscus.app"
     );
-  }, [theme]);
+  }, [resolvedTheme]);
 
   return (
     <div className={"py-5"}>

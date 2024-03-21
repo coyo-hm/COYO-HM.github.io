@@ -14,7 +14,7 @@ import { useEffect } from "react";
 import * as gtag from "lib/gtag";
 
 import Container from "@components/Container";
-import ThemeProvider from "@contexts/ThemeContext";
+import ThemeProvider from "@providers/ThemeProvider";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
