@@ -23,6 +23,7 @@
       "@providers/*": ["src/providers/*"],
       "@fonts/*": ["public/static/fonts/*"],
       "@images/*": ["public/static/images/*"],
+      "@icons/*": ["public/static/icons/*"],
       "@hooks/*": ["src/hooks/*"],
       "@styles/*": ["src/styles/*"],
       "@models/*": ["src/models/*"],

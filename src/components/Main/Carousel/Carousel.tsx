@@ -1,17 +1,19 @@
 import Link from "next/link";
 import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import ShadowRoundedCard from "@components/Card/ShadowRoundedCard";
-import RecentPostCard from "@components/Main/Carousel/RecentPostCard";
 import { PostType } from "@models/post";
 import DirectionType from "@models/direction";
 import { SeriesAttributeTableType } from "@models/series";
+
+import ShadowRoundedCard from "@components/Card/ShadowRoundedCard";
+import RecentPostCard from "@components/Main/Carousel/RecentPostCard";
+import ActivePostCard from "@components/Main/Carousel/ActivePostCard";
+
 import LeftForwardIcon from "@components/Icon/LeftForwardIcon";
 import RightForwardIcon from "@components/Icon/RightForwardIcon";
 import PauseIcon from "@components/Icon/PauseIcon";
 import PlayIcon from "@components/Icon/PlayIcon";
-import ActivePostCard from "@components/Main/Carousel/ActivePostCard";
-import ClockWiseIcon from "@images/clockwise.svg";
+import ClockWiseIcon from "@icons/clockwise.svg";
 
 const svgVariants = {
   initial: {
