@@ -36,7 +36,6 @@
 
 * {
     box-sizing: border-box;
-    font-family: "Inter";
     scrollbar-color: rgb(30, 58, 138) transparent;
     transition: 0.2s;
 }
