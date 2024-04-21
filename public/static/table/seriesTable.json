@@ -18,9 +18,9 @@
       "tags": [],
       "description": "소소한 프로젝트들",
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/e5565bd4-839d-4c77-9bfc-600ea3990312",
-      "startDate": "",
-      "endDate": "",
-      "posts": []
+      "startDate": "2022-10-03",
+      "endDate": "2022-10-03",
+      "posts": ["project-simple-kanban-board"]
     },
     "network_note": {
       "title": "컴퓨터 네트워크 강의 정리",
@@ -93,7 +93,7 @@
       "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/e5565bd4-839d-4c77-9bfc-600ea3990312",
       "startDate": "2022-09-15T00:00:00.000Z",
       "endDate": "2022-10-03T00:00:00.000Z",
-      "posts": ["simple-kanban-board", "real-time-coin-info"]
+      "posts": ["project-simple-kanban-board", "project-real-time-coin-info"]
     },
     "network_note": {
       "title": "컴퓨터 네트워크 강의 정리",
