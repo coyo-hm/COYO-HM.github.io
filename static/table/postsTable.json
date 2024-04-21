@@ -76,23 +76,6 @@
     "published": true,
     "path": "socket.mdx"
   },
-  "simple-kanban-board": {
-    "date": "2022-10-03T00:00:00",
-    "title": "Simple Kanban Board",
-    "tags": [
-      "react",
-      "typescript",
-      "react_beautiful_dnd",
-      "react_hook_form",
-      "recoil",
-      "styled_components"
-    ],
-    "description": "react-beautiful-dnd를 이용한 간단한 칸반 보드",
-    "published": false,
-    "series": ["toy_project"],
-    "thumbnail": "/static/images/project/simple_kanban_board.jpg",
-    "path": "simple-kanban-board.mdx"
-  },
   "semantic-release": {
     "date": "2024-03-14T00:00:00",
     "title": "semantic-release: 커밋 메세지로 버전 및 변경 로그 관리까지",
@@ -120,24 +103,6 @@
     "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/000fb047-8568-4a11-af36-e89afcf2ad38",
     "published": true,
     "path": "redux-persist.mdx"
-  },
-  "real-time-coin-info": {
-    "date": "2022-09-15T00:00:00",
-    "title": "REAL TIME COIN INFO",
-    "tags": [
-      "react",
-      "typescript",
-      "react_helmet",
-      "react_query",
-      "react_apexcharts",
-      "recoil",
-      "styled_components"
-    ],
-    "description": "코인 정보와 실시간 가격을 CANDLE STICK CHART로 볼 수 있는 서비스",
-    "published": false,
-    "series": ["toy_project"],
-    "thumbnail": "/static/images/project/real-time-coin-info.gif",
-    "path": "real-time-coin-info.mdx"
   },
   "react-hook": {
     "date": "2023-02-23T00:00:00",
@@ -174,6 +139,41 @@
     "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/60313c86-9b9f-4a22-95ce-55af6ae0f54e",
     "published": true,
     "path": "python-rjust-ljust-zfill.mdx"
+  },
+  "project-simple-kanban-board": {
+    "date": "2022-10-03T00:00:00",
+    "title": "Simple Kanban Board",
+    "tags": [
+      "react",
+      "typescript",
+      "react_beautiful_dnd",
+      "react_hook_form",
+      "recoil",
+      "styled_components"
+    ],
+    "description": "react-beautiful-dnd를 이용한 간단한 칸반 보드",
+    "published": true,
+    "series": ["toy_project"],
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/ab525423-e3d3-4664-ba71-27aae3f9210e",
+    "path": "project-simple-kanban-board.mdx"
+  },
+  "project-real-time-coin-info": {
+    "date": "2022-09-15T00:00:00",
+    "title": "REAL TIME COIN INFO",
+    "tags": [
+      "react",
+      "typescript",
+      "react_helmet",
+      "react_query",
+      "react_apexcharts",
+      "recoil",
+      "styled_components"
+    ],
+    "description": "코인 정보와 실시간 가격을 CANDLE STICK CHART로 볼 수 있는 서비스",
+    "published": false,
+    "series": ["toy_project"],
+    "thumbnail": "https://user-images.githubusercontent.com/56423604/197561313-2defe8e5-31d0-4402-9a2a-13614b0d76a2.gif",
+    "path": "project-real-time-coin-info.mdx"
   },
   "nextjs-large-page-data-warning": {
     "date": "2023-10-09T00:00:00",
