@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 
@@ -6,7 +8,7 @@ const NEXT_PUBLIC_CATEGORY_ID = process.env.NEXT_PUBLIC_CATEGORY_ID as string;
 
 const Giscus = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { resolvedTheme } = useTheme();
+  const { resolvedTheme, theme } = useTheme();
 
   // https://github.com/utterance/utterances/issues/161
   useEffect(() => {
@@ -38,7 +40,7 @@ const Giscus = () => {
       "iframe.giscus-frame"
     );
     iframe?.contentWindow?.postMessage(
-      { giscus: { setConfig: { resolvedTheme } } },
+      { giscus: { setConfig: { theme: resolvedTheme } } },
       "https://giscus.app"
     );
   }, [resolvedTheme]);
