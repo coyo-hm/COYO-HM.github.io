@@ -26,7 +26,7 @@ const Footer = () => {
           rel="noreferrer"
           className={`hover:text-blue-700`}
         >
-          <ProfileIcon height={24} width={"auto"} />
+          <ProfileIcon height={24} />
         </a>
       </div>
       <div className={`col-span-2 font-extralight`}>{metadata.copyright}</div>
