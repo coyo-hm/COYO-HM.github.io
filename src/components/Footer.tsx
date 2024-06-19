@@ -30,7 +30,12 @@ const Footer = () => {
           <ProfileIcon height={24} width={24} />
         </a>
       </div>
-      <div className={`col-span-2 font-extralight`}>{metadata.copyright}</div>
+      <div
+        id={"main-footer-copyright"}
+        className={`col-span-2 font-extralight`}
+      >
+        {metadata.copyright}
+      </div>
     </footer>
   );
 };
