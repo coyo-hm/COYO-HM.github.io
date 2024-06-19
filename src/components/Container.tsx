@@ -23,10 +23,10 @@ const Container = (props: {
 }) => {
   return (
     <div
-      className={`${inter.className} bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-100 mx-auto h-screen w-full overflow-auto`}
+      className={`${inter.className} bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-100 mx-auto h-screen overflow-auto`}
     >
       <div
-        className={`bg-transparent flex flex-col justify-center px-8 lg:w-[950px] m-auto min-h-screen`}
+        className={`bg-transparent flex flex-col justify-center px-8 m-auto min-h-screen w-full lg:w-[950px]`}
       >
         <Header />
         <main className={`w-full flex flex-col grow shrink`}>
