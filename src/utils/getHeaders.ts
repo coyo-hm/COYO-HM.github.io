@@ -1,4 +1,6 @@
-const getHeaders = (content: string) => {
+import { PostTitleType } from "@models/post";
+
+const getHeaders = (content: string): PostTitleType[] => {
   const titles = content.split(`\n`).filter((t) => t.includes("# "));
   return titles
     .filter((str) => str[0] === "#")

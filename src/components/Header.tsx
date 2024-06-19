@@ -16,7 +16,10 @@ const Header = () => {
   const isHome = useMemo(() => route === "/", [route]);
 
   return (
-    <header className={`flex justify-end items-center pb-1 pt-5 relative h-12`}>
+    <header
+      className={`flex justify-end items-center pb-1 pt-5 relative h-12`}
+      id={"main-header"}
+    >
       {!isHome && (
         <>
           <Link href="/" className={`text-lg italic font-extrabold mr-5 mt-1`}>

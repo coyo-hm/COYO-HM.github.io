@@ -23,3 +23,9 @@ export interface PostType {
 export type showType = "list" | "card";
 
 export type PostTableNode = Omit<PostAttributeType, "key">;
+
+export interface PostTitleType {
+  id: string;
+  title: string;
+  count: number;
+}
