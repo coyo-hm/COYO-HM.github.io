@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 
 import metadata from "@config/index";
 import CustomMDX from "@components/Post/CustomMDX";
-import CommentWidget from "@components/Post/CommentWidget";
 import TagColorBox from "@components/Tag/TagColorBox";
 import PageSeo from "@components/SEO/PageSEO";
 import { SeriesPostType } from "@models/series";

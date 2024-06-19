@@ -1,55 +1,34 @@
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import getHeaders from "@utils/getHeaders";
+import { usePathname } from "next/navigation";
+import useIntersectionObserver from "@hooks/useIntersectionObserver";
+import useScrollTitle from "@hooks/useScrollTitle";
 
 const TableOfContents = ({ content }: { content: string }) => {
   const headers = getHeaders(content);
-  const headersRef = useRef<any>({});
+  const pathname = usePathname();
   const [activeHeaderId, setActiveHeaderId] = useState("");
 
-  useEffect(() => {
-    headersRef.current = {};
-    const callback: IntersectionObserverCallback = (headers) => {
-      headersRef.current = headers.reduce((dict: any, headerElement) => {
-        dict[headerElement.target.id] = headerElement;
-        return dict;
-      }, headersRef.current);
-
-      const visibleHeaders: IntersectionObserverEntry[] = [];
-
-      Object.keys(headersRef.current).forEach((key) => {
-        const headerElement = headersRef.current[key];
-        if (headerElement.isIntersecting) {
-          visibleHeaders.push(headerElement);
-        }
-      });
-
-      if (visibleHeaders?.length > 0) {
-        setActiveHeaderId(visibleHeaders[0].target.id);
-      }
-    };
-
-    const observer = new IntersectionObserver(callback, {
-      rootMargin: "-50px 0px 0px 0px",
-    });
-
-    headers.forEach(({ id }) => {
-      const element = document.getElementById(id);
-      if (!!element) observer.observe(element);
-    });
-
-    return () => observer.disconnect();
-  }, [headers]);
+  const onClickEvent = useScrollTitle();
 
   const onClickUp = () => {
-    window.scroll({ top: 0, behavior: "smooth" });
+    // window.scrollTo({ top: 0, behavior: "smooth" });
+    document
+      .getElementById("main-header")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   const onClickDownButton = () => {
-    document.body.scrollTop = document.body.scrollHeight;
-    window.scroll(0, document.body.scrollHeight);
+    // document.body.scrollTop = document.body.scrollHeight;
+    // window.scroll(0, document.body.scrollHeight);
+    document
+      .getElementById("main-footer")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useIntersectionObserver(pathname, setActiveHeaderId);
 
   return (
     <div
@@ -70,9 +49,11 @@ const TableOfContents = ({ content }: { content: string }) => {
             <Link
               key={title}
               href={`#${id}`}
+              scroll={false}
               className={`hover:text-blue-700 box-decoration-slice py-1.5 pr-1 text-xs ${
                 activeHeaderId === id ? "bg-blue-100 dark:bg-blue-900" : ""
               } header-${count}`}
+              onClick={() => onClickEvent(id)}
             >
               {title}
             </Link>

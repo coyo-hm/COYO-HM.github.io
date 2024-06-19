@@ -10,20 +10,15 @@ code {
   color: rgb(229, 229, 229);
 }
 
-code[class*="language-"] {
-  tab-size: 2;
-  font-family: "JetBrains Mono";
-}
+/*.dark code[class*="language-"] {*/
+/*  background: none;*/
+/*}*/
 
-.dark code[class*="language-"] {
-  background: none;
-}
-
-pre[class*="language-"] {
-  tab-size: 2;
-  font-family: "JetBrains Mono";
-  overflow: auto;
-}
+/*pre[class*="language-"] {*/
+/*  tab-size: 2;*/
+/*  font-family: "JetBrains Mono";*/
+/*  overflow: auto;*/
+/*}*/
 
 pre[class*="language-"]::-webkit-scrollbar {
   height: 10px;

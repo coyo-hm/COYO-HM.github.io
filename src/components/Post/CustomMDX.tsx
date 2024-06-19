@@ -144,10 +144,12 @@ const CustomMDX = (
     > & { components?: MDXComponents | undefined; lazy?: boolean | undefined }
 ) => {
   return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-    />
+    <div className={`markdown`}>
+      <MDXRemote
+        {...props}
+        components={{ ...components, ...(props.components || {}) }}
+      />
+    </div>
   );
 };
 

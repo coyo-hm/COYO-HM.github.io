@@ -7,6 +7,7 @@ const Footer = () => {
   return (
     <footer
       className={`flex flex-col items-center pb-7 text-neutral-700 dark:text-neutral-500`}
+      id={"main-footer"}
     >
       <div className={"flex justify-center mb-2 gap-4"}>
         <a
@@ -26,7 +27,7 @@ const Footer = () => {
           rel="noreferrer"
           className={`hover:text-blue-700`}
         >
-          <ProfileIcon height={24} />
+          <ProfileIcon height={24} width={24} />
         </a>
       </div>
       <div className={`col-span-2 font-extralight`}>{metadata.copyright}</div>

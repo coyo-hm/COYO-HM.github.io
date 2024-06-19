@@ -5,3 +5,6 @@ export const DEFAULT_NUMBER_OF_POST = {
   list: 6,
   card: 12,
 };
+
+export const POST_TITLE_SELECTOR =
+  ".markdown > h1, .markdown > h2, .markdown > h3, .markdown > h4, .markdown > h5, .markdown > h6";
