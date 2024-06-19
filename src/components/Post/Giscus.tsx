@@ -2,17 +2,19 @@
 
 import { useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 
 const NEXT_PUBLIC_REPO_ID = process.env.NEXT_PUBLIC_REPO_ID as string;
 const NEXT_PUBLIC_CATEGORY_ID = process.env.NEXT_PUBLIC_CATEGORY_ID as string;
 
 const Giscus = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
   const { resolvedTheme, theme } = useTheme();
 
   // https://github.com/utterance/utterances/issues/161
   useEffect(() => {
-    if (!ref.current || ref.current.hasChildNodes()) return;
+    if (!ref.current) return;
 
     const scriptElem = document.createElement("script");
     scriptElem.src = "https://giscus.app/client.js";
@@ -32,7 +34,7 @@ const Giscus = () => {
     scriptElem.setAttribute("data-lang", "ko");
 
     ref.current.appendChild(scriptElem);
-  }, [resolvedTheme]);
+  }, [resolvedTheme, pathname]);
 
   // https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#isetconfigmessage
   useEffect(() => {
