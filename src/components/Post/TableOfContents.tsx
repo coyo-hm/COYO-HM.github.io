@@ -24,7 +24,7 @@ const TableOfContents = ({ content }: { content: string }) => {
     // document.body.scrollTop = document.body.scrollHeight;
     // window.scroll(0, document.body.scrollHeight);
     document
-      .getElementById("main-footer")
+      .getElementById("main-footer-copyright")
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
