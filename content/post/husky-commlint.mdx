@@ -20,13 +20,13 @@ husky 설치 및 git hook에 관련한 내용은 [링크된 포스트](https://c
 
 ## 설치
 
-```bash
-# npm을 사용하는 경우
-npm install --dev @commitlint/config-conventional @commitlint/cli
+  ```bash
+  # npm을 사용하는 경우
+  npm install --dev @commitlint/config-conventional @commitlint/cli
 
-# yarn을 사용하는 경우
-yarn add --dev @commitlint/config-conventional @commitlint/cli
-```
+  # yarn을 사용하는 경우
+  yarn add --dev @commitlint/config-conventional @commitlint/cli
+  ```
 
 설치 후 프로젝트 루트 디렉토리에 `commitlint.config.js` 생성하고 `@commitlint/config-conventional`를 extends 추가해주어 [Conventional Commits Rule](https://www.conventionalcommits.org/en/v1.0.0/)을 따를 수 있도록 해줍니다.
 
@@ -40,16 +40,16 @@ yarn add --dev @commitlint/config-conventional @commitlint/cli
 
 `commlint`를 commit-msg hook 에 추가해줍니다.
 
-```bash
-# 스크립트 생성 없이 하는 방법
-npx husky add .husky/commit-msg "npx commitlint --edit "$1""
+  ```bash
+  # 스크립트 생성 없이 하는 방법
+  npx husky add .husky/commit-msg "npx commitlint --edit "$1""
 
-or
+  or
 
-# 스크립트 생성하는 방법
-npm pkg set scripts.commitlint="commitlint --edit"
-npx husky add .husky/commit-msg 'npm run commitlint ${1}'
-```
+  # 스크립트 생성하는 방법
+  npm pkg set scripts.commitlint="commitlint --edit"
+  npx husky add .husky/commit-msg 'npm run commitlint ${1}'
+  ```
 
 <aside>
   💡 다음과 같이 패키지 설치 없이 바로 적용할 수 있습니다.

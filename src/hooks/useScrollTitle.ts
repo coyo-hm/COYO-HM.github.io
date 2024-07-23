@@ -13,7 +13,6 @@ const useScrollTitle = () => {
     const titleElements = Array.from(
       document.querySelectorAll(POST_TITLE_SELECTOR)
     );
-    console.log(decodedHash);
     if (!decodedHash || titleElements.length === 0) return;
     const target = titleElements.find((post) => post.id === decodedHash);
     if (!target) return;

@@ -46,22 +46,20 @@ const Post = ({
         <div
           className={`relative border-y border-y-blue-700 flex flex-row flex-nowrap max-md:flex-col-reverse`}
         >
-          <div
-            className={`grow shrink pr-10 pt-5 min-w-0 max-md:p-0 max-md:pb-4`}
-          >
-            <div className={`flex flex-col gap-3`}>
-              {allSeriesInfo.map((series) => (
-                <SeriesPostsList
-                  key={series.key}
-                  selectedPostKey={slug}
-                  seriesInfo={series}
-                />
-              ))}
-            </div>
+          <div className={`grow shrink pr-10 pt-2 min-w-0 max-md:p-0 `}>
             <CustomMDX {...mdx} />
             <TagsList tags={tags} slug={slug} />
           </div>
           <TableOfContents content={body} />
+        </div>
+        <div className={`flex flex-col gap-3 my-5`}>
+          {allSeriesInfo.map((series) => (
+            <SeriesPostsList
+              key={series.key}
+              selectedPostKey={slug}
+              seriesInfo={series}
+            />
+          ))}
         </div>
         <Giscus />
       </article>
@@ -87,6 +85,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 interface SlugsType {
   [key: string]: string[];
+
   slugs: string[];
 }
 
