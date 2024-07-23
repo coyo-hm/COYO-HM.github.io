@@ -4,9 +4,10 @@ import "@fonts/NanumSquareRound/NanumSquareRound.css";
 import "@fonts/Inter/inter.css";
 import "@styles/tailwind.css";
 import "@styles/globals.css";
-// import "@styles/prism-dracula.css";
-import "@styles/prism-one-dark.css";
 import "@styles/code.css";
+import "@styles/prism-dracula.css";
+// import "@styles/prism-one-dark.css";
+
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import Script from "next/script";
