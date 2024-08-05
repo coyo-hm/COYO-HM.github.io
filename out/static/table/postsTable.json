@@ -91,7 +91,7 @@
     "title": "정규표현식 정리",
     "tags": ["reg_exp", "javascript"],
     "series": ["code_snippets"],
-    "description": "gtag에 알아보고 NextJS 블로에 gtag4를 적용해보기",
+    "description": "자주 쓰는 정규표현식 모음: 이메일 정규표현식",
     "thumbnail": "https://github.com/user-attachments/assets/73a94837-d4bd-4c2d-92ce-2c38d549ea4c",
     "published": true,
     "path": "reg-exp.mdx"
