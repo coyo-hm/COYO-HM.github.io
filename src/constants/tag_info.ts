@@ -119,6 +119,15 @@ const TAG_INFO: {
     text_hover: "hover:text-black dark:hover:text-black",
     border: "border-black",
   },
+  reg_exp: {
+    label: "RegExp",
+    color: "#b0b0ae",
+    bg: "bg-[#b0b0ae]",
+    bg_hover: "hover:bg-[#b0b0ae] dark:hover:bg-[#b0b0ae]",
+    text: "text-[#b0b0ae]",
+    text_hover: "hover:text-[#b0b0ae] dark:hover:text-[#b0b0ae]",
+    border: "border-[#b0b0ae]",
+  },
   // git_hub: {
   //   label: "GitHub",
   //   color: "#000000",
