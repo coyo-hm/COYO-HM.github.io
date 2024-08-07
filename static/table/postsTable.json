@@ -195,6 +195,16 @@
     "thumbnail": "https://user-images.githubusercontent.com/56423604/273578963-e3f37379-368c-460d-9b37-c4b98cfba9e7.png",
     "path": "nextjs-large-page-data-warning.mdx"
   },
+  "nextjs-intl": {
+    "date": "2024-08-06T00:00:00",
+    "title": "nextjs-intl: Next.js 환경에서 다국어 지원하기",
+    "tags": ["nextjs", "next_intl"],
+    "series": [],
+    "description": "Next.js 환경에서 next-intl로 pathname에 따라 다국어 지원하기",
+    "thumbnail": "https://github.com/user-attachments/assets/e620e3a5-a456-4234-a6b7-a0a8a81a2256",
+    "published": true,
+    "path": "nextjs-intl.mdx"
+  },
   "nextjs-image-blur": {
     "date": "2024-03-19T00:00:00",
     "title": "NextJS 이미지 로딩 시에 Blur 처리하기",

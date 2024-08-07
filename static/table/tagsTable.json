@@ -17,6 +17,7 @@
       "python-rjust-ljust-zfill",
       "project-simple-kanban-board",
       "nextjs-large-page-data-warning",
+      "nextjs-intl",
       "nextjs-image-blur",
       "nextjs-gtag",
       "network-note-01",
@@ -97,6 +98,7 @@
     "nextjs": [
       "utterances-to-giscus",
       "nextjs-large-page-data-warning",
+      "nextjs-intl",
       "nextjs-image-blur",
       "nextjs-gtag",
       "blog-version-2"
@@ -125,6 +127,7 @@
     "react_beautiful_dnd": ["project-simple-kanban-board"],
     "react_hook_form": ["project-simple-kanban-board"],
     "recoil": ["project-simple-kanban-board"],
+    "next_intl": ["nextjs-intl"],
     "plaiceholder": ["nextjs-image-blur"],
     "gtag": ["nextjs-gtag"],
     "google_analytics": ["nextjs-gtag"],
@@ -175,6 +178,7 @@
       "project-simple-kanban-board",
       "project-real-time-coin-info",
       "nextjs-large-page-data-warning",
+      "nextjs-intl",
       "nextjs-image-blur",
       "nextjs-gtag",
       "network-note-01",
@@ -259,6 +263,7 @@
     "nextjs": [
       "utterances-to-giscus",
       "nextjs-large-page-data-warning",
+      "nextjs-intl",
       "nextjs-image-blur",
       "nextjs-gtag",
       "blog-version-2"
@@ -291,6 +296,7 @@
     "react_helmet": ["project-real-time-coin-info"],
     "react_query": ["project-real-time-coin-info"],
     "react_apexcharts": ["project-real-time-coin-info"],
+    "next_intl": ["nextjs-intl"],
     "plaiceholder": ["nextjs-image-blur"],
     "gtag": ["nextjs-gtag"],
     "google_analytics": ["nextjs-gtag"],
