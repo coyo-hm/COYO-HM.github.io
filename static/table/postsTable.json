@@ -423,5 +423,15 @@
     "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/616f1229-bb39-46a0-929f-cdd47d9628b3",
     "published": true,
     "path": "axios-config.mdx"
+  },
+  "assignInlineVars-to-client-from-server": {
+    "date": "2024-08-24T00:00:00",
+    "title": "assignInlineVars 사용시에 nextjs warning 해결하기",
+    "tags": ["nextjs", "vanilla_extract"],
+    "series": ["trouble_shooting"],
+    "description": "nextjs 환경에서 vanilla-extract assignInlineVars 사용시에 `Warning: Only plain objects can be passed to Client Components from Server Components. Classes or other objects with methods are not supported.` warning 해결하기",
+    "thumbnail": "https://github.com/user-attachments/assets/233542e4-436d-4a51-a052-a16605deef28",
+    "published": true,
+    "path": "assignInlineVars-to-client-from-server.mdx"
   }
 }
