@@ -40,7 +40,8 @@
       "browser-rendering",
       "blog-version-2",
       "axios-interceptor",
-      "axios-config"
+      "axios-config",
+      "assignInlineVars-to-client-from-server"
     ],
     "yarn": ["yarn-berry-start", "yarn-berry-pnp"],
     "npm": ["yarn-berry-pnp", "vite-library-typescript", "error-emeedauth"],
@@ -101,7 +102,8 @@
       "nextjs-intl",
       "nextjs-image-blur",
       "nextjs-gtag",
-      "blog-version-2"
+      "blog-version-2",
+      "assignInlineVars-to-client-from-server"
     ],
     "giscus": ["utterances-to-giscus"],
     "utterances": ["utterances-to-giscus"],
@@ -155,7 +157,8 @@
     "gatsby": ["gatsby-add-table-of-contents-in-gatsby"],
     "framer_motion": ["blog-version-2"],
     "tailwind": ["blog-version-2"],
-    "axios": ["axios-interceptor", "axios-config"]
+    "axios": ["axios-interceptor", "axios-config"],
+    "vanilla_extract": ["assignInlineVars-to-client-from-server"]
   },
   "unpublished": {
     "all": [
@@ -201,7 +204,8 @@
       "browser-rendering",
       "blog-version-2",
       "axios-interceptor",
-      "axios-config"
+      "axios-config",
+      "assignInlineVars-to-client-from-server"
     ],
     "yarn": ["yarn-berry-start", "yarn-berry-pnp"],
     "npm": ["yarn-berry-pnp", "vite-library-typescript", "error-emeedauth"],
@@ -266,7 +270,8 @@
       "nextjs-intl",
       "nextjs-image-blur",
       "nextjs-gtag",
-      "blog-version-2"
+      "blog-version-2",
+      "assignInlineVars-to-client-from-server"
     ],
     "giscus": ["utterances-to-giscus"],
     "utterances": ["utterances-to-giscus"],
@@ -324,6 +329,7 @@
     "gatsby": ["gatsby-add-table-of-contents-in-gatsby"],
     "framer_motion": ["blog-version-2"],
     "tailwind": ["blog-version-2"],
-    "axios": ["axios-interceptor", "axios-config"]
+    "axios": ["axios-interceptor", "axios-config"],
+    "vanilla_extract": ["assignInlineVars-to-client-from-server"]
   }
 }
