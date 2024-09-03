@@ -1,0 +1,36 @@
+---
+date: "2024-09-03"
+title: "동기와 비동기, 블록킹과 논블록킹 개념 정리"
+tags: ["network", "computer_science"]
+description: "동기(Synchronous)와 비동기(Asynchronous), 블록킹(Blocking)과 논블록킹(Non-Blocking)에 대해 알아보기"
+thumbnail: "https://github.com/user-attachments/assets/2f87c239-464d-4974-9d9e-0ad75168fc14"
+published: true
+---
+# 동기(Synchronous)와 비동기(Asynchronous)
+: 작업(프로세스)를 처리하는 방식, 작업 완료 여부에 초점
+
+| <img width="500" alt="image" src="https://github.com/user-attachments/assets/30ccd6f4-0f16-4aff-af19-e1c6ae73b203"/> | <img width="500" alt="image" src="https://github.com/user-attachments/assets/858dd7cc-d9be-41ec-a669-935c49d89de9"/> |
+| --- | --- |
+| * 요청(request)을 하면 요청한 자리에서 결과가 주어진다.<br/>* 서버에서 요청(request)을 보냈을 때 응답(response)이 돌아와야 다음 작업을 진행할 수 있다.<br/> => <span className="yellow">요청(request)와 응답(reponse)의 순서가 보장된다.</span>| * 요청(request)한 결과는 동시에 일어나지 않는다.<br/>* 요청(request)을 보냈을 때 응답(reponse)과 상관없이 다음 동작을 수행할 수 있다.<br/>=> <span className="yellow">요청(request)와 응답(reponse)의 순서가 보장되지 않는다.</span>|
+| 순차적 진행 보장 O | 순차적 진행 보장 X |
+| 진행 중인 작업이 완료될 때까지 다른 작업 진행 X | 진행 중인 작업이 완료되지 않더라도 다른 작업 진행 O <br/>=> 느린 작업이 발생하더라도 다른 작업을 진행하기에 전반적인 시스템 성능 향상에 도움을 줄 수 있음 |
+
+# 블록킹(Blocking)과 논블록킹(Non-Blocking)
+: 프로세스 유휴 상태, 다른 요청의 작업을 처리하기 위해 현재 작업 여부(차단/대기)에 초점
+
+| 블록킹(Blocking) | 논블록킹(Non-Blocking) |
+| --- | --- |
+| <img width="500" alt="image" src="https://github.com/user-attachments/assets/534407bf-a9f4-4f0f-a885-9156a9418d78"/> | <img width="500" alt="image" src="https://github.com/user-attachments/assets/024083e1-c2fc-4e23-8414-8b1223e65071"/> |
+| 다른 작업이 다 수행될 때까지 현재 작업 차단 | 다른 작업과 현재 작업이 동시에 진행(현재 작업을 막지 않음 = non-blocking) |
+
+# 동기(Synchronous)/비동기(Asynchronous) + 블록킹(Blocking)/논블록킹(Non-Blocking)
+<br/>
+
+| | 블록킹(Blocking)<br/><span className={"font-normal"}>: 호출된 대상이 제어권을 가짐</span> | 논블록킹(Non-Blocking)<br/><span className={"font-normal"}>: 호출한 대상이 제어권을 가짐</span> |
+| --- | --- | --- |
+|**동기(Synchronous)**<br/>: 호출한 함수가 작업 완료 여부를 확인| <img width="360" alt="image" src="https://github.com/user-attachments/assets/60be6096-a2ee-4a6b-a080-b1cce0ac63fd"/><br/>* 코드 순차 진행<br/>* 작업이 간단하거나 양이 적은 경우에 사용된다.<br/>* 작업량이 많거나 복잡한 경우에는 시간이 오래 걸리기 때문에 비효율적이다. | <img width="360" alt="image" src="https://github.com/user-attachments/assets/aa1f156b-faca-429c-926e-a98f0fc752c5"/><br/>* 자신의 작업을 진행하고 있지만 다른 작업과의 동기를 위해서 계속해서 다른 작업의 완료 여부를 조회한다. |
+|**비동기(Asynchronous)**<br/>: Callback 함수가 작업 완료 여부를 확인| <img width="360" alt="image" src="https://github.com/user-attachments/assets/aa808961-5b90-4c22-8b5b-2594b9a00afa"/><br/>* 블로킹으로 인해 결국 다른 작업이 끝날 때까지 기다려야 하기에 동기 + 블로킹 작업과 동일한 결과가 나온다. | <img width="360" alt="image" src="https://github.com/user-attachments/assets/c567926e-d881-4b97-9855-20020c89ece0"/><br/>* 자원이 충분하다면 가장 효율이 좋은 조합이다.<br/>* 순차가 보장되지 않기에 동기가 필요하지 않고 작업이 대규모이고 시간이 오래 걸리는 경우에 사용하면 좋다. |
+
+# 참조
+* [완벽히 이해하는 동기/비동기 & 블로킹/논블로킹](https://inpa.tistory.com/entry/%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-%EB%8F%99%EA%B8%B0%EB%B9%84%EB%8F%99%EA%B8%B0-%EB%B8%94%EB%A1%9C%ED%82%B9%EB%85%BC%EB%B8%94%EB%A1%9C%ED%82%B9-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)
+* [동기/비동기와 블로킹/논블로킹](https://deveric.tistory.com/99)
