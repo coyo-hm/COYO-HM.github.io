@@ -7,6 +7,7 @@
       "vite-react-ts-emotion-props-config",
       "vite-library-typescript",
       "utterances-to-giscus",
+      "sync-async",
       "styled-components-global-style",
       "socket",
       "semantic-release",
@@ -107,12 +108,8 @@
     ],
     "giscus": ["utterances-to-giscus"],
     "utterances": ["utterances-to-giscus"],
-    "styled_components": [
-      "styled-components-global-style",
-      "project-simple-kanban-board"
-    ],
-    "css": ["styled-components-global-style", "browser-rendering"],
     "network": [
+      "sync-async",
       "socket",
       "network-note-01",
       "network-application-02",
@@ -120,6 +117,17 @@
       "cookie-session",
       "browser-rendering"
     ],
+    "computer_science": [
+      "sync-async",
+      "network-note-01",
+      "network-application-02",
+      "mvc-pattern"
+    ],
+    "styled_components": [
+      "styled-components-global-style",
+      "project-simple-kanban-board"
+    ],
+    "css": ["styled-components-global-style", "browser-rendering"],
     "semamtic_release": ["semantic-release"],
     "github_actions": ["semantic-release"],
     "reg_exp": ["reg-exp"],
@@ -133,11 +141,6 @@
     "plaiceholder": ["nextjs-image-blur"],
     "gtag": ["nextjs-gtag"],
     "google_analytics": ["nextjs-gtag"],
-    "computer_science": [
-      "network-note-01",
-      "network-application-02",
-      "mvc-pattern"
-    ],
     "lodash": ["lodash"],
     "husky": [
       "husky-precommit-unauthorized",
@@ -168,6 +171,7 @@
       "vite-react-ts-emotion-props-config",
       "vite-library-typescript",
       "utterances-to-giscus",
+      "sync-async",
       "styled-components-global-style",
       "socket",
       "semantic-release",
@@ -275,13 +279,8 @@
     ],
     "giscus": ["utterances-to-giscus"],
     "utterances": ["utterances-to-giscus"],
-    "styled_components": [
-      "styled-components-global-style",
-      "project-simple-kanban-board",
-      "project-real-time-coin-info"
-    ],
-    "css": ["styled-components-global-style", "browser-rendering"],
     "network": [
+      "sync-async",
       "socket",
       "network-note-01",
       "network-application-02",
@@ -289,6 +288,18 @@
       "cookie-session",
       "browser-rendering"
     ],
+    "computer_science": [
+      "sync-async",
+      "network-note-01",
+      "network-application-02",
+      "mvc-pattern"
+    ],
+    "styled_components": [
+      "styled-components-global-style",
+      "project-simple-kanban-board",
+      "project-real-time-coin-info"
+    ],
+    "css": ["styled-components-global-style", "browser-rendering"],
     "semamtic_release": ["semantic-release"],
     "github_actions": ["semantic-release"],
     "reg_exp": ["reg-exp"],
@@ -305,11 +316,6 @@
     "plaiceholder": ["nextjs-image-blur"],
     "gtag": ["nextjs-gtag"],
     "google_analytics": ["nextjs-gtag"],
-    "computer_science": [
-      "network-note-01",
-      "network-application-02",
-      "mvc-pattern"
-    ],
     "lodash": ["lodash"],
     "husky": [
       "husky-precommit-unauthorized",
