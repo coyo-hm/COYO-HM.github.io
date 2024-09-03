@@ -117,31 +117,6 @@ a {
 }
 
 
-aside {
-    background-color: rgb(235, 235, 235);
-    padding: 20px 20px;
-    border-radius: 5px;
-    margin: 15px 0;
-}
-
-.dark aside {
-    background-color: rgb(64, 64, 64);
-}
-
-.yellow {
-    padding: 0 4px;
-    border-radius: 3px;
-    background-color: #f1c40fbe;
-    box-decoration-break: clone;
-}
-
-.red {
-    padding: 0 4px;
-    border-radius: 3px;
-    background-color: #e74d3cbe;
-    box-decoration-break: clone;
-}
-
 .paused:hover {
     animation-play-state: paused;
 }

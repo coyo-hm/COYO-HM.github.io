@@ -4,8 +4,8 @@ import "@fonts/NanumSquareRound/NanumSquareRound.css";
 import "@fonts/Inter/inter.css";
 import "@styles/tailwind.css";
 import "@styles/globals.css";
-import "@styles/code.css";
 import "@styles/prism-dracula.css";
+import "@styles/markdown.css";
 // import "@styles/prism-one-dark.css";
 
 import type { AppProps } from "next/app";
