@@ -30,14 +30,11 @@
     }
 
 
-
-
-
     /*code*/
 
     code {
         font-family: "JetBrains Mono";
-        background-color: rgba(229, 229, 229, 0.8);
+        background: rgba(229, 229, 229, 0.8);
         border-radius: 4px;
         padding: 0 7px;
     }
@@ -46,11 +43,12 @@
     /*  background: none;*/
     /*}*/
 
-    /*pre[class*="language-"] {*/
-    /*  tab-size: 2;*/
-    /*  font-family: "JetBrains Mono";*/
-    /*  overflow: auto;*/
-    /*}*/
+    pre[class*="language-"] > code {
+        background: none;
+        /*tab-size: 2;*/
+        /*font-family: "JetBrains Mono";*/
+        /*overflow: auto;*/
+    }
 
     pre[class*="language-"]::-webkit-scrollbar {
         height: 10px;
