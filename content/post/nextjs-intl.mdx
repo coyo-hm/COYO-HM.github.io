@@ -13,6 +13,10 @@ published: true
 
 next-intl에서 제공하는 [example](https://github.com/amannn/next-intl/tree/main/examples/example-app-router)과 [공식 docs](https://next-intl-docs.vercel.app/docs/getting-started/app-router)를 따라 진행하였습니다.
 
+<aside>
+  24.9.10 v.3.19 업데이트 내용 추가하였습니다.
+</aside>
+
 # 설치
 
 ```bash
@@ -36,17 +40,19 @@ pnpm i next-intl
 # 폴더 구조 설정
 
 ```
-├── messages (1)
-│   ├── en.json
+├── messages
+│   ├── en.json (1)
 │   └── ...
 ├── next.config.mjs (2)
 └── src
-    ├── i18n.ts (3)
+    ├── i18n
+    │   ├── routing.ts (3)
+    │   └── request.ts (5)
     ├── middleware.ts (4)
     └── app
         └── [locale]
-            ├── layout.tsx (5)
-            └── page.tsx (6)
+            ├── layout.tsx (6)
+            └── page.tsx (7)
 ```
 
 ## messages 폴더 생성
@@ -85,18 +91,57 @@ const nextConfig = {};
 export default withNextIntl(nextConfig);
 ```
 
-## `i18n.ts` 생성
+## `routing.ts` 생성
+
+24년 9월 10일에 추가된 내용입니다.
+
+```jsx
+  import {defineRouting} from 'next-intl/routing';
+
+  export const routing = defineRouting({
+    locales: ['en', 'ko'],
+    defaultLocale: 'ko'
+  });
+```
+
+## `middleware.ts` 생성
+
+```tsx
+import createMiddleware from 'next-intl/middleware';
+import {routing} from "@i18n/routing";
+
+// export default createMiddleware({ => 업데이트: routing으로 변경
+// 	// A list of all locales that are supported
+// 	locales: ['en', 'ko'],
+//
+// 	// Used when no locale matches
+// 	defaultLocale: 'ko'
+// });
+
+export default createMiddleware(routing);
+
+export const config = {
+	// Match only internationalized pathnames
+	matcher: ['/', '/(ko|en)/:path*']
+};
+```
+
+
+## `request.ts` 생성
+
+`i18n.ts` 에서 `i18n/request.ts`으로 변경되었습니다.
 
 ```tsx
 import {notFound} from 'next/navigation';
 import {getRequestConfig} from 'next-intl/server';
+import {routing} from "@i18n/routing";
 
 // Can be imported from a shared config
-export const locales = ['en', 'ko'];
+// export const locales = ['en', 'ko'];  => 업데이트: routing으로 변경
 
 export default getRequestConfig(async ({locale}) => {
 	// Validate that the incoming `locale` parameter is valid
-	if (!locales.includes(locale as any)) notFound();
+	if (!routing.locales.includes(locale as any)) notFound();
 
 	return {
 		messages: (await import(`../messages/${locale}.json`)).default
@@ -104,24 +149,7 @@ export default getRequestConfig(async ({locale}) => {
 });
 ```
 
-## `middleware.ts` 생성
 
-```tsx
-import createMiddleware from 'next-intl/middleware';
-
-export default createMiddleware({
-	// A list of all locales that are supported
-	locales: ['en', 'ko'],
-
-	// Used when no locale matches
-	defaultLocale: 'ko'
-});
-
-export const config = {
-	// Match only internationalized pathnames
-	matcher: ['/', '/(ko|en)/:path*']
-};
-```
 
 ## `app/[locale]/layout.tsx` 설정
 
@@ -172,14 +200,16 @@ export default function RegisterPage() {
 
 다음과 같이 설정해놓고 사용한다면 pathname에 locale을 입력하지 않고 사용 가능합니다.
 
-`navigation.ts`
+`routing.ts`
 
 ```tsx
+import {defineRouting} from 'next-intl/routing';
 import {createSharedPathnamesNavigation} from 'next-intl/navigation';
-import { locales } from "@src/i18n";
+
+...
 
 export const {Link, redirect, usePathname, useRouter} =
-	createSharedPathnamesNavigation({locales});
+	createSharedPathnamesNavigation(routing);
 ```
 
 만일 사용언어에 따라 다른 path를 쓴다면 `createLocalizedPathnamesNavigation` 사용하면 됩니다. 자세한 내용은 [공식 문서](https://next-intl-docs.vercel.app/docs/routing/navigation) 참고 바랍니다.
