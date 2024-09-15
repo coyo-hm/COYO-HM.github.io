@@ -382,7 +382,7 @@
     "title": "npm publish ENEEDAUTH 오류 해결하기",
     "tags": ["npm", "git"],
     "series": ["trouble_shooting"],
-    "description": "gtag에 알아보고 NextJS 블로에 gtag4를 적용해보기",
+    "description": "npm publish ENEEDAUTH 오류. npm login 실패 오류 해결하기",
     "thumbnail": "https://github.com/COYO-HM/coyo-ui/assets/56423604/ce77552f-20d5-495d-a9a2-99e44349956b",
     "published": true,
     "path": "error-emeedauth.mdx"
