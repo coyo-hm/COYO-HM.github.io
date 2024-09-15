@@ -377,6 +377,16 @@
     "published": true,
     "path": "gatsby-add-table-of-contents-in-gatsby.mdx"
   },
+  "error-ts2802": {
+    "date": "2024-09-11T00:00:00",
+    "title": "TypeScript 2802 error(downlevelIteration, target) 오류 해결하기",
+    "tags": ["typescript"],
+    "series": ["trouble_shooting"],
+    "description": "TypeScript 2802 error(downlevelIteration, target) 오류에 대해 알아보고 해결해보기",
+    "thumbnail": "https://github.com/user-attachments/assets/ae48b518-5410-49c9-9a47-6377ce2f4479",
+    "published": true,
+    "path": "error-ts2802.mdx"
+  },
   "error-emeedauth": {
     "date": "2024-02-13T00:00:00",
     "title": "npm publish ENEEDAUTH 오류 해결하기",
