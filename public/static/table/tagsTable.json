@@ -36,6 +36,7 @@
       "github-page-publish",
       "git-commit-template",
       "gatsby-add-table-of-contents-in-gatsby",
+      "error-ts2802",
       "error-emeedauth",
       "cookie-session",
       "browser-rendering",
@@ -63,6 +64,7 @@
       "nextjs-gtag",
       "lodash",
       "gatsby-add-table-of-contents-in-gatsby",
+      "error-ts2802",
       "axios-interceptor",
       "axios-config"
     ],
@@ -203,6 +205,7 @@
       "github-page-publish",
       "git-commit-template",
       "gatsby-add-table-of-contents-in-gatsby",
+      "error-ts2802",
       "error-emeedauth",
       "cookie-session",
       "browser-rendering",
@@ -231,6 +234,7 @@
       "nextjs-gtag",
       "lodash",
       "gatsby-add-table-of-contents-in-gatsby",
+      "error-ts2802",
       "axios-interceptor",
       "axios-config"
     ],
