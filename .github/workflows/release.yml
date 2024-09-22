@@ -15,8 +15,8 @@ jobs:
       - run: npm run build && touch ./out/.nojekyll
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+          branch: gh-pages
+          folder: out
   release:
     name: release
     runs-on: ubuntu-latest
