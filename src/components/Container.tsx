@@ -1,4 +1,4 @@
-import { Inter } from "@next/font/google";
+// import { Inter } from "@next/font/google";
 import {
   JSXElementConstructor,
   ReactElement,
@@ -8,7 +8,7 @@ import {
 import Footer from "./Footer";
 import Header from "./Header";
 
-const inter = Inter({ preload: false });
+// const inter = Inter({ preload: false });
 
 const Container = (props: {
   children:
@@ -23,7 +23,7 @@ const Container = (props: {
 }) => {
   return (
     <div
-      className={`${inter.className} bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-100 mx-auto h-screen overflow-auto`}
+      className={`bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-100 mx-auto h-screen overflow-auto`}
     >
       <div
         className={`bg-transparent flex flex-col justify-center px-8 m-auto min-h-screen w-full lg:w-[950px]`}
