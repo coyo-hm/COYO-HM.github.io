@@ -4,15 +4,14 @@ import Link from "next/link";
 import metadata from "@config/index";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
 import { CATEGORY_INFO } from "@constants/category";
-import PageSeo from "@components/SEO/PageSEO";
-import Pagination from "@components/Pagination";
+import PageSeo from "@components/common/PageSEO";
+import Pagination from "@components/common/Pagination";
 import usePage from "@hooks/usePage";
 import { SeriesAttributeType } from "@models/series";
 import getAllSeriesInfo from "@utils/getAllSeriesInfo";
 import getLastPage from "@utils/getLastPage";
 import Image from "next/image";
 import imgLoader from "@utils/imgLoader";
-import PageTitle from "@components/Title/PageTitle";
 import getSeries from "@utils/getSeries";
 import getBlurImg from "@utils/getBlurImg";
 import { PostType } from "@models/post";
@@ -40,9 +39,9 @@ const Series = ({
         url={metadata.siteUrl + `series`}
       />
       <main className={`flex flex-col items-center`}>
-        <PageTitle className={`mb-24 mt-14`}>
+        <h1 className={`mb-24 mt-14 page-title`}>
           {CATEGORY_INFO.series.label}
-        </PageTitle>
+        </h1>
         <div className={`text-neutral-500 text-sm text-right mb-5 w-full`}>
           시리즈 수: {seriesTotal}
         </div>

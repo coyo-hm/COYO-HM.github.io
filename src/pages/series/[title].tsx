@@ -7,15 +7,13 @@ import { motion } from "framer-motion";
 import metadata from "@config/index";
 import CustomMDX from "@components/Post/CustomMDX";
 import TagColorBox from "@components/Tag/TagColorBox";
-import PageSeo from "@components/SEO/PageSEO";
+import PageSeo from "@components/common/PageSEO";
 import { SeriesPostType } from "@models/series";
 import getDate from "@utils/getDate";
 import getAllSeriesInfo from "@utils/getAllSeriesInfo";
 import getSeriesIntro from "@utils/getSeriesIntro";
 import parseMarkdownToMdx from "@utils/parseMarkdown";
 import imgLoader from "@utils/imgLoader";
-import PostTitle from "@components/Title/PostTitle";
-import PostSubTitle from "@components/Title/PostSubTitle";
 import { CATEGORY_INFO } from "@constants/category";
 import Giscus from "@components/Post/Giscus";
 
@@ -61,31 +59,23 @@ const SeriesIntroPage = ({
             className={`h-full w-full bg-gradient-to-b from-white/0 dark:from-neutral-800/0 via-white/70 dark:via-neutral-800/70 to-white/100 dark:to-neutral-800/100 absolute`}
           ></div>
         </div>
-        <PostTitle className={`mb-20 mt-[-5px] z-10`}>
-          <h1
+        <h1 className={`post-title mb-20 mt-[-5px] z-10`}>
+          <div
             className={`text-lg w-fit font-normal italic bg-transparent border-b-2 border-black dark:border-white mb-4 mx-auto`}
           >
             {CATEGORY_INFO.series.label}
-          </h1>
+          </div>
           {title}
-        </PostTitle>
+        </h1>
         <div className={`py-7`}>
-          <PostSubTitle
-            className={`text-blue-700 border-b-2 py-2 border-blue-700 mb-4`}
-          >
-            INTRODUCTION
-          </PostSubTitle>
+          <h2 className={`series-subtitle`}>INTRODUCTION</h2>
           <div className={``}>
             <CustomMDX {...mdx} />
           </div>
         </div>
         <div className={`py-7`}>
-          <PostSubTitle
-            className={`text-blue-700 border-b-2 py-2 border-blue-700 mb-4`}
-          >
-            SERIES POST
-          </PostSubTitle>
-          <section className={`flex flex-col gap-3`}>
+          <h2 className={`series-subtitle`}>SERIES POST</h2>
+          <div className={`flex flex-col gap-3`}>
             {posts.map((post, idx) => (
               <Link href={`/post/${post.key}`} key={post.key}>
                 <motion.div
@@ -129,7 +119,7 @@ const SeriesIntroPage = ({
                 </motion.div>
               </Link>
             ))}
-          </section>
+          </div>
         </div>
         <div className={`mt-12`}>
           <Giscus />

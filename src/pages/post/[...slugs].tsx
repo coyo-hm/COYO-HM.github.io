@@ -5,7 +5,7 @@ import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { PostAttributeType, PostTableNode, PostType } from "@models/post";
 import parseMarkdownToMdx from "@utils/parseMarkdown";
 import { getAllPosts } from "@utils/getPosts";
-import PostSEO from "@components/SEO/PostSEO";
+import PostSEO from "@components/common/PostSEO";
 import metadata from "@config/index";
 import PostHeader from "@components/Post/PostHeader";
 import CustomMDX from "@components/Post/CustomMDX";

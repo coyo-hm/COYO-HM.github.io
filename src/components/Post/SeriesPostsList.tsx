@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Title from "@components/Title/Title";
 import { SeriesAttributeWithPostType } from "@models/series";
 
 interface Props {
@@ -9,12 +8,12 @@ interface Props {
 
 const SeriesPostsList = ({ selectedPostKey, seriesInfo }: Props) => {
   return (
-    <div
+    <section
       className={`bg-blue-500/20 p-5 rounded-lg
     `}
     >
-      <Title
-        className={`text-lg font-bold flex justify-between flex-wrap align-bottom`}
+      <header
+        className={`italic text-lg font-bold flex justify-between flex-wrap align-bottom`}
       >
         {seriesInfo?.title}
         <Link
@@ -23,7 +22,7 @@ const SeriesPostsList = ({ selectedPostKey, seriesInfo }: Props) => {
         >
           같은 시리즈 다른 글 보기&nbsp;&gt;
         </Link>
-      </Title>
+      </header>
       <ul className={`flex flex-col gap-1.5 italic pt-3`}>
         {seriesInfo.posts.map((post) =>
           post.key === selectedPostKey ? (
@@ -41,7 +40,7 @@ const SeriesPostsList = ({ selectedPostKey, seriesInfo }: Props) => {
           )
         )}
       </ul>
-    </div>
+    </section>
   );
 };
 export default SeriesPostsList;

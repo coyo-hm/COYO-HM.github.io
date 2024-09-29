@@ -4,8 +4,8 @@ import { BsArrowRight } from "react-icons/bs";
 
 import metadata from "config";
 import Carousel from "@components/Main/Carousel/Carousel";
-import SpinningTags from "@components/Main/SpinningTags";
-import PageSeo from "@components/SEO/PageSEO";
+import SpinningTags from "@components/home/SpinningTags";
+import PageSeo from "@components/common/PageSEO";
 import { CATEGORY_INFO, CATEGORY_KEYS } from "@constants/category";
 import { PostType } from "@models/post";
 import { SeriesAttributeTableType } from "@models/series";
@@ -14,8 +14,7 @@ import { getPosts } from "@utils/getPosts";
 import getAllTags from "@utils/getAllTags";
 import getAllSeriesInfo from "@utils/getAllSeriesInfo";
 import getBlurImg from "@utils/getBlurImg";
-import PageTitle from "@components/Title/PageTitle";
-import PageSubTitle from "@components/Title/PageSubTitle";
+
 import SeriesCards from "@components/Main/SeriesCards";
 
 export default function Home({
@@ -34,8 +33,8 @@ export default function Home({
         description={metadata.description}
         url={metadata.siteUrl}
       />
-      <div className={`flex flex-col pb-10 bg-transparent`}>
-        <PageTitle className={`mt-20`}>{metadata.title}</PageTitle>
+      <main className={`pb-10 bg-transparent`}>
+        <h1 className={`mt-20 page-title`}>{metadata.title}</h1>
         <nav className={`flex gap-3 justify-center my-10`}>
           {CATEGORY_KEYS.map((key) => (
             <Link
@@ -49,23 +48,23 @@ export default function Home({
         </nav>
         <SpinningTags tagList={tags} />
         <Link href={CATEGORY_INFO.post.link} aria-label={"link-blog"}>
-          <PageSubTitle
-            className={`flex justify-between mt-5 mb-4 hover:text-blue-700`}
+          <h2
+            className={`page-subtitle flex justify-between mt-5 mb-4 hover:text-blue-700`}
           >
             Recent Post
             <BsArrowRight />
-          </PageSubTitle>
+          </h2>
         </Link>
         <Carousel posts={recentPosts} allSeriesInfo={allSeriesInfo} />
         <Link href={CATEGORY_INFO.series.link} aria-label={"link-blog"}>
-          <PageSubTitle
-            className={`flex justify-between hover:text-blue-700 mt-10 mb-4`}
+          <h2
+            className={`page-subtitle flex justify-between mt-10 mb-4 hover:text-blue-700`}
           >
             Series
-          </PageSubTitle>
+          </h2>
         </Link>
         <SeriesCards allSeriesInfo={allSeriesInfo} />
-      </div>
+      </main>
     </>
   );
 }

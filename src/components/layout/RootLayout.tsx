@@ -13,7 +13,7 @@ const RootLayout = ({ children }: Props) => {
         className={`bg-transparent flex flex-col justify-center px-8 m-auto min-h-screen w-full lg:w-[950px]`}
       >
         <Header />
-        <main className={`w-full flex flex-col grow shrink`}>{children}</main>
+        {children}
         <Footer />
       </div>
     </div>

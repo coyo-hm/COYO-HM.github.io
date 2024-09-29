@@ -1,8 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 
-import PageSeo from "@components/SEO/PageSEO";
-import Pagination from "@components/Pagination";
-import PageTitle from "@components/Title/PageTitle";
+import PageSeo from "@components/common/PageSEO";
+import Pagination from "@components/common/Pagination";
 import metadata from "@config/index";
 import { CATEGORY_INFO } from "@constants/category";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
@@ -50,9 +49,9 @@ const Blog = ({
             {CATEGORY_INFO.post.label}
           </div>
         )}
-        <PageTitle className={`pb-2`}>
+        <h1 className={`pb-2 page-title`}>
           {isAllTag ? CATEGORY_INFO.post.label : selectedTag}
-        </PageTitle>
+        </h1>
         <div className={`my-12 flex flex-wrap gap-2 `}>
           {allTags.map((tag) => (
             <TagCapsule
