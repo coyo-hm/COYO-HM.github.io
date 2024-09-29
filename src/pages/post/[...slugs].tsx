@@ -1,6 +1,8 @@
+import PostsTable from "public/static/table/postsTable.json";
+
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import { PostType } from "@models/post";
+import { PostAttributeType, PostTableNode, PostType } from "@models/post";
 import parseMarkdownToMdx from "@utils/parseMarkdown";
 import { getAllPosts } from "@utils/getPosts";
 import PostSEO from "@components/SEO/PostSEO";
@@ -70,10 +72,22 @@ const Post = ({
 export default Post;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allPosts = await getAllPosts();
-  const paths = allPosts.map(({ fields: { slug } }) => ({
+  const postsAttributesObj: {
+    [key: string]: PostTableNode;
+  } = PostsTable;
+
+  const allPosts = Object.keys(PostsTable).reduce(
+    (arr: PostAttributeType[], key) =>
+      postsAttributesObj[key].published ||
+      process.env.NODE_ENV === "development"
+        ? [...arr, { ...postsAttributesObj[key], key }]
+        : arr,
+    []
+  );
+
+  const paths = allPosts.map(({ key }) => ({
     params: {
-      slugs: slug.split("/"),
+      slugs: key.split("/"),
     },
   }));
 
