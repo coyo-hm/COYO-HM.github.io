@@ -11,11 +11,10 @@
   "homepage": "https://coyo-hm.github.io/",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build && next-sitemap && next export",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "deploy": "next build && touch out/.nojekyll && git add -f out/ && git commit -m 'DEPLOY: deploy to gh-pages' && git subtree push --prefix out origin gh-pages",
+    "deploy": "touch out/.nojekyll && git add -f out/ && git commit -m 'DEPLOY: deploy to gh-pages' && git subtree push --prefix out origin gh-pages",
     "prepare": "husky install",
     "table": "node src/scripts/createTable.js && prettier --cache --write public/static/table"
   },
