@@ -13,6 +13,7 @@ import getPostSeriesInfo from "@utils/getPostSeriesInfo";
 import { SeriesAttributeWithPostType } from "@models/series";
 import SeriesPostsList from "@components/Post/SeriesPostsList";
 import Giscus from "@components/Post/Giscus";
+import getPostAttributesList from "@utils/getPostAttributesList";
 
 const Post = ({
   post: {
@@ -70,10 +71,10 @@ const Post = ({
 export default Post;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allPosts = await getAllPosts();
-  const paths = allPosts.map(({ fields: { slug } }) => ({
+  const allPosts = await getPostAttributesList();
+  const paths = allPosts.map(({ key }) => ({
     params: {
-      slugs: slug.split("/"),
+      slugs: key.split("/"),
     },
   }));
 
