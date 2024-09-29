@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function NotFound({}) {
   return (
-    <div className={`text-center`}>
-      <h1 className={`text-lg`}>
+    <div className={`text-center m-auto`}>
+      <h1 className={`text-2xl`}>
         페이지를 찾을 수 없습니다.
         <br />
         <Link href={`/`} className={`text-blue-700`}>
