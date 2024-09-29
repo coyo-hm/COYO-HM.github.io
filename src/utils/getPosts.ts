@@ -1,11 +1,13 @@
 import fs from "fs";
+import path from "path";
 import frontMatter from "front-matter";
 import { PostAttributeType, PostType } from "@models/post";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
 import getPostAttributesList from "@utils/getPostAttributesList";
 import { POST_DIR_PATH } from "@constants/api";
 
-const POST_PATH = `${process.cwd()}${POST_DIR_PATH}`;
+// const POST_PATH = `${process.cwd()}${POST_DIR_PATH}`;
+const POST_PATH = path.join(process.cwd(), POST_DIR_PATH);
 
 export async function getAllPosts(tag?: string): Promise<Array<PostType>> {
   const postsList = await getPostAttributesList(tag);
