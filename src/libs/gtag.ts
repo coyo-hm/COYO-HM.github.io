@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { isDev } from "@libs/core";
 
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID as string;
 
@@ -25,7 +26,7 @@ export const event = (
 export const useGtagRouting = () => {
   const router = useRouter();
   useEffect(() => {
-    if (process.env.NODE_ENV === "development") return;
+    if (isDev) return;
     const handleRouteChange = (url: URL) => {
       pageview(url);
     };

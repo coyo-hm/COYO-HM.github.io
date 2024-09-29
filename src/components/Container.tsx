@@ -1,4 +1,3 @@
-// import { Inter } from "@next/font/google";
 import {
   JSXElementConstructor,
   ReactElement,
@@ -7,8 +6,6 @@ import {
 } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-
-// const inter = Inter({ preload: false });
 
 const Container = (props: {
   children:
