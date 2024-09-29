@@ -3,7 +3,6 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import "@fonts/jetBrainsMono/jetBrainsMono.css";
 import "@fonts/Inter/inter.css";
 
-import "@styles/tailwind.css";
 import "@styles/globals.css";
 import "@styles/prism-dracula.css";
 import "@styles/markdown.css";
