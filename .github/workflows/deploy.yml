@@ -13,9 +13,15 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - name: Install and Build
+
+      - name: Create env file
         run: |
-          npm ci
+          jq -r 'to_entries|map("\(.key)=\(.value|tostring)")|.[]' <<< "$SECRETS_CONTEXT" > .env
+        env:
+          SECRETS_CONTEXT: ${{ toJson(secrets) }}
+      - name: Install and Build1
+        run: |
+          npm i
           npm run build
           touch ./out/.nojekyll
       - name: Deploy
