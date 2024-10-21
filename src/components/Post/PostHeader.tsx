@@ -2,7 +2,7 @@ import { CiCalendar } from "react-icons/ci";
 
 import getDate from "@utils/getDate";
 import { PostAttributeType } from "@models/post";
-import { CATEGORY_INFO } from "@constants/category";
+import CATEGORY from "@constants/category";
 
 type PostHeaderPropsType = Pick<PostAttributeType, "title" | "date">;
 
@@ -13,7 +13,7 @@ const PostHeader = ({ title, date }: PostHeaderPropsType) => {
       <h2
         className={`text-lg w-fit font-normal italic bg-transparent border-b-2 border-black dark:border-white mb-2 mx-auto text-center`}
       >
-        {CATEGORY_INFO.post.label}
+        {CATEGORY.post.label}
       </h2>
       <h1
         className={`post-title break-keep max-md:text-xl leading-snug text-center mx-10 text-5xl font-semibold`}

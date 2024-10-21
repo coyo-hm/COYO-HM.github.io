@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 import metadata from "@config/index";
 import CustomMDX from "@components/Post/CustomMDX";
-import TagColorBox from "@components/Tag/TagColorBox";
+import TagColorBox from "@components/common/TagColorBox";
 import PageSeo from "@components/common/PageSEO";
 import { SeriesPostType } from "@models/series";
 import getDate from "@utils/getDate";
@@ -14,7 +14,7 @@ import getAllSeriesInfo from "@utils/getAllSeriesInfo";
 import getSeriesIntro from "@utils/getSeriesIntro";
 import parseMarkdownToMdx from "@utils/parseMarkdown";
 import imgLoader from "@utils/imgLoader";
-import { CATEGORY_INFO } from "@constants/category";
+import CATEGORY from "@constants/category";
 import Giscus from "@components/Post/Giscus";
 
 const postVariants = {
@@ -63,7 +63,7 @@ const SeriesIntroPage = ({
           <div
             className={`text-lg w-fit font-normal italic bg-transparent border-b-2 border-black dark:border-white mb-4 mx-auto`}
           >
-            {CATEGORY_INFO.series.label}
+            {CATEGORY.series.label}
           </div>
           {title}
         </h1>

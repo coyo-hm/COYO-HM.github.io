@@ -1,12 +1,10 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs";
 
 import metadata from "config";
-import Carousel from "@components/Main/Carousel/Carousel";
 import SpinningTags from "@components/home/SpinningTags";
 import PageSeo from "@components/common/PageSEO";
-import { CATEGORY_INFO, CATEGORY_KEYS } from "@constants/category";
+import CATEGORY, { CATEGORY_KEYS } from "@constants/category";
 import { PostType } from "@models/post";
 import { SeriesAttributeTableType } from "@models/series";
 import { TagWithCountType } from "@models/tag";
@@ -15,7 +13,8 @@ import getAllTags from "@utils/getAllTags";
 import getAllSeriesInfo from "@utils/getAllSeriesInfo";
 import getBlurImg from "@utils/getBlurImg";
 
-import SeriesCards from "@components/Main/SeriesCards";
+import RecentPosts from "@components/home/RecentPosts";
+import Series from "@components/home/Series";
 
 export default function Home({
   recentPosts,
@@ -38,32 +37,17 @@ export default function Home({
         <nav className={`flex gap-3 justify-center my-10`}>
           {CATEGORY_KEYS.map((key) => (
             <Link
-              href={CATEGORY_INFO[key].link}
-              key={CATEGORY_INFO[key].id}
+              href={CATEGORY[key].link}
+              key={CATEGORY[key].id}
               className={`hover:text-blue-700`}
             >
-              {CATEGORY_INFO[key].label}
+              {CATEGORY[key].label}
             </Link>
           ))}
         </nav>
         <SpinningTags tagList={tags} />
-        <Link href={CATEGORY_INFO.post.link} aria-label={"link-blog"}>
-          <h2
-            className={`page-subtitle flex justify-between mt-5 mb-4 hover:text-blue-700`}
-          >
-            Recent Post
-            <BsArrowRight />
-          </h2>
-        </Link>
-        <Carousel posts={recentPosts} allSeriesInfo={allSeriesInfo} />
-        <Link href={CATEGORY_INFO.series.link} aria-label={"link-blog"}>
-          <h2
-            className={`page-subtitle flex justify-between mt-10 mb-4 hover:text-blue-700`}
-          >
-            Series
-          </h2>
-        </Link>
-        <SeriesCards allSeriesInfo={allSeriesInfo} />
+        <RecentPosts posts={recentPosts} allSeriesInfo={allSeriesInfo} />
+        <Series allSeriesInfo={allSeriesInfo} />
       </main>
     </>
   );

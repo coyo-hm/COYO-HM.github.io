@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import PageSeo from "@components/common/PageSEO";
 import Pagination from "@components/common/Pagination";
 import metadata from "@config/index";
-import { CATEGORY_INFO } from "@constants/category";
+import CATEGORY from "@constants/category";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
 import usePage from "@hooks/usePage";
 import { PostType } from "@models/post";
@@ -37,7 +37,7 @@ const Blog = ({
   return (
     <>
       <PageSeo
-        title={CATEGORY_INFO.post.label}
+        title={CATEGORY.post.label}
         description={metadata.description}
         url={metadata.siteUrl + `blog`}
       />
@@ -46,18 +46,18 @@ const Blog = ({
           <div
             className={`italic bg-transparent border-b-2 border-black dark:border-white mb-2 font-bold`}
           >
-            {CATEGORY_INFO.post.label}
+            {CATEGORY.post.label}
           </div>
         )}
         <h1 className={`pb-2 page-title`}>
-          {isAllTag ? CATEGORY_INFO.post.label : selectedTag}
+          {isAllTag ? CATEGORY.post.label : selectedTag}
         </h1>
         <div className={`my-12 flex flex-wrap gap-2 `}>
           {allTags.map((tag) => (
             <TagCapsule
               key={tag.tag}
               selectedTag={selectedTag}
-              category={CATEGORY_INFO.post.id}
+              category={CATEGORY.post.id}
               {...tag}
             />
           ))}

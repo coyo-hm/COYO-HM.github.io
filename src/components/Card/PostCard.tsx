@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import ShadowRoundedCard from "@components/Card/ShadowRoundedCard";
-import TagColorBox from "@components/Tag/TagColorBox";
+import TagColorBox from "@components/common/TagColorBox";
 import { PostAttributeType } from "@models/post";
 import imgLoader from "@utils/imgLoader";
 import getDate from "@utils/getDate";

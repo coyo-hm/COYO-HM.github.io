@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import metadata from "@config/index";
-import { CATEGORY_INFO, CATEGORY_KEYS } from "@constants/category";
+import CATEGORY, { CATEGORY_KEYS } from "@constants/category";
 
 const Nav = () => {
   const { route } = useRouter();
@@ -14,15 +14,15 @@ const Nav = () => {
       <nav className={`flex grow gap-3 max-md:gap-2`}>
         {CATEGORY_KEYS.map((key) => (
           <Link
-            href={CATEGORY_INFO[key].link}
-            key={CATEGORY_INFO[key].id}
+            href={CATEGORY[key].link}
+            key={CATEGORY[key].id}
             className={`hover:text-blue-700 font-light border-b italic ${
-              route.includes(CATEGORY_INFO[key].id)
+              route.includes(CATEGORY[key].id)
                 ? "border-b-blue-700"
                 : "border-b-transparent"
             }`}
           >
-            {CATEGORY_INFO[key].label}
+            {CATEGORY[key].label}
           </Link>
         ))}
       </nav>

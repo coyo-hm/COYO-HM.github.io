@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import metadata from "@config/index";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
-import { CATEGORY_INFO } from "@constants/category";
+import CATEGORY from "@constants/category";
 import PageSeo from "@components/common/PageSEO";
 import Pagination from "@components/common/Pagination";
 import usePage from "@hooks/usePage";
@@ -34,14 +34,12 @@ const Series = ({
   return (
     <>
       <PageSeo
-        title={CATEGORY_INFO.series.label}
+        title={CATEGORY.series.label}
         description={metadata.description}
         url={metadata.siteUrl + `series`}
       />
       <main className={`flex flex-col items-center`}>
-        <h1 className={`mb-24 mt-14 page-title`}>
-          {CATEGORY_INFO.series.label}
-        </h1>
+        <h1 className={`mb-24 mt-14 page-title`}>{CATEGORY.series.label}</h1>
         <div className={`text-neutral-500 text-sm text-right mb-5 w-full`}>
           시리즈 수: {seriesTotal}
         </div>
