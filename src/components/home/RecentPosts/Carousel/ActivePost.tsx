@@ -89,7 +89,7 @@ const ActivePost = ({
               <BlurImage
                 src={thumbnail}
                 alt={title}
-                className={`w-full h-auto`}
+                className={`w-full h-auto object-contain`}
                 width={100}
                 height={100}
                 blurDataURL={blurThumbnail}

@@ -39,6 +39,7 @@ const SeriesPostItem = ({
         <BlurImage
           src={thumbnail}
           alt={title}
+          className={`object-cover h-auto`}
           fill
           blurDataURL={blurThumbnail}
         />

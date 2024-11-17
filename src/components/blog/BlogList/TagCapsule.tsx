@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ShadowRoundedCard from "@components/Card/ShadowRoundedCard";
+import { motion } from "framer-motion";
 import { categoryType } from "@constants/category";
 import TAG_INFO from "@constants/tag_info";
 import { TagWithCountType } from "@models/tag";
@@ -18,8 +18,8 @@ const TagCapsule = ({ selectedTag, category, tag, count }: Props) => {
   const tagInfo = TAG_INFO[tag];
   return (
     <Link href={`/${category}/page/0/${tag}`} key={tag}>
-      <ShadowRoundedCard
-        className={`px-3 py-1 flex justify-between items-center gap-3 rounded-2xl ${
+      <motion.div
+        className={`px-3 py-1 flex justify-between items-center gap-3 rounded-2xl shadow-xl dark:shadow-black/50 ${
           selectedTag === tag ? "bg-blue-700" : "bg-transparent"
         }`}
         variants={floatedVariants}
@@ -34,7 +34,7 @@ const TagCapsule = ({ selectedTag, category, tag, count }: Props) => {
           {tag === "all" ? "전체보기" : tagInfo?.label || tag}
         </span>
         <span className={`text-neutral-400 text-sm`}>{count}</span>
-      </ShadowRoundedCard>
+      </motion.div>
     </Link>
   );
 };

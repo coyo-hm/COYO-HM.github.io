@@ -2,13 +2,13 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import metadata from "@config/index";
 import PageSeo from "@components/common/PageSEO";
-import Intro from "@components/series/Intro";
+import SeriesPost from "@components/series/SeriesPost";
 import { SeriesPostType } from "@models/series";
 import getAllSeriesInfo from "@utils/getAllSeriesInfo";
 import getSeriesIntro from "@utils/getSeriesIntro";
 import parseMarkdownToMdx from "@utils/parseMarkdown";
 
-const SeriesIntroPage = ({
+const SeriesPostPage = ({
   seriesInfo,
   mdx,
   seriesKey,
@@ -27,7 +27,7 @@ const SeriesIntroPage = ({
         description={description}
         url={`${metadata.siteUrl}/series/${seriesKey}`}
       />
-      <Intro {...frontMatter} mdx={mdx} posts={posts} />
+      <SeriesPost {...frontMatter} mdx={mdx} posts={posts} />
     </>
   );
 };
@@ -61,4 +61,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     notFound: true,
   };
 };
-export default SeriesIntroPage;
+export default SeriesPostPage;
