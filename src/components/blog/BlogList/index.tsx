@@ -1,12 +1,12 @@
+import Link from "next/link";
+import CATEGORY from "@constants/category";
+import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
+import usePage from "@hooks/usePage";
 import { PostType } from "@models/post";
 import { TagWithCountType } from "@models/tag";
-import CATEGORY from "@constants/category";
-import Link from "next/link";
-import usePage from "@hooks/usePage";
-import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
-import TagCapsule from "./TagCapsule";
 import Pagination from "@components/common/Pagination";
-import BlogItem from "@components/blog/BlogList/BlogItem";
+import TagCapsule from "./TagCapsule";
+import BlogItem from "./BlogItem";
 
 interface Props {
   posts: PostType[];

@@ -1,6 +1,6 @@
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import NextImage from "@components/common/NextImage";
-import CustomMDX from "@components/Post/CustomMDX";
+import CustomMDX from "@components/blog/BlogPost/CustomMDX";
 import getDate from "@utils/getDate";
 import { CiCalendar } from "react-icons/ci";
 

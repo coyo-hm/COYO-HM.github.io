@@ -6,7 +6,7 @@ interface Props {
   seriesInfo: SeriesAttributeWithPostType;
 }
 
-const SeriesPostsList = ({ selectedPostKey, seriesInfo }: Props) => {
+const PostSeriesList = ({ selectedPostKey, seriesInfo }: Props) => {
   return (
     <section
       className={`bg-blue-500/20 p-5 rounded-lg
@@ -43,4 +43,4 @@ const SeriesPostsList = ({ selectedPostKey, seriesInfo }: Props) => {
     </section>
   );
 };
-export default SeriesPostsList;
+export default PostSeriesList;
