@@ -4,8 +4,10 @@ import getDate from "@utils/getDate";
 import BlurImage from "@components/common/BlurImage";
 import TagColorBox from "@components/common/TagColorBox";
 
+//bg-white/60 dark:bg-neutral-700
+
 const postVariants = {
-  initial: { y: 0 },
+  initial: { y: 0, backgroundColor: "transparent" },
   hover: {
     y: -3,
     backgroundColor: "rgba(147, 197, 253, 0.2)",
@@ -31,7 +33,7 @@ const SeriesPostItem = ({
       variants={postVariants}
       initial={"initial"}
       whileHover={"hover"}
-      className={`flex gap-3 bg-white/60 dark:bg-neutral-700 rounded shadow-xl overflow-hidden p-5`}
+      className={`flex gap-3 rounded shadow-xl dark:shadow-black/50 overflow-hidden p-5`}
     >
       <div className={`relative w-1/5 min-w-[100px] bg-white flex-shrink-0`}>
         <BlurImage
