@@ -6,7 +6,7 @@ import ProfileIcon from "@icons/profile.svg";
 const Footer = () => {
   return (
     <footer
-      className={`flex flex-col items-center pb-7 text-neutral-700 dark:text-neutral-500`}
+      className={`flex flex-col items-center mt-5 pb-7 text-neutral-700 dark:text-neutral-500`}
       id={"main-footer"}
     >
       <div className={"flex justify-center mb-2 gap-4"}>
