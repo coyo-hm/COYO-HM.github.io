@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { PostAttributeType } from "@models/post";
 import getDate from "@utils/getDate";
 import BlurImage from "@components/common/BlurImage";
-import TagColorBox from "@components/common/TagColorBox";
+import TagBox from "@components/common/TagBox";
 
 //bg-white/60 dark:bg-neutral-700
 
@@ -60,7 +60,7 @@ const SeriesPostItem = ({
             className={`flex flex-shrink flex-wrap items-center gap-1 border-l-2 border-neutral-200 dark:border-neutral-500 pl-2 ml-2`}
           >
             {tags.map((tag) => (
-              <TagColorBox tag={tag} key={tag} />
+              <TagBox tag={tag} key={tag} />
             ))}
           </ul>
         </div>

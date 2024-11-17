@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import ShadowRoundedCard from "@components/Card/ShadowRoundedCard";
-import TagColorBox from "@components/common/TagColorBox";
+import TagBox from "@components/common/TagBox";
 import { PostAttributeType } from "@models/post";
 import imgLoader from "@utils/imgLoader";
 import getDate from "@utils/getDate";
@@ -56,7 +56,7 @@ const PostCard = ({
             <div className={`grow overflow-hidden relative`}>
               <div className={`flex flex-wrap items-center gap-1 absolute`}>
                 {tags.map((tag) => (
-                  <TagColorBox tag={tag} key={tag} />
+                  <TagBox tag={tag} key={tag} />
                 ))}
               </div>
             </div>

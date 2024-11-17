@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PostAttributeType } from "@models/post";
 import getDate from "@utils/getDate";
-import TagColorBox from "@components/common/TagColorBox";
+import TagBox from "@components/common/TagBox";
 
 interface Props extends Omit<PostAttributeType, "key"> {
   onMouseOver: () => void;
@@ -40,7 +40,7 @@ const RecentPostItem = ({
         <span className={`text-xs text-neutral-400`}>{dateStr}</span>
         <div className={`flex gap-2 flex-wrap`}>
           {tags.map((tag) => (
-            <TagColorBox tag={tag} key={tag} />
+            <TagBox tag={tag} key={tag} />
           ))}
         </div>
       </li>
