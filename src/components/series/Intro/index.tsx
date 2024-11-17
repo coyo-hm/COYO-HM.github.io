@@ -16,7 +16,7 @@ interface Props {
 
 const Intro = ({ title, posts, ...rest }: Props) => {
   return (
-    <main className={`flex flex-col mx-auto w-full lg:w-[800px]`}>
+    <main className={`mx-auto lg:w-[800px]`}>
       <header className={`flex flex-col pt-28 pb-16`}>
         <Link href={CATEGORY.series.link} className={"category-title"}>
           {CATEGORY.series.label}
