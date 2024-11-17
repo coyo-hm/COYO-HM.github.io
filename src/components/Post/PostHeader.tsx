@@ -15,11 +15,7 @@ const PostHeader = ({ title, date }: PostHeaderPropsType) => {
       >
         {CATEGORY.post.label}
       </h2>
-      <h1
-        className={`post-title break-keep max-md:text-xl leading-snug text-center mx-10 text-5xl font-semibold`}
-      >
-        {title}
-      </h1>
+      <h1 className={`post-series-title mx-10`}>{title}</h1>
       <p
         className={`text-sm text-neutral-500 mt-10 font-light flex items-center gap-1`}
       >
