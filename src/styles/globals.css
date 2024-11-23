@@ -1,3 +1,8 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
 @font-face {
     font-family: "Pretendard-Regular";
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
@@ -34,89 +39,219 @@
     }
 }
 
-* {
-    box-sizing: border-box;
-    scrollbar-color: rgb(30, 58, 138) transparent;
-    transition: 0.2s;
+
+@layer base {
+    * {
+        box-sizing: border-box;
+        scrollbar-color: rgb(30, 58, 138) transparent;
+        transition: background-color, color 0.2s;
+    }
+
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+    }
+
+
+    html, body {
+        font-family: 'Inter';
+        overflow: auto;
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(rgb(229, 229, 229), rgb(229, 229, 229));
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        /*overscroll-behavior: contain;*/
+    }
+
+    html.dark, body.dark {
+        background-image: linear-gradient(rgb(38, 38, 38), rgb(38, 38, 38));
+    }
+
+    main { /*page container*/
+        @apply w-full flex flex-col grow shrink;
+    }
+
+    a {
+        word-break: break-all;
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    pre {
+        overflow-x: auto;
+    }
+}
+
+@layer components {
+    .remark-code-title {
+        @apply px-5 py-3 font-mono text-sm font-bold text-gray-200 bg-gray-700 rounded-t;
+    }
+
+    .remark-code-title + pre {
+        @apply mt-0 rounded-t-none;
+    }
+
+    .task-list-item:before {
+        @apply hidden;
+    }
+
+    .math-display {
+        overflow-x: auto;
+    }
+
+    h2 > a > span.icon.icon-link {
+        width: 18px;
+        height: 18px;
+    }
+
+    h3 > a > span.icon.icon-link {
+        width: 15px;
+        height: 15px;
+    }
+
+    h4 > a > span.icon.icon-link {
+        width: 12px;
+        height: 12px;
+    }
+
+    .header-1 {
+        padding-left: 6px;
+    }
+
+    .header-2 {
+        padding-left: 12px;
+    }
+
+    .header-3 {
+        padding-left: 18px;
+    }
+
+    .header-4 {
+        padding-left: 24px;
+    }
+
+    .header-5 {
+        padding-left: 30px;
+    }
+
+    .header-6 {
+        padding-left: 36px;
+    }
+
+    #toc {
+        max-height: calc(100vh - 174px);
+        overflow-y: auto;
+    }
+
+    #toc::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    #toc::-webkit-scrollbar-thumb {
+        background-color: rgb(219 234 254);
+    }
+
+    .dark #toc::-webkit-scrollbar-thumb {
+        background-color: rgb(30 58 138);
+    }
+
+    #tags::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category-title {
+        @apply text-lg w-fit font-normal italic bg-transparent border-b-2 border-black dark:border-white mb-4 mx-auto;
+    }
+
+    .page-title {
+        font-style: italic;
+        text-align: center;
+        font-size: 3.75rem;
+        line-height: 1;
+        font-weight: 800;
+    }
+
+    .page-subtitle {
+        font-style: italic;
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+        font-weight: 700;
+    }
+
+    .post-series-title {
+        @apply break-keep max-md:text-xl;
+        font-style: italic;
+        text-align: center;
+        font-size: 3rem;
+        line-height: 1.375;
+        font-weight: 700;
+    }
+
+    .series-subtitle {
+        @apply text-2xl font-bold italic text-blue-700 border-b-4 border-blue-700 mb-4;
+    }
 }
 
 
-::-webkit-scrollbar {
-    width: 15px;
+@layer utilities {
+    .paused:hover {
+        animation-play-state: paused;
+    }
+
+    .recent-post-item {
+        border-bottom-width: 1px;
+
+        &:last-child {
+            border: none;
+        }
+    }
+
+    .flippedCard-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.5s;
+        transform-style: preserve-3d;
+    }
+
+    .flippedCard {
+        width: 240px;
+        height: 350px;
+        overflow: hidden;
+        background: transparent;
+
+        &:hover > .flippedCard-inner {
+            transform: rotateY(180deg);
+        }
+    }
+
+    .flippedCard-side {
+        /*shadow-xl dark:shadow-black/50*/
+        box-shadow: inset 0 10px 10px 0 rgb(0 0 0 / 0.05);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+        border-radius: 0.75rem;
+        overflow: hidden;
+    }
+
+    .two-line-ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
 }
 
-::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-}
-
-html, body {
-    overflow: auto;
-    padding: 0;
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(rgb(229, 229, 229), rgb(229, 229, 229));
-    -webkit-overflow-scrolling: touch;
-    /*overscroll-behavior: contain;*/
-}
-
-html.dark, body.dark {
-    background-image: linear-gradient(rgb(38, 38, 38), rgb(38, 38, 38));
-}
-
-
-a {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.header-1 {
-    padding-left: 6px;
-}
-
-.header-2 {
-    padding-left: 12px;
-}
-
-.header-3 {
-    padding-left: 18px;
-}
-
-.header-4 {
-    padding-left: 24px;
-}
-
-.header-5 {
-    padding-left: 30px;
-}
-
-.header-6 {
-    padding-left: 36px;
-}
-
-#toc {
-    max-height: calc(100vh - 174px);
-    overflow-y: auto;
-}
-
-#toc::-webkit-scrollbar {
-    width: 10px;
-}
-
-#toc::-webkit-scrollbar-thumb {
-    background-color: rgb(219 234 254);
-}
-
-.dark #toc::-webkit-scrollbar-thumb {
-    background-color: rgb(30 58 138);
-}
-
-#tags::-webkit-scrollbar {
-    display: none;
-}
-
-
-.paused:hover {
-    animation-play-state: paused;
-}
