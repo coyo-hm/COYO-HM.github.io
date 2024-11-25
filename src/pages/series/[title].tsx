@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths: Object.keys(allSeriesInfo).map((key) => ({
       params: { title: key },
     })),
-    fallback: "blocking",
+    fallback: false,
   };
 };
 
