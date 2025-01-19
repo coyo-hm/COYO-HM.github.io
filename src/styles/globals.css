@@ -87,6 +87,8 @@
     pre {
         overflow-x: auto;
     }
+
+
 }
 
 @layer components {
@@ -121,30 +123,6 @@
         height: 12px;
     }
 
-    .header-1 {
-        padding-left: 6px;
-    }
-
-    .header-2 {
-        padding-left: 12px;
-    }
-
-    .header-3 {
-        padding-left: 18px;
-    }
-
-    .header-4 {
-        padding-left: 24px;
-    }
-
-    .header-5 {
-        padding-left: 30px;
-    }
-
-    .header-6 {
-        padding-left: 36px;
-    }
-
     #toc {
         max-height: calc(100vh - 174px);
         overflow-y: auto;
@@ -160,6 +138,14 @@
 
     .dark #toc::-webkit-scrollbar-thumb {
         background-color: rgb(30 58 138);
+    }
+
+    #toc > a {
+        @apply hover:text-blue-700 box-decoration-slice py-1.5 text-xs
+    }
+
+    #toc > a .active{
+        @apply bg-blue-100 dark:bg-blue-900
     }
 
     #tags::-webkit-scrollbar {
@@ -253,5 +239,33 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
     }
+
+
 }
+
+.header-1 {
+    padding-left: 6px;
+}
+
+.header-2 {
+    padding-left: 12px;
+}
+
+.header-3 {
+    padding-left: 18px;
+}
+
+.header-4 {
+    padding-left: 24px;
+}
+
+.header-5 {
+    padding-left: 30px;
+}
+
+.header-6 {
+    padding-left: 36px;
+}
+
+
 

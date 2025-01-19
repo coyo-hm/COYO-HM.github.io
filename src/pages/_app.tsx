@@ -4,9 +4,9 @@ import "@fonts/jetBrainsMono/jetBrainsMono.css";
 import "@fonts/Inter/inter.css";
 
 import "@styles/globals.css";
-import "@styles/prism-dracula.css";
-import "@styles/markdown.css";
+// import "@styles/prism-dracula.css";
 // import "@styles/prism-one-dark.css";
+import "@styles/markdown.css";
 import type { AppProps } from "next/app";
 import * as gtag from "@src/libs/gtag";
 import ThemeProvider from "@providers/ThemeProvider";
