@@ -1,13 +1,13 @@
-import { SeriesAttributeType } from "@models/series";
+import { SeriesInfoType } from "@models/series";
 import BlurImage from "@components/common/BlurImage";
 
-interface Props extends SeriesAttributeType {}
+interface Props extends SeriesInfoType {}
 const SeriesItem = ({
   title,
   thumbnail,
   blurThumbnail,
   description,
-  posts,
+  postIds,
 }: Props) => {
   return (
     <li
@@ -28,7 +28,7 @@ const SeriesItem = ({
       </section>
       <section className={`italic flex flex-col justify-center items-center`}>
         <h3 className={`text-sm text-neutral-400 font-light`}>포스트 수</h3>
-        <div className={`font-extrabold text-6xl`}>{posts.length}</div>
+        <div className={`font-extrabold text-6xl`}>{postIds.length}</div>
       </section>
     </li>
   );

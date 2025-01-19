@@ -1,20 +1,15 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import metadata from "@config/index";
+import { getSeriesInfoList, seriesInfoTable, totalSeries } from "@utils/series";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
 import CATEGORY from "@constants/category";
 import PageSeo from "@components/common/PageSEO";
 import SeriesList from "@components/series/SeriesList";
-import { SeriesAttributeType } from "@models/series";
-import getAllSeriesInfo from "@utils/getAllSeriesInfo";
+import { SeriesInfoType } from "@models/series";
 import getLastPage from "@utils/getLastPage";
-import getSeries from "@utils/getSeries";
 import getBlurImg from "@utils/getBlurImg";
 
-const Series = (props: {
-  series: SeriesAttributeType[];
-  seriesTotal: number;
-  page: number;
-}) => {
+const Series = (props: { series: SeriesInfoType[]; page: number }) => {
   return (
     <>
       <PageSeo
@@ -30,12 +25,12 @@ const Series = (props: {
 export default Series;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allSeriesInfo = await getAllSeriesInfo();
-  const total = Object.keys(allSeriesInfo).length;
   const size = DEFAULT_NUMBER_OF_POST["series"];
-  const paths = new Array(getLastPage(total, size)).fill(0).map((_, p) => ({
-    params: { page: "" + p },
-  }));
+  const paths = new Array(getLastPage(totalSeries, size))
+    .fill(0)
+    .map((_, p) => ({
+      params: { page: "" + p },
+    }));
 
   return {
     paths,
@@ -45,11 +40,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { page } = params as { page: string };
-  const allSeriesInfo = await getAllSeriesInfo();
-  const seriesInfo = await getSeries(+page, DEFAULT_NUMBER_OF_POST["series"]);
+  const seriesInfo = await getSeriesInfoList(+page);
 
   const series = await Promise.all(
-    seriesInfo.map(async (s: SeriesAttributeType) => {
+    seriesInfo.map(async (s: SeriesInfoType) => {
       const blurThumbnail = await getBlurImg(s.thumbnail);
       return { ...s, blurThumbnail };
     })
@@ -58,7 +52,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       series,
-      seriesTotal: Object.keys(allSeriesInfo).length,
       page: +page,
     },
   };

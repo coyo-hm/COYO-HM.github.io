@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { PostAttributeType } from "@models/post";
+import { PostInfoType } from "@models/post";
 import getDate from "@utils/getDate";
 import BlurImage from "@components/common/BlurImage";
 import TagBox from "@components/common/TagBox";
@@ -15,7 +15,7 @@ const postVariants = {
   },
 };
 
-interface Props extends PostAttributeType {
+interface Props extends PostInfoType {
   index: number;
 }
 

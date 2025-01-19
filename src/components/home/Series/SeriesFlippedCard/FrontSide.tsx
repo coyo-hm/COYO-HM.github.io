@@ -1,7 +1,7 @@
-import { SeriesTableNode } from "@models/series";
+import { SeriesInfoType } from "@models/series";
 import BlurImage from "@components/common/BlurImage";
 
-const FrontSide = ({ thumbnail, title, blurThumbnail }: SeriesTableNode) => (
+const FrontSide = ({ thumbnail, title, blurThumbnail }: SeriesInfoType) => (
   <div
     id={"seriesFront"}
     className={`flippedCard-side bg-neutral-50 dark:bg-neutral-900`}

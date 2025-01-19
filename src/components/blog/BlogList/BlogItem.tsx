@@ -1,8 +1,8 @@
-import { PostAttributeType } from "@models/post";
 import { motion } from "framer-motion";
 import BlurImage from "@components/common/BlurImage";
 import getDate from "@utils/getDate";
 import TagBox from "@components/common/TagBox";
+import { Post } from "contentlayer/generated";
 
 const hoverVariants = {
   initial: { y: 0 },
@@ -12,7 +12,7 @@ const hoverVariants = {
   },
 };
 
-interface Props extends PostAttributeType {}
+interface Props extends Post {}
 
 const BlogItem = ({ title, date, tags, thumbnail, blurThumbnail }: Props) => {
   return (

@@ -16,14 +16,16 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "contentlayer/generated": ["./.contentlayer/generated"],
       "@components/*": ["src/components/*"],
       "@config/*": ["config/*"],
       "@constants/*": ["src/constants/*"],
       "@contexts/*": ["src/contexts/*"],
       "@providers/*": ["src/providers/*"],
       "@fonts/*": ["public/static/fonts/*"],
-      "@images/*": ["public/static/images/*"],
       "@icons/*": ["public/static/icons/*"],
+      "@images/*": ["public/static/images/*"],
+      "@tables/*": ["public/static/tables/*"],
       "@hooks/*": ["src/hooks/*"],
       "@libs/*": ["src/libs/*"],
       "@styles/*": ["src/styles/*"],
@@ -35,6 +37,6 @@
       "@types/gtag.js"
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.config.js",".contentlayer/generated"],
   "exclude": ["node_modules"]
 }

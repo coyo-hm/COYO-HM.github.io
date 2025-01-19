@@ -1,9 +1,12 @@
-const sortPostByDate = (postList: any[], reverse = false) =>
+const sortPostByDate = <T extends { date: string }>(
+  postList: T[],
+  asc = false
+) =>
   postList.sort((a, b) => {
     const dateA = new Date(a.date);
     const dateB = new Date(b.date);
 
-    if (reverse) {
+    if (asc) {
       if (dateA < dateB) {
         return -1;
       }

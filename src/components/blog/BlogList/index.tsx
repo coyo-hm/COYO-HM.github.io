@@ -1,22 +1,23 @@
 import Link from "next/link";
 import CATEGORY from "@constants/category";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
+import { Post } from "contentlayer/generated";
 import usePage from "@hooks/usePage";
-import { PostType } from "@models/post";
 import { TagWithCountType } from "@models/tag";
+import { ALL_TAG } from "@constants/tag_info";
 import Pagination from "@components/common/Pagination";
 import TagCapsule from "./TagCapsule";
 import BlogItem from "./BlogItem";
 
 interface Props {
-  posts: PostType[];
+  posts: Post[];
   allTags: TagWithCountType[];
   selectedTag: string;
   page: number;
 }
 
 const BlogList = ({ posts, allTags, selectedTag, page }: Props) => {
-  const isAllTag = selectedTag === "all";
+  const isAllTag = selectedTag === ALL_TAG;
   const total = allTags.find(({ tag }) => selectedTag === tag)?.count || 0;
   const { startPage, endPage } = usePage(
     total,
@@ -51,9 +52,9 @@ const BlogList = ({ posts, allTags, selectedTag, page }: Props) => {
       <ul
         className={`w-full grid gap-5 grid-cols-1 md:grid-cols-2 items-stretch my-5`}
       >
-        {posts.map(({ frontMatter, fields: { slug } }) => (
-          <Link href={`/post/${slug}`} key={slug}>
-            <BlogItem {...frontMatter} />
+        {posts.map(({ slug, ...post }) => (
+          <Link href={slug} key={slug}>
+            <BlogItem {...post} slug={slug} />
           </Link>
         ))}
       </ul>

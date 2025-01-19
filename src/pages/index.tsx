@@ -1,18 +1,17 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
-
 import metadata from "config";
-import SpinningTags from "@components/home/SpinningTags";
-import PageSeo from "@components/common/PageSEO";
-import CATEGORY, { CATEGORY_KEYS } from "@constants/category";
-import { PostType } from "@models/post";
-import { SeriesAttributeTableType } from "@models/series";
-import { TagWithCountType } from "@models/tag";
-import { getPosts } from "@utils/getPosts";
-import getAllTags from "@utils/getAllTags";
-import getAllSeriesInfo from "@utils/getAllSeriesInfo";
+import { Post } from "contentlayer/generated";
+import { allSeriesInfo, seriesInfoTable } from "@utils/series";
+import { allTagsWithCount } from "@utils/tags";
+import { allBlogPosts } from "@utils/posts";
 import getBlurImg from "@utils/getBlurImg";
+import CATEGORY, { CATEGORY_KEYS } from "@constants/category";
+import { SeriesInfoType } from "@models/series";
+import { TagWithCountType } from "@models/tag";
 
+import PageSeo from "@components/common/PageSEO";
+import SpinningTags from "@components/home/SpinningTags";
 import RecentPosts from "@components/home/RecentPosts";
 import Series from "@components/home/Series";
 
@@ -21,9 +20,9 @@ export default function Home({
   tags,
   allSeriesInfo,
 }: {
-  recentPosts: PostType[];
+  recentPosts: Post[];
   tags: TagWithCountType[];
-  allSeriesInfo: SeriesAttributeTableType;
+  allSeriesInfo: SeriesInfoType[];
 }) {
   return (
     <>
@@ -46,7 +45,7 @@ export default function Home({
           ))}
         </nav>
         <SpinningTags tagList={tags} />
-        <RecentPosts posts={recentPosts} allSeriesInfo={allSeriesInfo} />
+        <RecentPosts posts={recentPosts} seriesInfoTable={seriesInfoTable} />
         <Series allSeriesInfo={allSeriesInfo} />
       </main>
     </>
@@ -54,30 +53,24 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const recentPosts = await getPosts(0, 5);
-  const allTags = await getAllTags();
-  const allSeriesInfo = await getAllSeriesInfo();
-
   const posts = await Promise.all(
-    recentPosts.map(async (post: PostType) => {
-      const blurThumbnail = await getBlurImg(post.frontMatter.thumbnail);
-      return { ...post, frontMatter: { ...post.frontMatter, blurThumbnail } };
+    allBlogPosts.slice(0, 5).map(async (post: Post) => {
+      const blurThumbnail = await getBlurImg(post.thumbnail);
+      return { ...post, blurThumbnail };
     })
   );
-
-  for (const allSeriesInfoKey in allSeriesInfo) {
-    const series = allSeriesInfo[allSeriesInfoKey];
-    const blurThumbnail = await getBlurImg(series.thumbnail);
-    if (blurThumbnail) {
-      allSeriesInfo[allSeriesInfoKey].blurThumbnail = blurThumbnail;
-    }
-  }
+  const seriesInfo = await Promise.all(
+    allSeriesInfo.map(async (s: SeriesInfoType) => {
+      const blurThumbnail = await getBlurImg(s.thumbnail);
+      return { ...s, blurThumbnail };
+    })
+  );
 
   return {
     props: {
       recentPosts: posts,
-      tags: allTags,
-      allSeriesInfo: allSeriesInfo,
+      tags: allTagsWithCount,
+      allSeriesInfo: seriesInfo,
     },
   };
 };

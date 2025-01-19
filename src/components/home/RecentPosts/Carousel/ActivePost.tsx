@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-
-import { PostType } from "@models/post";
+import { Post } from "contentlayer/generated";
 import DirectionType from "@models/direction";
-import { SeriesAttributeTableType } from "@models/series";
+import { SeriesInfoTable } from "@models/series";
 import TAG_INFO from "@constants/tag_info";
 import getDate from "@utils/getDate";
 import BlurImage from "@components/common/BlurImage";
@@ -31,10 +30,10 @@ const postVariants = {
   }),
 };
 
-interface Props extends PostType {
+interface Props extends Post {
   activeIndex: number;
   direction: DirectionType;
-  allSeriesInfo: SeriesAttributeTableType;
+  seriesInfoTable: SeriesInfoTable;
 }
 
 const Tag = ({ tag }: { tag: string }) => {
@@ -52,27 +51,26 @@ const Tag = ({ tag }: { tag: string }) => {
 const ActivePost = ({
   activeIndex,
   direction,
-  allSeriesInfo,
-  fields: { slug },
-  frontMatter: {
-    title,
-    tags,
-    date,
-    thumbnail,
-    description,
-    series,
-    blurThumbnail,
-  },
+  seriesInfoTable,
+  id,
+  title,
+  slug,
+  tags,
+  date,
+  thumbnail,
+  description,
+  series,
+  blurThumbnail,
 }: Props) => {
   const getSeriesTitle = (seriesKey?: string) =>
-    seriesKey && allSeriesInfo && allSeriesInfo[seriesKey]
-      ? allSeriesInfo[seriesKey].title
+    seriesKey && seriesInfoTable && seriesInfoTable[seriesKey]
+      ? seriesInfoTable[seriesKey].title
       : "";
 
   return (
     <div className={`relative max-md:h-[400px]`}>
       <AnimatePresence custom={direction}>
-        <Link href={`/post/${slug}`} aria-label={`link-${slug}`}>
+        <Link href={slug} aria-label={`link-${id}`}>
           <motion.div
             key={activeIndex}
             custom={direction}

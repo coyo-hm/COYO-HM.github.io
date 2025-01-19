@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { SeriesAttributeWithPostType } from "@models/series";
+import { SeriesInfoWithPost } from "@models/series";
 
-interface Props {
-  selectedPostKey: string;
-  seriesInfo: SeriesAttributeWithPostType;
+interface Props extends SeriesInfoWithPost {
+  selectedPostId: string;
 }
 
-const PostSeriesList = ({ selectedPostKey, seriesInfo }: Props) => {
+const PostSeriesList = ({ selectedPostId, id, title, posts }: Props) => {
   return (
     <section
       className={`bg-blue-500/20 p-5 rounded-lg
@@ -15,27 +14,27 @@ const PostSeriesList = ({ selectedPostKey, seriesInfo }: Props) => {
       <header
         className={`italic text-lg font-bold flex justify-between flex-wrap align-bottom`}
       >
-        {seriesInfo?.title}
+        {title}
         <Link
           className={"italic font-light text-sm hover:text-yellow-600"}
-          href={`/series/${seriesInfo.key}`}
+          href={`/series/${id}`}
         >
           같은 시리즈 다른 글 보기&nbsp;&gt;
         </Link>
       </header>
       <ul className={`flex flex-col gap-1.5 italic pt-3`}>
-        {seriesInfo.posts.map((post) =>
-          post.key === selectedPostKey ? (
-            <h3 key={post.key} className={`text-blue-500 cursor-default`}>
-              {post.title}
+        {posts.map((post) =>
+          post.id === selectedPostId ? (
+            <h3 key={post.id} className={`text-blue-500 cursor-default`}>
+              {post.no}. {post.title}
             </h3>
           ) : (
             <Link
-              href={`/post/${post.key}`}
-              key={post.key}
+              href={post.slug}
+              key={post.id}
               className={`hover:text-blue-700`}
             >
-              {post.title}
+              {post.no}. {post.title}
             </Link>
           )
         )}

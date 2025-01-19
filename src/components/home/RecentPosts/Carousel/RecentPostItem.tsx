@@ -1,18 +1,19 @@
 import Link from "next/link";
-import { PostAttributeType } from "@models/post";
+import { PostInfoType } from "@models/post";
 import getDate from "@utils/getDate";
 import TagBox from "@components/common/TagBox";
+import { Post } from "contentlayer/generated";
 
-interface Props extends Omit<PostAttributeType, "key"> {
+interface Props extends Omit<Post, "_raw"> {
   onMouseOver: () => void;
   onMouseOut: () => void;
   isActive?: boolean;
-  slug: string;
 }
 
 const RecentPostItem = ({
-  slug,
+  id,
   title,
+  slug,
   date,
   tags,
   onMouseOver,
@@ -22,9 +23,9 @@ const RecentPostItem = ({
   const { dateStr } = getDate(date);
   return (
     <Link
-      href={`/post/${slug}`}
-      key={`recent_post_${slug}`}
-      aria-label={`link-${slug}`}
+      href={slug}
+      key={`recent_post_${id}`}
+      aria-label={`link-${id}`}
       className={`recent-post-item`}
     >
       <li

@@ -1,18 +1,21 @@
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import NextImage from "@components/common/NextImage";
-import CustomMDX from "@components/blog/BlogPost/CustomMDX";
-import getDate from "@utils/getDate";
+import { Series } from "contentlayer/generated";
 import { CiCalendar } from "react-icons/ci";
+import NextImage from "@components/common/NextImage";
+import CustomMDX from "@components/common/CustomMDX";
+import getDate from "@utils/getDate";
 
-interface Props {
-  title: string;
+interface Props extends Series {
   startDate: string;
   endDate: string;
-  mdx: MDXRemoteSerializeResult;
-  thumbnail: string;
 }
 
-const Introduction = ({ title, startDate, endDate, thumbnail, mdx }: Props) => {
+const Introduction = ({
+  title,
+  startDate,
+  endDate,
+  thumbnail,
+  body,
+}: Props) => {
   const start = getDate(startDate);
   const end = getDate(endDate);
 
@@ -42,7 +45,7 @@ const Introduction = ({ title, startDate, endDate, thumbnail, mdx }: Props) => {
           />
         </div>
         <div className={`flex flex-col w-full`}>
-          <CustomMDX {...mdx} />
+          <CustomMDX body={body} />
         </div>
       </div>
     </div>

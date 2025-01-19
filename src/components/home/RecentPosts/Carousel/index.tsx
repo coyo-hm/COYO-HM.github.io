@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Post } from "contentlayer/generated";
 import DirectionType from "@models/direction";
-import { PostType } from "@models/post";
-import { SeriesAttributeTableType } from "@models/series";
+import { SeriesInfoTable } from "@models/series";
 
 import CarouselNavigation from "./CarouselNavigation";
 import ActivePost from "./ActivePost";
@@ -26,11 +26,11 @@ const dotsVariants = {
 };
 
 interface Props {
-  posts: PostType[];
-  allSeriesInfo: SeriesAttributeTableType;
+  posts: Post[];
+  seriesInfoTable: SeriesInfoTable;
 }
 
-const Carousel = ({ posts, allSeriesInfo }: Props) => {
+const Carousel = ({ posts, seriesInfoTable }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [direction, setDirection] = useState<DirectionType>("right");
@@ -98,7 +98,7 @@ const Carousel = ({ posts, allSeriesInfo }: Props) => {
         {...posts[currentIndex]}
         activeIndex={currentIndex}
         direction={direction}
-        allSeriesInfo={allSeriesInfo}
+        seriesInfoTable={seriesInfoTable}
       />
       <RecentPostList
         posts={posts}

@@ -1,31 +1,15 @@
-export interface PostAttributeType {
-  key: string;
-  path: string;
-  title: string;
-  published: boolean;
-  description: string;
+export interface PostInfoType {
+  id: string;
   date: string;
+  title: string;
   tags: string[];
   series?: string[];
+  description: string;
   thumbnail: string;
   blurThumbnail?: string;
+  published: boolean;
 }
 
-export interface PostType {
-  frontMatter: PostAttributeType;
-  body: string;
-  path: string;
-  fields: {
-    slug: string;
-  };
-}
-
-export type showType = "list" | "card";
-
-export type PostTableNode = Omit<PostAttributeType, "key">;
-
-export interface PostTitleType {
-  id: string;
-  title: string;
-  count: number;
+export interface PostInfoTable {
+  [key: string]: PostInfoType;
 }

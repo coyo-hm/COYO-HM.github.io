@@ -1,16 +1,16 @@
 import Link from "next/link";
 import CATEGORY from "@constants/category";
 import { BsArrowRight } from "react-icons/bs";
-import { PostType } from "@models/post";
-import { SeriesAttributeTableType } from "@models/series";
+import { SeriesInfoTable } from "@models/series";
 import Carousel from "@components/home/RecentPosts/Carousel";
+import { Post } from "contentlayer/generated";
 
 interface Props {
-  posts: PostType[];
-  allSeriesInfo: SeriesAttributeTableType;
+  posts: Post[];
+  seriesInfoTable: SeriesInfoTable;
 }
 
-const RecentPosts = ({ posts, allSeriesInfo }: Props) => {
+const RecentPosts = ({ posts, seriesInfoTable }: Props) => {
   return (
     <section>
       <Link
@@ -21,7 +21,7 @@ const RecentPosts = ({ posts, allSeriesInfo }: Props) => {
         Recent Posts
         <BsArrowRight />
       </Link>
-      <Carousel posts={posts} allSeriesInfo={allSeriesInfo} />
+      <Carousel posts={posts} seriesInfoTable={seriesInfoTable} />
     </section>
   );
 };

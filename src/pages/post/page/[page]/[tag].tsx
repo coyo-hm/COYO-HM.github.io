@@ -4,19 +4,14 @@ import BlogList from "@components/blog/BlogList";
 import metadata from "@config/index";
 import CATEGORY from "@constants/category";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
-import { PostType } from "@models/post";
-import { TagWithCountType } from "@models/tag";
-import { getPosts } from "@utils/getPosts";
+import { Post } from "contentlayer/generated";
+import { getPostList } from "@utils/posts";
+import { allTagsWithCount } from "@utils/tags";
+
 import getLastPage from "@utils/getLastPage";
-import getAllTags from "@utils/getAllTags";
 import getBlurImg from "@utils/getBlurImg";
 
-const Blog = (props: {
-  posts: PostType[];
-  allTags: TagWithCountType[];
-  selectedTag: string;
-  page: number;
-}) => {
+const Blog = (props: { posts: Post[]; selectedTag: string; page: number }) => {
   return (
     <>
       <PageSeo
@@ -24,7 +19,7 @@ const Blog = (props: {
         description={metadata.description}
         url={metadata.siteUrl + `blog`}
       />
-      <BlogList {...props} />
+      <BlogList {...props} allTags={allTagsWithCount} />
     </>
   );
 };
@@ -32,9 +27,8 @@ const Blog = (props: {
 export default Blog;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allTags = await getAllTags();
   const size = DEFAULT_NUMBER_OF_POST["list"];
-  const paths = allTags.reduce(
+  const paths = allTagsWithCount.reduce(
     (arr: { params: { page: string; tag: string } }[], { tag, count }) => [
       ...arr,
       ...new Array(getLastPage(count, size)).fill(0).map((_, p) => ({
@@ -51,20 +45,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { page, tag } = params as { page: string; tag: string };
-  const allTags = await getAllTags();
-  const postsInfo = await getPosts(+page, DEFAULT_NUMBER_OF_POST.list, tag);
+  const postsInfo = await getPostList(tag, +page);
 
   const posts = await Promise.all(
-    postsInfo.map(async (post: PostType) => {
-      const blurThumbnail = await getBlurImg(post.frontMatter.thumbnail);
-      return { ...post, frontMatter: { ...post.frontMatter, blurThumbnail } };
+    postsInfo.map(async (post: Post) => {
+      const blurThumbnail = await getBlurImg(post.thumbnail);
+      return { ...post, blurThumbnail };
     })
   );
 
   return {
     props: {
       posts,
-      allTags,
       selectedTag: tag,
       page: +page,
     },

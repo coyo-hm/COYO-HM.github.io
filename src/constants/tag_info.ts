@@ -1,3 +1,5 @@
+export const ALL_TAG = "all";
+
 export interface TagInfoNode {
   label: string;
   color?: string;
