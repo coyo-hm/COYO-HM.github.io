@@ -5,7 +5,7 @@ const frontMatter = require("front-matter");
 
 const POST_DIR_PATH = path.join(process.cwd(), "content/Post");
 const SERIES_DIR_PATH = path.join(process.cwd(), "content/series");
-const TABLE_DIR_PATH = path.join(process.cwd(), "public/static/table");
+const TABLE_DIR_PATH = path.join(process.cwd(), "public/static/tables");
 
 const isIntroPost = (postKey = "") => {
   const postDirectory = postKey.split("/");
@@ -57,17 +57,19 @@ const createTable = () => {
       const seriesKey = seriesPath?.replace(path.extname(filePath), "");
 
       seriesTablePublished[seriesKey] = {
+        id: seriesKey,
         ...attributes,
         startDate: "",
         endDate: "",
-        posts: [],
+        postIds: [],
       };
 
       seriesTableUnpublished[seriesKey] = {
+        id: seriesKey,
         ...attributes,
         startDate: "",
         endDate: "",
-        posts: [],
+        postIds: [],
       };
     }
 
@@ -82,6 +84,15 @@ const createTable = () => {
       const postTags = tags?.map((tag) =>
         tag.toLowerCase().replace(/\s|-/gi, "_")
       );
+
+      const postInfo = {
+        ...attributes,
+        // path: postPath,
+        id: postKey,
+        tags: postTags,
+        date: date ? new Date(date).toISOString().substring(0, 19) : "",
+        published,
+      };
 
       tagsTableUnpublished.all = [...tagsTableUnpublished.all, postKey];
       if (published) {
@@ -103,9 +114,12 @@ const createTable = () => {
                   seriesTableUnpublished[seriesKey].endDate,
                   date
                 ),
-                posts: [...seriesTableUnpublished[seriesKey].posts, postKey],
+                postIds: [
+                  ...seriesTableUnpublished[seriesKey].postIds,
+                  postKey,
+                ],
               }
-            : { posts: [postKey] };
+            : { postIds: [postKey] };
 
           if (published) {
             seriesTablePublished[seriesKey] = seriesTablePublished[seriesKey]
@@ -121,9 +135,12 @@ const createTable = () => {
                     seriesTablePublished[seriesKey].endDate,
                     date
                   ),
-                  posts: [...seriesTablePublished[seriesKey].posts, postKey],
+                  postIds: [
+                    ...seriesTableUnpublished[seriesKey].postIds,
+                    postKey,
+                  ],
                 }
-              : { posts: [postKey] };
+              : { postIds: [postKey] };
           }
         });
       }
@@ -139,13 +156,7 @@ const createTable = () => {
         }
       });
 
-      fileAttributes[postKey] = {
-        ...attributes,
-        path: postPath,
-        tags: postTags,
-        date: date ? new Date(date).toISOString().substring(0, 19) : "",
-        published,
-      };
+      fileAttributes[postKey] = postInfo;
     }
 
     fs.mkdirSync(TABLE_DIR_PATH, { recursive: true });
@@ -154,6 +165,7 @@ const createTable = () => {
       JSON.stringify(fileAttributes),
       "utf-8"
     );
+
     fs.writeFileSync(
       path.join(TABLE_DIR_PATH, `tagsTable.json`),
       JSON.stringify({
