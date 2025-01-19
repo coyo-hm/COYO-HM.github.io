@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import getHeaders from "@utils/getHeaders";
 import { usePathname } from "next/navigation";
 import useIntersectionObserver from "@hooks/useIntersectionObserver";
 import useScrollTitle from "@hooks/useScrollTitle";
+import getTitles from "@utils/getTitles";
 
 const TableOfContents = ({ content }: { content: string }) => {
-  const headers = getHeaders(content);
+  const titles = getTitles(content);
   const pathname = usePathname();
   const [activeHeaderId, setActiveHeaderId] = useState("");
 
@@ -44,15 +44,15 @@ const TableOfContents = ({ content }: { content: string }) => {
         id={"toc"}
         className={`w-full flex flex-col border-l-2 border-l-blue-100 dark:border-l-blue-900 my-4 rounded-none max-md:border-0 max-md:p-4 max-md:bg-neutral-200 max-md:rounded-xl dark:bg-neutral-700`}
       >
-        {headers.map(({ title, count, id }) => {
+        {titles.map(({ title, depth, id }) => {
           return (
             <Link
               key={title}
               href={`#${id}`}
               scroll={false}
-              className={`hover:text-blue-700 box-decoration-slice py-1.5 pr-1 text-xs ${
-                activeHeaderId === id ? "bg-blue-100 dark:bg-blue-900" : ""
-              } header-${count}`}
+              className={`header-${depth} ${
+                activeHeaderId === id && "bg-blue-100 dark:bg-blue-900"
+              }`}
               onClick={() => onClickEvent(id)}
             >
               {title}
