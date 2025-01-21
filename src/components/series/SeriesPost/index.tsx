@@ -3,9 +3,9 @@ import Link from "next/link";
 import Introduction from "@components/series/SeriesPost/Introduction";
 import SeriesPostList from "@components/series/SeriesPost/SeriesPostList";
 import { PostInfoType } from "@models/post";
-import { Series } from "contentlayer/generated";
+import { SeriesType } from "@models/series";
 
-interface Props extends Series {
+interface Props extends SeriesType {
   posts: PostInfoType[];
 }
 

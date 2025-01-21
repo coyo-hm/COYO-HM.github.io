@@ -1,5 +1,5 @@
-import { Post } from "contentlayer/generated";
 import { SeriesInfoWithPost } from "@models/series";
+import { PostType } from "@models/post";
 import CustomMDX from "@components/common/CustomMDX";
 import PostHeader from "./PostHeader";
 import TagsList from "./TagsList";
@@ -7,7 +7,7 @@ import TableOfContents from "./TableOfContents";
 import PostSeriesList from "./PostSeriesList";
 import Giscus from "./Giscus";
 
-export interface BlogPostProps extends Omit<Post, "series"> {
+export interface BlogPostProps extends Omit<PostType, "series"> {
   series: SeriesInfoWithPost[];
 }
 

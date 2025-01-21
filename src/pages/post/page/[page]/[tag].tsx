@@ -4,14 +4,17 @@ import BlogList from "@components/blog/BlogList";
 import metadata from "@config/index";
 import CATEGORY from "@constants/category";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
-import { Post } from "contentlayer/generated";
+import { PostType } from "@models/post";
 import { getPostList } from "@utils/posts";
 import { allTagsWithCount } from "@utils/tags";
-
 import getLastPage from "@utils/getLastPage";
 import getBlurImg from "@utils/getBlurImg";
 
-const Blog = (props: { posts: Post[]; selectedTag: string; page: number }) => {
+const Blog = (props: {
+  posts: PostType[];
+  selectedTag: string;
+  page: number;
+}) => {
   return (
     <>
       <PageSeo
@@ -48,7 +51,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postsInfo = await getPostList(tag, +page);
 
   const posts = await Promise.all(
-    postsInfo.map(async (post: Post) => {
+    postsInfo.map(async (post: PostType) => {
       const blurThumbnail = await getBlurImg(post.thumbnail);
       return { ...post, blurThumbnail };
     })

@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Post } from "contentlayer/generated";
 import DirectionType from "@models/direction";
 import { SeriesInfoTable } from "@models/series";
 
 import CarouselNavigation from "./CarouselNavigation";
 import ActivePost from "./ActivePost";
 import RecentPostList from "./RecentPostList";
+import { PostType } from "@models/post";
 
 const INTERVAL_TIME = 4000;
 
@@ -26,7 +26,7 @@ const dotsVariants = {
 };
 
 interface Props {
-  posts: Post[];
+  posts: PostType[];
   seriesInfoTable: SeriesInfoTable;
 }
 

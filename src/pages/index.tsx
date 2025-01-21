@@ -1,7 +1,6 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import metadata from "config";
-import { Post } from "contentlayer/generated";
 import { allSeriesInfo, seriesInfoTable } from "@utils/series";
 import { allTagsWithCount } from "@utils/tags";
 import { allBlogPosts } from "@utils/posts";
@@ -9,7 +8,7 @@ import getBlurImg from "@utils/getBlurImg";
 import CATEGORY, { CATEGORY_KEYS } from "@constants/category";
 import { SeriesInfoType } from "@models/series";
 import { TagWithCountType } from "@models/tag";
-
+import { PostType } from "@models/post";
 import PageSeo from "@components/common/PageSEO";
 import SpinningTags from "@components/home/SpinningTags";
 import RecentPosts from "@components/home/RecentPosts";
@@ -20,7 +19,7 @@ export default function Home({
   tags,
   allSeriesInfo,
 }: {
-  recentPosts: Post[];
+  recentPosts: PostType[];
   tags: TagWithCountType[];
   allSeriesInfo: SeriesInfoType[];
 }) {
@@ -54,7 +53,7 @@ export default function Home({
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await Promise.all(
-    allBlogPosts.slice(0, 5).map(async (post: Post) => {
+    allBlogPosts.slice(0, 5).map(async (post: PostType) => {
       const blurThumbnail = await getBlurImg(post.thumbnail);
       return { ...post, blurThumbnail };
     })

@@ -1,3 +1,7 @@
+import { Series } from "contentlayer/generated";
+
+export type SeriesType = Series;
+
 export interface SeriesInfoType {
   id: string;
   title: string;

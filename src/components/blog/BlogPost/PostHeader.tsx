@@ -1,11 +1,10 @@
-import { CiCalendar } from "react-icons/ci";
-
-import getDate from "@utils/getDate";
-import CATEGORY from "@constants/category";
 import Link from "next/link";
-import { Post } from "contentlayer/generated";
+import { CiCalendar } from "react-icons/ci";
+import CATEGORY from "@constants/category";
+import { PostType } from "@models/post";
+import getDate from "@utils/getDate";
 
-type PostHeaderPropsType = Pick<Post, "title" | "date">;
+type PostHeaderPropsType = Pick<PostType, "title" | "date">;
 
 const PostHeader = ({ title, date }: PostHeaderPropsType) => {
   const { dateStr } = getDate(date);

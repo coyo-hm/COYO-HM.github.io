@@ -1,10 +1,10 @@
-import { Series } from "contentlayer/generated";
 import { CiCalendar } from "react-icons/ci";
+import { SeriesType } from "@models/series";
+import getDate from "@utils/getDate";
 import NextImage from "@components/common/NextImage";
 import CustomMDX from "@components/common/CustomMDX";
-import getDate from "@utils/getDate";
 
-interface Props extends Series {
+interface Props extends SeriesType {
   startDate: string;
   endDate: string;
 }

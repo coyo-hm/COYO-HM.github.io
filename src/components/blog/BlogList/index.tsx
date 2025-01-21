@@ -1,16 +1,16 @@
 import Link from "next/link";
 import CATEGORY from "@constants/category";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
-import { Post } from "contentlayer/generated";
 import usePage from "@hooks/usePage";
 import { TagWithCountType } from "@models/tag";
+import { PostType } from "@models/post";
 import { ALL_TAG } from "@constants/tag_info";
 import Pagination from "@components/common/Pagination";
 import TagCapsule from "./TagCapsule";
 import BlogItem from "./BlogItem";
 
 interface Props {
-  posts: Post[];
+  posts: PostType[];
   allTags: TagWithCountType[];
   selectedTag: string;
   page: number;

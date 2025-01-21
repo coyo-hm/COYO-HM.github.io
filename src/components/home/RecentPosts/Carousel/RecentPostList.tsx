@@ -1,8 +1,8 @@
+import { PostType } from "@models/post";
 import RecentPostItem from "@components/home/RecentPosts/Carousel/RecentPostItem";
-import { Post } from "contentlayer/generated";
 
 interface Props {
-  posts: Post[];
+  posts: PostType[];
   onMouseOver: (idx: number) => void;
   onMouseOut: () => void;
   activeIndex: number;

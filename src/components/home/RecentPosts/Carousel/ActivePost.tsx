@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Post } from "contentlayer/generated";
 import DirectionType from "@models/direction";
 import { SeriesInfoTable } from "@models/series";
 import TAG_INFO from "@constants/tag_info";
 import getDate from "@utils/getDate";
 import BlurImage from "@components/common/BlurImage";
 import TagIcon from "@icons/tag.svg";
+import { PostType } from "@models/post";
 
 const postVariants = {
   initial: (direction: DirectionType) => ({
@@ -30,7 +30,7 @@ const postVariants = {
   }),
 };
 
-interface Props extends Post {
+interface Props extends PostType {
   activeIndex: number;
   direction: DirectionType;
   seriesInfoTable: SeriesInfoTable;

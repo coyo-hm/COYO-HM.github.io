@@ -1,9 +1,9 @@
 import Link from "next/link";
 import getDate from "@utils/getDate";
+import { PostType } from "@models/post";
 import TagBox from "@components/common/TagBox";
-import { Post } from "contentlayer/generated";
 
-interface Props extends Omit<Post, "_raw"> {
+interface Props extends Omit<PostType, "_raw"> {
   onMouseOver: () => void;
   onMouseOut: () => void;
   isActive?: boolean;

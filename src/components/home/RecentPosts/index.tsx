@@ -1,12 +1,12 @@
 import Link from "next/link";
-import CATEGORY from "@constants/category";
 import { BsArrowRight } from "react-icons/bs";
+import CATEGORY from "@constants/category";
 import { SeriesInfoTable } from "@models/series";
+import { PostType } from "@models/post";
 import Carousel from "@components/home/RecentPosts/Carousel";
-import { Post } from "contentlayer/generated";
 
 interface Props {
-  posts: Post[];
+  posts: PostType[];
   seriesInfoTable: SeriesInfoTable;
 }
 
