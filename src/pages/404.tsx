@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function NotFound({}) {
+export default function NotFound() {
   return (
     <div className={`text-center m-auto`}>
       <h1 className={`text-2xl`}>

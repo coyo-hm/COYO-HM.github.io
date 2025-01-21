@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import metadata from "@config/index";
-import { getSeriesInfoList, seriesInfoTable, totalSeries } from "@utils/series";
+import { getSeriesInfoList, totalSeries } from "@utils/series";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
 import CATEGORY from "@constants/category";
 import PageSeo from "@components/common/PageSEO";

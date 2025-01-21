@@ -12,9 +12,7 @@ const hoverVariants = {
   },
 };
 
-interface Props extends Post {}
-
-const BlogItem = ({ title, date, tags, thumbnail, blurThumbnail }: Props) => {
+const BlogItem = ({ title, date, tags, thumbnail, blurThumbnail }: Post) => {
   return (
     <motion.li
       className={`rounded-xl shadow-xl dark:shadow-black/50 bg-white dark:bg-neutral-800 h-full overflow-hidden flex flex-col`}

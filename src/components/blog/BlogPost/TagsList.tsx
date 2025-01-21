@@ -1,7 +1,7 @@
 import Link from "next/link";
 import TAG_INFO from "@constants/tag_info";
 
-const TagsList = ({ tags, slug: path }: { tags: string[]; slug: string }) => {
+const TagsList = ({ tags }: { tags: string[]; slug: string }) => {
   return (
     <div className={`pt-4 flex flex-row items-center flex-wrap`}>
       <h1 className={`text-lg mr-3 mb-2 italic font-semibold`}>#tags</h1>

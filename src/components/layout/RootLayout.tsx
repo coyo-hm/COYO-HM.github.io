@@ -3,9 +3,7 @@ import Header from "@components/layout/Header";
 import Footer from "@components/layout/Footer";
 import RoutingAnimation from "@components/layout/RoutingAnimation";
 
-interface Props extends PropsWithChildren {}
-
-const RootLayout = ({ children }: Props) => {
+const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <div
       className={`bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-100 w-full h-screen overflow-auto`}

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { PostInfoType } from "@models/post";
 import getDate from "@utils/getDate";
 import TagBox from "@components/common/TagBox";
 import { Post } from "contentlayer/generated";

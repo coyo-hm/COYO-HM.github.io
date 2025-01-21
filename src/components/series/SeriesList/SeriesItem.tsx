@@ -1,14 +1,13 @@
 import { SeriesInfoType } from "@models/series";
 import BlurImage from "@components/common/BlurImage";
 
-interface Props extends SeriesInfoType {}
 const SeriesItem = ({
   title,
   thumbnail,
   blurThumbnail,
   description,
   postIds,
-}: Props) => {
+}: SeriesInfoType) => {
   return (
     <li
       className={`grid grid-cols-[1fr_3fr_1fr] bg-[rgb(255,255,255,0.6)] dark:bg-[rgba(255,250,250,0.1)] rounded shadow-xl bg-translate overflow-hidden hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out hover:text-blue-700`}

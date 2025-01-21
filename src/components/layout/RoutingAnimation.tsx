@@ -2,9 +2,7 @@ import { PropsWithChildren, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-interface Props extends PropsWithChildren {}
-
-const RoutingAnimation = ({ children }: Props) => {
+const RoutingAnimation = ({ children }: PropsWithChildren) => {
   const pathname = usePathname();
 
   useEffect(() => {

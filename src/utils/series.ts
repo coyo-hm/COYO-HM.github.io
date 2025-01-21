@@ -59,7 +59,7 @@ export const getSeriesInfoWithRecentPosts = async (
     );
     const postIdx = posts.findIndex((post) => post.id === postId);
     let startIdx = Math.max(0, postIdx - 3);
-    let endIdx = Math.min(posts.length, startIdx + NUMBER_OF_POST);
+    const endIdx = Math.min(posts.length, startIdx + NUMBER_OF_POST);
     startIdx = Math.max(endIdx - NUMBER_OF_POST, 0);
 
     const selectedPosts = posts.slice(startIdx, endIdx).map((post, idx) => ({

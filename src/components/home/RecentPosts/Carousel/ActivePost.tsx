@@ -25,7 +25,7 @@ const postVariants = {
   hover: {
     scale: 1.02,
   },
-  exit: (direction: DirectionType) => ({
+  exit: () => ({
     opacity: 0,
   }),
 };

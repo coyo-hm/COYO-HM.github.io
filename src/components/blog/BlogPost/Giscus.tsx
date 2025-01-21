@@ -10,7 +10,7 @@ const NEXT_PUBLIC_CATEGORY_ID = process.env.NEXT_PUBLIC_CATEGORY_ID as string;
 const Giscus = () => {
   const ref = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const { resolvedTheme, theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   // https://github.com/utterance/utterances/issues/161
   useEffect(() => {

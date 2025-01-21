@@ -3,9 +3,7 @@ import { SeriesInfoType } from "@models/series";
 import FrontSide from "./FrontSide";
 import BackSide from "./BackSide";
 
-interface Props extends SeriesInfoType {}
-
-const SeriesFlippedCard = (props: Props) => {
+const SeriesFlippedCard = (props: SeriesInfoType) => {
   const { id } = props;
   return (
     <Link href={`/series/${id}`}>
