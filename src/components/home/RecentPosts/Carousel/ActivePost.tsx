@@ -52,7 +52,6 @@ const ActivePost = ({
   activeIndex,
   direction,
   seriesInfoTable,
-  id,
   title,
   slug,
   tags,
@@ -70,7 +69,7 @@ const ActivePost = ({
   return (
     <div className={`relative max-md:h-[400px]`}>
       <AnimatePresence custom={direction}>
-        <Link href={slug} aria-label={`link-${id}`}>
+        <Link href={slug} aria-label={`link-${slug}`}>
           <motion.div
             key={activeIndex}
             custom={direction}
