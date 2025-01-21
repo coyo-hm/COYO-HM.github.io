@@ -18,7 +18,15 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "import/no-unresolved": 1,
+    "import/no-unresolved": [
+      1,
+      {
+        "ignore": [
+          "contentlayer/generated",
+          "next-contentlayer/hooks"
+        ]
+      }
+    ],
     "@typescript-eslint/no-explicit-any": 1,
     "no-extra-boolean-cast": 0
   }

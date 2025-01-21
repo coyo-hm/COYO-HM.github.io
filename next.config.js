@@ -1,4 +1,5 @@
 /** @models {import('next').NextConfig} */
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const { withContentlayer } = require("next-contentlayer");
 
 module.exports = withContentlayer({
