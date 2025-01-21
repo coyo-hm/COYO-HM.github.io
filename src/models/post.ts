@@ -1,6 +1,6 @@
 import { Post } from "contentlayer/generated";
 
-export type PostType = Post;
+export type PostType = Post & { title: string };
 
 export interface PostInfoType {
   id: string;

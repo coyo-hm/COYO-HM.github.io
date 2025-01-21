@@ -30,12 +30,6 @@ const postVariants = {
   }),
 };
 
-interface Props extends PostType {
-  activeIndex: number;
-  direction: DirectionType;
-  seriesInfoTable: SeriesInfoTable;
-}
-
 const Tag = ({ tag }: { tag: string }) => {
   const tagInfo = TAG_INFO[tag];
   return (
@@ -47,6 +41,12 @@ const Tag = ({ tag }: { tag: string }) => {
     </div>
   );
 };
+
+interface Props extends PostType {
+  activeIndex: number;
+  direction: DirectionType;
+  seriesInfoTable: SeriesInfoTable;
+}
 
 const ActivePost = ({
   activeIndex,

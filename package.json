@@ -10,8 +10,8 @@
   },
   "homepage": "https://coyo-hm.github.io/",
   "scripts": {
-    "dev": "yarn table && next dev",
-    "build": "next build && next-sitemap",
+    "dev": "yarn table && contentlayer dev && next dev",
+    "build": "contentlayer build && next build && next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "deploy": "touch out/.nojekyll && git add -f out/ && git commit -m 'DEPLOY: deploy to gh-pages' && git subtree push --prefix out origin gh-pages",
