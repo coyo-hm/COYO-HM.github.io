@@ -1,3 +1,7 @@
+import { Post } from "contentlayer/generated";
+
+export type PostType = Post;
+
 export interface PostInfoType {
   id: string;
   date: string;

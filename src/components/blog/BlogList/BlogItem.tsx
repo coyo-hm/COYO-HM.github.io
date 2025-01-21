@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import BlurImage from "@components/common/BlurImage";
-import getDate from "@utils/getDate";
 import TagBox from "@components/common/TagBox";
-import { Post } from "contentlayer/generated";
+import { PostType } from "@models/post";
+import getDate from "@utils/getDate";
 
 const hoverVariants = {
   initial: { y: 0 },
@@ -12,7 +12,13 @@ const hoverVariants = {
   },
 };
 
-const BlogItem = ({ title, date, tags, thumbnail, blurThumbnail }: Post) => {
+const BlogItem = ({
+  title,
+  date,
+  tags,
+  thumbnail,
+  blurThumbnail,
+}: PostType) => {
   return (
     <motion.li
       className={`rounded-xl shadow-xl dark:shadow-black/50 bg-white dark:bg-neutral-800 h-full overflow-hidden flex flex-col`}
