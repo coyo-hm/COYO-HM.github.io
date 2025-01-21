@@ -49,7 +49,7 @@ const BlogItem = ({
           </span>
           <div className={`overflow-hidden relative grow`}>
             <div className={`flex flex-wrap items-center gap-1 absolute`}>
-              {tags.map((tag) => (
+              {tags.map((tag: string) => (
                 <TagBox tag={tag} key={tag} />
               ))}
             </div>
