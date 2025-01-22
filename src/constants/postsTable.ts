@@ -481,6 +481,19 @@ const PostsTable: PostInfoTable = {
       "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/6e3156e2-0623-410b-8b52-011e99b0811f",
     id: "blog-version-2",
   },
+  "blog-auto-deploy": {
+    date: "2025-01-22T00:00:00.000Z",
+    title:
+      "github-pages-deploy-action: NextJS 블로그 github action으로 자동 배포하기",
+    tags: ["github_actions", "nextjs", "github_pages_deploy_action@v4"],
+    series: ["blog"],
+    description:
+      "contentlayer 적용하고 JamesIves/github-pages-deploy-action@v4로 NextJS 블로그 github action으로 자동 배포하기",
+    thumbnail:
+      "https://github.com/user-attachments/assets/6b1b1726-7884-476b-a757-5d8c637edea5",
+    published: true,
+    id: "blog-auto-deploy",
+  },
   "axios-interceptor": {
     date: "2022-11-10T00:00:00.000Z",
     title: "Axios Intercepter 사용해보기",

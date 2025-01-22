@@ -1,4 +1,8 @@
 .markdown {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
     /*highlight*/
     .yellow {
         padding: 0 4px;
@@ -15,19 +19,19 @@
     }
 
     table {
-        @apply collapse border-neutral-200;
+        @apply border-2 border-neutral-200 border-collapse ;
     }
 
     th, td {
-        @apply px-4 py-2 border-neutral-200 text-left;
+        @apply px-4 py-2 border-2 border-neutral-200 text-left;
     }
 
     ul {
-        @apply pl-3 my-2 ml-4 list-disc;
+        @apply pl-3 ml-4 list-disc ;
     }
 
     ol {
-        @apply pl-3 my-2 ml-4 list-decimal;
+        @apply pl-3 ml-4 list-decimal ;
     }
 
     li {
@@ -35,15 +39,15 @@
     }
 
     p {
-        @apply font-normal py-2;
+        @apply font-normal text-base;
     }
 
     blockquote {
-        @apply border-l-4 pl-3 my-2 border-neutral-600;
+        @apply border-l-4 pl-3  border-neutral-600;
     }
 
     aside { /*callout*/
-        @apply bg-neutral-200 dark:bg-neutral-700 p-5 rounded;
+        @apply bg-neutral-200 dark:bg-neutral-700 p-5 rounded leading-6 flex-col flex gap-2;
 
         .title {
             font-weight: 500;
@@ -51,8 +55,12 @@
         }
     }
 
-    img + em { /*이미지 캡션*/
+    img {
+        width: 100%;
+        height: auto;
+    }
 
+    img + em { /*이미지 캡션*/
     }
 
     .heading-anchor {
@@ -72,7 +80,7 @@
     }
 
     figure[data-rehype-pretty-code-figure] {
-        @apply rounded-lg bg-black overflow-hidden relative;
+        @apply rounded-lg bg-black overflow-hidden relative ;
     }
 
 
@@ -80,9 +88,6 @@
         padding: 1rem 0;
     }
 
-    pre [data-line] {
-        padding: 0 1rem;
-    }
 
     figcaption[data-rehype-pretty-code-title] {
         @apply bg-neutral-700/60 pb-2 pt-3 px-4 text-neutral-200 text-sm;
@@ -115,6 +120,14 @@
         margin-right: 1.25rem;
         text-align: right;
         color: gray;
+    }
+
+    span[data-line]:where(pre *) {
+        padding: 0 1rem;
+    }
+
+    span[data-highlighted-line] {
+        @apply border-l-2 border-yellow-400 bg-yellow-50/20 pl-[calc(0.5rem-2px)] md:pl-[calc(1rem-2px)];
     }
 }
 

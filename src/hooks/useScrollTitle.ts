@@ -1,11 +1,14 @@
-import { useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import { POST_TITLE_SELECTOR } from "@src/constants";
 
-const useScrollTitle = () => {
+const useScrollTitle = (
+  setActiveHeaderId: Dispatch<SetStateAction<string>>
+) => {
   const scroll = (id: string, behavior: ScrollBehavior = "smooth") => {
     const targetElement = document.getElementById(id);
     if (!targetElement) return;
     targetElement.scrollIntoView({ behavior });
+    setActiveHeaderId(id);
   };
 
   useEffect(() => {

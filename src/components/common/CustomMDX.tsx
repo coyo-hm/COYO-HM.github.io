@@ -33,10 +33,7 @@ const mdxComponents: MDXComponents = {
   h1: (props) => {
     const id = getTitleId(props);
     return (
-      <h1
-        className={`font-extrabold text-2xl pt-8 pb-2 max-md:text-xl`}
-        id={id}
-      >
+      <h1 className={`font-extrabold text-2xl pt-8 max-md:text-xl`} id={id}>
         <HeadingAnchor id={id}>{props.children}</HeadingAnchor>
       </h1>
     );
@@ -44,7 +41,7 @@ const mdxComponents: MDXComponents = {
   h2: (props) => {
     const id = getTitleId(props);
     return (
-      <h2 className={`font-extrabold text-xl pt-6 pb-2 max-md:text-lg`} id={id}>
+      <h2 className={`font-extrabold text-xl pt-6 max-md:text-lg`} id={id}>
         <HeadingAnchor id={id}> {props.children}</HeadingAnchor>
       </h2>
     );
@@ -52,7 +49,7 @@ const mdxComponents: MDXComponents = {
   h3: (props) => {
     const id = getTitleId(props);
     return (
-      <h3 className={`font-extrabold pt-6 pb-2 text-lg max-md:text`} id={id}>
+      <h3 className={`font-extrabold pt-6 text-lg max-md:text`} id={id}>
         <HeadingAnchor id={id}> {props.children}</HeadingAnchor>
       </h3>
     );
@@ -60,7 +57,7 @@ const mdxComponents: MDXComponents = {
   h4: (props) => {
     const id = getTitleId(props);
     return (
-      <h4 className={`font-extrabold pt-6 pb-2 text-lg max-md:text`} id={id}>
+      <h4 className={`font-extrabold pt-6 text-lg max-md:text`} id={id}>
         <HeadingAnchor id={id}> {props.children}</HeadingAnchor>
       </h4>
     );
@@ -68,7 +65,7 @@ const mdxComponents: MDXComponents = {
   h5: (props) => {
     const id = getTitleId(props);
     return (
-      <h5 className={`font-extrabold pt-4 pb-2 text-lg max-md:text`} id={id}>
+      <h5 className={`font-extrabold pt-4 text-lg max-md:text`} id={id}>
         <HeadingAnchor id={id}> {props.children}</HeadingAnchor>
       </h5>
     );
@@ -76,7 +73,7 @@ const mdxComponents: MDXComponents = {
   h6: (props) => {
     const id = getTitleId(props);
     return (
-      <h6 className={`font-extrabold pt-4 pb-2 text-lg max-md:text`} id={id}>
+      <h6 className={`font-extrabold pt-4 text-lg max-md:text`} id={id}>
         <HeadingAnchor id={id}> {props.children}</HeadingAnchor>
       </h6>
     );
