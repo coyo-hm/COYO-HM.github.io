@@ -1,14 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import PageSeo from "@components/common/PageSEO";
-import BlogList from "@components/blog/BlogList";
 import metadata from "@config/index";
 import CATEGORY from "@constants/category";
-import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
+import CONSTANTS from "@constants/index";
+import { allTagsWithCount, getPostList } from "@constants/contents";
 import { PostType } from "@models/post";
-import { allTagsWithCount } from "@utils/tags";
 import getLastPage from "@utils/getLastPage";
 import getBlurImg from "@utils/getBlurImg";
-import { getPostList } from "@utils/posts";
+import PageSeo from "@components/common/PageSEO";
+import BlogList from "@components/blog/BlogList";
 
 const Blog = (props: {
   posts: PostType[];
@@ -30,7 +29,7 @@ const Blog = (props: {
 export default Blog;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const size = DEFAULT_NUMBER_OF_POST["list"];
+  const size = CONSTANTS.DEFAULT_NUMBER_OF_POST.SERIES;
   const paths = allTagsWithCount.reduce(
     (arr: { params: { page: string; tag: string } }[], { tag, count }) => [
       ...arr,

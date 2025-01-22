@@ -1,13 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import metadata from "@config/index";
-import { getSeriesInfoList, totalSeries } from "@utils/series";
-import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
 import CATEGORY from "@constants/category";
-import PageSeo from "@components/common/PageSEO";
-import SeriesList from "@components/series/SeriesList";
+import CONSTANTS from "@src/constants";
+import { getSeriesInfoList, totalSeries } from "@constants/contents";
 import { SeriesInfoType } from "@models/series";
 import getLastPage from "@utils/getLastPage";
 import getBlurImg from "@utils/getBlurImg";
+import PageSeo from "@components/common/PageSEO";
+import SeriesList from "@components/series/SeriesList";
 
 const Series = (props: { series: SeriesInfoType[]; page: number }) => {
   return (
@@ -25,8 +25,9 @@ const Series = (props: { series: SeriesInfoType[]; page: number }) => {
 export default Series;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const size = DEFAULT_NUMBER_OF_POST["series"];
-  const paths = new Array(getLastPage(totalSeries, size))
+  const paths = new Array(
+    getLastPage(totalSeries, CONSTANTS.DEFAULT_NUMBER_OF_POST.SERIES)
+  )
     .fill(0)
     .map((_, p) => ({
       params: { page: "" + p },

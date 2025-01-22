@@ -1,7 +1,7 @@
-import TAG_INFO from "@constants/tag_info";
+import TagInfo from "@constants/tagInfo";
 
 const TagBox = ({ tag }: { tag: string }) => {
-  const tagInfo = TAG_INFO[tag];
+  const tagInfo = TagInfo[tag];
   const bgColor = tagInfo?.bg || "bg-neutral-400";
 
   return (

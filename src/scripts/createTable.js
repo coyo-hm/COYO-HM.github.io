@@ -5,7 +5,8 @@ const frontMatter = require("front-matter");
 
 const POST_DIR_PATH = path.join(process.cwd(), "content/Post");
 const SERIES_DIR_PATH = path.join(process.cwd(), "content/series");
-const TABLE_DIR_PATH = path.join(process.cwd(), "public/static/tables");
+// const TABLE_DIR_PATH = path.join(process.cwd(), "public/static/tables");
+const TABLE_DIR_PATH = path.join(process.cwd(), "src/constants");
 
 const isIntroPost = (postKey = "") => {
   const postDirectory = postKey.split("/");
@@ -76,21 +77,21 @@ const createTable = () => {
     for (const filePath of files) {
       const file = fs.readFileSync(filePath, { encoding: "utf8" });
       const { attributes } = frontMatter(file);
-      const { date, tags, series, published } = attributes;
+      const { series, published } = attributes;
+      const date = new Date(attributes.date).toISOString();
+      const tags = attributes.tags?.map((tag) =>
+        tag.toLowerCase().replace(/\s|-/gi, "_")
+      );
 
       const postPath = filePath.replace(`${POST_DIR_PATH}/`, "");
       const postKey = postPath.replace(path.extname(filePath), "");
-
-      const postTags = tags?.map((tag) =>
-        tag.toLowerCase().replace(/\s|-/gi, "_")
-      );
 
       const postInfo = {
         ...attributes,
         // path: postPath,
         id: postKey,
-        tags: postTags,
-        date: date ? new Date(date).toISOString().substring(0, 19) : "",
+        tags,
+        date,
         published,
       };
 
@@ -136,7 +137,7 @@ const createTable = () => {
                     date
                   ),
                   postIds: [
-                    ...seriesTableUnpublished[seriesKey].postIds,
+                    ...seriesTablePublished[seriesKey].postIds,
                     postKey,
                   ],
                 }
@@ -145,7 +146,7 @@ const createTable = () => {
         });
       }
 
-      postTags.forEach((t) => {
+      tags.forEach((t) => {
         tagsTableUnpublished[t] = tagsTableUnpublished[t]
           ? [...tagsTableUnpublished[t], postKey]
           : [postKey];
@@ -161,25 +162,38 @@ const createTable = () => {
 
     fs.mkdirSync(TABLE_DIR_PATH, { recursive: true });
     fs.writeFileSync(
-      path.join(TABLE_DIR_PATH, `postsTable.json`),
-      JSON.stringify(fileAttributes),
+      path.join(TABLE_DIR_PATH, `postsTable.ts`),
+      'import { PostInfoTable } from "@models/post";\n' +
+        "\n" +
+        "const PostsTable: PostInfoTable = " +
+        JSON.stringify(fileAttributes) +
+        ";export default PostsTable;",
       "utf-8"
     );
 
     fs.writeFileSync(
-      path.join(TABLE_DIR_PATH, `tagsTable.json`),
-      JSON.stringify({
-        published: tagsTablePublished,
-        unpublished: tagsTableUnpublished,
-      }),
+      path.join(TABLE_DIR_PATH, `tagsTable.ts`),
+      "const TagsTable =" +
+        JSON.stringify({
+          published: tagsTablePublished,
+          unpublished: tagsTableUnpublished,
+        }) +
+        ";export default TagsTable;",
       "utf-8"
     );
     fs.writeFileSync(
-      path.join(TABLE_DIR_PATH, `seriesTable.json`),
-      JSON.stringify({
-        published: seriesTablePublished,
-        unpublished: seriesTableUnpublished,
-      }),
+      path.join(TABLE_DIR_PATH, `seriesTable.ts`),
+      'import { SeriesInfoTable } from "@models/series";\n' +
+        "\n" +
+        "const SeriesTable: {\n" +
+        "  published: SeriesInfoTable;\n" +
+        "  unpublished: SeriesInfoTable;\n" +
+        "} = " +
+        JSON.stringify({
+          published: seriesTablePublished,
+          unpublished: seriesTableUnpublished,
+        }) +
+        ";export default SeriesTable;",
       "utf-8"
     );
   } catch (e) {

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import DirectionType from "@models/direction";
 import { SeriesInfoTable } from "@models/series";
-import TAG_INFO from "@constants/tag_info";
+import TagInfo from "@constants/tagInfo";
 import getDate from "@utils/getDate";
 import BlurImage from "@components/common/BlurImage";
 import TagIcon from "@icons/tag.svg";
@@ -31,7 +31,7 @@ const postVariants = {
 };
 
 const Tag = ({ tag }: { tag: string }) => {
-  const tagInfo = TAG_INFO[tag];
+  const tagInfo = TagInfo[tag];
   return (
     <div
       key={tag}

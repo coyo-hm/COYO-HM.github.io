@@ -31,6 +31,7 @@ const RAW_RUNTIME_STATE =
           ["@commitlint/config-conventional", "npm:19.6.0"],\
           ["@mdx-js/loader", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:3.1.0"],\
           ["@mdx-js/react", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:3.1.0"],\
+          ["@next/env", "npm:15.1.5"],\
           ["@next/mdx", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:15.1.5"],\
           ["@next/third-parties", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:14.2.23"],\
           ["@semantic-release/commit-analyzer", "virtual:af2cf72dc39691c71459e458026c5c34e70102662ec3c672a81f04a0a9438b409df99e648748671b2c936443bb341cff406321d9d48103b5d85fdc26705c8a42#npm:11.1.0"],\
@@ -3637,6 +3638,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/@next-env-npm-14.2.23-42ad9ee9bd-10c0.zip/node_modules/@next/env/",\
         "packageDependencies": [\
           ["@next/env", "npm:14.2.23"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:15.1.5", {\
+        "packageLocation": "../../.yarn/berry/cache/@next-env-npm-15.1.5-00336f7c3d-10c0.zip/node_modules/@next/env/",\
+        "packageDependencies": [\
+          ["@next/env", "npm:15.1.5"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7563,6 +7571,7 @@ const RAW_RUNTIME_STATE =
           ["@commitlint/config-conventional", "npm:19.6.0"],\
           ["@mdx-js/loader", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:3.1.0"],\
           ["@mdx-js/react", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:3.1.0"],\
+          ["@next/env", "npm:15.1.5"],\
           ["@next/mdx", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:15.1.5"],\
           ["@next/third-parties", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:14.2.23"],\
           ["@semantic-release/commit-analyzer", "virtual:af2cf72dc39691c71459e458026c5c34e70102662ec3c672a81f04a0a9438b409df99e648748671b2c936443bb341cff406321d9d48103b5d85fdc26705c8a42#npm:11.1.0"],\
@@ -13812,7 +13821,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["next-sitemap", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:3.1.55"],\
           ["@corex/deepmerge", "npm:4.0.43"],\
-          ["@next/env", null],\
+          ["@next/env", "npm:15.1.5"],\
           ["@types/next", null],\
           ["@types/next__env", null],\
           ["minimist", "npm:1.2.8"],\

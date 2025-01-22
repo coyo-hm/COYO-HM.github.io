@@ -335,5 +335,4 @@ const TagsTable = {
     vanilla_extract: ["assignInlineVars-to-client-from-server"],
   },
 };
-
 export default TagsTable;

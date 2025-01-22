@@ -1,4 +1,4 @@
-export const ALL_TAG = "all";
+export const TAG_ALL = "all";
 
 export interface TagInfoNode {
   label: string;
@@ -10,7 +10,7 @@ export interface TagInfoNode {
   border?: string;
 }
 
-const TAG_INFO: {
+const TagInfo: {
   [key: string]: TagInfoNode;
 } = {
   algorithm: { label: "Algorithm" },
@@ -152,4 +152,4 @@ const TAG_INFO: {
     border: "border-[#99425b]",
   },
 };
-export default TAG_INFO;
+export default TagInfo;

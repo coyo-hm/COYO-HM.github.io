@@ -25,7 +25,6 @@
       "@fonts/*": ["public/static/fonts/*"],
       "@icons/*": ["public/static/icons/*"],
       "@images/*": ["public/static/images/*"],
-      "@tables/*": ["public/static/tables/*"],
       "@hooks/*": ["src/hooks/*"],
       "@libs/*": ["src/libs/*"],
       "@styles/*": ["src/styles/*"],

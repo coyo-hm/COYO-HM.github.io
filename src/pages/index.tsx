@@ -1,11 +1,14 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import metadata from "config";
-import { allSeriesInfo, seriesInfoTable } from "@utils/series";
-import { allTagsWithCount } from "@utils/tags";
-import { allBlogPosts } from "@utils/posts";
-import getBlurImg from "@utils/getBlurImg";
 import CATEGORY, { CATEGORY_KEYS } from "@constants/category";
+import {
+  allBlogPosts,
+  allSeriesInfo,
+  allTagsWithCount,
+  seriesInfoTable,
+} from "@constants/contents";
+import getBlurImg from "@utils/getBlurImg";
 import { SeriesInfoType } from "@models/series";
 import { TagWithCountType } from "@models/tag";
 import { PostType } from "@models/post";

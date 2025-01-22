@@ -2,8 +2,8 @@ import Link from "next/link";
 import usePage from "@hooks/usePage";
 import { SeriesInfoType } from "@models/series";
 import CATEGORY from "@constants/category";
-import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
-import { totalSeries } from "@utils/series";
+import CONSTANTS from "@constants/index";
+import { totalSeries } from "@constants/contents";
 import Pagination from "@components/common/Pagination";
 import SeriesItem from "@components/series/SeriesList/SeriesItem";
 
@@ -16,7 +16,7 @@ const SeriesList = ({ page, series }: Props) => {
   const { startPage, endPage } = usePage(
     totalSeries,
     page,
-    DEFAULT_NUMBER_OF_POST.series
+    CONSTANTS.DEFAULT_NUMBER_OF_POST.SERIES
   );
   return (
     <main>

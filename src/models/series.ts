@@ -19,5 +19,5 @@ export interface SeriesInfoTable {
 }
 
 export interface SeriesInfoWithPost extends SeriesInfoType {
-  posts: { id: string; slug: string; title: string; no: number }[];
+  posts: { id: string; slug: string; title: string; no: string }[];
 }

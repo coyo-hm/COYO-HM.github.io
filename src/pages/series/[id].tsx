@@ -1,12 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { allSeries } from "contentlayer/generated";
 import metadata from "@config/index";
-import { getSortedPostsInSeries, seriesInfoTable } from "@utils/series";
+import { allSeries } from "contentlayer/generated";
+import { getSortedPostsInSeries, seriesInfoTable } from "@constants/contents";
 import getBlurImg from "@utils/getBlurImg";
 import sortPostByDate from "@utils/sortPostByDate";
 import { PostInfoType } from "@models/post";
 import { SeriesType } from "@models/series";
-
 import PageSeo from "@components/common/PageSEO";
 import SeriesPost from "@components/series/SeriesPost";
 
