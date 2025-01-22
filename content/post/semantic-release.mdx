@@ -79,6 +79,7 @@ npm i -D @semantic-release/commit-analyzer @semantic-release/release-notes-gener
 - `@semantic-release/commit-analyzer` : commit message를 분석하는 플러그인입니다.
 - `@semantic-release/release-notes-generator` : 분석된 commit message를 가지고 지정한 규칙에 따라 릴리즈 노트를 생성하는 플러그인입니다.
 - `@semantic-release/npm` : `package.json`에 version을 수정하고 npm 에 배포를 담당하는 플러그인입니다.
+  만약 `npm`이 아닌 `yarn`을 사용하신다면, [`semantic-release-yarn`](https://github.com/hongaar/semantic-release-yarn) 을 npm 대신에 사용해주시면 됩니다.
 - `@semantic-release/github` : github release를 생성하고 해당 release를 `pull request`하는 플러그인입니다.
 
 위의 필수 플러그인 외에도 `semantic-release` 에는 정말 많은 플러그인들이 존재합니다. 그리고 다양한 플러그인에 대한 설명이 [공식 플러그인 문서](https://semantic-release.gitbook.io/semantic-release/extending/plugins-list)에 상당히 잘 정리되어있으니 해당 문서를 반드시 참조해주시길 바랍니다.
@@ -114,7 +115,8 @@ npm install @semantic-release/git @semantic-release/changelog -D
 		"@semantic-release/commit-analyzer",
 		"@semantic-release/release-notes-generator",
 		"@semantic-release/changelog",
-		"@semantic-release/npm",
+		"@semantic-release/npm",  // npm 사용 시
+		"semantic-release-yarn",  // yarn 사용 시
 		"@semantic-release/github",
 		"@semantic-release/git"
 	]
@@ -209,12 +211,13 @@ npm install @semantic-release/git @semantic-release/changelog -D
         "changelogTitle": "# CHANGELOG"
       }
     ],
-    ["@semantic-release/npm",
+    ["@semantic-release/npm", // npm 사용 시
       {
         "pkgRoot": ".",
         "tarball": "dist"
       }
     ],
+    "semantic-release-yarn", // yarn 사용 시
     "@semantic-release/github",
     [
       "@semantic-release/git",
@@ -312,8 +315,8 @@ jobs:
           node-version: "lts/*"
           registry-url: "https://npm.pkg.github.com/"
           scope: '@github-id'
-      - run: npm ci
-      - run: npm run build
+      - run: npm ci # yarn install
+      - run: npm run build # yarn build
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
