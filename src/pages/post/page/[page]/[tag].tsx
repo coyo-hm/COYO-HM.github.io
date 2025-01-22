@@ -5,10 +5,10 @@ import metadata from "@config/index";
 import CATEGORY from "@constants/category";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
 import { PostType } from "@models/post";
-import { getPostList } from "@utils/posts";
 import { allTagsWithCount } from "@utils/tags";
 import getLastPage from "@utils/getLastPage";
 import getBlurImg from "@utils/getBlurImg";
+import { getPostList } from "@utils/posts";
 
 const Blog = (props: {
   posts: PostType[];
@@ -40,15 +40,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
     ],
     []
   );
+
   return {
     paths,
     fallback: false,
   };
 };
 
+type ParamsType = { page: string; tag: string };
+
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { page, tag } = params as { page: string; tag: string };
-  const postsInfo = await getPostList(tag, +page);
+  const { page, tag } = params as ParamsType;
+  const postsInfo = getPostList(tag, +page);
 
   const posts = await Promise.all(
     postsInfo.map(async (post: PostType) => {

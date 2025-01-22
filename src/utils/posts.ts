@@ -1,12 +1,13 @@
+import { allPosts } from "contentlayer/generated";
 import { isDev } from "@libs/core";
-import { Post, allPosts } from "contentlayer/generated";
+import { PostType } from "@models/post";
 import { allTags } from "@utils/tags";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
 import { ALL_TAG } from "@constants/tag_info";
 
-export const allBlogPosts: Post[] = allPosts
+export const allBlogPosts: PostType[] = allPosts
   .reduce(
-    (arr: Post[], post) =>
+    (arr: PostType[], post) =>
       post.slug.startsWith("/post") && (isDev || post.published)
         ? [...arr, post]
         : arr,
@@ -16,18 +17,36 @@ export const allBlogPosts: Post[] = allPosts
 
 export const allBlogPostIds = allBlogPosts.map((post) => post.id);
 
-export const getPostList = async (
+// export const getPostList = async (
+//   tag: string = ALL_TAG,
+//   page: number = 0,
+//   size: number = DEFAULT_NUMBER_OF_POST.list
+// ): Promise<Array<PostType>> => {
+//   const selectedTagPostIds = allTags[tag];
+//
+//   return (
+//     tag === ALL_TAG
+//       ? allBlogPosts
+//       : allBlogPosts.reduce(
+//           (arr: PostType[], post) =>
+//             selectedTagPostIds.includes(post.id) ? [...arr, post] : arr,
+//           []
+//         )
+//   ).slice(page * size, (page + 1) * size);
+// };
+
+export const getPostList = (
   tag: string = ALL_TAG,
   page: number = 0,
   size: number = DEFAULT_NUMBER_OF_POST.list
-): Promise<Array<Post>> => {
+): Array<PostType> => {
   const selectedTagPostIds = allTags[tag];
 
   return (
     tag === ALL_TAG
       ? allBlogPosts
       : allBlogPosts.reduce(
-          (arr: Post[], post) =>
+          (arr: PostType[], post) =>
             selectedTagPostIds.includes(post.id) ? [...arr, post] : arr,
           []
         )

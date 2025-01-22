@@ -10,7 +10,7 @@
   },
   "homepage": "https://coyo-hm.github.io/",
   "scripts": {
-    "dev": "yarn table && contentlayer dev && next dev",
+    "dev": "yarn table && next dev",
     "build": "contentlayer build && next build && next-sitemap",
     "start": "next start",
     "lint": "next lint",

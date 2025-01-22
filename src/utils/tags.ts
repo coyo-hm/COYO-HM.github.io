@@ -1,6 +1,7 @@
-import TagsTable from "@tables/tagsTable.json";
 import { isDev } from "@libs/core";
+// import TagsTable from "@tables/tagsTable.json";
 import { TagTable, TagWithCountType } from "@models/tag";
+import TagsTable from "@constants/TagsTable";
 
 export const allTags: TagTable = isDev
   ? TagsTable.unpublished

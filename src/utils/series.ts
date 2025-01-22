@@ -1,10 +1,12 @@
-import SeriesTable from "@tables/seriesTable.json";
-import PostsTable from "@tables/postsTable.json";
+// import SeriesTable from "@tables/seriesTable.json";
+// import PostsTable from "@tables/postsTable.json";
 import { isDev } from "@libs/core";
 import { SeriesInfoTable, SeriesInfoWithPost } from "@models/series";
 import { PostInfoTable, PostInfoType } from "@models/post";
 import sortPostByDate from "@utils/sortPostByDate";
 import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
+import SeriesTable from "@constants/SeriesTable";
+import PostsTable from "@constants/PostsTable";
 
 const NUMBER_OF_POST = 5;
 
