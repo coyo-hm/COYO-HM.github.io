@@ -11,7 +11,7 @@ const TableOfContents = ({ content }: { content: string }) => {
   const pathname = usePathname();
   const [activeHeaderId, setActiveHeaderId] = useState("");
 
-  const onClickEvent = useScrollTitle();
+  const onClickEvent = useScrollTitle(setActiveHeaderId);
 
   const onClickUp = () => {
     // window.scrollTo({ top: 0, behavior: "smooth" });
@@ -53,7 +53,10 @@ const TableOfContents = ({ content }: { content: string }) => {
               className={`header-${depth} ${
                 activeHeaderId === id && "bg-blue-100 dark:bg-blue-900"
               }`}
-              onClick={() => onClickEvent(id)}
+              onClick={() => {
+                onClickEvent(id);
+                // setActiveHeaderId(id);
+              }}
             >
               {title}
             </Link>
