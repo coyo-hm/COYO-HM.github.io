@@ -39,7 +39,7 @@ pnpm i next-intl
 
 # 폴더 구조 설정
 
-```
+```plaintext
 ├── messages
 │   ├── en.json (1)
 │   └── ...
@@ -80,7 +80,7 @@ pnpm i next-intl
 
 ## next config 설정
 
-```jsx
+```jsx title="next.config.[mjs/js]" showLineNumbers
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
@@ -95,7 +95,7 @@ export default withNextIntl(nextConfig);
 
 24년 9월 10일에 추가된 내용입니다.
 
-```jsx
+```jsx title="routing.ts" showLineNumbers
   import {defineRouting} from 'next-intl/routing';
 
   export const routing = defineRouting({
@@ -106,7 +106,7 @@ export default withNextIntl(nextConfig);
 
 ## `middleware.ts` 생성
 
-```tsx
+```tsx title="middleware.ts" showLineNumbers
 import createMiddleware from 'next-intl/middleware';
 import {routing} from "@i18n/routing";
 
@@ -131,7 +131,7 @@ export const config = {
 
 `i18n.ts` 에서 `i18n/request.ts`으로 변경되었습니다.
 
-```tsx
+```tsx title="i18n/request.ts" showLineNumbers
 import {notFound} from 'next/navigation';
 import {getRequestConfig} from 'next-intl/server';
 import {routing} from "@i18n/routing";

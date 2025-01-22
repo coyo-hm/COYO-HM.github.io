@@ -21,8 +21,8 @@ jobs:
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
       - name: Install and Build
         run: |
-          npm ci
-          npm run build
+          yarn install
+          yarn build
           touch ./out/.nojekyll
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

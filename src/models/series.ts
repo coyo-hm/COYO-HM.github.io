@@ -1,7 +1,9 @@
-import { PostAttributeType } from "@models/post";
+import { Series } from "contentlayer/generated";
 
-export interface SeriesAttributeType {
-  key: string;
+export type SeriesType = Series;
+
+export interface SeriesInfoType {
+  id: string;
   title: string;
   tags: string[];
   description: string;
@@ -9,27 +11,13 @@ export interface SeriesAttributeType {
   blurThumbnail?: string;
   startDate: string;
   endDate: string;
-  posts: string[];
+  postIds: string[];
 }
 
-export interface SeriesAttributeWithPostType
-  extends Omit<SeriesAttributeType, "posts"> {
-  posts: PostAttributeType[];
+export interface SeriesInfoTable {
+  [key: string]: SeriesInfoType;
 }
 
-export interface SeriesPostType {
-  key: string;
-  posts: PostAttributeType[];
-  frontMatter: SeriesTableNode;
-  body: string;
-  path: string;
-  fields: {
-    slug: string;
-  };
-}
-
-export type SeriesTableNode = Omit<SeriesAttributeType, "key">;
-
-export interface SeriesAttributeTableType {
-  [key: string]: SeriesTableNode;
+export interface SeriesInfoWithPost extends SeriesInfoType {
+  posts: { id: string; slug: string; title: string; no: string }[];
 }

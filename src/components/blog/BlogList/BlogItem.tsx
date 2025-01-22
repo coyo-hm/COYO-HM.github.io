@@ -1,8 +1,8 @@
-import { PostAttributeType } from "@models/post";
 import { motion } from "framer-motion";
 import BlurImage from "@components/common/BlurImage";
-import getDate from "@utils/getDate";
 import TagBox from "@components/common/TagBox";
+import { PostType } from "@models/post";
+import getDate from "@utils/getDate";
 
 const hoverVariants = {
   initial: { y: 0 },
@@ -12,9 +12,13 @@ const hoverVariants = {
   },
 };
 
-interface Props extends PostAttributeType {}
-
-const BlogItem = ({ title, date, tags, thumbnail, blurThumbnail }: Props) => {
+const BlogItem = ({
+  title,
+  date,
+  tags,
+  thumbnail,
+  blurThumbnail,
+}: PostType) => {
   return (
     <motion.li
       className={`rounded-xl shadow-xl dark:shadow-black/50 bg-white dark:bg-neutral-800 h-full overflow-hidden flex flex-col`}
@@ -45,7 +49,7 @@ const BlogItem = ({ title, date, tags, thumbnail, blurThumbnail }: Props) => {
           </span>
           <div className={`overflow-hidden relative grow`}>
             <div className={`flex flex-wrap items-center gap-1 absolute`}>
-              {tags.map((tag) => (
+              {tags.map((tag: string) => (
                 <TagBox tag={tag} key={tag} />
               ))}
             </div>

@@ -1,18 +1,15 @@
 import Link from "next/link";
 import CATEGORY from "@constants/category";
-import { SeriesAttributeTableType } from "@models/series";
+import { SeriesInfoType } from "@models/series";
 import useHorizontalScroll from "@hooks/useHorizontalScroll";
 import SeriesFlippedCard from "./SeriesFlippedCard";
 
 interface Props {
-  allSeriesInfo: SeriesAttributeTableType;
+  allSeriesInfo: SeriesInfoType[];
 }
 
 const Series = ({ allSeriesInfo }: Props) => {
   const seriesRef = useHorizontalScroll();
-  const sortedSeriesKey = Object.keys(allSeriesInfo).sort(
-    (a, b) => allSeriesInfo[b].posts.length - allSeriesInfo[a].posts.length
-  );
 
   return (
     <section>
@@ -27,12 +24,8 @@ const Series = ({ allSeriesInfo }: Props) => {
         className={"flex gap-5 overflow-auto pb-10 px-5 scrollbar-hide"}
         ref={seriesRef}
       >
-        {sortedSeriesKey.map((seriesKey) => (
-          <SeriesFlippedCard
-            id={seriesKey}
-            key={seriesKey}
-            {...allSeriesInfo[seriesKey]}
-          />
+        {allSeriesInfo.map(({ id, ...rest }) => (
+          <SeriesFlippedCard key={id} id={id} {...rest} />
         ))}
       </div>
     </section>

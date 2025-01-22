@@ -1,9 +1,9 @@
 import * as process from "process";
 
 const dev = "development";
-const beta = "test";
-const production = "production";
-const local = "local";
+// const beta = "test";
+// const production = "production";
+// const local = "local";
 
 const LEVEL = process.env.NODE_ENV ? String(process.env.NODE_ENV) : dev;
 

@@ -1,7 +1,10 @@
 /** @models {import('next').NextConfig} */
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const { withContentlayer } = require("next-contentlayer");
 
-module.exports = {
+module.exports = withContentlayer({
   reactStrictMode: true,
+  swcMinify: true,
   images: {
     domains: ["https://coyo-hm.github.io/"],
     loader: "imgix",
@@ -20,4 +23,4 @@ module.exports = {
     return config;
   },
   output: "export",
-};
+});

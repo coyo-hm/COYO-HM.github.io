@@ -1,14 +1,13 @@
-import { SeriesAttributeType } from "@models/series";
+import { SeriesInfoType } from "@models/series";
 import BlurImage from "@components/common/BlurImage";
 
-interface Props extends SeriesAttributeType {}
 const SeriesItem = ({
   title,
   thumbnail,
   blurThumbnail,
   description,
-  posts,
-}: Props) => {
+  postIds,
+}: SeriesInfoType) => {
   return (
     <li
       className={`grid grid-cols-[1fr_3fr_1fr] bg-[rgb(255,255,255,0.6)] dark:bg-[rgba(255,250,250,0.1)] rounded shadow-xl bg-translate overflow-hidden hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out hover:text-blue-700`}
@@ -28,7 +27,7 @@ const SeriesItem = ({
       </section>
       <section className={`italic flex flex-col justify-center items-center`}>
         <h3 className={`text-sm text-neutral-400 font-light`}>포스트 수</h3>
-        <div className={`font-extrabold text-6xl`}>{posts.length}</div>
+        <div className={`font-extrabold text-6xl`}>{postIds.length}</div>
       </section>
     </li>
   );

@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-
-import { PostType } from "@models/post";
 import DirectionType from "@models/direction";
-import { SeriesAttributeTableType } from "@models/series";
-import TAG_INFO from "@constants/tag_info";
+import { SeriesInfoTable } from "@models/series";
+import TagInfo from "@constants/tagInfo";
 import getDate from "@utils/getDate";
 import BlurImage from "@components/common/BlurImage";
 import TagIcon from "@icons/tag.svg";
+import { PostType } from "@models/post";
 
 const postVariants = {
   initial: (direction: DirectionType) => ({
@@ -26,19 +25,13 @@ const postVariants = {
   hover: {
     scale: 1.02,
   },
-  exit: (direction: DirectionType) => ({
+  exit: () => ({
     opacity: 0,
   }),
 };
 
-interface Props extends PostType {
-  activeIndex: number;
-  direction: DirectionType;
-  allSeriesInfo: SeriesAttributeTableType;
-}
-
 const Tag = ({ tag }: { tag: string }) => {
-  const tagInfo = TAG_INFO[tag];
+  const tagInfo = TagInfo[tag];
   return (
     <div
       key={tag}
@@ -49,30 +42,34 @@ const Tag = ({ tag }: { tag: string }) => {
   );
 };
 
+interface Props extends PostType {
+  activeIndex: number;
+  direction: DirectionType;
+  seriesInfoTable: SeriesInfoTable;
+}
+
 const ActivePost = ({
   activeIndex,
   direction,
-  allSeriesInfo,
-  fields: { slug },
-  frontMatter: {
-    title,
-    tags,
-    date,
-    thumbnail,
-    description,
-    series,
-    blurThumbnail,
-  },
+  seriesInfoTable,
+  title,
+  slug,
+  tags,
+  date,
+  thumbnail,
+  description,
+  series,
+  blurThumbnail,
 }: Props) => {
   const getSeriesTitle = (seriesKey?: string) =>
-    seriesKey && allSeriesInfo && allSeriesInfo[seriesKey]
-      ? allSeriesInfo[seriesKey].title
+    seriesKey && seriesInfoTable && seriesInfoTable[seriesKey]
+      ? seriesInfoTable[seriesKey].title
       : "";
 
   return (
     <div className={`relative max-md:h-[400px]`}>
       <AnimatePresence custom={direction}>
-        <Link href={`/post/${slug}`} aria-label={`link-${slug}`}>
+        <Link href={slug} aria-label={`link-${slug}`}>
           <motion.div
             key={activeIndex}
             custom={direction}

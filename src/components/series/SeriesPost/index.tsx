@@ -1,17 +1,12 @@
 import CATEGORY from "@constants/category";
 import Link from "next/link";
 import Introduction from "@components/series/SeriesPost/Introduction";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import SeriesPostList from "@components/series/SeriesPost/SeriesPostList";
-import { PostAttributeType } from "@models/post";
+import { PostInfoType } from "@models/post";
+import { SeriesType } from "@models/series";
 
-interface Props {
-  title: string;
-  startDate: string;
-  endDate: string;
-  thumbnail: string;
-  mdx: MDXRemoteSerializeResult;
-  posts: PostAttributeType[];
+interface Props extends SeriesType {
+  posts: PostInfoType[];
 }
 
 const SeriesPost = ({ title, posts, ...rest }: Props) => {
@@ -23,7 +18,12 @@ const SeriesPost = ({ title, posts, ...rest }: Props) => {
         </Link>
         <h1 className={`post-series-title`}>{title}</h1>
       </header>
-      <Introduction {...rest} title={title} />
+      <Introduction
+        {...rest}
+        title={title}
+        startDate={posts[0].date}
+        endDate={posts[posts.length - 1].date}
+      />
       <SeriesPostList posts={posts} />
     </main>
   );

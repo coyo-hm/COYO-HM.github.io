@@ -1,6 +1,5 @@
 .markdown {
     /*highlight*/
-
     .yellow {
         padding: 0 4px;
         border-radius: 3px;
@@ -15,13 +14,36 @@
         box-decoration-break: clone;
     }
 
-    /*callout*/
+    table {
+        @apply collapse border-neutral-200;
+    }
 
-    aside {
-        background-color: rgb(235, 235, 235);
-        padding: 20px 20px;
-        border-radius: 5px;
-        margin: 15px 0;
+    th, td {
+        @apply px-4 py-2 border-neutral-200 text-left;
+    }
+
+    ul {
+        @apply pl-3 my-2 ml-4 list-disc;
+    }
+
+    ol {
+        @apply pl-3 my-2 ml-4 list-decimal;
+    }
+
+    li {
+        @apply font-normal py-1 leading-6;
+    }
+
+    p {
+        @apply font-normal py-2;
+    }
+
+    blockquote {
+        @apply border-l-4 pl-3 my-2 border-neutral-600;
+    }
+
+    aside { /*callout*/
+        @apply bg-neutral-200 dark:bg-neutral-700 p-5 rounded;
 
         .title {
             font-weight: 500;
@@ -29,97 +51,72 @@
         }
     }
 
+    img + em { /*이미지 캡션*/
 
-    /*code*/
+    }
+
+    .heading-anchor {
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+            @apply border-b-blue-700 border-b-2;
+
+            &::after {
+                @apply text-blue-700 left-[-1rem] top-0;
+                position: absolute;
+                display: block;
+                content: "#";
+            }
+        }
+    }
+
+    figure[data-rehype-pretty-code-figure] {
+        @apply rounded-lg bg-black overflow-hidden relative;
+    }
+
+
+    pre {
+        padding: 1rem 0;
+    }
+
+    pre [data-line] {
+        padding: 0 1rem;
+    }
+
+    figcaption[data-rehype-pretty-code-title] {
+        @apply bg-neutral-700/60 pb-2 pt-3 px-4 text-neutral-200 text-sm;
+        font-family: "JetBrains Mono";
+    }
 
     code {
         font-family: "JetBrains Mono";
-        background: rgba(229, 229, 229, 0.8);
-        border-radius: 4px;
-        padding: 0 7px;
+
+        &:not(:where(pre *)) { /*inline code*/
+            @apply rounded px-1.5 bg-neutral-200/80 dark:bg-neutral-600/80 dark:text-neutral-200;
+        }
+
+        &:where(pre *) {
+            @apply text-sm grid leading-6;
+            color: hsl(220, 14%, 71%);
+            /*width: 100%;*/
+        }
     }
 
-    /*.dark code[class*="language-"] {*/
-    /*  background: none;*/
-    /*}*/
-
-    pre[class*="language-"] > code {
-        background: none;
-        /*tab-size: 2;*/
-        /*font-family: "JetBrains Mono";*/
-        /*overflow: auto;*/
+    code[data-line-numbers] {
+        counter-reset: line;
     }
 
-    pre[class*="language-"]::-webkit-scrollbar {
-        height: 10px;
-    }
-
-    pre[class*="language-"]::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background-color: rgb(162, 162, 202);
-    }
-
-    pre[class*="language-"]::-webkit-scrollbar-track {
-        background-color: transparent;
-    }
-
-    /**
-     * Inspired by gatsby remark prism - https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/
-     * 1. Make the element just wide enough to fit its content.
-     * 2. Always fill the visible space in .code-highlight.
-     */
-
-    .code-highlight {
-        float: left; /* 1 */
-        min-width: 100%; /* 2 */
-        padding: 15px 5px;
-    }
-
-    .code-line {
-        font-family: "JetBrains Mono";
-        display: block;
-        padding-left: 16px;
-        padding-right: 16px;
-        margin-left: -16px;
-        margin-right: -16px;
-        border-left-width: 4px;
-        border-left-color: rgba(31, 41, 55, 0); /* Set code block color */
-    }
-
-    .code-line.inserted {
-        background-color: rgba(16, 185, 129, 0.2); /* Set inserted line (+) color */
-    }
-
-    .code-line.deleted {
-        background-color: rgba(239, 68, 68, 0.2); /* Set deleted line (-) color */
-    }
-
-    .highlight-line {
-        margin-left: -16px;
-        margin-right: -16px;
-        background-color: rgba(55, 65, 81, 0.5); /* Set highlight bg color */
-        border-left-width: 4px;
-        border-left-color: rgb(59, 130, 246); /* Set highlight accent border color */
-    }
-
-    .line-number::before {
+    code[data-line-numbers] > span[data-line]::before {
+        counter-increment: line;
+        content: counter(line);
         display: inline-block;
-        width: 1rem;
+        width: 0.75rem;
+        margin-right: 1.25rem;
         text-align: right;
-        margin-right: 16px;
-        margin-left: -8px;
-        color: rgb(156, 163, 175); /* Line number color */
-        content: attr(line);
+        color: gray;
     }
 }
 
-.dark .markdown {
-    aside {
-        background-color: rgb(64, 64, 64);
-    }
 
-    code {
-        background: rgb(82, 82, 82, 0.8);
-        color: rgb(229, 229, 229);
-    }
-}
+

@@ -1,6 +1,6 @@
 import { ForwardedRef, forwardRef } from "react";
 import Link from "next/link";
-import TAG_INFO from "@constants/tag_info";
+import TagInfo from "@constants/tagInfo";
 import { TagWithCountType } from "@models/tag";
 
 const SpinningTags = forwardRef(function TagList(
@@ -23,11 +23,11 @@ const SpinningTags = forwardRef(function TagList(
               href={`/post/page/0/${tag}`}
               key={`${tag}_${idx}`}
               className={`whitespace-nowrap mr-2 hover:font-bold  ${
-                TAG_INFO[tag]?.text_hover || "hover:text-blue-700"
+                TagInfo[tag]?.text_hover || "hover:text-blue-700"
               }  hover:-translate-y-0.5 hover:duration-300 hover:ease-in-out`}
               aria-label={`link-${tag}`}
             >
-              {TAG_INFO[tag]?.label || tag}
+              {TagInfo[tag]?.label || tag}
             </Link>
           ))}
         </div>

@@ -39,7 +39,7 @@ const Pagination = ({
   const getPath = (page: number) =>
     tag ? `/${category}/page/${page}/${tag}` : `/${category}/page/${page}`;
   return (
-    <div className={`flex justify-center items-center my-5 text-lg`}>
+    <div className={`flex justify-center items-center mt-5 text-lg`}>
       <Link
         href={getPath(currPage - 1)}
         className={`hover:text-blue-700 `}

@@ -1,4 +1,4 @@
-const getDate = (dateStr: string) => {
+const getDate = (dateStr = "") => {
   const newDate = new Date(dateStr);
   const year = newDate.getFullYear();
   const month = newDate.getMonth() + 1;

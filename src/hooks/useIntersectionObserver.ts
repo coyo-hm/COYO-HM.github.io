@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
-import { POST_TITLE_SELECTOR } from "@constants/post";
+import { POST_TITLE_SELECTOR } from "@src/constants";
 
 const useIntersectionObserver = (
   pathname: string | null,

@@ -1,9 +1,10 @@
 import Link from "next/link";
+import CONSTANTS from "@constants/index";
 import CATEGORY from "@constants/category";
-import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
+import { TAG_ALL } from "@constants/tagInfo";
 import usePage from "@hooks/usePage";
-import { PostType } from "@models/post";
 import { TagWithCountType } from "@models/tag";
+import { PostType } from "@models/post";
 import Pagination from "@components/common/Pagination";
 import TagCapsule from "./TagCapsule";
 import BlogItem from "./BlogItem";
@@ -16,12 +17,12 @@ interface Props {
 }
 
 const BlogList = ({ posts, allTags, selectedTag, page }: Props) => {
-  const isAllTag = selectedTag === "all";
+  const isAllTag = selectedTag === TAG_ALL;
   const total = allTags.find(({ tag }) => selectedTag === tag)?.count || 0;
   const { startPage, endPage } = usePage(
     total,
     page,
-    DEFAULT_NUMBER_OF_POST.list
+    CONSTANTS.DEFAULT_NUMBER_OF_POST.LIST
   );
   return (
     <main>
@@ -51,9 +52,9 @@ const BlogList = ({ posts, allTags, selectedTag, page }: Props) => {
       <ul
         className={`w-full grid gap-5 grid-cols-1 md:grid-cols-2 items-stretch my-5`}
       >
-        {posts.map(({ frontMatter, fields: { slug } }) => (
-          <Link href={`/post/${slug}`} key={slug}>
-            <BlogItem {...frontMatter} />
+        {posts.map(({ slug, ...post }) => (
+          <Link href={slug} key={slug}>
+            <BlogItem {...post} slug={slug} />
           </Link>
         ))}
       </ul>

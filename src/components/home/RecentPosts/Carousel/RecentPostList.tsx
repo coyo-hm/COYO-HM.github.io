@@ -19,9 +19,9 @@ const RecentPostList = ({
       id={"home-recent-post-list"}
       className={`overflow-hidden flex flex-col gap-1.5 rounded-xl shadow-xl dark:shadow-black/50 bg-white dark:bg-neutral-800`}
     >
-      {posts.map(({ frontMatter, fields: { slug } }, idx) => (
+      {posts.map(({ slug, ...rest }, idx) => (
         <RecentPostItem
-          {...frontMatter}
+          {...rest}
           key={slug}
           slug={slug}
           isActive={idx === activeIndex}

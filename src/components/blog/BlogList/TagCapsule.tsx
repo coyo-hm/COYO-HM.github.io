@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { categoryType } from "@constants/category";
-import TAG_INFO from "@constants/tag_info";
+import TagInfo from "@constants/tagInfo";
 import { TagWithCountType } from "@models/tag";
 
 interface Props extends TagWithCountType {
@@ -15,7 +15,7 @@ const floatedVariants = {
 };
 
 const TagCapsule = ({ selectedTag, category, tag, count }: Props) => {
-  const tagInfo = TAG_INFO[tag];
+  const tagInfo = TagInfo[tag];
   return (
     <Link href={`/${category}/page/0/${tag}`} key={tag}>
       <motion.div

@@ -1,32 +1,32 @@
 import Link from "next/link";
 import usePage from "@hooks/usePage";
-import { SeriesAttributeType } from "@models/series";
+import { SeriesInfoType } from "@models/series";
 import CATEGORY from "@constants/category";
-import { DEFAULT_NUMBER_OF_POST } from "@constants/post";
+import CONSTANTS from "@constants/index";
+import { totalSeries } from "@constants/contents";
 import Pagination from "@components/common/Pagination";
 import SeriesItem from "@components/series/SeriesList/SeriesItem";
 
 interface Props {
   page: number;
-  seriesTotal: number;
-  series: SeriesAttributeType[];
+  series: SeriesInfoType[];
 }
 
-const SeriesList = ({ page, seriesTotal, series }: Props) => {
+const SeriesList = ({ page, series }: Props) => {
   const { startPage, endPage } = usePage(
-    seriesTotal,
+    totalSeries,
     page,
-    DEFAULT_NUMBER_OF_POST.series
+    CONSTANTS.DEFAULT_NUMBER_OF_POST.SERIES
   );
   return (
     <main>
       <h1 className={`page-title mt-14 mb-24`}>{CATEGORY.series.label}</h1>
       <div className={`text-neutral-500 text-sm text-right`}>
-        시리즈 수: {seriesTotal}
+        시리즈 수: {totalSeries}
       </div>
       <ul className={`w-full mt-5 flex flex-col flex-nowrap gap-3`}>
         {series.map((info) => (
-          <Link href={`/series/${info.key}`} key={info.key}>
+          <Link href={`/series/${info.id}`} key={info.id}>
             <SeriesItem {...info} />
           </Link>
         ))}
