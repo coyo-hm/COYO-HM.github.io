@@ -481,6 +481,18 @@ const PostsTable: PostInfoTable = {
       "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/6e3156e2-0623-410b-8b52-011e99b0811f",
     id: "blog-version-2",
   },
+  "blog-ver-2-8": {
+    date: "2025-01-31T00:00:00.000Z",
+    title: "소소한 블로그 업데이트(rehype-pretty-code, 포스트 목차)",
+    tags: ["nextjs", "rehype_pretty_code"],
+    series: ["blog"],
+    description:
+      "블로그 ver.2.8 코드 블럭 rehype-pretty-code 적용 및 clipboard API 사용, 포스트 toc 업데이트 정리",
+    thumbnail:
+      "https://github.com/user-attachments/assets/8ab6506b-3112-48ef-9ae3-89b8496c252f",
+    published: true,
+    id: "blog-ver-2-8",
+  },
   "blog-auto-deploy": {
     date: "2025-01-22T00:00:00.000Z",
     title:
