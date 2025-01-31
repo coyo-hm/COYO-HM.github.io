@@ -80,7 +80,7 @@ const SeriesTable: {
       thumbnail:
         "https://github.com/user-attachments/assets/47567c59-4a8c-47dc-ba42-8c97e8ec9595",
       startDate: "2022-10-23T00:00:00.000Z",
-      endDate: "2025-01-22T00:00:00.000Z",
+      endDate: "2025-01-31T00:00:00.000Z",
       postIds: [
         "utterances-to-giscus",
         "nextjs-large-page-data-warning",
@@ -88,6 +88,7 @@ const SeriesTable: {
         "nextjs-gtag",
         "gatsby-add-table-of-contents-in-gatsby",
         "blog-version-2",
+        "blog-ver-2-8",
         "blog-auto-deploy",
       ],
     },
@@ -168,7 +169,7 @@ const SeriesTable: {
       thumbnail:
         "https://github.com/user-attachments/assets/47567c59-4a8c-47dc-ba42-8c97e8ec9595",
       startDate: "2022-10-23T00:00:00.000Z",
-      endDate: "2025-01-22T00:00:00.000Z",
+      endDate: "2025-01-31T00:00:00.000Z",
       postIds: [
         "utterances-to-giscus",
         "nextjs-large-page-data-warning",
@@ -176,6 +177,7 @@ const SeriesTable: {
         "nextjs-gtag",
         "gatsby-add-table-of-contents-in-gatsby",
         "blog-version-2",
+        "blog-ver-2-8",
         "blog-auto-deploy",
       ],
     },
