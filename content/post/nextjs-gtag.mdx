@@ -47,7 +47,58 @@ google analytics는 google에서 제공하는 내 서비스의 트래픽이나 �
 
 <img src={"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/76d16c87-c908-4b3a-b06a-9fb757b0978a"} alt={"google-analytics-3"} style={{margin:"5px auto 20px"}}/>
 
-## 프로젝트에 gtag 적용하기
+## 프로젝트에 gtag 적용하기(third-party 사용)
+
+<span className={`text-neutral-500`}>2025년 2월 2일 추가된 내용입니다.</span>
+
+`nextjs`에서 `@next/third-parties`를 통해서 지원해주고 있습니다, 해당 내용은 [공식 문서](https://nextjs.org/docs/app/building-your-application/optimizing/third-party-libraries#google-third-parties) 참고해주시기 바랍니다.
+
+이전보다 훨씬 간단해졌습니다.
+
+
+### 설치
+
+```bash
+npm install @next/third-parties@latest
+yarn add @next/third-parties@latest
+```
+
+### 프로젝트에 적용
+
+```tsx title="_app.tsx" {2, 11, 12}
+import type { AppProps } from "next/app";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import * as gtag from "@src/libs/gtag";
+...
+
+const App = ({ Component, pageProps }: AppProps) => {
+  return (
+    <>
+      {!isDev && (
+        <>
+          <GoogleTagManager gtmId={gtag.GA_TRACKING_ID} />
+          <GoogleAnalytics gaId={gtag.GA_TRACKING_ID} />
+        </>
+      )}
+      <ThemeProvider>
+        ...
+      </ThemeProvider>
+    </>
+  );
+};
+
+export default App;
+```
+
+참고로 저는 `libs/gtag.ts` 파일에 `GA_ID` 상수를 생성해주었습니다.
+
+`_app,tsx`에 이런식으로 적용하면 완료입니다.
+
+
+
+
+
+## 프로젝트에 gtag 적용하기(업데이트 이전)
 
 gtag를 설치줍니다. 만약 `typescript` 가 아닌 `javascript` + `nextjs` 인 경우에는 [nextjs의 공식 예시](https://github.com/vercel/next.js/tree/canary/examples/with-google-analytics)를 따라주시면 됩니다.
 
