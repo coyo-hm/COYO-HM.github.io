@@ -1,0 +1,114 @@
+---
+date: "2025-02-12"
+title: "Vite + React + Typescript 환경에서 gh-pages 배포하기"
+tags: ["react", "vite", "gh-pages", "typescript"]
+series: []
+description: "vite + react + typescript 환경에서 gh-pages 배포하기"
+thumbnail: "https://github.com/user-attachments/assets/278bf562-2a89-4f99-b0d5-80ca9f739fdb"
+published: true
+---
+# gh-pages로 배포하기
+
+## `gh-pages` 설치
+``` bash
+npm i gh-pages
+yarn add gh-pages
+```
+
+## `vite` 설정
+```ts title="vite.config.ts"
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+// https://vite.dev/config/
+export default defineConfig({
+  base: "/tool-kit-box/",
+  plugins: [react(), ...],
+});
+```
+
+## `package.json` 설정
+```json title="package.json"
+{
+  "homepage": "https://[사용자 이름].github.io/[레포지토리 이름]/",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "deploy": "npm run build && gh-pages -d dist", // cra react인 경우에는 gh-pages -d build
+    ...
+  },
+...
+}
+```
+
+## 배포하기
+```bash
+npm run build
+git add dist -f # dist:build 내용 강제로 git add 진행
+git commit -m "commit message"
+git subtree push --prefix dist origin gh-pages # gh-pages 에 dist 내용 업로드
+```
+
+## github repository 설정
+
+Github Repository > Settings > Pages 에 들어가면 다음과 같이 `Branch`에 `gh-pages`가 설정된 것을 볼 수 있습니다.
+
+
+![githubrepo-settins-pages](https://github.com/user-attachments/assets/424c6b64-8a42-42b4-a7b4-25fdffecf635)
+
+
+# 자동 배포 설정하기
+
+저는 `JamesIves/github-pages-deploy-action@v4`를 이용했습니다. `gitlab`을 이용하는 방법도 있습니다.
+
+```yaml title="deploy.yml"
+name: Deploy
+on:
+  pull_request: # 원하는 경우 선택
+    branches: ["main"] # 원하는 branch 선택
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }} # repo 권한 github token 주시면 됩니다.
+          branch: gh-pages # 배포할 branch 설정하면 됩니다. gh-pages가 defaylt 값으로 설정되어 있습니다.
+          folder: dist # build dir 반드시 지정해야 합니다.
+          clean: true
+```
+
+# 그 외 소소한 경로 설정
+
+## `react-router-dom` 설정
+`vite` 에서 `base`를 설정하더라도 `router`에서는 따로 `basename`을 수정해줘야 합니다.
+```typescript jsx title="Router.tsx" {6}
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+...
+
+function Router() {
+  return (
+    <BrowserRouter basename={"/tool-kit-box"}>
+      <Routes>
+        ...
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default Router;
+```
