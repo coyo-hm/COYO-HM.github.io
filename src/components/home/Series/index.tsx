@@ -1,6 +1,6 @@
 import Link from "next/link";
 import CATEGORY from "@constants/category";
-import { SeriesInfoType } from "@models/series";
+import { SeriesInfoType } from "@src/types/series";
 import useHorizontalScroll from "@hooks/useHorizontalScroll";
 import SeriesFlippedCard from "./SeriesFlippedCard";
 

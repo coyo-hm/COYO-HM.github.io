@@ -1,4 +1,4 @@
-import { PostType } from "@models/post";
+import { PostType } from "@src/types/post";
 import RecentPostItem from "@components/home/RecentPosts/Carousel/RecentPostItem";
 
 interface Props {

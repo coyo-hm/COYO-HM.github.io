@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import DirectionType from "@models/direction";
-import { SeriesInfoTable } from "@models/series";
+import DirectionType from "@src/types/direction";
+import { SeriesInfoTable } from "@src/types/series";
 
 import CarouselNavigation from "./CarouselNavigation";
 import ActivePost from "./ActivePost";
 import RecentPostList from "./RecentPostList";
-import { PostType } from "@models/post";
+import { PostType } from "@src/types/post";
 
 const INTERVAL_TIME = 4000;
 

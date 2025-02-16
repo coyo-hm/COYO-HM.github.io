@@ -1,6 +1,6 @@
 import Link from "next/link";
 import getDate from "@utils/getDate";
-import { PostType } from "@models/post";
+import { PostType } from "@src/types/post";
 import TagBox from "@components/common/TagBox";
 
 interface Props extends Omit<PostType, "_raw"> {

@@ -1,4 +1,4 @@
-import { SeriesInfoType } from "@models/series";
+import { SeriesInfoType } from "@src/types/series";
 
 const BackSide = ({ postIds = [], description }: SeriesInfoType) => (
   <div

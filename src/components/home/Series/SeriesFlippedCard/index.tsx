@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SeriesInfoType } from "@models/series";
+import { SeriesInfoType } from "@src/types/series";
 import FrontSide from "./FrontSide";
 import BackSide from "./BackSide";
 

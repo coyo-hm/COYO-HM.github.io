@@ -1,5 +1,5 @@
-import { SeriesInfoWithPost } from "@models/series";
-import { PostType } from "@models/post";
+import { SeriesInfoWithPost } from "@src/types/series";
+import { PostType } from "@src/types/post";
 import CustomMDX from "@components/common/CustomMDX";
 import PostHeader from "./PostHeader";
 import TagsList from "./TagsList";

@@ -3,7 +3,7 @@ import metadata from "@config/index";
 import CATEGORY from "@constants/category";
 import CONSTANTS from "@constants/index";
 import { allTagsWithCount, getPostList } from "@constants/contents";
-import { PostType } from "@models/post";
+import { PostType } from "@src/types/post";
 import getLastPage from "@utils/getLastPage";
 import getBlurImg from "@utils/getBlurImg";
 import PageSeo from "@components/common/PageSEO";

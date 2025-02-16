@@ -1,4 +1,4 @@
-import { SeriesInfoType } from "@models/series";
+import { SeriesInfoType } from "@src/types/series";
 import BlurImage from "@components/common/BlurImage";
 
 const FrontSide = ({ thumbnail, title, blurThumbnail }: SeriesInfoType) => (
