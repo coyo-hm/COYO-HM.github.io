@@ -152,6 +152,7 @@ const TagsTable = {
     plaiceholder: ["nextjs-image-blur"],
     gtag: ["nextjs-gtag"],
     google_analytics: ["nextjs-gtag"],
+    "@next/third_parties": ["nextjs-gtag"],
     lodash: ["lodash"],
     husky: ["husky-precommit-unauthorized", "husky-git-hook", "husky-commlint"],
     git: [
@@ -336,6 +337,7 @@ const TagsTable = {
     plaiceholder: ["nextjs-image-blur"],
     gtag: ["nextjs-gtag"],
     google_analytics: ["nextjs-gtag"],
+    "@next/third_parties": ["nextjs-gtag"],
     lodash: ["lodash"],
     husky: ["husky-precommit-unauthorized", "husky-git-hook", "husky-commlint"],
     git: [

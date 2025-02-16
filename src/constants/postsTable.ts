@@ -270,7 +270,13 @@ const PostsTable: PostInfoTable = {
   "nextjs-gtag": {
     date: "2023-12-17T00:00:00.000Z",
     title: "NextJS에 GA4(Google Analytics) 적용하기",
-    tags: ["nextjs", "gtag", "google_analytics", "typescript"],
+    tags: [
+      "nextjs",
+      "gtag",
+      "google_analytics",
+      "typescript",
+      "@next/third_parties",
+    ],
     series: ["blog"],
     description: "gtag에 알아보고 NextJS 블로그에 gtag4를 적용해보기",
     published: true,
