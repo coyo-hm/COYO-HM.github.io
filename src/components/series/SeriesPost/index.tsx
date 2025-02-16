@@ -2,8 +2,8 @@ import CATEGORY from "@constants/category";
 import Link from "next/link";
 import Introduction from "@components/series/SeriesPost/Introduction";
 import SeriesPostList from "@components/series/SeriesPost/SeriesPostList";
-import { PostInfoType } from "@models/post";
-import { SeriesType } from "@models/series";
+import { PostInfoType } from "@src/types/post";
+import { SeriesType } from "@src/types/series";
 
 interface Props extends SeriesType {
   posts: PostInfoType[];

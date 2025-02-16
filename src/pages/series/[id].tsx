@@ -4,8 +4,8 @@ import { allSeries } from "contentlayer/generated";
 import { getSortedPostsInSeries, seriesInfoTable } from "@constants/contents";
 import getBlurImg from "@utils/getBlurImg";
 import sortPostByDate from "@utils/sortPostByDate";
-import { PostInfoType } from "@models/post";
-import { SeriesType } from "@models/series";
+import { PostInfoType } from "@src/types/post";
+import { SeriesType } from "@src/types/series";
 import PageSeo from "@components/common/PageSEO";
 import SeriesPost from "@components/series/SeriesPost";
 

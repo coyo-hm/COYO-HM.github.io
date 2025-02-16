@@ -9,9 +9,9 @@ import {
   seriesInfoTable,
 } from "@constants/contents";
 import getBlurImg from "@utils/getBlurImg";
-import { SeriesInfoType } from "@models/series";
-import { TagWithCountType } from "@models/tag";
-import { PostType } from "@models/post";
+import { SeriesInfoType } from "@src/types/series";
+import { TagWithCountType } from "@src/types/tag";
+import { PostType } from "@src/types/post";
 import PageSeo from "@components/common/PageSEO";
 import SpinningTags from "@components/home/SpinningTags";
 import RecentPosts from "@components/home/RecentPosts";

@@ -9,9 +9,10 @@ import "@styles/globals.css";
 import "@styles/markdown.css";
 import type { AppProps } from "next/app";
 import * as gtag from "@src/libs/gtag";
-import ThemeProvider from "@providers/ThemeProvider";
 import { isDev } from "@src/libs/core";
+import Providers from "@src/providers";
 import RootLayout from "@components/layout/RootLayout";
+import ToastMessageList from "@components/common/ToastMessage/ToastMessageList";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -22,11 +23,12 @@ const App = ({ Component, pageProps }: AppProps) => {
           <GoogleAnalytics gaId={gtag.GA_TRACKING_ID} />
         </>
       )}
-      <ThemeProvider>
+      <Providers>
         <RootLayout>
           <Component {...pageProps} />
         </RootLayout>
-      </ThemeProvider>
+        <ToastMessageList />
+      </Providers>
     </>
   );
 };

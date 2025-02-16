@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import DirectionType from "@models/direction";
+import DirectionType from "@src/types/direction";
 
 import ClockWiseIcon from "@icons/clockwise.svg";
 import LeftForwardIcon from "@icons/left-forward.svg";

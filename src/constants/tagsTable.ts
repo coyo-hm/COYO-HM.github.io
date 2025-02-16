@@ -5,6 +5,7 @@ const TagsTable = {
       "yarn-berry-pnp",
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-ghpages",
       "vite-library-typescript",
       "utterances-to-giscus",
       "sync-async",
@@ -53,11 +54,13 @@ const TagsTable = {
     vite: [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-ghpages",
       "vite-library-typescript",
     ],
     typescript: [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-ghpages",
       "vite-library-typescript",
       "utterances-to-giscus",
       "styled-components-global-style",
@@ -73,6 +76,7 @@ const TagsTable = {
     react: [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-ghpages",
       "vite-library-typescript",
       "styled-components-global-style",
       "redux-RTK-with-ts",
@@ -101,6 +105,7 @@ const TagsTable = {
       "vite-react-ts-emotion-props-config",
       "gatsby-add-table-of-contents-in-gatsby",
     ],
+    gh_pages: ["vite-react-ghpages"],
     nextjs: [
       "utterances-to-giscus",
       "nextjs-large-page-data-warning",
@@ -173,6 +178,7 @@ const TagsTable = {
       "yarn-berry-pnp",
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-ghpages",
       "vite-library-typescript",
       "utterances-to-giscus",
       "sync-async",
@@ -224,11 +230,13 @@ const TagsTable = {
     vite: [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-ghpages",
       "vite-library-typescript",
     ],
     typescript: [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-ghpages",
       "vite-library-typescript",
       "utterances-to-giscus",
       "styled-components-global-style",
@@ -245,6 +253,7 @@ const TagsTable = {
     react: [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-ghpages",
       "vite-library-typescript",
       "styled-components-global-style",
       "redux-RTK-with-ts",
@@ -276,6 +285,7 @@ const TagsTable = {
       "vite-react-ts-emotion-props-config",
       "gatsby-add-table-of-contents-in-gatsby",
     ],
+    gh_pages: ["vite-react-ghpages"],
     nextjs: [
       "utterances-to-giscus",
       "nextjs-large-page-data-warning",

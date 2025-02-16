@@ -2,7 +2,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { categoryType } from "@constants/category";
 import TagInfo from "@constants/tagInfo";
-import { TagWithCountType } from "@models/tag";
+import { TagWithCountType } from "@src/types/tag";
 
 interface Props extends TagWithCountType {
   selectedTag: string;

@@ -1,7 +1,7 @@
 import { ForwardedRef, forwardRef } from "react";
 import Link from "next/link";
 import TagInfo from "@constants/tagInfo";
-import { TagWithCountType } from "@models/tag";
+import { TagWithCountType } from "@src/types/tag";
 
 const SpinningTags = forwardRef(function TagList(
   { tagList }: { tagList: TagWithCountType[] },

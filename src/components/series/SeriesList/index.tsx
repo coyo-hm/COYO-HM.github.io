@@ -1,6 +1,6 @@
 import Link from "next/link";
 import usePage from "@hooks/usePage";
-import { SeriesInfoType } from "@models/series";
+import { SeriesInfoType } from "@src/types/series";
 import CATEGORY from "@constants/category";
 import CONSTANTS from "@constants/index";
 import { totalSeries } from "@constants/contents";

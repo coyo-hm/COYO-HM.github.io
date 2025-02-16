@@ -163,7 +163,7 @@ const createTable = () => {
     fs.mkdirSync(TABLE_DIR_PATH, { recursive: true });
     fs.writeFileSync(
       path.join(TABLE_DIR_PATH, `postsTable.ts`),
-      'import { PostInfoTable } from "@models/post";\n' +
+      'import { PostInfoTable } from "@src/types/post";\n' +
         "\n" +
         "const PostsTable: PostInfoTable = " +
         JSON.stringify(fileAttributes) +
@@ -183,7 +183,7 @@ const createTable = () => {
     );
     fs.writeFileSync(
       path.join(TABLE_DIR_PATH, `seriesTable.ts`),
-      'import { SeriesInfoTable } from "@models/series";\n' +
+      'import { SeriesInfoTable } from "@src/types/series";\n' +
         "\n" +
         "const SeriesTable: {\n" +
         "  published: SeriesInfoTable;\n" +

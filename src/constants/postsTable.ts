@@ -1,4 +1,4 @@
-import { PostInfoTable } from "@models/post";
+import { PostInfoTable } from "@src/types/post";
 
 const PostsTable: PostInfoTable = {
   "yarn-berry-start": {
@@ -44,6 +44,17 @@ const PostsTable: PostInfoTable = {
       "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/a8924712-3db6-4ab6-abc8-eb2795ff4121",
     published: true,
     id: "vite-react-ts-emotion-props-config",
+  },
+  "vite-react-ghpages": {
+    date: "2025-02-12T00:00:00.000Z",
+    title: "Vite + React + Typescript 환경에서 gh-pages 배포하기",
+    tags: ["react", "vite", "gh_pages", "typescript"],
+    series: [],
+    description: "vite + react + typescript 환경에서 gh-pages 배포하기",
+    thumbnail:
+      "https://github.com/user-attachments/assets/278bf562-2a89-4f99-b0d5-80ca9f739fdb",
+    published: true,
+    id: "vite-react-ghpages",
   },
   "vite-library-typescript": {
     date: "2024-02-02T00:00:00.000Z",

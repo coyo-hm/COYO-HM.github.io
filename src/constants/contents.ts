@@ -7,9 +7,9 @@ import TagsTable from "@constants/tagsTable";
 import CONSTANTS from "@constants/index";
 import { TAG_ALL } from "@constants/tagInfo";
 import sortPostByDate from "@utils/sortPostByDate";
-import { PostInfoType, PostType } from "@models/post";
-import { SeriesInfoWithPost } from "@models/series";
-import { TagTable, TagWithCountType } from "@models/tag";
+import { PostInfoType, PostType } from "@src/types/post";
+import { SeriesInfoWithPost } from "@src/types/series";
+import { TagTable, TagWithCountType } from "@src/types/tag";
 
 export const seriesInfoTable = isDev
   ? SeriesTable.unpublished

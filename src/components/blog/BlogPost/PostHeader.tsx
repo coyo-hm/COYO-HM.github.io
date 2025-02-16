@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CiCalendar } from "react-icons/ci";
 import CATEGORY from "@constants/category";
-import { PostType } from "@models/post";
+import { PostType } from "@src/types/post";
 import getDate from "@utils/getDate";
 
 type PostHeaderPropsType = Pick<PostType, "title" | "date">;

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PostInfoType } from "@models/post";
+import { PostInfoType } from "@src/types/post";
 import SeriesPostItem from "@components/series/SeriesPost/SeriesPostItem";
 
 interface Props {

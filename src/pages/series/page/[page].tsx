@@ -3,7 +3,7 @@ import metadata from "@config/index";
 import CATEGORY from "@constants/category";
 import CONSTANTS from "@src/constants";
 import { getSeriesInfoList, totalSeries } from "@constants/contents";
-import { SeriesInfoType } from "@models/series";
+import { SeriesInfoType } from "@src/types/series";
 import getLastPage from "@utils/getLastPage";
 import getBlurImg from "@utils/getBlurImg";
 import PageSeo from "@components/common/PageSEO";

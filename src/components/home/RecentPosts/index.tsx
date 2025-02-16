@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import CATEGORY from "@constants/category";
-import { SeriesInfoTable } from "@models/series";
-import { PostType } from "@models/post";
+import { SeriesInfoTable } from "@src/types/series";
+import { PostType } from "@src/types/post";
 import Carousel from "@components/home/RecentPosts/Carousel";
 
 interface Props {

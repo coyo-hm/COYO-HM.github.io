@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import BlurImage from "@components/common/BlurImage";
 import TagBox from "@components/common/TagBox";
-import { PostType } from "@models/post";
+import { PostType } from "@src/types/post";
 import getDate from "@utils/getDate";
 
 const hoverVariants = {

@@ -1,5 +1,5 @@
 import { CiCalendar } from "react-icons/ci";
-import { SeriesType } from "@models/series";
+import { SeriesType } from "@src/types/series";
 import getDate from "@utils/getDate";
 import NextImage from "@components/common/NextImage";
 import CustomMDX from "@components/common/CustomMDX";

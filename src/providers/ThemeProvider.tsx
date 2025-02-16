@@ -7,7 +7,7 @@ interface ThemePropsInterface {
   children?: JSX.Element | Array<JSX.Element> | ReactNode;
 }
 
-const ThemeProvider = ({ children }: ThemePropsInterface) => {
+export default function ThemeProvider({ children }: ThemePropsInterface) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -27,6 +27,4 @@ const ThemeProvider = ({ children }: ThemePropsInterface) => {
       {children}
     </NextThemeProvider>
   );
-};
-
-export default ThemeProvider;
+}

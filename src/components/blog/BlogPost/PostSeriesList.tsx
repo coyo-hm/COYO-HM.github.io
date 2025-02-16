@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SeriesInfoWithPost } from "@models/series";
+import { SeriesInfoWithPost } from "@src/types/series";
 
 interface Props extends SeriesInfoWithPost {
   selectedPostId: string;

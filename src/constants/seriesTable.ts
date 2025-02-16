@@ -1,4 +1,4 @@
-import { SeriesInfoTable } from "@models/series";
+import { SeriesInfoTable } from "@src/types/series";
 
 const SeriesTable: {
   published: SeriesInfoTable;

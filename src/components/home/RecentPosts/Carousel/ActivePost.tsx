@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import DirectionType from "@models/direction";
-import { SeriesInfoTable } from "@models/series";
+import DirectionType from "@src/types/direction";
+import { SeriesInfoTable } from "@src/types/series";
 import TagInfo from "@constants/tagInfo";
 import getDate from "@utils/getDate";
 import BlurImage from "@components/common/BlurImage";
 import TagIcon from "@icons/tag.svg";
-import { PostType } from "@models/post";
+import { PostType } from "@src/types/post";
 
 const postVariants = {
   initial: (direction: DirectionType) => ({
