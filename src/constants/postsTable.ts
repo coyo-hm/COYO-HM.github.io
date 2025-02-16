@@ -1,4 +1,4 @@
-import { PostInfoTable } from "@models/post";
+import { PostInfoTable } from "@src/types/post";
 
 const PostsTable: PostInfoTable = {
   "yarn-berry-start": {
