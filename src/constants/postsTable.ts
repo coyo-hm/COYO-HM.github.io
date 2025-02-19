@@ -45,6 +45,18 @@ const PostsTable: PostInfoTable = {
     published: true,
     id: "vite-react-ts-emotion-props-config",
   },
+  "vite-react-svg": {
+    date: "2025-02-19T00:00:00.000Z",
+    title: "Vite 환경에서 svg 파일 사용하기",
+    tags: ["vite", "react", "typescript", "svg", "vite_plugin_svgr"],
+    series: [],
+    description:
+      "Vite 환경에서 svg 사용하는 방법 3가지: react-component로 사용하기, image로 사용하기, 직접 jsx로 변환하기",
+    thumbnail:
+      "https://github.com/user-attachments/assets/d9b228f5-5932-47bf-8165-7a3a6d232fe1",
+    published: true,
+    id: "vite-react-svg",
+  },
   "vite-react-ghpages": {
     date: "2025-02-12T00:00:00.000Z",
     title: "Vite + React + Typescript 환경에서 gh-pages 배포하기",
