@@ -5,6 +5,7 @@ const TagsTable = {
       "yarn-berry-pnp",
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-svg",
       "vite-react-ghpages",
       "vite-library-typescript",
       "utterances-to-giscus",
@@ -54,12 +55,14 @@ const TagsTable = {
     vite: [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-svg",
       "vite-react-ghpages",
       "vite-library-typescript",
     ],
     typescript: [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-svg",
       "vite-react-ghpages",
       "vite-library-typescript",
       "utterances-to-giscus",
@@ -76,6 +79,7 @@ const TagsTable = {
     react: [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-svg",
       "vite-react-ghpages",
       "vite-library-typescript",
       "styled-components-global-style",
@@ -105,6 +109,8 @@ const TagsTable = {
       "vite-react-ts-emotion-props-config",
       "gatsby-add-table-of-contents-in-gatsby",
     ],
+    svg: ["vite-react-svg"],
+    vite_plugin_svgr: ["vite-react-svg"],
     gh_pages: ["vite-react-ghpages"],
     nextjs: [
       "utterances-to-giscus",
@@ -152,6 +158,7 @@ const TagsTable = {
     plaiceholder: ["nextjs-image-blur"],
     gtag: ["nextjs-gtag"],
     google_analytics: ["nextjs-gtag"],
+    "@next/third_parties": ["nextjs-gtag"],
     lodash: ["lodash"],
     husky: ["husky-precommit-unauthorized", "husky-git-hook", "husky-commlint"],
     git: [
@@ -178,6 +185,7 @@ const TagsTable = {
       "yarn-berry-pnp",
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-svg",
       "vite-react-ghpages",
       "vite-library-typescript",
       "utterances-to-giscus",
@@ -230,12 +238,14 @@ const TagsTable = {
     vite: [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-svg",
       "vite-react-ghpages",
       "vite-library-typescript",
     ],
     typescript: [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-svg",
       "vite-react-ghpages",
       "vite-library-typescript",
       "utterances-to-giscus",
@@ -253,6 +263,7 @@ const TagsTable = {
     react: [
       "vite-ts-react-path",
       "vite-react-ts-emotion-props-config",
+      "vite-react-svg",
       "vite-react-ghpages",
       "vite-library-typescript",
       "styled-components-global-style",
@@ -285,6 +296,8 @@ const TagsTable = {
       "vite-react-ts-emotion-props-config",
       "gatsby-add-table-of-contents-in-gatsby",
     ],
+    svg: ["vite-react-svg"],
+    vite_plugin_svgr: ["vite-react-svg"],
     gh_pages: ["vite-react-ghpages"],
     nextjs: [
       "utterances-to-giscus",
@@ -336,6 +349,7 @@ const TagsTable = {
     plaiceholder: ["nextjs-image-blur"],
     gtag: ["nextjs-gtag"],
     google_analytics: ["nextjs-gtag"],
+    "@next/third_parties": ["nextjs-gtag"],
     lodash: ["lodash"],
     husky: ["husky-precommit-unauthorized", "husky-git-hook", "husky-commlint"],
     git: [
