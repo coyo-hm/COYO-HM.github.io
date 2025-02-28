@@ -18,6 +18,10 @@
         box-decoration-break: clone;
     }
 
+    img {
+        @apply my-1.5
+    }
+
     table {
         @apply border-2 border-neutral-200 border-collapse ;
     }
@@ -35,7 +39,7 @@
     }
 
     li {
-        @apply font-normal py-1 leading-6;
+        @apply font-normal py-1.5 leading-6;
     }
 
     p {

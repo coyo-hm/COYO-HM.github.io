@@ -1,0 +1,54 @@
+---
+date: "2025-02-28"
+title: "WebStorm(InteliJ)에서 Snippet 사용하기"
+tags: ["webstorm", "inteliJ", "snippet"]
+series: []
+description: "Webstorm(InteliJ) 환경에서 Snippet 사용하는 방법과 Snippet 에서 함수 사용하기"
+thumbnail: "https://github.com/user-attachments/assets/14f69248-9caf-41a1-be48-580bbefda157"
+published: true
+---
+Webstorm 에서 code snippet 설정할 해야 되는 경우가 생겨서 이번 기회에 정리해보려고 합니다.
+
+# 스니펫(Snippet)
+
+> 재사용 가능한 소스 코드, 기계어, 텍스트의 작은 부분을 일컫는 프로그래밍 용어
+
+코드 작성 시에 반복적으로 동일한 타이핑을 하는 것을 막기 위해 코드 스니펫을 사용합니다. 아이폰의 텍스트 대치와 비슷한 기능입니다.
+
+# Webstorm에 Snippet 설정하기
+
+1. Settings > Editor > Live Templates 메뉴에 들어갑니다.
+![settings-1](https://github.com/user-attachments/assets/f8810c2d-e4d3-495c-b0c0-e0327a0277ca)
+
+
+2. 상단의 `+` 버튼을 누르면 `Live Template`과 `Template Group`을 생성하실 수 있습니다. 여기서 `Live Template` 이 Snippet 입니다. `Template Group`은 생성한 Snippet을 관리하는 Group입니다. Group 먼저 생성해주실 분들은 생성해주셔도 상관없습니다.
+![setting-2](https://github.com/user-attachments/assets/c1602956-0b9b-44cf-a567-bca39ff80eb4)
+
+3. `Live Template`을 클릭하면 다음과 같이 창이 바뀝니다.
+여기서 `Abbreviation`이 단축어, `Description`은 설명, `Template text`가 대치되는 텍스트입니다.
+![setting-3](https://github.com/user-attachments/assets/02dd509e-6c9c-4d0b-b985-a7694a7f0b79)
+설정에 맞게 다음과 같이 원하는 스니펫을 작성하시면 됩니다.
+![setting-4](https://github.com/user-attachments/assets/eb6c0241-a217-4ff1-b7ff-b9bc74045375)
+
+4. 하단의 `change`를 클릭해서 해당 스니펫이 적용 환경 설정합니다.
+![setting-5](https://github.com/user-attachments/assets/25713b88-a957-4530-864a-d049472288ee)
+
+5. Snippet 사용하기: 다음과 같이 지정된 단축어를 입력하면 바로 입력해두었던 코드와 설명이 뜨는 것을 확인할 수 있습니다.
+![setting-6](https://github.com/user-attachments/assets/90275a3b-2227-45d6-b4af-154b6f2f173e)
+
+
+# Snippet 에서 함수 사용하기
+단순 텍스트 코드 이 외에도 함수를 사용해야 좀 더 활용도 높은 코드 스니펫을 작성할 수 있습니다.
+제가 지정한 스니펫에서 `date` 항목을 자동으로 오늘 날짜로 나오도록 설정해봅시다.
+
+1. 앞과 뒤에 `$`를 붙여서 변수로 설정해줍니다.
+![date-setting-1](https://github.com/user-attachments/assets/cc87212a-3386-484a-8365-1dd1c3adf0bf)
+
+2. 우측에 `Edit Variables...` 을 클릭하면 입력한 변수가 떠있고 `Expression`에 다양한 함수들이 `Selector`로 존재하는 걸 볼 수 있습니다.
+`Default value`와 `Skip if defined` 에서 기본 값과 필수 값 여부 또한 지정하실 수 있습니다.
+![date-setting-2](https://github.com/user-attachments/assets/638c1e18-630f-4302-ad6b-0049c298c5a8)
+저는 오늘 날짜가 뜨기를 원했기 때문에 `date` 함수를 사용해주었습니다. 형식은 기존 js `Date()` 함수와 같이 지정하실 수 있습니다.
+![date-setting-3](https://github.com/user-attachments/assets/4378a554-fda0-4603-8021-b60a6076ab1e)
+
+3. 스니펫을 사용해보면, 오늘 날짜가 잘 나오는 것을 확인할 수 있습니다.
+![date-setting-4](https://github.com/user-attachments/assets/17c8a8c8-58ff-4fd7-ab49-a06af6d319fa)
