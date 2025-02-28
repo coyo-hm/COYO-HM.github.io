@@ -489,6 +489,18 @@ const PostsTable: PostInfoTable = {
     published: true,
     id: "cookie-session",
   },
+  "code-snppets-webstorm": {
+    date: "2025-02-28T00:00:00.000Z",
+    title: "WebStorm(InteliJ)에서 Snippet 사용하기",
+    tags: ["webstorm", "intelij", "snippet"],
+    series: [],
+    description:
+      "Webstorm(InteliJ) 환경에서 Snippet 사용하는 방법과 Snippet 에서 함수 사용하기",
+    thumbnail:
+      "https://github.com/user-attachments/assets/14f69248-9caf-41a1-be48-580bbefda157",
+    published: true,
+    id: "code-snppets-webstorm",
+  },
   "browser-rendering": {
     date: "2023-09-13T00:00:00.000Z",
     title: "브라우저 렌더링 과정 살펴보기",
