@@ -94,7 +94,7 @@
 
 
     figcaption[data-rehype-pretty-code-title] {
-        @apply bg-neutral-700/60 pb-2 pt-3 px-4 text-neutral-200 text-sm;
+        @apply bg-neutral-700/50 pb-2 pt-3 px-4 text-neutral-200 text-sm;
         font-family: "JetBrains Mono";
     }
 
