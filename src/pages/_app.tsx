@@ -8,7 +8,6 @@ import "@styles/globals.css";
 // import "@styles/prism-one-dark.css";
 import "@styles/markdown.css";
 import type { AppProps } from "next/app";
-import * as gtag from "@src/libs/gtag";
 import { isDev } from "@src/libs/core";
 import Providers from "@src/providers";
 import RootLayout from "@components/layout/RootLayout";
@@ -19,8 +18,8 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       {!isDev && (
         <>
-          <GoogleTagManager gtmId={gtag.GTM_TRACKING_ID} />
-          <GoogleAnalytics gaId={gtag.GA_TRACKING_ID} />
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID as string} />
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
         </>
       )}
       <Providers>
