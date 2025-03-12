@@ -19,7 +19,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       {!isDev && (
         <>
-          <GoogleTagManager gtmId={gtag.GA_TRACKING_ID} />
+          <GoogleTagManager gtmId={gtag.GTM_TRACKING_ID} />
           <GoogleAnalytics gaId={gtag.GA_TRACKING_ID} />
         </>
       )}
