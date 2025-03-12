@@ -34,7 +34,7 @@ const Footer = () => {
         id={"main-footer-copyright"}
         className={`col-span-2 font-extralight`}
       >
-        {metadata.copyright}
+        © 2021 - {new Date().getFullYear()} {metadata.copyright}
       </div>
     </footer>
   );
