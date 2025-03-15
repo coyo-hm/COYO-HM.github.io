@@ -16,9 +16,16 @@ jobs:
 
       - name: Create env file
         run: |
-          jq -r 'to_entries|map("\(.key)=\(.value|tostring)")|.[]' <<< "$SECRETS_CONTEXT" > .env
+          echo "NEXT_PUBLIC_CATEGORY_ID=${{ secrets.NEXT_PUBLIC_CATEGORY_ID }}" >> .env
+          echo "NEXT_PUBLIC_GA_ID=${{ secrets.NEXT_PUBLIC_GA_ID }}" >> .env
+          echo "NEXT_PUBLIC_GTM_ID=${{ secrets.NEXT_PUBLIC_GTM_ID }}" >> .env
+          echo "NEXT_PUBLIC_REPO_ID=${{ secrets.NEXT_PUBLIC_REPO_ID }}" >> .env
         env:
-          SECRETS_CONTEXT: ${{ toJson(secrets) }}
+          NEXT_PUBLIC_CATEGORY_ID: ${{ secrets.NEXT_PUBLIC_CATEGORY_ID }}
+          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+          NEXT_PUBLIC_GTM_ID: ${{ secrets.NEXT_PUBLIC_GTM_ID }}
+          NEXT_PUBLIC_REPO_ID: ${{ secrets.NEXT_PUBLIC_REPO_ID }}
+
       - name: Install and Build
         run: |
           yarn install
