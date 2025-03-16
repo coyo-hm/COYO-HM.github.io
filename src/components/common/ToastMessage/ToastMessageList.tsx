@@ -5,7 +5,7 @@ const ToastMessageList = () => {
   const { toastMessages } = useToastMessageContext();
   return (
     <div
-      role={"toastMessages"}
+      role={"alertdialog"}
       aria-live={"polite"}
       className={"fixed top-4 left-1/2 translate-x-[-50%] flex flex-col gap-3"}
     >
