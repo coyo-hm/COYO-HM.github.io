@@ -25,7 +25,7 @@ const getTitleId = ({
     const element = children as ReactHTMLElement<any>;
     title = getTitleId(element.props);
   } else {
-    const elements = children as any[];
+    const elements = children as unknown as any[];
     title = elements.reduce((t: string, ele) => t + getText(ele), "");
   }
 
