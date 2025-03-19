@@ -41,6 +41,7 @@ const Pagination = ({
   return (
     <div className={`flex justify-center items-center mt-5 text-lg`}>
       <Link
+        aria-label={"link-previous-page"}
         href={getPath(currPage - 1)}
         className={`hover:text-blue-700 `}
         onClick={(e) => startPage === currPage && e.preventDefault()}
@@ -52,7 +53,11 @@ const Pagination = ({
           .fill(0)
           .map((v: number, i) => {
             return (
-              <Link href={getPath(i + startPage)} key={i + startPage}>
+              <Link
+                aria-label={`link-page-${i + startPage + 1}`}
+                href={getPath(i + startPage)}
+                key={i + startPage}
+              >
                 <motion.div
                   className={`flex items-center justify-center flex-shrink-0 font-light`}
                   variants={pageVariants}
@@ -67,6 +72,7 @@ const Pagination = ({
           })}
       </div>
       <Link
+        aria-label={"link-next-page"}
         className={`hover:text-blue-700`}
         href={getPath(currPage + 1)}
         onClick={(e) => endPage === currPage + 1 && e.preventDefault()}

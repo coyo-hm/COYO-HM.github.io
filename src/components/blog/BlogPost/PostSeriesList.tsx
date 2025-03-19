@@ -22,7 +22,7 @@ const PostSeriesList = ({ selectedPostId, id, title, posts }: Props) => {
           같은 시리즈 다른 글 보기&nbsp;&gt;
         </Link>
       </header>
-      <ul className={`flex flex-col gap-1.5 italic pt-3`}>
+      <div className={`flex flex-col gap-1.5 italic pt-3`}>
         {posts.map((post) =>
           post.id === selectedPostId ? (
             <h3 key={post.id} className={`text-blue-500 cursor-default`}>
@@ -30,15 +30,16 @@ const PostSeriesList = ({ selectedPostId, id, title, posts }: Props) => {
             </h3>
           ) : (
             <Link
-              href={post.slug}
               key={post.id}
+              href={post.slug}
               className={`hover:text-blue-700`}
+              aria-label={`link-${post.id}`}
             >
               {post.no}. {post.title}
             </Link>
           )
         )}
-      </ul>
+      </div>
     </section>
   );
 };

@@ -6,6 +6,7 @@ const ToastMessageList = () => {
   return (
     <div
       role={"alertdialog"}
+      aria-label={"alertdialog-to"}
       aria-live={"polite"}
       className={"fixed top-4 left-1/2 translate-x-[-50%] flex flex-col gap-3"}
     >
