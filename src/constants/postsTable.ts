@@ -511,6 +511,16 @@ const PostsTable: PostInfoTable = {
       "https://user-images.githubusercontent.com/56423604/272330679-3d6f37c2-fe0a-44f7-995a-8f600257b83f.png",
     id: "browser-rendering",
   },
+  boilerplates: {
+    date: "2025-03-21T00:00:00.000Z",
+    title: "boilerplate 만들고 npx로 프로젝트 다운받기",
+    tags: ["github", "boilerplate", "template"],
+    series: [],
+    description: "boilerplate 만들고 `npx degit`으로 프로젝트 다운 받기",
+    thumbnail: "",
+    published: true,
+    id: "boilerplates",
+  },
   "blog-version-2": {
     date: "2023-12-10T00:00:00.000Z",
     title: "블로그 개편해보자",
