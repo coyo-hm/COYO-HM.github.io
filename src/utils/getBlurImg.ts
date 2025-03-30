@@ -8,7 +8,7 @@ const getBlurImg = async (imgSrc: string) => {
     const { base64 } = await getPlaiceholder(buffer, { size: 10 });
     return base64;
   } catch (e) {
-    console.error(e);
+    console.error("getBlurImg", e);
   }
 };
 

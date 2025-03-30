@@ -245,6 +245,17 @@ const PostsTable: PostInfoTable = {
       "https://user-images.githubusercontent.com/56423604/197561313-2defe8e5-31d0-4402-9a2a-13614b0d76a2.gif",
     id: "project-real-time-coin-info",
   },
+  "npx-degit": {
+    date: "2025-03-21T00:00:00.000Z",
+    title: "template 만들고 npx로 프로젝트 다운받기",
+    tags: ["github", "node"],
+    description:
+      "remote repository 에 template 만들고 `npx degit`으로 프로젝트 다운 받기",
+    thumbnail:
+      "https://github.com/user-attachments/assets/7b64664e-3605-4ff8-a5c5-cb67a66d2bc8",
+    published: true,
+    id: "npx-degit",
+  },
   "nextjs-large-page-data-warning": {
     date: "2023-10-09T00:00:00.000Z",
     title: "NextJS Large Page Data Warning 해결하기",
@@ -510,16 +521,6 @@ const PostsTable: PostInfoTable = {
     thumbnail:
       "https://user-images.githubusercontent.com/56423604/272330679-3d6f37c2-fe0a-44f7-995a-8f600257b83f.png",
     id: "browser-rendering",
-  },
-  boilerplates: {
-    date: "2025-03-21T00:00:00.000Z",
-    title: "boilerplate 만들고 npx로 프로젝트 다운받기",
-    tags: ["github", "boilerplate", "template"],
-    series: [],
-    description: "boilerplate 만들고 `npx degit`으로 프로젝트 다운 받기",
-    thumbnail: "",
-    published: true,
-    id: "boilerplates",
   },
   "blog-version-2": {
     date: "2023-12-10T00:00:00.000Z",
