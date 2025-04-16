@@ -252,9 +252,20 @@ const PostsTable: PostInfoTable = {
     description:
       "remote repository 에 template 만들고 `npx degit`으로 프로젝트 다운 받기",
     thumbnail:
-      "https://github.com/user-attachments/assets/7b64664e-3605-4ff8-a5c5-cb67a66d2bc8",
+      "https://github.com/user-attachments/assets/49d149cf-cf5c-40ec-9501-d7a3230c8594",
     published: true,
     id: "npx-degit",
+  },
+  "nextjs-svg-component": {
+    date: "2024-08-14T00:00:00.000Z",
+    title: "@svgr: Nextjs 에서 SVG 컴포넌트 사용하기",
+    tags: ["nextjs", "svg", "svgr"],
+    series: [],
+    description: "`svgr webpack`을 사용하여 Nextjs에서도 svg component",
+    thumbnail:
+      "https://github.com/user-attachments/assets/fa829fdd-e7e5-4c2f-80ba-ed704606f664",
+    published: true,
+    id: "nextjs-svg-component",
   },
   "nextjs-large-page-data-warning": {
     date: "2023-10-09T00:00:00.000Z",
