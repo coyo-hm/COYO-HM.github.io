@@ -350,6 +350,18 @@ const PostsTable: PostInfoTable = {
     published: true,
     id: "mvc-pattern",
   },
+  "mobile-full-view-height": {
+    date: "2025-05-10T00:00:00.000Z",
+    title: "모바일 브라우저 100vh 오류",
+    tags: ["css"],
+    series: ["trouble_shooting"],
+    description:
+      "모바일 화면(사파리, 크롬 등)에서 100vh가 적용안되는 오류 해결하기",
+    thumbnail:
+      "https://github.com/user-attachments/assets/884b14a7-5303-4c48-8fb8-238b83c30635",
+    published: true,
+    id: "mobile-full-view-height",
+  },
   lodash: {
     date: "2022-01-10T00:00:00.000Z",
     title: "Lodash 자주 사용하는 함수 정리",
