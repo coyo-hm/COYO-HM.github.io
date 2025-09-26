@@ -126,7 +126,6 @@ const TagsTable = {
       "blog-version-2",
       "blog-ver-2-8",
       "blog-auto-deploy",
-      "assignInlineVars-to-client-from-server",
     ],
     giscus: ["utterances-to-giscus"],
     utterances: ["utterances-to-giscus"],
@@ -192,7 +191,6 @@ const TagsTable = {
     rehype_pretty_code: ["blog-ver-2-8"],
     "github_pages_deploy_action@v4": ["blog-auto-deploy"],
     axios: ["axios-interceptor", "axios-config"],
-    vanilla_extract: ["assignInlineVars-to-client-from-server"],
   },
   unpublished: {
     all: [

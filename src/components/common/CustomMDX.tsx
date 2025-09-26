@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { useMDXComponent } from "next-contentlayer/hooks";
-import { MDX } from "contentlayer/core";
+import { useMDXComponent } from "next-contentlayer2/hooks";
+import { MDX } from "contentlayer2/core";
 import type { MDXComponents } from "mdx/types";
 import getTitleId from "@utils/getTitleId";
 import CodeBlock from "./MDXContent/CodeBlock";

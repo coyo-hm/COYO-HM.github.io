@@ -51,10 +51,11 @@ const createTable = () => {
     let tagsTablePublished = { all: [] };
     let tagsTableUnpublished = { all: [] };
 
-    for (const filePath of seriesFiles) {
+    for (const _filePath of seriesFiles) {
+        const filePath = path.normalize(_filePath);
       const file = fs.readFileSync(filePath, { encoding: "utf8" });
       const { attributes } = frontMatter(file);
-      const seriesPath = filePath.replace(`${SERIES_DIR_PATH}/`, "");
+      const seriesPath = filePath.replace(`${SERIES_DIR_PATH}`, "").slice(1);
       const seriesKey = seriesPath?.replace(path.extname(filePath), "");
 
       seriesTablePublished[seriesKey] = {
@@ -83,12 +84,14 @@ const createTable = () => {
         tag.toLowerCase().replace(/\s|-/gi, "_")
       );
 
-      const postPath = filePath.replace(`${POST_DIR_PATH}/`, "");
+      const postPath = path
+        .normalize(filePath)
+        .replace(`${POST_DIR_PATH}`, "")
+        .slice(1);
       const postKey = postPath.replace(path.extname(filePath), "");
 
       const postInfo = {
-        ...attributes,
-        // path: postPath,
+        ...attributes, // path: postPath,
         id: postKey,
         tags,
         date,
