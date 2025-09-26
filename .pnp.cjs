@@ -83,8 +83,8 @@ const RAW_RUNTIME_STATE =
           ["react-icons", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:4.12.0"],\
           ["rehype-katex", "npm:6.0.3"],\
           ["rehype-pretty-code", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:0.14.0"],\
-          ["remark-gfm", "npm:3.0.1"],\
-          ["remark-math", "npm:5.1.1"],\
+          ["remark-gfm", "npm:4.0.1"],\
+          ["remark-math", "npm:6.0.0"],\
           ["semantic-release", "npm:22.0.12"],\
           ["semantic-release-yarn", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:3.0.2"],\
           ["sharp", "npm:0.33.5"],\
@@ -7694,8 +7694,8 @@ const RAW_RUNTIME_STATE =
           ["react-icons", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:4.12.0"],\
           ["rehype-katex", "npm:6.0.3"],\
           ["rehype-pretty-code", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:0.14.0"],\
-          ["remark-gfm", "npm:3.0.1"],\
-          ["remark-math", "npm:5.1.1"],\
+          ["remark-gfm", "npm:4.0.1"],\
+          ["remark-math", "npm:6.0.0"],\
           ["semantic-release", "npm:22.0.12"],\
           ["semantic-release-yarn", "virtual:4fb8fdc2b89600417132a5dcb24a3cc556f4bb44cc41b4bdf43ffd54ef85f919eb5cc903c2afaf1230cd6b18323a07208a6b226e9aac2c8fad80b48b9fbfd8dc#npm:3.0.2"],\
           ["sharp", "npm:0.33.5"],\
@@ -12124,14 +12124,14 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["mdast-util-find-and-replace", [\
-      ["npm:2.2.2", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-find-and-replace-npm-2.2.2-7e2061aea9-10c0.zip/node_modules/mdast-util-find-and-replace/",\
+      ["npm:3.0.2", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-find-and-replace-npm-3.0.2-700884f061-10c0.zip/node_modules/mdast-util-find-and-replace/",\
         "packageDependencies": [\
-          ["@types/mdast", "npm:3.0.15"],\
+          ["@types/mdast", "npm:4.0.4"],\
           ["escape-string-regexp", "npm:5.0.0"],\
-          ["mdast-util-find-and-replace", "npm:2.2.2"],\
-          ["unist-util-is", "npm:5.2.1"],\
-          ["unist-util-visit-parents", "npm:5.1.3"]\
+          ["mdast-util-find-and-replace", "npm:3.0.2"],\
+          ["unist-util-is", "npm:6.0.0"],\
+          ["unist-util-visit-parents", "npm:6.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -12192,89 +12192,100 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["mdast-util-gfm", [\
-      ["npm:2.0.2", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-npm-2.0.2-34fe06a303-10c0.zip/node_modules/mdast-util-gfm/",\
+      ["npm:3.1.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-npm-3.1.0-933de2cdb5-10c0.zip/node_modules/mdast-util-gfm/",\
         "packageDependencies": [\
-          ["mdast-util-from-markdown", "npm:1.3.1"],\
-          ["mdast-util-gfm", "npm:2.0.2"],\
-          ["mdast-util-gfm-autolink-literal", "npm:1.0.3"],\
-          ["mdast-util-gfm-footnote", "npm:1.0.2"],\
-          ["mdast-util-gfm-strikethrough", "npm:1.0.3"],\
-          ["mdast-util-gfm-table", "npm:1.0.7"],\
-          ["mdast-util-gfm-task-list-item", "npm:1.0.2"],\
-          ["mdast-util-to-markdown", "npm:1.5.0"]\
+          ["mdast-util-from-markdown", "npm:2.0.2"],\
+          ["mdast-util-gfm", "npm:3.1.0"],\
+          ["mdast-util-gfm-autolink-literal", "npm:2.0.1"],\
+          ["mdast-util-gfm-footnote", "npm:2.1.0"],\
+          ["mdast-util-gfm-strikethrough", "npm:2.0.0"],\
+          ["mdast-util-gfm-table", "npm:2.0.0"],\
+          ["mdast-util-gfm-task-list-item", "npm:2.0.0"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["mdast-util-gfm-autolink-literal", [\
-      ["npm:1.0.3", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-autolink-literal-npm-1.0.3-30e29b9908-10c0.zip/node_modules/mdast-util-gfm-autolink-literal/",\
+      ["npm:2.0.1", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-autolink-literal-npm-2.0.1-dd870d9308-10c0.zip/node_modules/mdast-util-gfm-autolink-literal/",\
         "packageDependencies": [\
-          ["@types/mdast", "npm:3.0.15"],\
+          ["@types/mdast", "npm:4.0.4"],\
           ["ccount", "npm:2.0.1"],\
-          ["mdast-util-find-and-replace", "npm:2.2.2"],\
-          ["mdast-util-gfm-autolink-literal", "npm:1.0.3"],\
-          ["micromark-util-character", "npm:1.2.0"]\
+          ["devlop", "npm:1.1.0"],\
+          ["mdast-util-find-and-replace", "npm:3.0.2"],\
+          ["mdast-util-gfm-autolink-literal", "npm:2.0.1"],\
+          ["micromark-util-character", "npm:2.1.1"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["mdast-util-gfm-footnote", [\
-      ["npm:1.0.2", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-footnote-npm-1.0.2-4584cc7d97-10c0.zip/node_modules/mdast-util-gfm-footnote/",\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-footnote-npm-2.1.0-d8da32ba7c-10c0.zip/node_modules/mdast-util-gfm-footnote/",\
         "packageDependencies": [\
-          ["@types/mdast", "npm:3.0.15"],\
-          ["mdast-util-gfm-footnote", "npm:1.0.2"],\
-          ["mdast-util-to-markdown", "npm:1.5.0"],\
-          ["micromark-util-normalize-identifier", "npm:1.1.0"]\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["devlop", "npm:1.1.0"],\
+          ["mdast-util-from-markdown", "npm:2.0.2"],\
+          ["mdast-util-gfm-footnote", "npm:2.1.0"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"],\
+          ["micromark-util-normalize-identifier", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["mdast-util-gfm-strikethrough", [\
-      ["npm:1.0.3", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-strikethrough-npm-1.0.3-213cf55fea-10c0.zip/node_modules/mdast-util-gfm-strikethrough/",\
+      ["npm:2.0.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-strikethrough-npm-2.0.0-d16d95c318-10c0.zip/node_modules/mdast-util-gfm-strikethrough/",\
         "packageDependencies": [\
-          ["@types/mdast", "npm:3.0.15"],\
-          ["mdast-util-gfm-strikethrough", "npm:1.0.3"],\
-          ["mdast-util-to-markdown", "npm:1.5.0"]\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["mdast-util-from-markdown", "npm:2.0.2"],\
+          ["mdast-util-gfm-strikethrough", "npm:2.0.0"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["mdast-util-gfm-table", [\
-      ["npm:1.0.7", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-table-npm-1.0.7-70536e7d2d-10c0.zip/node_modules/mdast-util-gfm-table/",\
+      ["npm:2.0.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-table-npm-2.0.0-45a74f064b-10c0.zip/node_modules/mdast-util-gfm-table/",\
         "packageDependencies": [\
-          ["@types/mdast", "npm:3.0.15"],\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["devlop", "npm:1.1.0"],\
           ["markdown-table", "npm:3.0.4"],\
-          ["mdast-util-from-markdown", "npm:1.3.1"],\
-          ["mdast-util-gfm-table", "npm:1.0.7"],\
-          ["mdast-util-to-markdown", "npm:1.5.0"]\
+          ["mdast-util-from-markdown", "npm:2.0.2"],\
+          ["mdast-util-gfm-table", "npm:2.0.0"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["mdast-util-gfm-task-list-item", [\
-      ["npm:1.0.2", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-task-list-item-npm-1.0.2-9de4576007-10c0.zip/node_modules/mdast-util-gfm-task-list-item/",\
+      ["npm:2.0.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-gfm-task-list-item-npm-2.0.0-cb1270a10f-10c0.zip/node_modules/mdast-util-gfm-task-list-item/",\
         "packageDependencies": [\
-          ["@types/mdast", "npm:3.0.15"],\
-          ["mdast-util-gfm-task-list-item", "npm:1.0.2"],\
-          ["mdast-util-to-markdown", "npm:1.5.0"]\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["devlop", "npm:1.1.0"],\
+          ["mdast-util-from-markdown", "npm:2.0.2"],\
+          ["mdast-util-gfm-task-list-item", "npm:2.0.0"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["mdast-util-math", [\
-      ["npm:2.0.2", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-math-npm-2.0.2-2a515a3146-10c0.zip/node_modules/mdast-util-math/",\
+      ["npm:3.0.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/mdast-util-math-npm-3.0.0-8b1aa5f265-10c0.zip/node_modules/mdast-util-math/",\
         "packageDependencies": [\
-          ["@types/mdast", "npm:3.0.15"],\
+          ["@types/hast", "npm:3.0.4"],\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["devlop", "npm:1.1.0"],\
           ["longest-streak", "npm:3.1.0"],\
-          ["mdast-util-math", "npm:2.0.2"],\
-          ["mdast-util-to-markdown", "npm:1.5.0"]\
+          ["mdast-util-from-markdown", "npm:2.0.2"],\
+          ["mdast-util-math", "npm:3.0.0"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"],\
+          ["unist-util-remove-position", "npm:5.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -12704,117 +12715,117 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["micromark-extension-gfm", [\
-      ["npm:2.0.3", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-npm-2.0.3-134337a21c-10c0.zip/node_modules/micromark-extension-gfm/",\
+      ["npm:3.0.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-npm-3.0.0-d154ab531f-10c0.zip/node_modules/micromark-extension-gfm/",\
         "packageDependencies": [\
-          ["micromark-extension-gfm", "npm:2.0.3"],\
-          ["micromark-extension-gfm-autolink-literal", "npm:1.0.5"],\
-          ["micromark-extension-gfm-footnote", "npm:1.1.2"],\
-          ["micromark-extension-gfm-strikethrough", "npm:1.0.7"],\
-          ["micromark-extension-gfm-table", "npm:1.0.7"],\
-          ["micromark-extension-gfm-tagfilter", "npm:1.0.2"],\
-          ["micromark-extension-gfm-task-list-item", "npm:1.0.5"],\
-          ["micromark-util-combine-extensions", "npm:1.1.0"],\
-          ["micromark-util-types", "npm:1.1.0"]\
+          ["micromark-extension-gfm", "npm:3.0.0"],\
+          ["micromark-extension-gfm-autolink-literal", "npm:2.1.0"],\
+          ["micromark-extension-gfm-footnote", "npm:2.1.0"],\
+          ["micromark-extension-gfm-strikethrough", "npm:2.1.0"],\
+          ["micromark-extension-gfm-table", "npm:2.1.1"],\
+          ["micromark-extension-gfm-tagfilter", "npm:2.0.0"],\
+          ["micromark-extension-gfm-task-list-item", "npm:2.1.0"],\
+          ["micromark-util-combine-extensions", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["micromark-extension-gfm-autolink-literal", [\
-      ["npm:1.0.5", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-autolink-literal-npm-1.0.5-1ada4a6641-10c0.zip/node_modules/micromark-extension-gfm-autolink-literal/",\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-autolink-literal-npm-2.1.0-8fcb271412-10c0.zip/node_modules/micromark-extension-gfm-autolink-literal/",\
         "packageDependencies": [\
-          ["micromark-extension-gfm-autolink-literal", "npm:1.0.5"],\
-          ["micromark-util-character", "npm:1.2.0"],\
-          ["micromark-util-sanitize-uri", "npm:1.2.0"],\
-          ["micromark-util-symbol", "npm:1.1.0"],\
-          ["micromark-util-types", "npm:1.1.0"]\
+          ["micromark-extension-gfm-autolink-literal", "npm:2.1.0"],\
+          ["micromark-util-character", "npm:2.1.1"],\
+          ["micromark-util-sanitize-uri", "npm:2.0.1"],\
+          ["micromark-util-symbol", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["micromark-extension-gfm-footnote", [\
-      ["npm:1.1.2", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-footnote-npm-1.1.2-caa5472e3f-10c0.zip/node_modules/micromark-extension-gfm-footnote/",\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-footnote-npm-2.1.0-1cf783dd36-10c0.zip/node_modules/micromark-extension-gfm-footnote/",\
         "packageDependencies": [\
-          ["micromark-core-commonmark", "npm:1.1.0"],\
-          ["micromark-extension-gfm-footnote", "npm:1.1.2"],\
-          ["micromark-factory-space", "npm:1.1.0"],\
-          ["micromark-util-character", "npm:1.2.0"],\
-          ["micromark-util-normalize-identifier", "npm:1.1.0"],\
-          ["micromark-util-sanitize-uri", "npm:1.2.0"],\
-          ["micromark-util-symbol", "npm:1.1.0"],\
-          ["micromark-util-types", "npm:1.1.0"],\
-          ["uvu", "npm:0.5.6"]\
+          ["devlop", "npm:1.1.0"],\
+          ["micromark-core-commonmark", "npm:2.0.2"],\
+          ["micromark-extension-gfm-footnote", "npm:2.1.0"],\
+          ["micromark-factory-space", "npm:2.0.1"],\
+          ["micromark-util-character", "npm:2.1.1"],\
+          ["micromark-util-normalize-identifier", "npm:2.0.1"],\
+          ["micromark-util-sanitize-uri", "npm:2.0.1"],\
+          ["micromark-util-symbol", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["micromark-extension-gfm-strikethrough", [\
-      ["npm:1.0.7", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-strikethrough-npm-1.0.7-f5e7b0b63e-10c0.zip/node_modules/micromark-extension-gfm-strikethrough/",\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-strikethrough-npm-2.1.0-b2aa188eba-10c0.zip/node_modules/micromark-extension-gfm-strikethrough/",\
         "packageDependencies": [\
-          ["micromark-extension-gfm-strikethrough", "npm:1.0.7"],\
-          ["micromark-util-chunked", "npm:1.1.0"],\
-          ["micromark-util-classify-character", "npm:1.1.0"],\
-          ["micromark-util-resolve-all", "npm:1.1.0"],\
-          ["micromark-util-symbol", "npm:1.1.0"],\
-          ["micromark-util-types", "npm:1.1.0"],\
-          ["uvu", "npm:0.5.6"]\
+          ["devlop", "npm:1.1.0"],\
+          ["micromark-extension-gfm-strikethrough", "npm:2.1.0"],\
+          ["micromark-util-chunked", "npm:2.0.1"],\
+          ["micromark-util-classify-character", "npm:2.0.1"],\
+          ["micromark-util-resolve-all", "npm:2.0.1"],\
+          ["micromark-util-symbol", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["micromark-extension-gfm-table", [\
-      ["npm:1.0.7", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-table-npm-1.0.7-878b7528e3-10c0.zip/node_modules/micromark-extension-gfm-table/",\
+      ["npm:2.1.1", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-table-npm-2.1.1-7b9f4422c9-10c0.zip/node_modules/micromark-extension-gfm-table/",\
         "packageDependencies": [\
-          ["micromark-extension-gfm-table", "npm:1.0.7"],\
-          ["micromark-factory-space", "npm:1.1.0"],\
-          ["micromark-util-character", "npm:1.2.0"],\
-          ["micromark-util-symbol", "npm:1.1.0"],\
-          ["micromark-util-types", "npm:1.1.0"],\
-          ["uvu", "npm:0.5.6"]\
+          ["devlop", "npm:1.1.0"],\
+          ["micromark-extension-gfm-table", "npm:2.1.1"],\
+          ["micromark-factory-space", "npm:2.0.1"],\
+          ["micromark-util-character", "npm:2.1.1"],\
+          ["micromark-util-symbol", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["micromark-extension-gfm-tagfilter", [\
-      ["npm:1.0.2", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-tagfilter-npm-1.0.2-87d5ea927a-10c0.zip/node_modules/micromark-extension-gfm-tagfilter/",\
+      ["npm:2.0.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-tagfilter-npm-2.0.0-c5ad486636-10c0.zip/node_modules/micromark-extension-gfm-tagfilter/",\
         "packageDependencies": [\
-          ["micromark-extension-gfm-tagfilter", "npm:1.0.2"],\
-          ["micromark-util-types", "npm:1.1.0"]\
+          ["micromark-extension-gfm-tagfilter", "npm:2.0.0"],\
+          ["micromark-util-types", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["micromark-extension-gfm-task-list-item", [\
-      ["npm:1.0.5", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-task-list-item-npm-1.0.5-0fb4eed065-10c0.zip/node_modules/micromark-extension-gfm-task-list-item/",\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-gfm-task-list-item-npm-2.1.0-b717607894-10c0.zip/node_modules/micromark-extension-gfm-task-list-item/",\
         "packageDependencies": [\
-          ["micromark-extension-gfm-task-list-item", "npm:1.0.5"],\
-          ["micromark-factory-space", "npm:1.1.0"],\
-          ["micromark-util-character", "npm:1.2.0"],\
-          ["micromark-util-symbol", "npm:1.1.0"],\
-          ["micromark-util-types", "npm:1.1.0"],\
-          ["uvu", "npm:0.5.6"]\
+          ["devlop", "npm:1.1.0"],\
+          ["micromark-extension-gfm-task-list-item", "npm:2.1.0"],\
+          ["micromark-factory-space", "npm:2.0.1"],\
+          ["micromark-util-character", "npm:2.1.1"],\
+          ["micromark-util-symbol", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["micromark-extension-math", [\
-      ["npm:2.1.2", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-math-npm-2.1.2-957b34601d-10c0.zip/node_modules/micromark-extension-math/",\
+      ["npm:3.1.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/micromark-extension-math-npm-3.1.0-60c186f61c-10c0.zip/node_modules/micromark-extension-math/",\
         "packageDependencies": [\
           ["@types/katex", "npm:0.16.7"],\
+          ["devlop", "npm:1.1.0"],\
           ["katex", "npm:0.16.21"],\
-          ["micromark-extension-math", "npm:2.1.2"],\
-          ["micromark-factory-space", "npm:1.1.0"],\
-          ["micromark-util-character", "npm:1.2.0"],\
-          ["micromark-util-symbol", "npm:1.1.0"],\
-          ["micromark-util-types", "npm:1.1.0"],\
-          ["uvu", "npm:0.5.6"]\
+          ["micromark-extension-math", "npm:3.1.0"],\
+          ["micromark-factory-space", "npm:2.0.1"],\
+          ["micromark-util-character", "npm:2.1.1"],\
+          ["micromark-util-symbol", "npm:2.0.1"],\
+          ["micromark-util-types", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15801,27 +15812,29 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["remark-gfm", [\
-      ["npm:3.0.1", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/remark-gfm-npm-3.0.1-4a9f6f751e-10c0.zip/node_modules/remark-gfm/",\
+      ["npm:4.0.1", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/remark-gfm-npm-4.0.1-f55aaba8ef-10c0.zip/node_modules/remark-gfm/",\
         "packageDependencies": [\
-          ["@types/mdast", "npm:3.0.15"],\
-          ["mdast-util-gfm", "npm:2.0.2"],\
-          ["micromark-extension-gfm", "npm:2.0.3"],\
-          ["remark-gfm", "npm:3.0.1"],\
-          ["unified", "npm:10.1.2"]\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["mdast-util-gfm", "npm:3.1.0"],\
+          ["micromark-extension-gfm", "npm:3.0.0"],\
+          ["remark-gfm", "npm:4.0.1"],\
+          ["remark-parse", "npm:11.0.0"],\
+          ["remark-stringify", "npm:11.0.0"],\
+          ["unified", "npm:11.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["remark-math", [\
-      ["npm:5.1.1", {\
-        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/remark-math-npm-5.1.1-6a0cb6e9f6-10c0.zip/node_modules/remark-math/",\
+      ["npm:6.0.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/remark-math-npm-6.0.0-747000722b-10c0.zip/node_modules/remark-math/",\
         "packageDependencies": [\
-          ["@types/mdast", "npm:3.0.15"],\
-          ["mdast-util-math", "npm:2.0.2"],\
-          ["micromark-extension-math", "npm:2.1.2"],\
-          ["remark-math", "npm:5.1.1"],\
-          ["unified", "npm:10.1.2"]\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["mdast-util-math", "npm:3.0.0"],\
+          ["micromark-extension-math", "npm:3.1.0"],\
+          ["remark-math", "npm:6.0.0"],\
+          ["unified", "npm:11.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15929,6 +15942,16 @@ const RAW_RUNTIME_STATE =
           ["mdast-util-to-markdown", "npm:1.5.0"],\
           ["remark-stringify", "npm:10.0.3"],\
           ["unified", "npm:10.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:11.0.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/remark-stringify-npm-11.0.0-b41a557b8d-10c0.zip/node_modules/remark-stringify/",\
+        "packageDependencies": [\
+          ["@types/mdast", "npm:4.0.4"],\
+          ["mdast-util-to-markdown", "npm:2.1.2"],\
+          ["remark-stringify", "npm:11.0.0"],\
+          ["unified", "npm:11.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -17772,6 +17795,15 @@ const RAW_RUNTIME_STATE =
           ["@types/unist", "npm:2.0.11"],\
           ["unist-util-remove-position", "npm:4.0.2"],\
           ["unist-util-visit", "npm:4.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:5.0.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/unist-util-remove-position-npm-5.0.0-1f2a181e0a-10c0.zip/node_modules/unist-util-remove-position/",\
+        "packageDependencies": [\
+          ["@types/unist", "npm:3.0.3"],\
+          ["unist-util-remove-position", "npm:5.0.0"],\
+          ["unist-util-visit", "npm:5.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
