@@ -34,7 +34,7 @@ jobs:
 
       - name: Backup Content
         run: |
-          cd ./contentlayer/generated/index.d.ts ./src/constants/backup.ts
+          cp ./contentlayer/generated/index.d.ts ./src/constants/backup.ts
           git config --global user.name "coyo-hm"
           git config --global user.email "bsydwp@gmail.com"
           git commit -am "CONTENT: backup"
