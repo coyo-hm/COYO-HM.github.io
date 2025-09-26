@@ -47,6 +47,7 @@ const TableOfContents = ({ content }: { content: string }) => {
         {titles.map(({ title, depth, id }) => {
           return (
             <Link
+              aria-label={`link-toc-${title}`}
               key={title}
               href={`#${id}`}
               scroll={false}

@@ -1,0 +1,47 @@
+---
+date: "2025-05-10"
+title: "모바일 브라우저 100vh 오류"
+tags: ["css"]
+series: ["trouble_shooting"]
+description: "모바일 화면(사파리, 크롬 등)에서 100vh가 적용안되는 오류 해결하기"
+thumbnail: "https://github.com/user-attachments/assets/884b14a7-5303-4c48-8fb8-238b83c30635"
+published: true
+---
+# ⚠️ 문제
+
+
+![issue-mobile-chrome](https://github.com/user-attachments/assets/b9828064-97f5-4121-9395-d977aa26d3f7)
+
+해당 화면은 안드로이드 크롬 모바일 이용 시에 화면입니다.
+![issue-mobile-safari](https://github.com/user-attachments/assets/aebc618d-c665-4070-a84c-80a17af4479e)
+
+해당 화면은 ios 기종 safari 모바일 이용 시에 화면입니다.
+
+![desktop](https://github.com/user-attachments/assets/a17bff99-ba2b-4ae4-af83-cb969da3cc76)
+
+이런 식으로 데스크탑처럼 의도대로 하단에 Footer가 나와야 하는데 `100vh`가 모바일에서는 다른 식으로 동작하여 Footer 부분이 잘리고 있습니다.
+
+
+# 🔧 해결
+
+해당 이슈는 `100vh` 사용 시에 모바일에서는 검색창과 하단에 생성되는 네비게이션 바를 뷰포인트에 포함시켜 발생되는 이슈로 모바일 최적화용인 `dvh`를 사용하여 해결해봅시다.
+
+> `dvh(dynamic viewport height)`
+>
+> 주소 표시줄에 표시 여부에 따라 가변적으로 변하는 현재 보여지는 뷰포트 높이를 동적으로 가져온다.
+>
+> 참고로 safari와 edge, chrome 최신 버전에는 모두 지원하지만, 구버전과 firefox, IE에는 동작하지 않음.
+
+
+```ts
+export const layoutStyle = style({
+  width: "100%",
+  height: "100dvh",
+  overflow: "auto",
+});
+```
+
+![solved-mobile-chrome](https://github.com/user-attachments/assets/37e792e9-3928-40d8-9fda-f33b6543822b)
+![solved-mobile-safari](https://github.com/user-attachments/assets/b14bf40d-2630-4965-a849-71c352a2a589)
+
+모바일 화면에서도 모두 정상적으로 의도한 Footer가 나오고 있음을 확인할 수 있습니다.

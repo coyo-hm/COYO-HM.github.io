@@ -78,12 +78,16 @@ const CarouselNavigation = ({
           setCurrentIndex((prev) => (prev === 0 ? postLength - 1 : prev - 1))
         }
         className={`w-6 hover:scale-110 hover:text-blue-700`}
+        id={"btn-left-forward"}
+        aria-label={"btn-left-forward"}
       >
         <LeftForwardIcon />
       </button>
       <button
         onClick={onTogglePause}
         className={`w-6 hover:scale-110 hover:text-blue-700`}
+        id={"btn-pause-play"}
+        aria-label={"btn-pause-play"}
       >
         <AnimatePresence custom={direction}>
           {isPaused ? (
@@ -98,6 +102,8 @@ const CarouselNavigation = ({
           setCurrentIndex((prev) => (prev + 1 === postLength ? 0 : prev + 1))
         }
         className={`w-6 hover:scale-110 hover:text-blue-700`}
+        id={"btn-right-forward"}
+        aria-label={"btn-right-forward"}
       >
         <RightForwardIcon />
       </button>
@@ -106,6 +112,8 @@ const CarouselNavigation = ({
           setDirection((prev) => (prev === "left" ? "right" : "left"))
         }
         className={`w-5 hover:text-blue-700 hover:animate-spin`}
+        id={"btn-direction"}
+        aria-label={"btn-direction"}
       >
         {direction === "left" ? (
           <ClockWiseIcon />

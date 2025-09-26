@@ -245,6 +245,28 @@ const PostsTable: PostInfoTable = {
       "https://user-images.githubusercontent.com/56423604/197561313-2defe8e5-31d0-4402-9a2a-13614b0d76a2.gif",
     id: "project-real-time-coin-info",
   },
+  "npx-degit": {
+    date: "2025-03-21T00:00:00.000Z",
+    title: "template 만들고 npx로 프로젝트 다운받기",
+    tags: ["github", "node"],
+    description:
+      "remote repository 에 template 만들고 `npx degit`으로 프로젝트 다운 받기",
+    thumbnail:
+      "https://github.com/user-attachments/assets/49d149cf-cf5c-40ec-9501-d7a3230c8594",
+    published: true,
+    id: "npx-degit",
+  },
+  "nextjs-svg-component": {
+    date: "2024-08-14T00:00:00.000Z",
+    title: "@svgr: Nextjs 에서 SVG 컴포넌트 사용하기",
+    tags: ["nextjs", "svg", "svgr"],
+    series: [],
+    description: "`svgr webpack`을 사용하여 Nextjs에서도 svg component",
+    thumbnail:
+      "https://github.com/user-attachments/assets/fa829fdd-e7e5-4c2f-80ba-ed704606f664",
+    published: true,
+    id: "nextjs-svg-component",
+  },
   "nextjs-large-page-data-warning": {
     date: "2023-10-09T00:00:00.000Z",
     title: "NextJS Large Page Data Warning 해결하기",
@@ -327,6 +349,18 @@ const PostsTable: PostInfoTable = {
       "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/5d7241a9-235b-4a89-9b11-f9840ea1fc31",
     published: true,
     id: "mvc-pattern",
+  },
+  "mobile-full-view-height": {
+    date: "2025-05-10T00:00:00.000Z",
+    title: "모바일 브라우저 100vh 오류",
+    tags: ["css"],
+    series: ["trouble_shooting"],
+    description:
+      "모바일 화면(사파리, 크롬 등)에서 100vh가 적용안되는 오류 해결하기",
+    thumbnail:
+      "https://github.com/user-attachments/assets/884b14a7-5303-4c48-8fb8-238b83c30635",
+    published: true,
+    id: "mobile-full-view-height",
   },
   lodash: {
     date: "2022-01-10T00:00:00.000Z",

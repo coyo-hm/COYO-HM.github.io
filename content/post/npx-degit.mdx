@@ -1,0 +1,19 @@
+---
+date: "2025-03-21"
+title: "template 만들고 npx로 프로젝트 다운받기"
+tags: ["github", "node"]
+description: "remote repository 에 template 만들고 `npx degit`으로 프로젝트 다운 받기"
+thumbnail: "https://github.com/user-attachments/assets/49d149cf-cf5c-40ec-9501-d7a3230c8594"
+published: true
+---
+
+CRA template을 사용하는 방법도 있지만, 더 자유로운 수정과 다양한 template 제작을 위해 원격 저장소에 repo를 만들고 `npx degit`으로 프로젝트를 다운로드하기로 했습니다.
+
+
+# `npx degit`
+- `npx degit`은 `git clone`과 달리 버전 관리가 없는 새로운 프로젝트를 다운로드합니다. `.git` 파일을 포함하지 않으며 `node` 환경에서만 실행할 수 있습니다.
+- branch 단위로 다운로드가 가능합니다.
+
+```bash
+npx degit github계정/repo이름#branch이름 새로만드는프로젝트이름
+```

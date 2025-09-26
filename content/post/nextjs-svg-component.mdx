@@ -1,0 +1,124 @@
+---
+date: "2024-08-14"
+title: "@svgr: Nextjs 에서 SVG 컴포넌트 사용하기"
+tags: ["nextjs", "svg", "svgr"]
+series: []
+description: "`svgr webpack`을 사용하여 Nextjs에서도 svg component"
+thumbnail: "https://github.com/user-attachments/assets/fa829fdd-e7e5-4c2f-80ba-ed704606f664"
+published: true
+---
+
+svg를 보다 다양하게 활용하기 위해 `@svgr/webpack`으로 nextjs에서도 `svg` 파일을 컴포넌트로 만들어 봅시다.
+해당 포스트는 [SVGR 공식문서](https://react-svgr.com/docs/next/)를 참고 했습니다.
+
+# 설치
+```bash
+# npm 사용시
+npm install --save-dev @svgr/webpack
+
+# yarn 사용시
+yarn add --dev @svgr/webpack
+```
+
+# `next.config.[js/mjs]` 설정
+```javascript title="next.config.[js/mjs/ts]" showLineNumbers {9-13, 15-19}
+module.exports = {
+  webpack(config) {
+    const fileLoaderRule = config.module.rules.find((rule) =>
+      rule.test?.test?.(".svg"),
+    );
+
+    config.module.rules.push(
+      {
+        // url import 인 경우
+        ...fileLoaderRule,
+        test: /\.svg$/i,
+        resourceQuery: /url/
+      },
+      {
+        // svg component import인 경우
+        test: /\.svg$/i,
+        issuer: fileLoaderRule.issuer,
+        resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] },
+        use: ["@svgr/webpack"]
+      },
+    );
+
+    fileLoaderRule.exclude = /\.svg$/i;
+
+    return config;
+  }
+};
+```
+svg를 img src(url import) 하는 사용하는 경우를 고려하여 공식 문서대로 `next config`를 작성하였습니다.
+
+
+# `TypeScript` 설정
+
+## `Type` 정의
+```typescript title="svgr.d.ts"
+declare module '*.svg' {
+  import { FC, SVGProps } from 'react'
+  const content: FC<SVGProps<SVGElement>>
+  export default content
+}
+
+declare module '*.svg?url' {
+  const content: any
+  export default content
+}
+```
+
+## `tsconfig.json` 설정
+```json title="tsconfig.json"
+{
+  "include": [
+    "svgr.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  ...
+}
+```
+가장 첫번째 `include`에 `svgr.d.ts`를 선언합니다.
+
+# Usage
+
+## SVG Component
+```tsx
+...
+import EyeIcon from "@icons/eye.svg";
+import EyeClosedIcon from "@icons/eye-closed.svg";
+
+const PasswordShowButton = () => {
+  ...
+  return (
+    <button className={buttonPasswordStyle} onClick={() => setShowPassword(prev => !prev)}>
+      {showPassword ? <EyeIcon /> : <EyeClosedIcon />}
+    </button>
+  )
+};
+```
+
+## img url
+```tsx
+...
+import EyeIcon from "@icons/eye.svg?url";
+import EyeClosedIcon from "@icons/eye-closed.svg?url";
+
+const PasswordShowButton = () => {
+  ...
+  return (
+    <button className={buttonPasswordStyle} onClick={() => setShowPassword(prev => !prev)}>
+      {showPassword ? <Image src={EyeIcon} alt="btn-eye-opend" width={20} height={20} /> : <Image src={EyeClosedIcon} alt="btn-eye-closed" width={20} height={20} />}
+    </button>
+  )
+};
+```
+
+
+
+# 참조
+* [SVGR Document](https://react-svgr.com/docs/next/)

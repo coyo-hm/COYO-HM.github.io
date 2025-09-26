@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactHTMLElement } from "react";
 import parseHeadingToId from "@utils/parseHeadingToId";
 
 const getText = (element: any): string => {
@@ -20,8 +20,10 @@ const getTitleId = ({
   let title = "";
   if (typeof children === "string") {
     title = children;
+  } else if (typeof children === "object") {
+    title = getText(children);
   } else {
-    const elements = children as any[];
+    const elements = children as unknown as any[];
     title = elements.reduce((t: string, ele) => t + getText(ele), "");
   }
 

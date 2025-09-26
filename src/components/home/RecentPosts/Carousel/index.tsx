@@ -84,6 +84,8 @@ const Carousel = ({ posts, seriesInfoTable }: Props) => {
       <div className={`flex gap-1 justify-end items-center`}>
         {posts?.map((_, idx) => (
           <motion.button
+            id={`btn-post-${idx}`}
+            aria-label={`btn-post-${idx}`}
             key={`circle_${idx}`}
             className={`rounded-full h-2 w-2 bg-neutral-400`}
             onClick={() => setCurrentIndex(idx)}
