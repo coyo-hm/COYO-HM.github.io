@@ -31,6 +31,15 @@ jobs:
           yarn install
           yarn build
           touch ./out/.nojekyll
+
+      - name: Backup Content
+        run: |
+          cd ./contentlayer/generated/index.d.ts ./src/constants/backup.ts
+          git config --global user.name "coyo-hm"
+          git config --global user.email "bsydwp@gmail.com"
+          git commit -am "CONTENT: backup"
+          git push
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
