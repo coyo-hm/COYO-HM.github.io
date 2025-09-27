@@ -34,11 +34,7 @@ jobs:
 
       - name: Backup Content
         run: |
-          mkdir backup
-          cp ./.contentlayer/generated/Post/_index.mjs ./backup/post.mjs
-          cp ./.contentlayer/generated/Post/_index.json ./backup/post.json
-          cp ./.contentlayer/generated/Series/_index.mjs ./backup/series.mjs
-          cp ./.contentlayer/generated/Series/_index.json ./backup/series.json
+          cp ./.contentlayer/generated ./backup/
           git add backup
           git config --global user.name "coyo-hm"
           git config --global user.email "bsydwp@gmail.com"
