@@ -34,7 +34,7 @@ jobs:
 
       - name: Backup Content
         run: |
-          cp ./.contentlayer/generated ./backup/
+          cp -r ./.contentlayer/generated ./backup/
           git add backup
           git config --global user.name "coyo-hm"
           git config --global user.email "bsydwp@gmail.com"
