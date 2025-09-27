@@ -1,0 +1,106 @@
+---
+date: "2025-09-27"
+title: "contentlayer windows 환경에서 사용하기"
+tags: ["nextjs", "contentlaayer", "gh-pages", "github-actions"]
+series: ["trouble_shooting"]
+description: "windows local 환경에서 contentlayer(contentlayer2) 사용하기"
+thumbnail: "https://github.com/user-attachments/assets/fdd51e47-c855-4fd9-9a98-29b16ef3aeae"
+published: true
+---
+# ⚠️ 문제
+
+개인 사정상 갑작스럽게 개발 환경이 맥에서 윈도우로 바뀌게 되었는데 블로그를 개발하려고 하니 예상치 못한 오류가 발생했습니다…
+
+`contentlayer` 패키지가 windows에서 동작하지 않는다는 사실입니다….
+처음에는 windows와 ios의 파일 시스템이 달라서 발생하는 문제인 줄 알았는데 것도 맞지만 기본적으로 `contentlayer`가 windows를 지원하지 않습니다(차후 개선 계획도 없습니다. `contentlayer2` 역시 windows를 지원하지 않습니다).
+
+# 🔧 해결
+
+이는 임시적인 해결 방안이며 혹시 더 좋은 방법이 있다면 제발 알려주세요.
+
+원래라면 가상 환경이나 다른 방법이 있겠지만 최대한 더 이상 다른 패키지 사용 없이 현재의 환경만으로 해결하는 방법을 사용하였습니다.
+
+찾아보니 해당 이슈에 대한 [논의가 github에서 열린 적](https://github.com/orgs/community/discussions/109713)이 있어서 이를 참고하였습니다.
+
+참고로 저는 `gh-pages`에서  `github action` 과 packages를 이용해 자동 배포되고 있는 환경입니다.  자세한 내용은 [링크된 포스트](https://coyo-hm.github.io/post/blog-auto-deploy)를 참고해주세요.
+
+github discussions에 적힌 내용대로 설정에서 파일을 찾을 수 있도록 변경해줍니다.
+
+```typescript title="contentlayer.config.ts". {8, 12}
+...
+
+export const Post = defineDocumentType(() => ({
+  ...
+  computedFields: {
+    slug: {
+      type: "string",
+      // resolve: (post) => `/${post._raw.flattenedPath}`,
+      resolve: (post) => {
+          const segments = post._raw.flattenedPath.split(/[/\\]/)
+          return segments[segments.length - 1]
+      },
+    },
+    id: {
+      type: "string",
+      resolve: (post) => post._raw.sourceFileName.replace(".mdx", ""),
+    },
+  },
+}));
+...
+```
+
+주석처럼 적힌 내용(8번째 줄)을 9-12번째 줄과 같이 변경하면 됩니다.
+
+그 후에는 링크된 내용을 보면 `vercel` 환경에서 build된 `contentlayer` 내용을 복사하여 local에 붙여넣기 해주신다고 합니다.
+
+만약 배포환경이 vercel이시라면 그대로 build 파일에서 붙여넣기 해주시면 됩니다.
+
+다만 저는 vercel이 아니라 gh-pages 로 배포 github action으로 자동 빌드, 배포하고 있기 때문에 action에 내용을 추가해주었습니다.
+
+```yaml title=".github/workflows/deploy.yml". {18, 25}
+name: Deploy
+on:
+  pull_request:
+    branches: ["main"]
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      ...
+      - name: Install and Build
+        run: |
+          yarn install
+          yarn build
+          touch ./out/.nojekyll
+
+      - name: Backup Content
+        run: |
+          cp -r ./.contentlayer/generated ./backup/
+          git add backup
+          git config --global user.name "사용자 이름"
+          git config --global user.email "이메일"
+          git commit -m "CONTENT: backup"
+          git push origin HEAD:contents
+
+      - name: Deploy
+        ...
+
+```
+
+기존의 배포 액션에 추가해주었습니다. build 이후에 `contentlayee`가 생성한 파일을 복사해서 repository에 `push`해주는 식으로 액션을 진행하였습니다.
+
+따로 액션을 만들어줘도 무방합니다.  저는 보안 이슈 또는 혹시 모를 이슈를 대비하기 위해 `contents`  브랜치를 만들어 주었는데 권한 부여해서 기존 개발 브랜치에 push 하셔도 됩니다.
+
+<img width="616" height="501" alt="contents-branch" src="https://github.com/user-attachments/assets/b52ada5c-3e2f-4615-bafc-17fa3583ebee" />
+
+해당 action을 실행하면 `contents` 브랜치에 `contentlayer`가 정상적으로 작동한 결과물을 볼 수 있습니다.
+
+이걸 고대로 로컬 `.contentlayer/generated` 에 복사해주면 windows 로컬 환경에서도 정상적으로 테스트하실 수 있습니다.
+
+엄청 번거롭지만 환경 변경없이 진행하고 싶어서 주먹구구식으로 해결했는데 만약 추후에 다른 방법을 찾게 된다면 내용 추가하겠습니다…
+
+# 참조
+
+- https://github.com/orgs/community/discussions/109713
