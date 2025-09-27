@@ -34,10 +34,11 @@ jobs:
 
       - name: Backup Content
         run: |
-          cp ./.contentlayer/generated/Post/_index.mjs ./src/constants/_posts.ts
-          cp ./.contentlayer/generated/Series/_index.mjs ./src/constants/_series.ts
-          git add src/constants/_posts.ts
-          git add src/constants/_series.ts
+          cp ./.contentlayer/generated/Post/_index.mjs ./backup/post/_index.mjs
+          cp ./.contentlayer/generated/Post/_index.json ./backup/post/_index.json
+          cp ./.contentlayer/generated/Series/_index.mjs ./backup/series/_index.mjs
+          cp ./.contentlayer/generated/Series/_index.json ./backup/post/_index.json
+          git add backup
           git config --global user.name "coyo-hm"
           git config --global user.email "bsydwp@gmail.com"
           git commit -m "CONTENT: backup"
