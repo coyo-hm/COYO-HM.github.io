@@ -523,6 +523,17 @@ const PostsTable: PostInfoTable = {
     published: true,
     id: "cookie-session",
   },
+  "contentlayer-windows": {
+    date: "2025-09-27T00:00:00.000Z",
+    title: "contentlayer windows 환경에서 사용하기",
+    tags: ["nextjs", "contentlaayer", "gh_pages", "github_actions"],
+    series: ["trouble_shooting"],
+    description: "windows local 환경에서 contentlayer(contentlayer2) 사용하기",
+    thumbnail:
+      "https://github.com/user-attachments/assets/fdd51e47-c855-4fd9-9a98-29b16ef3aeae",
+    published: true,
+    id: "contentlayer-windows",
+  },
   "code-snppets-webstorm": {
     date: "2025-02-28T00:00:00.000Z",
     title: "WebStorm(InteliJ)에서 Snippet 사용하기",

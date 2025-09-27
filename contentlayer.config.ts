@@ -1,4 +1,4 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import { defineDocumentType, makeSource } from "contentlayer2/source-files";
 //remark
 import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm"; // 기본적인 마크다운 문법을 HTML로 변환
@@ -24,6 +24,10 @@ export const Post = defineDocumentType(() => ({
     slug: {
       type: "string",
       resolve: (post) => `/${post._raw.flattenedPath}`,
+      // resolve: (post) => {
+      //     const segments = post._raw.flattenedPath.split(/[/\\]/)
+      //     return segments[segments.length - 1]
+      // },
     },
     id: {
       type: "string",
@@ -47,6 +51,10 @@ export const Series = defineDocumentType(() => ({
     slug: {
       type: "string",
       resolve: (post) => `/${post._raw.flattenedPath}`,
+      // resolve: (post) => {
+      //     const segments = post._raw.flattenedPath.split(/[/\\]/)
+      //     return segments[segments.length - 1]
+      // },
     },
     id: {
       type: "string",
