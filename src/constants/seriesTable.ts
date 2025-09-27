@@ -13,13 +13,14 @@ const SeriesTable: {
       thumbnail:
         "https://user-images.githubusercontent.com/56423604/283492423-a261b95e-c0e1-4651-9351-83fc538db17d.png",
       startDate: "2023-10-09T00:00:00.000Z",
-      endDate: "2025-05-10T00:00:00.000Z",
+      endDate: "2025-09-27T00:00:00.000Z",
       postIds: [
         "nextjs-large-page-data-warning",
         "mobile-full-view-height",
         "husky-precommit-unauthorized",
         "error-ts2802",
         "error-emeedauth",
+        "contentlayer-windows",
         "assignInlineVars-to-client-from-server",
       ],
     },
@@ -103,13 +104,14 @@ const SeriesTable: {
       thumbnail:
         "https://user-images.githubusercontent.com/56423604/283492423-a261b95e-c0e1-4651-9351-83fc538db17d.png",
       startDate: "2023-10-09T00:00:00.000Z",
-      endDate: "2025-05-10T00:00:00.000Z",
+      endDate: "2025-09-27T00:00:00.000Z",
       postIds: [
         "nextjs-large-page-data-warning",
         "mobile-full-view-height",
         "husky-precommit-unauthorized",
         "error-ts2802",
         "error-emeedauth",
+        "contentlayer-windows",
         "assignInlineVars-to-client-from-server",
       ],
     },

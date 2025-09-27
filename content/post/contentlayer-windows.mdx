@@ -26,7 +26,7 @@ published: true
 
 github discussions에 적힌 내용대로 설정에서 파일을 찾을 수 있도록 변경해줍니다.
 
-```typescript title="contentlayer.config.ts". {8, 12}
+```typescript title="contentlayer.config.ts". showLineNumbers {8-12}
 ...
 
 export const Post = defineDocumentType(() => ({
@@ -57,7 +57,7 @@ export const Post = defineDocumentType(() => ({
 
 다만 저는 vercel이 아니라 gh-pages 로 배포 github action으로 자동 빌드, 배포하고 있기 때문에 action에 내용을 추가해주었습니다.
 
-```yaml title=".github/workflows/deploy.yml". {18, 25}
+```yaml title=".github/workflows/deploy.yml". {18-25}
 name: Deploy
 on:
   pull_request:
