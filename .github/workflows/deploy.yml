@@ -35,10 +35,11 @@ jobs:
       - name: Backup Content
         run: |
           cp ./.contentlayer/generated/index.d.ts ./src/constants/backup.ts
+          git add src/constants/backup.ts
           git config --global user.name "coyo-hm"
           git config --global user.email "bsydwp@gmail.com"
-          git commit -am "CONTENT: backup"
-          git push
+          git commit -m "CONTENT: backup"
+          git push origin HEAD:main
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
