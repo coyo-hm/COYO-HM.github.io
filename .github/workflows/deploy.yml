@@ -39,7 +39,7 @@ jobs:
           git config --global user.name "coyo-hm"
           git config --global user.email "bsydwp@gmail.com"
           git commit -m "CONTENT: backup"
-          git push origin HEAD:dev --force
+          git push origin HEAD:contents --force
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
