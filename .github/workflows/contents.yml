@@ -1,7 +1,7 @@
 name: Deploy
 on:
-  pull_request:
-    branches: ["main"]
+  push:
+    branches: ["dev"]
 permissions:
   contents: write
 jobs:
@@ -32,10 +32,11 @@ jobs:
           yarn build
           touch ./out/.nojekyll
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          branch: gh-pages
-          folder: out
-          clean: true
+      - name: Backup Content
+        run: |
+          cp -r ./.contentlayer/generated ./backup/
+          git add backup
+          git config --global user.name "coyo-hm"
+          git config --global user.email "bsydwp@gmail.com"
+          git commit -m "CONTENT: backup"
+          git push origin HEAD:contents --force

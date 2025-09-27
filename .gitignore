@@ -58,3 +58,8 @@ next-env.d.ts!/.env
 
 # and uncomment the following lines
  .pnp.*
+
+
+
+# custom
+/.contentlayer_backup/
