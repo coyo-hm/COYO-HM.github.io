@@ -20,8 +20,8 @@ const getTitleId = ({
   let title = "";
   if (typeof children === "string") {
     title = children;
-  } else if (typeof children === "object") {
-    title = getText(children);
+  // } else if (typeof children === "object") {
+  //   title = getText(children);
   } else {
     const elements = children as unknown as any[];
     title = elements.reduce((t: string, ele) => t + getText(ele), "");
