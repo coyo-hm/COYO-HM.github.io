@@ -1,0 +1,21 @@
+{
+  "title": "Toy Project",
+  "description": "소소한 프로젝트들",
+  "tags": [],
+  "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/e5565bd4-839d-4c77-9bfc-600ea3990312",
+  "body": {
+    "raw": "\n개인 공부하면서 진행한 간단한 프로젝트들입니다.",
+    "code": "var Component=(()=>{var d=Object.create;var c=Object.defineProperty;var x=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var h=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var l=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),M=(t,n)=>{for(var e in n)c(t,e,{get:n[e],enumerable:!0})},i=(t,n,e,s)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let o of f(n))!b.call(t,o)&&o!==e&&c(t,o,{get:()=>n[o],enumerable:!(s=x(n,o))||s.enumerable});return t};var _=(t,n,e)=>(e=t!=null?d(h(t)):{},i(n||!t||!t.__esModule?c(e,\"default\",{value:t,enumerable:!0}):e,t)),j=t=>i(c({},\"__esModule\",{value:!0}),t);var u=l((y,a)=>{a.exports=_jsx_runtime});var O={};M(O,{default:()=>p,frontmatter:()=>C});var r=_(u()),C={title:\"Toy Project\",tags:[],description:\"\\uC18C\\uC18C\\uD55C \\uD504\\uB85C\\uC81D\\uD2B8\\uB4E4\",thumbnail:\"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/e5565bd4-839d-4c77-9bfc-600ea3990312\"};function m(t){let n={p:\"p\",...t.components};return(0,r.jsx)(n.p,{children:\"\\uAC1C\\uC778 \\uACF5\\uBD80\\uD558\\uBA74\\uC11C \\uC9C4\\uD589\\uD55C \\uAC04\\uB2E8\\uD55C \\uD504\\uB85C\\uC81D\\uD2B8\\uB4E4\\uC785\\uB2C8\\uB2E4.\"})}function p(t={}){let{wrapper:n}=t.components||{};return n?(0,r.jsx)(n,{...t,children:(0,r.jsx)(m,{...t})}):m(t)}return j(O);})();\n;return Component;"
+  },
+  "_id": "series/toy_project.mdx",
+  "_raw": {
+    "sourceFilePath": "series/toy_project.mdx",
+    "sourceFileName": "toy_project.mdx",
+    "sourceFileDir": "series",
+    "contentType": "mdx",
+    "flattenedPath": "series/toy_project"
+  },
+  "type": "Series",
+  "slug": "/series/toy_project",
+  "id": "toy_project"
+}

@@ -1,0 +1,27 @@
+{
+  "title": "커밋 메세지 관리하기",
+  "description": "커밋 메세지로 버전 관리와 변경 로그까지",
+  "tags": [
+    "github",
+    "git",
+    "github_actions",
+    "commitlint",
+    "semantic-release"
+  ],
+  "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/116b115e-a767-4748-9705-482567e2aba7",
+  "body": {
+    "raw": "다음과 관련된 내용을 담은 시리즈입니다.\n* git commit template을 등록하고 `commitlint`로 commit message를 관리하는 방법\n* 관리한 commit message 를 통해 `semantice-release`를 이용하여 change log와 semantic version 을 관리하는 방법\n\n",
+    "code": "var Component=(()=>{var h=Object.create;var c=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var _=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),b=(t,e)=>{for(var a in e)c(t,a,{get:e[a],enumerable:!0})},o=(t,e,a,r)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let i of g(e))!x.call(t,i)&&i!==a&&c(t,i,{get:()=>e[i],enumerable:!(r=p(e,i))||r.enumerable});return t};var f=(t,e,a)=>(a=t!=null?h(u(t)):{},o(e||!t||!t.__esModule?c(a,\"default\",{value:t,enumerable:!0}):a,t)),y=t=>o(c({},\"__esModule\",{value:!0}),t);var l=_((k,s)=>{s.exports=_jsx_runtime});var M={};b(M,{default:()=>m,frontmatter:()=>j});var n=f(l()),j={title:\"\\uCEE4\\uBC0B \\uBA54\\uC138\\uC9C0 \\uAD00\\uB9AC\\uD558\\uAE30\",tags:[\"github\",\"git\",\"github_actions\",\"commitlint\",\"semantic-release\"],description:\"\\uCEE4\\uBC0B \\uBA54\\uC138\\uC9C0\\uB85C \\uBC84\\uC804 \\uAD00\\uB9AC\\uC640 \\uBCC0\\uACBD \\uB85C\\uADF8\\uAE4C\\uC9C0\",thumbnail:\"https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/116b115e-a767-4748-9705-482567e2aba7\"};function d(t){let e={code:\"code\",li:\"li\",p:\"p\",span:\"span\",ul:\"ul\",...t.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(e.p,{children:\"\\uB2E4\\uC74C\\uACFC \\uAD00\\uB828\\uB41C \\uB0B4\\uC6A9\\uC744 \\uB2F4\\uC740 \\uC2DC\\uB9AC\\uC988\\uC785\\uB2C8\\uB2E4.\"}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsxs)(e.li,{children:[\"git commit template\\uC744 \\uB4F1\\uB85D\\uD558\\uACE0 \",(0,n.jsx)(e.span,{\"data-rehype-pretty-code-figure\":\"\",children:(0,n.jsx)(e.code,{\"data-language\":\"plaintext\",\"data-theme\":\"one-dark-pro\",children:(0,n.jsx)(e.span,{\"data-line\":\"\",children:(0,n.jsx)(e.span,{children:\"commitlint\"})})})}),\"\\uB85C commit message\\uB97C \\uAD00\\uB9AC\\uD558\\uB294 \\uBC29\\uBC95\"]}),`\n`,(0,n.jsxs)(e.li,{children:[\"\\uAD00\\uB9AC\\uD55C commit message \\uB97C \\uD1B5\\uD574 \",(0,n.jsx)(e.span,{\"data-rehype-pretty-code-figure\":\"\",children:(0,n.jsx)(e.code,{\"data-language\":\"plaintext\",\"data-theme\":\"one-dark-pro\",children:(0,n.jsx)(e.span,{\"data-line\":\"\",children:(0,n.jsx)(e.span,{children:\"semantice-release\"})})})}),\"\\uB97C \\uC774\\uC6A9\\uD558\\uC5EC change log\\uC640 semantic version \\uC744 \\uAD00\\uB9AC\\uD558\\uB294 \\uBC29\\uBC95\"]}),`\n`]})]})}function m(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,{...t,children:(0,n.jsx)(d,{...t})}):d(t)}return y(M);})();\n;return Component;"
+  },
+  "_id": "series/commit-msg-management.mdx",
+  "_raw": {
+    "sourceFilePath": "series/commit-msg-management.mdx",
+    "sourceFileName": "commit-msg-management.mdx",
+    "sourceFileDir": "series",
+    "contentType": "mdx",
+    "flattenedPath": "series/commit-msg-management"
+  },
+  "type": "Series",
+  "slug": "/series/commit-msg-management",
+  "id": "commit-msg-management"
+}

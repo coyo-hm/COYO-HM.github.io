@@ -1,0 +1,21 @@
+{
+  "title": "⌨️ Code Snippets",
+  "description": "자주 사용하는 코드 조각 모음",
+  "tags": [],
+  "thumbnail": "https://user-images.githubusercontent.com/56423604/283492780-cc0b2221-9cbf-497e-8ca1-a93c6539d3b6.png",
+  "body": {
+    "raw": "\n개발할 때 주로 사용하는 코드 조각 관련 포스트 모음입니다.",
+    "code": "var Component=(()=>{var d=Object.create;var c=Object.defineProperty;var x=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var b=Object.getPrototypeOf,h=Object.prototype.hasOwnProperty;var l=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),_=(t,n)=>{for(var e in n)c(t,e,{get:n[e],enumerable:!0})},i=(t,n,e,s)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let o of f(n))!h.call(t,o)&&o!==e&&c(t,o,{get:()=>n[o],enumerable:!(s=x(n,o))||s.enumerable});return t};var g=(t,n,e)=>(e=t!=null?d(b(t)):{},i(n||!t||!t.__esModule?c(e,\"default\",{value:t,enumerable:!0}):e,t)),j=t=>i(c({},\"__esModule\",{value:!0}),t);var p=l((X,a)=>{a.exports=_jsx_runtime});var M={};_(M,{default:()=>m,frontmatter:()=>C});var r=g(p()),C={title:\"\\u2328\\uFE0F Code Snippets\",tags:[],description:\"\\uC790\\uC8FC \\uC0AC\\uC6A9\\uD558\\uB294 \\uCF54\\uB4DC \\uC870\\uAC01 \\uBAA8\\uC74C\",thumbnail:\"https://user-images.githubusercontent.com/56423604/283492780-cc0b2221-9cbf-497e-8ca1-a93c6539d3b6.png\"};function u(t){let n={p:\"p\",...t.components};return(0,r.jsx)(n.p,{children:\"\\uAC1C\\uBC1C\\uD560 \\uB54C \\uC8FC\\uB85C \\uC0AC\\uC6A9\\uD558\\uB294 \\uCF54\\uB4DC \\uC870\\uAC01 \\uAD00\\uB828 \\uD3EC\\uC2A4\\uD2B8 \\uBAA8\\uC74C\\uC785\\uB2C8\\uB2E4.\"})}function m(t={}){let{wrapper:n}=t.components||{};return n?(0,r.jsx)(n,{...t,children:(0,r.jsx)(u,{...t})}):u(t)}return j(M);})();\n;return Component;"
+  },
+  "_id": "series/code_snippets.mdx",
+  "_raw": {
+    "sourceFilePath": "series/code_snippets.mdx",
+    "sourceFileName": "code_snippets.mdx",
+    "sourceFileDir": "series",
+    "contentType": "mdx",
+    "flattenedPath": "series/code_snippets"
+  },
+  "type": "Series",
+  "slug": "/series/code_snippets",
+  "id": "code_snippets"
+}

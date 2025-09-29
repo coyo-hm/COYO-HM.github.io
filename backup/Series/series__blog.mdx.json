@@ -1,0 +1,21 @@
+{
+  "title": "Blog 제작 과정",
+  "description": "블로그 자체 제작기",
+  "tags": [],
+  "thumbnail": "https://github.com/user-attachments/assets/47567c59-4a8c-47dc-ba42-8c97e8ec9595",
+  "body": {
+    "raw": "\n블로그 자체 제작 과정을 담은 포스트 모음입니다.\n* version 1.x.x, gatsby + emotion 조합의 블로그\n* version 2.x.x, nextJs + tailwind 조합의 블로그",
+    "code": "var Component=(()=>{var u=Object.create;var o=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var h=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,_=Object.prototype.hasOwnProperty;var g=(n,t)=>()=>(t||n((t={exports:{}}).exports,t),t.exports),f=(n,t)=>{for(var s in t)o(n,s,{get:t[s],enumerable:!0})},c=(n,t,s,r)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let i of h(t))!_.call(n,i)&&i!==s&&o(n,i,{get:()=>t[i],enumerable:!(r=d(t,i))||r.enumerable});return n};var j=(n,t,s)=>(s=n!=null?u(p(n)):{},c(t||!n||!n.__esModule?o(s,\"default\",{value:n,enumerable:!0}):s,n)),b=n=>c(o({},\"__esModule\",{value:!0}),n);var l=g((y,a)=>{a.exports=_jsx_runtime});var v={};f(v,{default:()=>m,frontmatter:()=>M});var e=j(l()),M={title:\"Blog \\uC81C\\uC791 \\uACFC\\uC815\",tags:[],description:\"\\uBE14\\uB85C\\uADF8 \\uC790\\uCCB4 \\uC81C\\uC791\\uAE30\",thumbnail:\"https://github.com/user-attachments/assets/47567c59-4a8c-47dc-ba42-8c97e8ec9595\"};function x(n){let t={li:\"li\",p:\"p\",ul:\"ul\",...n.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(t.p,{children:\"\\uBE14\\uB85C\\uADF8 \\uC790\\uCCB4 \\uC81C\\uC791 \\uACFC\\uC815\\uC744 \\uB2F4\\uC740 \\uD3EC\\uC2A4\\uD2B8 \\uBAA8\\uC74C\\uC785\\uB2C8\\uB2E4.\"}),`\n`,(0,e.jsxs)(t.ul,{children:[`\n`,(0,e.jsx)(t.li,{children:\"version 1.x.x, gatsby + emotion \\uC870\\uD569\\uC758 \\uBE14\\uB85C\\uADF8\"}),`\n`,(0,e.jsx)(t.li,{children:\"version 2.x.x, nextJs + tailwind \\uC870\\uD569\\uC758 \\uBE14\\uB85C\\uADF8\"}),`\n`]})]})}function m(n={}){let{wrapper:t}=n.components||{};return t?(0,e.jsx)(t,{...n,children:(0,e.jsx)(x,{...n})}):x(n)}return b(v);})();\n;return Component;"
+  },
+  "_id": "series/blog.mdx",
+  "_raw": {
+    "sourceFilePath": "series/blog.mdx",
+    "sourceFileName": "blog.mdx",
+    "sourceFileDir": "series",
+    "contentType": "mdx",
+    "flattenedPath": "series/blog"
+  },
+  "type": "Series",
+  "slug": "/series/blog",
+  "id": "blog"
+}

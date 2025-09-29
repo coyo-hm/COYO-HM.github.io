@@ -1,0 +1,23 @@
+{
+  "title": "컴퓨터 네트워크 강의 정리",
+  "description": "컴퓨터 네트워크 강의 내용 정리하기",
+  "tags": [
+    "network"
+  ],
+  "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/d1f6edca-b29b-4a4a-9149-314bc1e7b31a",
+  "body": {
+    "raw": "\n네트워크 복습을 위해 해당 [컴퓨터 네트워크 강의](http://www.kocw.net/home/cview.do?cid=6b984f376cfb8f70)를 듣고 난 내용 정리 모음",
+    "code": "var Component=(()=>{var m=Object.create;var s=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var b=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var w=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),l=(t,e)=>{for(var n in e)s(t,n,{get:e[n],enumerable:!0})},a=(t,e,n,r)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let c of b(e))!x.call(t,c)&&c!==n&&s(t,c,{get:()=>e[c],enumerable:!(r=u(e,c))||r.enumerable});return t};var _=(t,e,n)=>(n=t!=null?m(p(t)):{},a(e||!t||!t.__esModule?s(n,\"default\",{value:t,enumerable:!0}):n,t)),j=t=>a(s({},\"__esModule\",{value:!0}),t);var d=w((g,i)=>{i.exports=_jsx_runtime});var C={};l(C,{default:()=>h,frontmatter:()=>M});var o=_(d()),M={title:\"\\uCEF4\\uD4E8\\uD130 \\uB124\\uD2B8\\uC6CC\\uD06C \\uAC15\\uC758 \\uC815\\uB9AC\",tags:[\"network\"],description:\"\\uCEF4\\uD4E8\\uD130 \\uB124\\uD2B8\\uC6CC\\uD06C \\uAC15\\uC758 \\uB0B4\\uC6A9 \\uC815\\uB9AC\\uD558\\uAE30\",thumbnail:\"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/d1f6edca-b29b-4a4a-9149-314bc1e7b31a\"};function f(t){let e={a:\"a\",p:\"p\",...t.components};return(0,o.jsxs)(e.p,{children:[\"\\uB124\\uD2B8\\uC6CC\\uD06C \\uBCF5\\uC2B5\\uC744 \\uC704\\uD574 \\uD574\\uB2F9 \",(0,o.jsx)(e.a,{href:\"http://www.kocw.net/home/cview.do?cid=6b984f376cfb8f70\",children:\"\\uCEF4\\uD4E8\\uD130 \\uB124\\uD2B8\\uC6CC\\uD06C \\uAC15\\uC758\"}),\"\\uB97C \\uB4E3\\uACE0 \\uB09C \\uB0B4\\uC6A9 \\uC815\\uB9AC \\uBAA8\\uC74C\"]})}function h(t={}){let{wrapper:e}=t.components||{};return e?(0,o.jsx)(e,{...t,children:(0,o.jsx)(f,{...t})}):f(t)}return j(C);})();\n;return Component;"
+  },
+  "_id": "series/network_note.mdx",
+  "_raw": {
+    "sourceFilePath": "series/network_note.mdx",
+    "sourceFileName": "network_note.mdx",
+    "sourceFileDir": "series",
+    "contentType": "mdx",
+    "flattenedPath": "series/network_note"
+  },
+  "type": "Series",
+  "slug": "/series/network_note",
+  "id": "network_note"
+}

@@ -1,0 +1,21 @@
+{
+  "title": "⚠️ Trouble Shooting Log",
+  "description": "프로젝트 진행 도중 나오는 문제 해결 기록",
+  "tags": [],
+  "thumbnail": "https://user-images.githubusercontent.com/56423604/283492423-a261b95e-c0e1-4651-9351-83fc538db17d.png",
+  "body": {
+    "raw": "\n프로그래밍 진행 도중 발생한 오류들과 해결 방법을 정리한 포스트 모음입니다.",
+    "code": "var Component=(()=>{var d=Object.create;var r=Object.defineProperty;var x=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,h=Object.prototype.hasOwnProperty;var l=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),b=(t,n)=>{for(var e in n)r(t,e,{get:n[e],enumerable:!0})},i=(t,n,e,s)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let o of f(n))!h.call(t,o)&&o!==e&&r(t,o,{get:()=>n[o],enumerable:!(s=x(n,o))||s.enumerable});return t};var _=(t,n,e)=>(e=t!=null?d(g(t)):{},i(n||!t||!t.__esModule?r(e,\"default\",{value:t,enumerable:!0}):e,t)),j=t=>i(r({},\"__esModule\",{value:!0}),t);var a=l((L,u)=>{u.exports=_jsx_runtime});var C={};b(C,{default:()=>p,frontmatter:()=>M});var c=_(a()),M={title:\"\\u26A0\\uFE0F Trouble Shooting Log\",tags:[],description:\"\\uD504\\uB85C\\uC81D\\uD2B8 \\uC9C4\\uD589 \\uB3C4\\uC911 \\uB098\\uC624\\uB294 \\uBB38\\uC81C \\uD574\\uACB0 \\uAE30\\uB85D\",thumbnail:\"https://user-images.githubusercontent.com/56423604/283492423-a261b95e-c0e1-4651-9351-83fc538db17d.png\"};function m(t){let n={p:\"p\",...t.components};return(0,c.jsx)(n.p,{children:\"\\uD504\\uB85C\\uADF8\\uB798\\uBC0D \\uC9C4\\uD589 \\uB3C4\\uC911 \\uBC1C\\uC0DD\\uD55C \\uC624\\uB958\\uB4E4\\uACFC \\uD574\\uACB0 \\uBC29\\uBC95\\uC744 \\uC815\\uB9AC\\uD55C \\uD3EC\\uC2A4\\uD2B8 \\uBAA8\\uC74C\\uC785\\uB2C8\\uB2E4.\"})}function p(t={}){let{wrapper:n}=t.components||{};return n?(0,c.jsx)(n,{...t,children:(0,c.jsx)(m,{...t})}):m(t)}return j(C);})();\n;return Component;"
+  },
+  "_id": "series/trouble_shooting.mdx",
+  "_raw": {
+    "sourceFilePath": "series/trouble_shooting.mdx",
+    "sourceFileName": "trouble_shooting.mdx",
+    "sourceFileDir": "series",
+    "contentType": "mdx",
+    "flattenedPath": "series/trouble_shooting"
+  },
+  "type": "Series",
+  "slug": "/series/trouble_shooting",
+  "id": "trouble_shooting"
+}

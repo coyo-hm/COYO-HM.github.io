@@ -1,0 +1,136 @@
+[
+  {
+    "title": "Blog 제작 과정",
+    "description": "블로그 자체 제작기",
+    "tags": [],
+    "thumbnail": "https://github.com/user-attachments/assets/47567c59-4a8c-47dc-ba42-8c97e8ec9595",
+    "body": {
+      "raw": "\n블로그 자체 제작 과정을 담은 포스트 모음입니다.\n* version 1.x.x, gatsby + emotion 조합의 블로그\n* version 2.x.x, nextJs + tailwind 조합의 블로그",
+      "code": "var Component=(()=>{var u=Object.create;var o=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var h=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,_=Object.prototype.hasOwnProperty;var g=(n,t)=>()=>(t||n((t={exports:{}}).exports,t),t.exports),f=(n,t)=>{for(var s in t)o(n,s,{get:t[s],enumerable:!0})},c=(n,t,s,r)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let i of h(t))!_.call(n,i)&&i!==s&&o(n,i,{get:()=>t[i],enumerable:!(r=d(t,i))||r.enumerable});return n};var j=(n,t,s)=>(s=n!=null?u(p(n)):{},c(t||!n||!n.__esModule?o(s,\"default\",{value:n,enumerable:!0}):s,n)),b=n=>c(o({},\"__esModule\",{value:!0}),n);var l=g((y,a)=>{a.exports=_jsx_runtime});var v={};f(v,{default:()=>m,frontmatter:()=>M});var e=j(l()),M={title:\"Blog \\uC81C\\uC791 \\uACFC\\uC815\",tags:[],description:\"\\uBE14\\uB85C\\uADF8 \\uC790\\uCCB4 \\uC81C\\uC791\\uAE30\",thumbnail:\"https://github.com/user-attachments/assets/47567c59-4a8c-47dc-ba42-8c97e8ec9595\"};function x(n){let t={li:\"li\",p:\"p\",ul:\"ul\",...n.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(t.p,{children:\"\\uBE14\\uB85C\\uADF8 \\uC790\\uCCB4 \\uC81C\\uC791 \\uACFC\\uC815\\uC744 \\uB2F4\\uC740 \\uD3EC\\uC2A4\\uD2B8 \\uBAA8\\uC74C\\uC785\\uB2C8\\uB2E4.\"}),`\n`,(0,e.jsxs)(t.ul,{children:[`\n`,(0,e.jsx)(t.li,{children:\"version 1.x.x, gatsby + emotion \\uC870\\uD569\\uC758 \\uBE14\\uB85C\\uADF8\"}),`\n`,(0,e.jsx)(t.li,{children:\"version 2.x.x, nextJs + tailwind \\uC870\\uD569\\uC758 \\uBE14\\uB85C\\uADF8\"}),`\n`]})]})}function m(n={}){let{wrapper:t}=n.components||{};return t?(0,e.jsx)(t,{...n,children:(0,e.jsx)(x,{...n})}):x(n)}return b(v);})();\n;return Component;"
+    },
+    "_id": "series/blog.mdx",
+    "_raw": {
+      "sourceFilePath": "series/blog.mdx",
+      "sourceFileName": "blog.mdx",
+      "sourceFileDir": "series",
+      "contentType": "mdx",
+      "flattenedPath": "series/blog"
+    },
+    "type": "Series",
+    "slug": "/series/blog",
+    "id": "blog"
+  },
+  {
+    "title": "⌨️ Code Snippets",
+    "description": "자주 사용하는 코드 조각 모음",
+    "tags": [],
+    "thumbnail": "https://user-images.githubusercontent.com/56423604/283492780-cc0b2221-9cbf-497e-8ca1-a93c6539d3b6.png",
+    "body": {
+      "raw": "\n개발할 때 주로 사용하는 코드 조각 관련 포스트 모음입니다.",
+      "code": "var Component=(()=>{var d=Object.create;var c=Object.defineProperty;var x=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var b=Object.getPrototypeOf,h=Object.prototype.hasOwnProperty;var l=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),_=(t,n)=>{for(var e in n)c(t,e,{get:n[e],enumerable:!0})},i=(t,n,e,s)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let o of f(n))!h.call(t,o)&&o!==e&&c(t,o,{get:()=>n[o],enumerable:!(s=x(n,o))||s.enumerable});return t};var g=(t,n,e)=>(e=t!=null?d(b(t)):{},i(n||!t||!t.__esModule?c(e,\"default\",{value:t,enumerable:!0}):e,t)),j=t=>i(c({},\"__esModule\",{value:!0}),t);var p=l((X,a)=>{a.exports=_jsx_runtime});var M={};_(M,{default:()=>m,frontmatter:()=>C});var r=g(p()),C={title:\"\\u2328\\uFE0F Code Snippets\",tags:[],description:\"\\uC790\\uC8FC \\uC0AC\\uC6A9\\uD558\\uB294 \\uCF54\\uB4DC \\uC870\\uAC01 \\uBAA8\\uC74C\",thumbnail:\"https://user-images.githubusercontent.com/56423604/283492780-cc0b2221-9cbf-497e-8ca1-a93c6539d3b6.png\"};function u(t){let n={p:\"p\",...t.components};return(0,r.jsx)(n.p,{children:\"\\uAC1C\\uBC1C\\uD560 \\uB54C \\uC8FC\\uB85C \\uC0AC\\uC6A9\\uD558\\uB294 \\uCF54\\uB4DC \\uC870\\uAC01 \\uAD00\\uB828 \\uD3EC\\uC2A4\\uD2B8 \\uBAA8\\uC74C\\uC785\\uB2C8\\uB2E4.\"})}function m(t={}){let{wrapper:n}=t.components||{};return n?(0,r.jsx)(n,{...t,children:(0,r.jsx)(u,{...t})}):u(t)}return j(M);})();\n;return Component;"
+    },
+    "_id": "series/code_snippets.mdx",
+    "_raw": {
+      "sourceFilePath": "series/code_snippets.mdx",
+      "sourceFileName": "code_snippets.mdx",
+      "sourceFileDir": "series",
+      "contentType": "mdx",
+      "flattenedPath": "series/code_snippets"
+    },
+    "type": "Series",
+    "slug": "/series/code_snippets",
+    "id": "code_snippets"
+  },
+  {
+    "title": "커밋 메세지 관리하기",
+    "description": "커밋 메세지로 버전 관리와 변경 로그까지",
+    "tags": [
+      "github",
+      "git",
+      "github_actions",
+      "commitlint",
+      "semantic-release"
+    ],
+    "thumbnail": "https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/116b115e-a767-4748-9705-482567e2aba7",
+    "body": {
+      "raw": "다음과 관련된 내용을 담은 시리즈입니다.\n* git commit template을 등록하고 `commitlint`로 commit message를 관리하는 방법\n* 관리한 commit message 를 통해 `semantice-release`를 이용하여 change log와 semantic version 을 관리하는 방법\n\n",
+      "code": "var Component=(()=>{var h=Object.create;var c=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var _=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),b=(t,e)=>{for(var a in e)c(t,a,{get:e[a],enumerable:!0})},o=(t,e,a,r)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let i of g(e))!x.call(t,i)&&i!==a&&c(t,i,{get:()=>e[i],enumerable:!(r=p(e,i))||r.enumerable});return t};var f=(t,e,a)=>(a=t!=null?h(u(t)):{},o(e||!t||!t.__esModule?c(a,\"default\",{value:t,enumerable:!0}):a,t)),y=t=>o(c({},\"__esModule\",{value:!0}),t);var l=_((k,s)=>{s.exports=_jsx_runtime});var M={};b(M,{default:()=>m,frontmatter:()=>j});var n=f(l()),j={title:\"\\uCEE4\\uBC0B \\uBA54\\uC138\\uC9C0 \\uAD00\\uB9AC\\uD558\\uAE30\",tags:[\"github\",\"git\",\"github_actions\",\"commitlint\",\"semantic-release\"],description:\"\\uCEE4\\uBC0B \\uBA54\\uC138\\uC9C0\\uB85C \\uBC84\\uC804 \\uAD00\\uB9AC\\uC640 \\uBCC0\\uACBD \\uB85C\\uADF8\\uAE4C\\uC9C0\",thumbnail:\"https://github.com/coyo-hm/COYO-HM.github.io/assets/56423604/116b115e-a767-4748-9705-482567e2aba7\"};function d(t){let e={code:\"code\",li:\"li\",p:\"p\",span:\"span\",ul:\"ul\",...t.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(e.p,{children:\"\\uB2E4\\uC74C\\uACFC \\uAD00\\uB828\\uB41C \\uB0B4\\uC6A9\\uC744 \\uB2F4\\uC740 \\uC2DC\\uB9AC\\uC988\\uC785\\uB2C8\\uB2E4.\"}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsxs)(e.li,{children:[\"git commit template\\uC744 \\uB4F1\\uB85D\\uD558\\uACE0 \",(0,n.jsx)(e.span,{\"data-rehype-pretty-code-figure\":\"\",children:(0,n.jsx)(e.code,{\"data-language\":\"plaintext\",\"data-theme\":\"one-dark-pro\",children:(0,n.jsx)(e.span,{\"data-line\":\"\",children:(0,n.jsx)(e.span,{children:\"commitlint\"})})})}),\"\\uB85C commit message\\uB97C \\uAD00\\uB9AC\\uD558\\uB294 \\uBC29\\uBC95\"]}),`\n`,(0,n.jsxs)(e.li,{children:[\"\\uAD00\\uB9AC\\uD55C commit message \\uB97C \\uD1B5\\uD574 \",(0,n.jsx)(e.span,{\"data-rehype-pretty-code-figure\":\"\",children:(0,n.jsx)(e.code,{\"data-language\":\"plaintext\",\"data-theme\":\"one-dark-pro\",children:(0,n.jsx)(e.span,{\"data-line\":\"\",children:(0,n.jsx)(e.span,{children:\"semantice-release\"})})})}),\"\\uB97C \\uC774\\uC6A9\\uD558\\uC5EC change log\\uC640 semantic version \\uC744 \\uAD00\\uB9AC\\uD558\\uB294 \\uBC29\\uBC95\"]}),`\n`]})]})}function m(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,{...t,children:(0,n.jsx)(d,{...t})}):d(t)}return y(M);})();\n;return Component;"
+    },
+    "_id": "series/commit-msg-management.mdx",
+    "_raw": {
+      "sourceFilePath": "series/commit-msg-management.mdx",
+      "sourceFileName": "commit-msg-management.mdx",
+      "sourceFileDir": "series",
+      "contentType": "mdx",
+      "flattenedPath": "series/commit-msg-management"
+    },
+    "type": "Series",
+    "slug": "/series/commit-msg-management",
+    "id": "commit-msg-management"
+  },
+  {
+    "title": "컴퓨터 네트워크 강의 정리",
+    "description": "컴퓨터 네트워크 강의 내용 정리하기",
+    "tags": [
+      "network"
+    ],
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/d1f6edca-b29b-4a4a-9149-314bc1e7b31a",
+    "body": {
+      "raw": "\n네트워크 복습을 위해 해당 [컴퓨터 네트워크 강의](http://www.kocw.net/home/cview.do?cid=6b984f376cfb8f70)를 듣고 난 내용 정리 모음",
+      "code": "var Component=(()=>{var m=Object.create;var s=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var b=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var w=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),l=(t,e)=>{for(var n in e)s(t,n,{get:e[n],enumerable:!0})},a=(t,e,n,r)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let c of b(e))!x.call(t,c)&&c!==n&&s(t,c,{get:()=>e[c],enumerable:!(r=u(e,c))||r.enumerable});return t};var _=(t,e,n)=>(n=t!=null?m(p(t)):{},a(e||!t||!t.__esModule?s(n,\"default\",{value:t,enumerable:!0}):n,t)),j=t=>a(s({},\"__esModule\",{value:!0}),t);var d=w((g,i)=>{i.exports=_jsx_runtime});var C={};l(C,{default:()=>h,frontmatter:()=>M});var o=_(d()),M={title:\"\\uCEF4\\uD4E8\\uD130 \\uB124\\uD2B8\\uC6CC\\uD06C \\uAC15\\uC758 \\uC815\\uB9AC\",tags:[\"network\"],description:\"\\uCEF4\\uD4E8\\uD130 \\uB124\\uD2B8\\uC6CC\\uD06C \\uAC15\\uC758 \\uB0B4\\uC6A9 \\uC815\\uB9AC\\uD558\\uAE30\",thumbnail:\"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/d1f6edca-b29b-4a4a-9149-314bc1e7b31a\"};function f(t){let e={a:\"a\",p:\"p\",...t.components};return(0,o.jsxs)(e.p,{children:[\"\\uB124\\uD2B8\\uC6CC\\uD06C \\uBCF5\\uC2B5\\uC744 \\uC704\\uD574 \\uD574\\uB2F9 \",(0,o.jsx)(e.a,{href:\"http://www.kocw.net/home/cview.do?cid=6b984f376cfb8f70\",children:\"\\uCEF4\\uD4E8\\uD130 \\uB124\\uD2B8\\uC6CC\\uD06C \\uAC15\\uC758\"}),\"\\uB97C \\uB4E3\\uACE0 \\uB09C \\uB0B4\\uC6A9 \\uC815\\uB9AC \\uBAA8\\uC74C\"]})}function h(t={}){let{wrapper:e}=t.components||{};return e?(0,o.jsx)(e,{...t,children:(0,o.jsx)(f,{...t})}):f(t)}return j(C);})();\n;return Component;"
+    },
+    "_id": "series/network_note.mdx",
+    "_raw": {
+      "sourceFilePath": "series/network_note.mdx",
+      "sourceFileName": "network_note.mdx",
+      "sourceFileDir": "series",
+      "contentType": "mdx",
+      "flattenedPath": "series/network_note"
+    },
+    "type": "Series",
+    "slug": "/series/network_note",
+    "id": "network_note"
+  },
+  {
+    "title": "Toy Project",
+    "description": "소소한 프로젝트들",
+    "tags": [],
+    "thumbnail": "https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/e5565bd4-839d-4c77-9bfc-600ea3990312",
+    "body": {
+      "raw": "\n개인 공부하면서 진행한 간단한 프로젝트들입니다.",
+      "code": "var Component=(()=>{var d=Object.create;var c=Object.defineProperty;var x=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var h=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var l=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),M=(t,n)=>{for(var e in n)c(t,e,{get:n[e],enumerable:!0})},i=(t,n,e,s)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let o of f(n))!b.call(t,o)&&o!==e&&c(t,o,{get:()=>n[o],enumerable:!(s=x(n,o))||s.enumerable});return t};var _=(t,n,e)=>(e=t!=null?d(h(t)):{},i(n||!t||!t.__esModule?c(e,\"default\",{value:t,enumerable:!0}):e,t)),j=t=>i(c({},\"__esModule\",{value:!0}),t);var u=l((y,a)=>{a.exports=_jsx_runtime});var O={};M(O,{default:()=>p,frontmatter:()=>C});var r=_(u()),C={title:\"Toy Project\",tags:[],description:\"\\uC18C\\uC18C\\uD55C \\uD504\\uB85C\\uC81D\\uD2B8\\uB4E4\",thumbnail:\"https://github.com/COYO-HM/COYO-HM.github.io/assets/56423604/e5565bd4-839d-4c77-9bfc-600ea3990312\"};function m(t){let n={p:\"p\",...t.components};return(0,r.jsx)(n.p,{children:\"\\uAC1C\\uC778 \\uACF5\\uBD80\\uD558\\uBA74\\uC11C \\uC9C4\\uD589\\uD55C \\uAC04\\uB2E8\\uD55C \\uD504\\uB85C\\uC81D\\uD2B8\\uB4E4\\uC785\\uB2C8\\uB2E4.\"})}function p(t={}){let{wrapper:n}=t.components||{};return n?(0,r.jsx)(n,{...t,children:(0,r.jsx)(m,{...t})}):m(t)}return j(O);})();\n;return Component;"
+    },
+    "_id": "series/toy_project.mdx",
+    "_raw": {
+      "sourceFilePath": "series/toy_project.mdx",
+      "sourceFileName": "toy_project.mdx",
+      "sourceFileDir": "series",
+      "contentType": "mdx",
+      "flattenedPath": "series/toy_project"
+    },
+    "type": "Series",
+    "slug": "/series/toy_project",
+    "id": "toy_project"
+  },
+  {
+    "title": "⚠️ Trouble Shooting Log",
+    "description": "프로젝트 진행 도중 나오는 문제 해결 기록",
+    "tags": [],
+    "thumbnail": "https://user-images.githubusercontent.com/56423604/283492423-a261b95e-c0e1-4651-9351-83fc538db17d.png",
+    "body": {
+      "raw": "\n프로그래밍 진행 도중 발생한 오류들과 해결 방법을 정리한 포스트 모음입니다.",
+      "code": "var Component=(()=>{var d=Object.create;var r=Object.defineProperty;var x=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,h=Object.prototype.hasOwnProperty;var l=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),b=(t,n)=>{for(var e in n)r(t,e,{get:n[e],enumerable:!0})},i=(t,n,e,s)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let o of f(n))!h.call(t,o)&&o!==e&&r(t,o,{get:()=>n[o],enumerable:!(s=x(n,o))||s.enumerable});return t};var _=(t,n,e)=>(e=t!=null?d(g(t)):{},i(n||!t||!t.__esModule?r(e,\"default\",{value:t,enumerable:!0}):e,t)),j=t=>i(r({},\"__esModule\",{value:!0}),t);var a=l((L,u)=>{u.exports=_jsx_runtime});var C={};b(C,{default:()=>p,frontmatter:()=>M});var c=_(a()),M={title:\"\\u26A0\\uFE0F Trouble Shooting Log\",tags:[],description:\"\\uD504\\uB85C\\uC81D\\uD2B8 \\uC9C4\\uD589 \\uB3C4\\uC911 \\uB098\\uC624\\uB294 \\uBB38\\uC81C \\uD574\\uACB0 \\uAE30\\uB85D\",thumbnail:\"https://user-images.githubusercontent.com/56423604/283492423-a261b95e-c0e1-4651-9351-83fc538db17d.png\"};function m(t){let n={p:\"p\",...t.components};return(0,c.jsx)(n.p,{children:\"\\uD504\\uB85C\\uADF8\\uB798\\uBC0D \\uC9C4\\uD589 \\uB3C4\\uC911 \\uBC1C\\uC0DD\\uD55C \\uC624\\uB958\\uB4E4\\uACFC \\uD574\\uACB0 \\uBC29\\uBC95\\uC744 \\uC815\\uB9AC\\uD55C \\uD3EC\\uC2A4\\uD2B8 \\uBAA8\\uC74C\\uC785\\uB2C8\\uB2E4.\"})}function p(t={}){let{wrapper:n}=t.components||{};return n?(0,c.jsx)(n,{...t,children:(0,c.jsx)(m,{...t})}):m(t)}return j(C);})();\n;return Component;"
+    },
+    "_id": "series/trouble_shooting.mdx",
+    "_raw": {
+      "sourceFilePath": "series/trouble_shooting.mdx",
+      "sourceFileName": "trouble_shooting.mdx",
+      "sourceFileDir": "series",
+      "contentType": "mdx",
+      "flattenedPath": "series/trouble_shooting"
+    },
+    "type": "Series",
+    "slug": "/series/trouble_shooting",
+    "id": "trouble_shooting"
+  }
+]
