@@ -1,42 +1,42 @@
-name: Contents
-on:
-  push:
-    branches: ["dev"]
-permissions:
-  contents: write
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-
-      - name: Create env file
-        run: |
-          echo "NEXT_PUBLIC_CATEGORY_ID=${{ secrets.NEXT_PUBLIC_CATEGORY_ID }}" >> .env
-          echo "NEXT_PUBLIC_GA_ID=${{ secrets.NEXT_PUBLIC_GA_ID }}" >> .env
-          echo "NEXT_PUBLIC_GTM_ID=${{ secrets.NEXT_PUBLIC_GTM_ID }}" >> .env
-          echo "NEXT_PUBLIC_REPO_ID=${{ secrets.NEXT_PUBLIC_REPO_ID }}" >> .env
-        env:
-          NEXT_PUBLIC_CATEGORY_ID: ${{ secrets.NEXT_PUBLIC_CATEGORY_ID }}
-          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
-          NEXT_PUBLIC_GTM_ID: ${{ secrets.NEXT_PUBLIC_GTM_ID }}
-          NEXT_PUBLIC_REPO_ID: ${{ secrets.NEXT_PUBLIC_REPO_ID }}
-
-      - name: Install and Build
-        run: |
-          yarn install
-          yarn build
-          touch ./out/.nojekyll
-
-      - name: Backup Content
-        run: |
-          cp -r ./.contentlayer/generated ./backup/
-          git add backup
-          git config --global user.name "coyo-hm"
-          git config --global user.email "bsydwp@gmail.com"
-          git commit -m "CONTENT: backup"
-          git push origin HEAD:contents --force
+#name: Contents
+#on:
+#  push:
+#    branches: ["dev"]
+#permissions:
+#  contents: write
+#jobs:
+#  deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: actions/setup-node@v4
+#        with:
+#          node-version: 20
+#          cache: 'npm'
+#
+#      - name: Create env file
+#        run: |
+#          echo "NEXT_PUBLIC_CATEGORY_ID=${{ secrets.NEXT_PUBLIC_CATEGORY_ID }}" >> .env
+#          echo "NEXT_PUBLIC_GA_ID=${{ secrets.NEXT_PUBLIC_GA_ID }}" >> .env
+#          echo "NEXT_PUBLIC_GTM_ID=${{ secrets.NEXT_PUBLIC_GTM_ID }}" >> .env
+#          echo "NEXT_PUBLIC_REPO_ID=${{ secrets.NEXT_PUBLIC_REPO_ID }}" >> .env
+#        env:
+#          NEXT_PUBLIC_CATEGORY_ID: ${{ secrets.NEXT_PUBLIC_CATEGORY_ID }}
+#          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+#          NEXT_PUBLIC_GTM_ID: ${{ secrets.NEXT_PUBLIC_GTM_ID }}
+#          NEXT_PUBLIC_REPO_ID: ${{ secrets.NEXT_PUBLIC_REPO_ID }}
+#
+#      - name: Install and Build
+#        run: |
+#          yarn install
+#          yarn build
+#          touch ./out/.nojekyll
+#
+#      - name: Backup Content
+#        run: |
+#          cp -r ./.contentlayer/generated ./backup/
+#          git add backup
+#          git config --global user.name "coyo-hm"
+#          git config --global user.email "bsydwp@gmail.com"
+#          git commit -m "CONTENT: backup"
+#          git push origin HEAD:contents --force
