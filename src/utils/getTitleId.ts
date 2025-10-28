@@ -11,20 +11,18 @@ const getText = (element: any): string => {
   return "";
 };
 
-const getTitleId = ({
-  children,
-}: DetailedHTMLProps<
+const getTitleId = ({ children }: DetailedHTMLProps<
   HTMLAttributes<HTMLHeadingElement>,
   HTMLHeadingElement
 >) => {
   let title = "";
   if (typeof children === "string") {
     title = children;
-  // } else if (typeof children === "object") {
-  //   title = getText(children);
-  } else {
+  } else if (Array.isArray(children)) {
     const elements = children as unknown as any[];
     title = elements.reduce((t: string, ele) => t + getText(ele), "");
+  } else {
+    title = getText(children);
   }
 
   return parseHeadingToId(title);
