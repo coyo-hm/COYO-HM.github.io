@@ -21,14 +21,13 @@ const Footer = () => {
         <a href="mailto:bsydwp@gmail.com" className={`hover:text-blue-700`}>
           <FaEnvelope size={24} />
         </a>
-        <a
-          href="https://bouts.vercel.app/"
-          target={"_blank"}
-          rel="noreferrer"
-          className={`hover:text-blue-700`}
-        >
-          <ProfileIcon height={24} width={24} />
-        </a>
+        {/*<a*/}
+        {/*  target={"_blank"}*/}
+        {/*  rel="noreferrer"*/}
+        {/*  className={`hover:text-blue-700`}*/}
+        {/*>*/}
+        {/*  <ProfileIcon height={24} width={24} />*/}
+        {/*</a>*/}
       </div>
       <div
         id={"main-footer-copyright"}

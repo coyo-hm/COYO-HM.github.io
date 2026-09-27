@@ -204,4 +204,12 @@ const createTable = () => {
   }
 };
 
-createTable();
+if (require.main === module) {
+  createTable();
+}
+
+module.exports = {
+  createTable,
+  getDate,
+  getSeriesKey,
+};
